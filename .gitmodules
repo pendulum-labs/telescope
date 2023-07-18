@@ -1,0 +1,6 @@
+[submodule "submodules/onomy"]
+	path = submodules/onomy
+	url = https://github.com/onomyprotocol/onomy
+[submodule "submodules/market"]
+	path = submodules/market
+	url = https://github.com/onomyprotocol/market

@@ -1,0 +1,25 @@
+{
+  "protoDirs": [
+    "./submodules/onomy/third_party/proto",
+    "./submodules/onomy/proto"
+  ],
+  "outPath": "./src/codegen",
+  "options": {
+    "aminoEncoding": {
+      "enabled": true
+    },
+    "lcdClients": {
+      "enabled": true
+    },
+    "rpcClients": {
+      "enabled": true
+    },
+    "prototypes": {
+      "includes": {
+        "protos": [
+          "**/*.proto"
+        ]
+      }
+    }
+  }
+}

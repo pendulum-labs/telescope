@@ -1,0 +1,172 @@
+import { Rpc } from "../helpers";
+import * as _m0 from "protobufjs/minimal";
+import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse } from "./query";
+/** Query defines the gRPC querier service. */
+export interface Query {
+  /** Parameters queries the parameters of the module. */
+  params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
+  /** Queries a Pool by index. */
+  pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
+  /** Queries a list of Pool items. */
+  poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
+  /** Queries a Drop by index. */
+  drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse>;
+  /** Queries a list of Drop items. */
+  dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse>;
+  /** Queries a Member by index. */
+  member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse>;
+  /** Queries a list of Member items. */
+  memberAll(request?: QueryAllMemberRequest): Promise<QueryAllMemberResponse>;
+  /** Queries a Burnings by index. */
+  burnings(request: QueryGetBurningsRequest): Promise<QueryGetBurningsResponse>;
+  /** Queries a list of Burnings items. */
+  burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
+  /** Queries a Order by index. */
+  order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
+  /** Queries a list of Order items. */
+  orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
+  /** Queries a list of Book items. */
+  book(request: QueryBookRequest): Promise<QueryBookResponse>;
+  /** Queries a list of Bookends items. */
+  bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
+}
+export class QueryClientImpl implements Query {
+  private readonly rpc: Rpc;
+  constructor(rpc: Rpc) {
+    this.rpc = rpc;
+    this.params = this.params.bind(this);
+    this.pool = this.pool.bind(this);
+    this.poolAll = this.poolAll.bind(this);
+    this.drop = this.drop.bind(this);
+    this.dropAll = this.dropAll.bind(this);
+    this.member = this.member.bind(this);
+    this.memberAll = this.memberAll.bind(this);
+    this.burnings = this.burnings.bind(this);
+    this.burningsAll = this.burningsAll.bind(this);
+    this.order = this.order.bind(this);
+    this.orderAll = this.orderAll.bind(this);
+    this.book = this.book.bind(this);
+    this.bookends = this.bookends.bind(this);
+  }
+  params(request: QueryParamsRequest = {}): Promise<QueryParamsResponse> {
+    const data = QueryParamsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Params", data);
+    return promise.then(data => QueryParamsResponse.decode(new _m0.Reader(data)));
+  }
+  pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse> {
+    const data = QueryGetPoolRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Pool", data);
+    return promise.then(data => QueryGetPoolResponse.decode(new _m0.Reader(data)));
+  }
+  poolAll(request: QueryAllPoolRequest = {
+    pagination: undefined
+  }): Promise<QueryAllPoolResponse> {
+    const data = QueryAllPoolRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "PoolAll", data);
+    return promise.then(data => QueryAllPoolResponse.decode(new _m0.Reader(data)));
+  }
+  drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse> {
+    const data = QueryGetDropRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Drop", data);
+    return promise.then(data => QueryGetDropResponse.decode(new _m0.Reader(data)));
+  }
+  dropAll(request: QueryAllDropRequest = {
+    pagination: undefined
+  }): Promise<QueryAllDropResponse> {
+    const data = QueryAllDropRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAll", data);
+    return promise.then(data => QueryAllDropResponse.decode(new _m0.Reader(data)));
+  }
+  member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse> {
+    const data = QueryGetMemberRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Member", data);
+    return promise.then(data => QueryGetMemberResponse.decode(new _m0.Reader(data)));
+  }
+  memberAll(request: QueryAllMemberRequest = {
+    pagination: undefined
+  }): Promise<QueryAllMemberResponse> {
+    const data = QueryAllMemberRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "MemberAll", data);
+    return promise.then(data => QueryAllMemberResponse.decode(new _m0.Reader(data)));
+  }
+  burnings(request: QueryGetBurningsRequest): Promise<QueryGetBurningsResponse> {
+    const data = QueryGetBurningsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Burnings", data);
+    return promise.then(data => QueryGetBurningsResponse.decode(new _m0.Reader(data)));
+  }
+  burningsAll(request: QueryAllBurningsRequest = {
+    pagination: undefined
+  }): Promise<QueryAllBurningsResponse> {
+    const data = QueryAllBurningsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "BurningsAll", data);
+    return promise.then(data => QueryAllBurningsResponse.decode(new _m0.Reader(data)));
+  }
+  order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse> {
+    const data = QueryGetOrderRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Order", data);
+    return promise.then(data => QueryGetOrderResponse.decode(new _m0.Reader(data)));
+  }
+  orderAll(request: QueryAllOrderRequest = {
+    pagination: undefined
+  }): Promise<QueryAllOrderResponse> {
+    const data = QueryAllOrderRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
+    return promise.then(data => QueryAllOrderResponse.decode(new _m0.Reader(data)));
+  }
+  book(request: QueryBookRequest): Promise<QueryBookResponse> {
+    const data = QueryBookRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Book", data);
+    return promise.then(data => QueryBookResponse.decode(new _m0.Reader(data)));
+  }
+  bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse> {
+    const data = QueryBookendsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Bookends", data);
+    return promise.then(data => QueryBookendsResponse.decode(new _m0.Reader(data)));
+  }
+}
+export const createRpcQueryExtension = (base: QueryClient) => {
+  const rpc = createProtobufRpcClient(base);
+  const queryService = new QueryClientImpl(rpc);
+  return {
+    params(request?: QueryParamsRequest): Promise<QueryParamsResponse> {
+      return queryService.params(request);
+    },
+    pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse> {
+      return queryService.pool(request);
+    },
+    poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse> {
+      return queryService.poolAll(request);
+    },
+    drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse> {
+      return queryService.drop(request);
+    },
+    dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse> {
+      return queryService.dropAll(request);
+    },
+    member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse> {
+      return queryService.member(request);
+    },
+    memberAll(request?: QueryAllMemberRequest): Promise<QueryAllMemberResponse> {
+      return queryService.memberAll(request);
+    },
+    burnings(request: QueryGetBurningsRequest): Promise<QueryGetBurningsResponse> {
+      return queryService.burnings(request);
+    },
+    burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse> {
+      return queryService.burningsAll(request);
+    },
+    order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse> {
+      return queryService.order(request);
+    },
+    orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse> {
+      return queryService.orderAll(request);
+    },
+    book(request: QueryBookRequest): Promise<QueryBookResponse> {
+      return queryService.book(request);
+    },
+    bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse> {
+      return queryService.bookends(request);
+    }
+  };
+};
