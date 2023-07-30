@@ -11,6 +11,8 @@ export interface Params {
   burnRate: string;
   /** burn coin */
   burnCoin: string;
+  /** market_fee (parameter / 1000), 9999 representing as 99.99% */
+  marketFee: string;
 }
 export interface ParamsProtoMsg {
   typeUrl: "/pendulumlabs.market.market.Params";
@@ -27,6 +29,8 @@ export interface ParamsAmino {
   burn_rate: string;
   /** burn coin */
   burn_coin: string;
+  /** market_fee (parameter / 1000), 9999 representing as 99.99% */
+  market_fee: string;
 }
 export interface ParamsAminoMsg {
   type: "/pendulumlabs.market.market.Params";
@@ -37,12 +41,14 @@ export interface ParamsSDKType {
   earn_rates: string;
   burn_rate: string;
   burn_coin: string;
+  market_fee: string;
 }
 function createBaseParams(): Params {
   return {
     earnRates: "",
     burnRate: "",
-    burnCoin: ""
+    burnCoin: "",
+    marketFee: ""
   };
 }
 export const Params = {
@@ -55,6 +61,9 @@ export const Params = {
     }
     if (message.burnCoin !== "") {
       writer.uint32(26).string(message.burnCoin);
+    }
+    if (message.marketFee !== "") {
+      writer.uint32(34).string(message.marketFee);
     }
     return writer;
   },
@@ -74,6 +83,9 @@ export const Params = {
         case 3:
           message.burnCoin = reader.string();
           break;
+        case 4:
+          message.marketFee = reader.string();
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -86,13 +98,15 @@ export const Params = {
     message.earnRates = object.earnRates ?? "";
     message.burnRate = object.burnRate ?? "";
     message.burnCoin = object.burnCoin ?? "";
+    message.marketFee = object.marketFee ?? "";
     return message;
   },
   fromAmino(object: ParamsAmino): Params {
     return {
       earnRates: object.earn_rates,
       burnRate: object.burn_rate,
-      burnCoin: object.burn_coin
+      burnCoin: object.burn_coin,
+      marketFee: object.market_fee
     };
   },
   toAmino(message: Params): ParamsAmino {
@@ -100,6 +114,7 @@ export const Params = {
     obj.earn_rates = message.earnRates;
     obj.burn_rate = message.burnRate;
     obj.burn_coin = message.burnCoin;
+    obj.market_fee = message.marketFee;
     return obj;
   },
   fromAminoMsg(object: ParamsAminoMsg): Params {

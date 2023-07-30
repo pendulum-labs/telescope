@@ -325,6 +325,7 @@ export declare namespace pendulumlabs {
                         earnRates?: string;
                         burnRate?: string;
                         burnCoin?: string;
+                        marketFee?: string;
                     };
                 }): _79.QueryParamsResponse;
                 fromAmino(object: _79.QueryParamsResponseAmino): _79.QueryParamsResponse;
@@ -436,7 +437,7 @@ export declare namespace pendulumlabs {
                         owner?: string;
                         pair?: string;
                         drops?: string;
-                        sum?: string;
+                        product?: string;
                         active?: boolean;
                     };
                 }): _79.QueryGetDropResponse;
@@ -475,7 +476,7 @@ export declare namespace pendulumlabs {
                         owner?: string;
                         pair?: string;
                         drops?: string;
-                        sum?: string;
+                        product?: string;
                         active?: boolean;
                     }[];
                     pagination?: {
@@ -847,6 +848,7 @@ export declare namespace pendulumlabs {
                     earnRates?: string;
                     burnRate?: string;
                     burnCoin?: string;
+                    marketFee?: string;
                 }): _77.Params;
                 fromAmino(object: _77.ParamsAmino): _77.Params;
                 toAmino(message: _77.Params): _77.ParamsAmino;
@@ -939,6 +941,7 @@ export declare namespace pendulumlabs {
                         earnRates?: string;
                         burnRate?: string;
                         burnCoin?: string;
+                        marketFee?: string;
                     };
                     poolList?: {
                         pair?: string;
@@ -955,7 +958,7 @@ export declare namespace pendulumlabs {
                         owner?: string;
                         pair?: string;
                         drops?: string;
-                        sum?: string;
+                        product?: string;
                         active?: boolean;
                     }[];
                     memberList?: {
@@ -999,7 +1002,7 @@ export declare namespace pendulumlabs {
                     owner?: string;
                     pair?: string;
                     drops?: string;
-                    sum?: string;
+                    product?: string;
                     active?: boolean;
                 }): _73.Drop;
                 fromAmino(object: _73.DropAmino): _73.Drop;
@@ -1021,6 +1024,19 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _73.DropsProtoMsg): _73.Drops;
                 toProto(message: _73.Drops): Uint8Array;
                 toProtoMsg(message: _73.Drops): _73.DropsProtoMsg;
+            };
+            DropsSum: {
+                encode(message: _73.DropsSum, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.DropsSum;
+                fromPartial(object: {
+                    sum?: string;
+                }): _73.DropsSum;
+                fromAmino(object: _73.DropsSumAmino): _73.DropsSum;
+                toAmino(message: _73.DropsSum): _73.DropsSumAmino;
+                fromAminoMsg(object: _73.DropsSumAminoMsg): _73.DropsSum;
+                fromProtoMsg(message: _73.DropsSumProtoMsg): _73.DropsSum;
+                toProto(message: _73.DropsSum): Uint8Array;
+                toProtoMsg(message: _73.DropsSum): _73.DropsSumProtoMsg;
             };
             Burnings: {
                 encode(message: _72.Burnings, writer?: import("protobufjs").Writer): import("protobufjs").Writer;

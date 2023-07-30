@@ -5,7 +5,7 @@ export interface Drop {
   owner: string;
   pair: string;
   drops: string;
-  sum: string;
+  product: string;
   active: boolean;
 }
 export interface DropProtoMsg {
@@ -17,7 +17,7 @@ export interface DropAmino {
   owner: string;
   pair: string;
   drops: string;
-  sum: string;
+  product: string;
   active: boolean;
 }
 export interface DropAminoMsg {
@@ -29,7 +29,7 @@ export interface DropSDKType {
   owner: string;
   pair: string;
   drops: string;
-  sum: string;
+  product: string;
   active: boolean;
 }
 export interface Drops {
@@ -49,13 +49,30 @@ export interface DropsAminoMsg {
 export interface DropsSDKType {
   uids: Long[];
 }
+export interface DropsSum {
+  sum: string;
+}
+export interface DropsSumProtoMsg {
+  typeUrl: "/pendulumlabs.market.market.DropsSum";
+  value: Uint8Array;
+}
+export interface DropsSumAmino {
+  sum: string;
+}
+export interface DropsSumAminoMsg {
+  type: "/pendulumlabs.market.market.DropsSum";
+  value: DropsSumAmino;
+}
+export interface DropsSumSDKType {
+  sum: string;
+}
 function createBaseDrop(): Drop {
   return {
     uid: Long.UZERO,
     owner: "",
     pair: "",
     drops: "",
-    sum: "",
+    product: "",
     active: false
   };
 }
@@ -73,8 +90,8 @@ export const Drop = {
     if (message.drops !== "") {
       writer.uint32(34).string(message.drops);
     }
-    if (message.sum !== "") {
-      writer.uint32(42).string(message.sum);
+    if (message.product !== "") {
+      writer.uint32(42).string(message.product);
     }
     if (message.active === true) {
       writer.uint32(48).bool(message.active);
@@ -101,7 +118,7 @@ export const Drop = {
           message.drops = reader.string();
           break;
         case 5:
-          message.sum = reader.string();
+          message.product = reader.string();
           break;
         case 6:
           message.active = reader.bool();
@@ -119,7 +136,7 @@ export const Drop = {
     message.owner = object.owner ?? "";
     message.pair = object.pair ?? "";
     message.drops = object.drops ?? "";
-    message.sum = object.sum ?? "";
+    message.product = object.product ?? "";
     message.active = object.active ?? false;
     return message;
   },
@@ -129,7 +146,7 @@ export const Drop = {
       owner: object.owner,
       pair: object.pair,
       drops: object.drops,
-      sum: object.sum,
+      product: object.product,
       active: object.active
     };
   },
@@ -139,7 +156,7 @@ export const Drop = {
     obj.owner = message.owner;
     obj.pair = message.pair;
     obj.drops = message.drops;
-    obj.sum = message.sum;
+    obj.product = message.product;
     obj.active = message.active;
     return obj;
   },
@@ -166,7 +183,7 @@ function createBaseDrops(): Drops {
 }
 export const Drops = {
   encode(message: Drops, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    writer.uint32(18).fork();
+    writer.uint32(10).fork();
     for (const v of message.uids) {
       writer.uint64(v);
     }
@@ -180,7 +197,7 @@ export const Drops = {
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
-        case 2:
+        case 1:
           if ((tag & 7) === 2) {
             const end2 = reader.uint32() + reader.pos;
             while (reader.pos < end2) {
@@ -229,6 +246,66 @@ export const Drops = {
     return {
       typeUrl: "/pendulumlabs.market.market.Drops",
       value: Drops.encode(message).finish()
+    };
+  }
+};
+function createBaseDropsSum(): DropsSum {
+  return {
+    sum: ""
+  };
+}
+export const DropsSum = {
+  encode(message: DropsSum, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.sum !== "") {
+      writer.uint32(10).string(message.sum);
+    }
+    return writer;
+  },
+  decode(input: _m0.Reader | Uint8Array, length?: number): DropsSum {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseDropsSum();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.sum = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+  fromPartial(object: DeepPartial<DropsSum>): DropsSum {
+    const message = createBaseDropsSum();
+    message.sum = object.sum ?? "";
+    return message;
+  },
+  fromAmino(object: DropsSumAmino): DropsSum {
+    return {
+      sum: object.sum
+    };
+  },
+  toAmino(message: DropsSum): DropsSumAmino {
+    const obj: any = {};
+    obj.sum = message.sum;
+    return obj;
+  },
+  fromAminoMsg(object: DropsSumAminoMsg): DropsSum {
+    return DropsSum.fromAmino(object.value);
+  },
+  fromProtoMsg(message: DropsSumProtoMsg): DropsSum {
+    return DropsSum.decode(message.value);
+  },
+  toProto(message: DropsSum): Uint8Array {
+    return DropsSum.encode(message).finish();
+  },
+  toProtoMsg(message: DropsSum): DropsSumProtoMsg {
+    return {
+      typeUrl: "/pendulumlabs.market.market.DropsSum",
+      value: DropsSum.encode(message).finish()
     };
   }
 };

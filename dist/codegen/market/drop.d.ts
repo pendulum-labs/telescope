@@ -6,7 +6,7 @@ export interface Drop {
     owner: string;
     pair: string;
     drops: string;
-    sum: string;
+    product: string;
     active: boolean;
 }
 export interface DropProtoMsg {
@@ -18,7 +18,7 @@ export interface DropAmino {
     owner: string;
     pair: string;
     drops: string;
-    sum: string;
+    product: string;
     active: boolean;
 }
 export interface DropAminoMsg {
@@ -30,7 +30,7 @@ export interface DropSDKType {
     owner: string;
     pair: string;
     drops: string;
-    sum: string;
+    product: string;
     active: boolean;
 }
 export interface Drops {
@@ -49,6 +49,23 @@ export interface DropsAminoMsg {
 }
 export interface DropsSDKType {
     uids: Long[];
+}
+export interface DropsSum {
+    sum: string;
+}
+export interface DropsSumProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.DropsSum";
+    value: Uint8Array;
+}
+export interface DropsSumAmino {
+    sum: string;
+}
+export interface DropsSumAminoMsg {
+    type: "/pendulumlabs.market.market.DropsSum";
+    value: DropsSumAmino;
+}
+export interface DropsSumSDKType {
+    sum: string;
 }
 export declare const Drop: {
     encode(message: Drop, writer?: _m0.Writer): _m0.Writer;
@@ -71,4 +88,15 @@ export declare const Drops: {
     fromProtoMsg(message: DropsProtoMsg): Drops;
     toProto(message: Drops): Uint8Array;
     toProtoMsg(message: Drops): DropsProtoMsg;
+};
+export declare const DropsSum: {
+    encode(message: DropsSum, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): DropsSum;
+    fromPartial(object: DeepPartial<DropsSum>): DropsSum;
+    fromAmino(object: DropsSumAmino): DropsSum;
+    toAmino(message: DropsSum): DropsSumAmino;
+    fromAminoMsg(object: DropsSumAminoMsg): DropsSum;
+    fromProtoMsg(message: DropsSumProtoMsg): DropsSum;
+    toProto(message: DropsSum): Uint8Array;
+    toProtoMsg(message: DropsSum): DropsSumProtoMsg;
 };

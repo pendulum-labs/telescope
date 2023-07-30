@@ -11,6 +11,8 @@ export interface Params {
     burnRate: string;
     /** burn coin */
     burnCoin: string;
+    /** market_fee (parameter / 1000), 9999 representing as 99.99% */
+    marketFee: string;
 }
 export interface ParamsProtoMsg {
     typeUrl: "/pendulumlabs.market.market.Params";
@@ -27,6 +29,8 @@ export interface ParamsAmino {
     burn_rate: string;
     /** burn coin */
     burn_coin: string;
+    /** market_fee (parameter / 1000), 9999 representing as 99.99% */
+    market_fee: string;
 }
 export interface ParamsAminoMsg {
     type: "/pendulumlabs.market.market.Params";
@@ -37,6 +41,7 @@ export interface ParamsSDKType {
     earn_rates: string;
     burn_rate: string;
     burn_coin: string;
+    market_fee: string;
 }
 export declare const Params: {
     encode(message: Params, writer?: _m0.Writer): _m0.Writer;

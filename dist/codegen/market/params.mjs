@@ -3,7 +3,8 @@ function createBaseParams() {
     return {
         earnRates: "",
         burnRate: "",
-        burnCoin: ""
+        burnCoin: "",
+        marketFee: ""
     };
 }
 export const Params = {
@@ -16,6 +17,9 @@ export const Params = {
         }
         if (message.burnCoin !== "") {
             writer.uint32(26).string(message.burnCoin);
+        }
+        if (message.marketFee !== "") {
+            writer.uint32(34).string(message.marketFee);
         }
         return writer;
     },
@@ -35,6 +39,9 @@ export const Params = {
                 case 3:
                     message.burnCoin = reader.string();
                     break;
+                case 4:
+                    message.marketFee = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -47,13 +54,15 @@ export const Params = {
         message.earnRates = object.earnRates ?? "";
         message.burnRate = object.burnRate ?? "";
         message.burnCoin = object.burnCoin ?? "";
+        message.marketFee = object.marketFee ?? "";
         return message;
     },
     fromAmino(object) {
         return {
             earnRates: object.earn_rates,
             burnRate: object.burn_rate,
-            burnCoin: object.burn_coin
+            burnCoin: object.burn_coin,
+            marketFee: object.market_fee
         };
     },
     toAmino(message) {
@@ -61,6 +70,7 @@ export const Params = {
         obj.earn_rates = message.earnRates;
         obj.burn_rate = message.burnRate;
         obj.burn_coin = message.burnCoin;
+        obj.market_fee = message.marketFee;
         return obj;
     },
     fromAminoMsg(object) {
