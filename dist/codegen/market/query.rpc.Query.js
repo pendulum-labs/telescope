@@ -44,6 +44,7 @@ class QueryClientImpl {
         this.orderAll = this.orderAll.bind(this);
         this.book = this.book.bind(this);
         this.bookends = this.bookends.bind(this);
+        this.history = this.history.bind(this);
     }
     params(request = {}) {
         const data = query_1.QueryParamsRequest.encode(request).finish();
@@ -120,6 +121,11 @@ class QueryClientImpl {
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Bookends", data);
         return promise.then(data => query_1.QueryBookendsResponse.decode(new _m0.Reader(data)));
     }
+    history(request) {
+        const data = query_1.QueryHistoryRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "History", data);
+        return promise.then(data => query_1.QueryHistoryResponse.decode(new _m0.Reader(data)));
+    }
 }
 exports.QueryClientImpl = QueryClientImpl;
 const createRpcQueryExtension = (base) => {
@@ -164,6 +170,9 @@ const createRpcQueryExtension = (base) => {
         },
         bookends(request) {
             return queryService.bookends(request);
+        },
+        history(request) {
+            return queryService.history(request);
         }
     };
 };

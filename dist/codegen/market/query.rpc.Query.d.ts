@@ -1,6 +1,6 @@
 import { Rpc } from "../helpers";
 import { QueryClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
     /** Parameters queries the parameters of the module. */
@@ -29,6 +29,8 @@ export interface Query {
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     /** Queries a list of Bookends items. */
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
+    /** Queries pool trade history. */
+    history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;
 }
 export declare class QueryClientImpl implements Query {
     private readonly rpc;
@@ -46,6 +48,7 @@ export declare class QueryClientImpl implements Query {
     orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
+    history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;
 }
 export declare const createRpcQueryExtension: (base: QueryClient) => {
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
@@ -61,4 +64,5 @@ export declare const createRpcQueryExtension: (base: QueryClient) => {
     orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
+    history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;
 };

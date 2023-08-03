@@ -1,11 +1,13 @@
+/// <reference types="long" />
+import { Long, DeepPartial } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial } from "../helpers";
 export interface Pool {
     pair: string;
     denom1: string;
     denom2: string;
     leaders: Leader[];
     drops: string;
+    history: Long;
 }
 export interface PoolProtoMsg {
     typeUrl: "/pendulumlabs.market.market.Pool";
@@ -17,6 +19,7 @@ export interface PoolAmino {
     denom2: string;
     leaders: LeaderAmino[];
     drops: string;
+    history: string;
 }
 export interface PoolAminoMsg {
     type: "/pendulumlabs.market.market.Pool";
@@ -28,6 +31,7 @@ export interface PoolSDKType {
     denom2: string;
     leaders: LeaderSDKType[];
     drops: string;
+    history: Long;
 }
 export interface Leader {
     address: string;

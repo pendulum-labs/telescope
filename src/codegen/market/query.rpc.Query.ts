@@ -1,7 +1,7 @@
 import { Rpc } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
   /** Parameters queries the parameters of the module. */
@@ -30,6 +30,8 @@ export interface Query {
   book(request: QueryBookRequest): Promise<QueryBookResponse>;
   /** Queries a list of Bookends items. */
   bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
+  /** Queries pool trade history. */
+  history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;
 }
 export class QueryClientImpl implements Query {
   private readonly rpc: Rpc;
@@ -48,6 +50,7 @@ export class QueryClientImpl implements Query {
     this.orderAll = this.orderAll.bind(this);
     this.book = this.book.bind(this);
     this.bookends = this.bookends.bind(this);
+    this.history = this.history.bind(this);
   }
   params(request: QueryParamsRequest = {}): Promise<QueryParamsResponse> {
     const data = QueryParamsRequest.encode(request).finish();
@@ -124,6 +127,11 @@ export class QueryClientImpl implements Query {
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "Bookends", data);
     return promise.then(data => QueryBookendsResponse.decode(new _m0.Reader(data)));
   }
+  history(request: QueryHistoryRequest): Promise<QueryHistoryResponse> {
+    const data = QueryHistoryRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "History", data);
+    return promise.then(data => QueryHistoryResponse.decode(new _m0.Reader(data)));
+  }
 }
 export const createRpcQueryExtension = (base: QueryClient) => {
   const rpc = createProtobufRpcClient(base);
@@ -167,6 +175,9 @@ export const createRpcQueryExtension = (base: QueryClient) => {
     },
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse> {
       return queryService.bookends(request);
+    },
+    history(request: QueryHistoryRequest): Promise<QueryHistoryResponse> {
+      return queryService.history(request);
     }
   };
 };

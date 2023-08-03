@@ -199,7 +199,7 @@ export interface MsgMarketOrder {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
-    quoteAsk: string;
+    /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
     slippage: string;
 }
 export interface MsgMarketOrderProtoMsg {
@@ -211,7 +211,7 @@ export interface MsgMarketOrderAmino {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
-    quoteAsk: string;
+    /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
     slippage: string;
 }
 export interface MsgMarketOrderAminoMsg {
@@ -223,7 +223,6 @@ export interface MsgMarketOrderSDKType {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
-    quoteAsk: string;
     slippage: string;
 }
 export interface MsgMarketOrderResponse {

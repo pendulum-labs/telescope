@@ -1,11 +1,12 @@
+import { Long, DeepPartial } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial } from "../helpers";
 export interface Pool {
   pair: string;
   denom1: string;
   denom2: string;
   leaders: Leader[];
   drops: string;
+  history: Long;
 }
 export interface PoolProtoMsg {
   typeUrl: "/pendulumlabs.market.market.Pool";
@@ -17,6 +18,7 @@ export interface PoolAmino {
   denom2: string;
   leaders: LeaderAmino[];
   drops: string;
+  history: string;
 }
 export interface PoolAminoMsg {
   type: "/pendulumlabs.market.market.Pool";
@@ -28,6 +30,7 @@ export interface PoolSDKType {
   denom2: string;
   leaders: LeaderSDKType[];
   drops: string;
+  history: Long;
 }
 export interface Leader {
   address: string;
@@ -55,7 +58,8 @@ function createBasePool(): Pool {
     denom1: "",
     denom2: "",
     leaders: [],
-    drops: ""
+    drops: "",
+    history: Long.UZERO
   };
 }
 export const Pool = {
@@ -74,6 +78,9 @@ export const Pool = {
     }
     if (message.drops !== "") {
       writer.uint32(42).string(message.drops);
+    }
+    if (!message.history.isZero()) {
+      writer.uint32(48).uint64(message.history);
     }
     return writer;
   },
@@ -99,6 +106,9 @@ export const Pool = {
         case 5:
           message.drops = reader.string();
           break;
+        case 6:
+          message.history = (reader.uint64() as Long);
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -113,6 +123,7 @@ export const Pool = {
     message.denom2 = object.denom2 ?? "";
     message.leaders = object.leaders?.map(e => Leader.fromPartial(e)) || [];
     message.drops = object.drops ?? "";
+    message.history = object.history !== undefined && object.history !== null ? Long.fromValue(object.history) : Long.UZERO;
     return message;
   },
   fromAmino(object: PoolAmino): Pool {
@@ -121,7 +132,8 @@ export const Pool = {
       denom1: object.denom1,
       denom2: object.denom2,
       leaders: Array.isArray(object?.leaders) ? object.leaders.map((e: any) => Leader.fromAmino(e)) : [],
-      drops: object.drops
+      drops: object.drops,
+      history: Long.fromString(object.history)
     };
   },
   toAmino(message: Pool): PoolAmino {
@@ -135,6 +147,7 @@ export const Pool = {
       obj.leaders = [];
     }
     obj.drops = message.drops;
+    obj.history = message.history ? message.history.toString() : undefined;
     return obj;
   },
   fromAminoMsg(object: PoolAminoMsg): Pool {

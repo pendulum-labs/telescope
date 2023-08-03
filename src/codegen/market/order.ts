@@ -3,7 +3,7 @@ import * as _m0 from "protobufjs/minimal";
 export interface Order {
   uid: Long;
   owner: string;
-  active: boolean;
+  status: string;
   orderType: string;
   denomAsk: string;
   denomBid: string;
@@ -11,6 +11,8 @@ export interface Order {
   rate: string[];
   prev: Long;
   next: Long;
+  begTime: Long;
+  endTime: Long;
 }
 export interface OrderProtoMsg {
   typeUrl: "/pendulumlabs.market.market.Order";
@@ -19,7 +21,7 @@ export interface OrderProtoMsg {
 export interface OrderAmino {
   uid: string;
   owner: string;
-  active: boolean;
+  status: string;
   orderType: string;
   denomAsk: string;
   denomBid: string;
@@ -27,6 +29,8 @@ export interface OrderAmino {
   rate: string[];
   prev: string;
   next: string;
+  beg_time: string;
+  end_time: string;
 }
 export interface OrderAminoMsg {
   type: "/pendulumlabs.market.market.Order";
@@ -35,7 +39,7 @@ export interface OrderAminoMsg {
 export interface OrderSDKType {
   uid: Long;
   owner: string;
-  active: boolean;
+  status: string;
   orderType: string;
   denomAsk: string;
   denomBid: string;
@@ -43,6 +47,8 @@ export interface OrderSDKType {
   rate: string[];
   prev: Long;
   next: Long;
+  beg_time: Long;
+  end_time: Long;
 }
 export interface Orders {
   uids: Long[];
@@ -64,7 +70,7 @@ export interface OrdersSDKType {
 export interface OrderResponse {
   uid: Long;
   owner: string;
-  active: boolean;
+  status: string;
   orderType: string;
   denomAsk: string;
   denomBid: string;
@@ -72,6 +78,8 @@ export interface OrderResponse {
   rate: string[];
   prev: Long;
   next: Long;
+  begTime: Long;
+  endTime: Long;
 }
 export interface OrderResponseProtoMsg {
   typeUrl: "/pendulumlabs.market.market.OrderResponse";
@@ -80,7 +88,7 @@ export interface OrderResponseProtoMsg {
 export interface OrderResponseAmino {
   uid: string;
   owner: string;
-  active: boolean;
+  status: string;
   orderType: string;
   denomAsk: string;
   denomBid: string;
@@ -88,6 +96,8 @@ export interface OrderResponseAmino {
   rate: string[];
   prev: string;
   next: string;
+  beg_time: string;
+  end_time: string;
 }
 export interface OrderResponseAminoMsg {
   type: "/pendulumlabs.market.market.OrderResponse";
@@ -96,7 +106,7 @@ export interface OrderResponseAminoMsg {
 export interface OrderResponseSDKType {
   uid: Long;
   owner: string;
-  active: boolean;
+  status: string;
   orderType: string;
   denomAsk: string;
   denomBid: string;
@@ -104,19 +114,23 @@ export interface OrderResponseSDKType {
   rate: string[];
   prev: Long;
   next: Long;
+  beg_time: Long;
+  end_time: Long;
 }
 function createBaseOrder(): Order {
   return {
     uid: Long.UZERO,
     owner: "",
-    active: false,
+    status: "",
     orderType: "",
     denomAsk: "",
     denomBid: "",
     amount: "",
     rate: [],
     prev: Long.UZERO,
-    next: Long.UZERO
+    next: Long.UZERO,
+    begTime: Long.ZERO,
+    endTime: Long.ZERO
   };
 }
 export const Order = {
@@ -127,8 +141,8 @@ export const Order = {
     if (message.owner !== "") {
       writer.uint32(18).string(message.owner);
     }
-    if (message.active === true) {
-      writer.uint32(24).bool(message.active);
+    if (message.status !== "") {
+      writer.uint32(26).string(message.status);
     }
     if (message.orderType !== "") {
       writer.uint32(34).string(message.orderType);
@@ -151,6 +165,12 @@ export const Order = {
     if (!message.next.isZero()) {
       writer.uint32(80).uint64(message.next);
     }
+    if (!message.begTime.isZero()) {
+      writer.uint32(88).int64(message.begTime);
+    }
+    if (!message.endTime.isZero()) {
+      writer.uint32(96).int64(message.endTime);
+    }
     return writer;
   },
   decode(input: _m0.Reader | Uint8Array, length?: number): Order {
@@ -167,7 +187,7 @@ export const Order = {
           message.owner = reader.string();
           break;
         case 3:
-          message.active = reader.bool();
+          message.status = reader.string();
           break;
         case 4:
           message.orderType = reader.string();
@@ -190,6 +210,12 @@ export const Order = {
         case 10:
           message.next = (reader.uint64() as Long);
           break;
+        case 11:
+          message.begTime = (reader.int64() as Long);
+          break;
+        case 12:
+          message.endTime = (reader.int64() as Long);
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -201,7 +227,7 @@ export const Order = {
     const message = createBaseOrder();
     message.uid = object.uid !== undefined && object.uid !== null ? Long.fromValue(object.uid) : Long.UZERO;
     message.owner = object.owner ?? "";
-    message.active = object.active ?? false;
+    message.status = object.status ?? "";
     message.orderType = object.orderType ?? "";
     message.denomAsk = object.denomAsk ?? "";
     message.denomBid = object.denomBid ?? "";
@@ -209,27 +235,31 @@ export const Order = {
     message.rate = object.rate?.map(e => e) || [];
     message.prev = object.prev !== undefined && object.prev !== null ? Long.fromValue(object.prev) : Long.UZERO;
     message.next = object.next !== undefined && object.next !== null ? Long.fromValue(object.next) : Long.UZERO;
+    message.begTime = object.begTime !== undefined && object.begTime !== null ? Long.fromValue(object.begTime) : Long.ZERO;
+    message.endTime = object.endTime !== undefined && object.endTime !== null ? Long.fromValue(object.endTime) : Long.ZERO;
     return message;
   },
   fromAmino(object: OrderAmino): Order {
     return {
       uid: Long.fromString(object.uid),
       owner: object.owner,
-      active: object.active,
+      status: object.status,
       orderType: object.orderType,
       denomAsk: object.denomAsk,
       denomBid: object.denomBid,
       amount: object.amount,
       rate: Array.isArray(object?.rate) ? object.rate.map((e: any) => e) : [],
       prev: Long.fromString(object.prev),
-      next: Long.fromString(object.next)
+      next: Long.fromString(object.next),
+      begTime: Long.fromString(object.beg_time),
+      endTime: Long.fromString(object.end_time)
     };
   },
   toAmino(message: Order): OrderAmino {
     const obj: any = {};
     obj.uid = message.uid ? message.uid.toString() : undefined;
     obj.owner = message.owner;
-    obj.active = message.active;
+    obj.status = message.status;
     obj.orderType = message.orderType;
     obj.denomAsk = message.denomAsk;
     obj.denomBid = message.denomBid;
@@ -241,6 +271,8 @@ export const Order = {
     }
     obj.prev = message.prev ? message.prev.toString() : undefined;
     obj.next = message.next ? message.next.toString() : undefined;
+    obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
+    obj.end_time = message.endTime ? message.endTime.toString() : undefined;
     return obj;
   },
   fromAminoMsg(object: OrderAminoMsg): Order {
@@ -336,14 +368,16 @@ function createBaseOrderResponse(): OrderResponse {
   return {
     uid: Long.UZERO,
     owner: "",
-    active: false,
+    status: "",
     orderType: "",
     denomAsk: "",
     denomBid: "",
     amount: "",
     rate: [],
     prev: Long.UZERO,
-    next: Long.UZERO
+    next: Long.UZERO,
+    begTime: Long.ZERO,
+    endTime: Long.ZERO
   };
 }
 export const OrderResponse = {
@@ -354,8 +388,8 @@ export const OrderResponse = {
     if (message.owner !== "") {
       writer.uint32(18).string(message.owner);
     }
-    if (message.active === true) {
-      writer.uint32(24).bool(message.active);
+    if (message.status !== "") {
+      writer.uint32(26).string(message.status);
     }
     if (message.orderType !== "") {
       writer.uint32(34).string(message.orderType);
@@ -378,6 +412,12 @@ export const OrderResponse = {
     if (!message.next.isZero()) {
       writer.uint32(80).uint64(message.next);
     }
+    if (!message.begTime.isZero()) {
+      writer.uint32(88).int64(message.begTime);
+    }
+    if (!message.endTime.isZero()) {
+      writer.uint32(96).int64(message.endTime);
+    }
     return writer;
   },
   decode(input: _m0.Reader | Uint8Array, length?: number): OrderResponse {
@@ -394,7 +434,7 @@ export const OrderResponse = {
           message.owner = reader.string();
           break;
         case 3:
-          message.active = reader.bool();
+          message.status = reader.string();
           break;
         case 4:
           message.orderType = reader.string();
@@ -417,6 +457,12 @@ export const OrderResponse = {
         case 10:
           message.next = (reader.uint64() as Long);
           break;
+        case 11:
+          message.begTime = (reader.int64() as Long);
+          break;
+        case 12:
+          message.endTime = (reader.int64() as Long);
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -428,7 +474,7 @@ export const OrderResponse = {
     const message = createBaseOrderResponse();
     message.uid = object.uid !== undefined && object.uid !== null ? Long.fromValue(object.uid) : Long.UZERO;
     message.owner = object.owner ?? "";
-    message.active = object.active ?? false;
+    message.status = object.status ?? "";
     message.orderType = object.orderType ?? "";
     message.denomAsk = object.denomAsk ?? "";
     message.denomBid = object.denomBid ?? "";
@@ -436,27 +482,31 @@ export const OrderResponse = {
     message.rate = object.rate?.map(e => e) || [];
     message.prev = object.prev !== undefined && object.prev !== null ? Long.fromValue(object.prev) : Long.UZERO;
     message.next = object.next !== undefined && object.next !== null ? Long.fromValue(object.next) : Long.UZERO;
+    message.begTime = object.begTime !== undefined && object.begTime !== null ? Long.fromValue(object.begTime) : Long.ZERO;
+    message.endTime = object.endTime !== undefined && object.endTime !== null ? Long.fromValue(object.endTime) : Long.ZERO;
     return message;
   },
   fromAmino(object: OrderResponseAmino): OrderResponse {
     return {
       uid: Long.fromString(object.uid),
       owner: object.owner,
-      active: object.active,
+      status: object.status,
       orderType: object.orderType,
       denomAsk: object.denomAsk,
       denomBid: object.denomBid,
       amount: object.amount,
       rate: Array.isArray(object?.rate) ? object.rate.map((e: any) => e) : [],
       prev: Long.fromString(object.prev),
-      next: Long.fromString(object.next)
+      next: Long.fromString(object.next),
+      begTime: Long.fromString(object.beg_time),
+      endTime: Long.fromString(object.end_time)
     };
   },
   toAmino(message: OrderResponse): OrderResponseAmino {
     const obj: any = {};
     obj.uid = message.uid ? message.uid.toString() : undefined;
     obj.owner = message.owner;
-    obj.active = message.active;
+    obj.status = message.status;
     obj.orderType = message.orderType;
     obj.denomAsk = message.denomAsk;
     obj.denomBid = message.denomBid;
@@ -468,6 +518,8 @@ export const OrderResponse = {
     }
     obj.prev = message.prev ? message.prev.toString() : undefined;
     obj.next = message.next ? message.next.toString() : undefined;
+    obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
+    obj.end_time = message.endTime ? message.endTime.toString() : undefined;
     return obj;
   },
   fromAminoMsg(object: OrderResponseAminoMsg): OrderResponse {

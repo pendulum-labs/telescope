@@ -4,7 +4,7 @@ import * as _m0 from "protobufjs/minimal";
 export interface Order {
     uid: Long;
     owner: string;
-    active: boolean;
+    status: string;
     orderType: string;
     denomAsk: string;
     denomBid: string;
@@ -12,6 +12,8 @@ export interface Order {
     rate: string[];
     prev: Long;
     next: Long;
+    begTime: Long;
+    endTime: Long;
 }
 export interface OrderProtoMsg {
     typeUrl: "/pendulumlabs.market.market.Order";
@@ -20,7 +22,7 @@ export interface OrderProtoMsg {
 export interface OrderAmino {
     uid: string;
     owner: string;
-    active: boolean;
+    status: string;
     orderType: string;
     denomAsk: string;
     denomBid: string;
@@ -28,6 +30,8 @@ export interface OrderAmino {
     rate: string[];
     prev: string;
     next: string;
+    beg_time: string;
+    end_time: string;
 }
 export interface OrderAminoMsg {
     type: "/pendulumlabs.market.market.Order";
@@ -36,7 +40,7 @@ export interface OrderAminoMsg {
 export interface OrderSDKType {
     uid: Long;
     owner: string;
-    active: boolean;
+    status: string;
     orderType: string;
     denomAsk: string;
     denomBid: string;
@@ -44,6 +48,8 @@ export interface OrderSDKType {
     rate: string[];
     prev: Long;
     next: Long;
+    beg_time: Long;
+    end_time: Long;
 }
 export interface Orders {
     uids: Long[];
@@ -65,7 +71,7 @@ export interface OrdersSDKType {
 export interface OrderResponse {
     uid: Long;
     owner: string;
-    active: boolean;
+    status: string;
     orderType: string;
     denomAsk: string;
     denomBid: string;
@@ -73,6 +79,8 @@ export interface OrderResponse {
     rate: string[];
     prev: Long;
     next: Long;
+    begTime: Long;
+    endTime: Long;
 }
 export interface OrderResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.OrderResponse";
@@ -81,7 +89,7 @@ export interface OrderResponseProtoMsg {
 export interface OrderResponseAmino {
     uid: string;
     owner: string;
-    active: boolean;
+    status: string;
     orderType: string;
     denomAsk: string;
     denomBid: string;
@@ -89,6 +97,8 @@ export interface OrderResponseAmino {
     rate: string[];
     prev: string;
     next: string;
+    beg_time: string;
+    end_time: string;
 }
 export interface OrderResponseAminoMsg {
     type: "/pendulumlabs.market.market.OrderResponse";
@@ -97,7 +107,7 @@ export interface OrderResponseAminoMsg {
 export interface OrderResponseSDKType {
     uid: Long;
     owner: string;
-    active: boolean;
+    status: string;
     orderType: string;
     denomAsk: string;
     denomBid: string;
@@ -105,6 +115,8 @@ export interface OrderResponseSDKType {
     rate: string[];
     prev: Long;
     next: Long;
+    beg_time: Long;
+    end_time: Long;
 }
 export declare const Order: {
     encode(message: Order, writer?: _m0.Writer): _m0.Writer;

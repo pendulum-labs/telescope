@@ -4,14 +4,16 @@ function createBaseOrder() {
     return {
         uid: Long.UZERO,
         owner: "",
-        active: false,
+        status: "",
         orderType: "",
         denomAsk: "",
         denomBid: "",
         amount: "",
         rate: [],
         prev: Long.UZERO,
-        next: Long.UZERO
+        next: Long.UZERO,
+        begTime: Long.ZERO,
+        endTime: Long.ZERO
     };
 }
 export const Order = {
@@ -22,8 +24,8 @@ export const Order = {
         if (message.owner !== "") {
             writer.uint32(18).string(message.owner);
         }
-        if (message.active === true) {
-            writer.uint32(24).bool(message.active);
+        if (message.status !== "") {
+            writer.uint32(26).string(message.status);
         }
         if (message.orderType !== "") {
             writer.uint32(34).string(message.orderType);
@@ -46,6 +48,12 @@ export const Order = {
         if (!message.next.isZero()) {
             writer.uint32(80).uint64(message.next);
         }
+        if (!message.begTime.isZero()) {
+            writer.uint32(88).int64(message.begTime);
+        }
+        if (!message.endTime.isZero()) {
+            writer.uint32(96).int64(message.endTime);
+        }
         return writer;
     },
     decode(input, length) {
@@ -62,7 +70,7 @@ export const Order = {
                     message.owner = reader.string();
                     break;
                 case 3:
-                    message.active = reader.bool();
+                    message.status = reader.string();
                     break;
                 case 4:
                     message.orderType = reader.string();
@@ -85,6 +93,12 @@ export const Order = {
                 case 10:
                     message.next = reader.uint64();
                     break;
+                case 11:
+                    message.begTime = reader.int64();
+                    break;
+                case 12:
+                    message.endTime = reader.int64();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -96,7 +110,7 @@ export const Order = {
         const message = createBaseOrder();
         message.uid = object.uid !== undefined && object.uid !== null ? Long.fromValue(object.uid) : Long.UZERO;
         message.owner = object.owner ?? "";
-        message.active = object.active ?? false;
+        message.status = object.status ?? "";
         message.orderType = object.orderType ?? "";
         message.denomAsk = object.denomAsk ?? "";
         message.denomBid = object.denomBid ?? "";
@@ -104,27 +118,31 @@ export const Order = {
         message.rate = object.rate?.map(e => e) || [];
         message.prev = object.prev !== undefined && object.prev !== null ? Long.fromValue(object.prev) : Long.UZERO;
         message.next = object.next !== undefined && object.next !== null ? Long.fromValue(object.next) : Long.UZERO;
+        message.begTime = object.begTime !== undefined && object.begTime !== null ? Long.fromValue(object.begTime) : Long.ZERO;
+        message.endTime = object.endTime !== undefined && object.endTime !== null ? Long.fromValue(object.endTime) : Long.ZERO;
         return message;
     },
     fromAmino(object) {
         return {
             uid: Long.fromString(object.uid),
             owner: object.owner,
-            active: object.active,
+            status: object.status,
             orderType: object.orderType,
             denomAsk: object.denomAsk,
             denomBid: object.denomBid,
             amount: object.amount,
             rate: Array.isArray(object?.rate) ? object.rate.map((e) => e) : [],
             prev: Long.fromString(object.prev),
-            next: Long.fromString(object.next)
+            next: Long.fromString(object.next),
+            begTime: Long.fromString(object.beg_time),
+            endTime: Long.fromString(object.end_time)
         };
     },
     toAmino(message) {
         const obj = {};
         obj.uid = message.uid ? message.uid.toString() : undefined;
         obj.owner = message.owner;
-        obj.active = message.active;
+        obj.status = message.status;
         obj.orderType = message.orderType;
         obj.denomAsk = message.denomAsk;
         obj.denomBid = message.denomBid;
@@ -137,6 +155,8 @@ export const Order = {
         }
         obj.prev = message.prev ? message.prev.toString() : undefined;
         obj.next = message.next ? message.next.toString() : undefined;
+        obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
+        obj.end_time = message.endTime ? message.endTime.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {
@@ -234,14 +254,16 @@ function createBaseOrderResponse() {
     return {
         uid: Long.UZERO,
         owner: "",
-        active: false,
+        status: "",
         orderType: "",
         denomAsk: "",
         denomBid: "",
         amount: "",
         rate: [],
         prev: Long.UZERO,
-        next: Long.UZERO
+        next: Long.UZERO,
+        begTime: Long.ZERO,
+        endTime: Long.ZERO
     };
 }
 export const OrderResponse = {
@@ -252,8 +274,8 @@ export const OrderResponse = {
         if (message.owner !== "") {
             writer.uint32(18).string(message.owner);
         }
-        if (message.active === true) {
-            writer.uint32(24).bool(message.active);
+        if (message.status !== "") {
+            writer.uint32(26).string(message.status);
         }
         if (message.orderType !== "") {
             writer.uint32(34).string(message.orderType);
@@ -276,6 +298,12 @@ export const OrderResponse = {
         if (!message.next.isZero()) {
             writer.uint32(80).uint64(message.next);
         }
+        if (!message.begTime.isZero()) {
+            writer.uint32(88).int64(message.begTime);
+        }
+        if (!message.endTime.isZero()) {
+            writer.uint32(96).int64(message.endTime);
+        }
         return writer;
     },
     decode(input, length) {
@@ -292,7 +320,7 @@ export const OrderResponse = {
                     message.owner = reader.string();
                     break;
                 case 3:
-                    message.active = reader.bool();
+                    message.status = reader.string();
                     break;
                 case 4:
                     message.orderType = reader.string();
@@ -315,6 +343,12 @@ export const OrderResponse = {
                 case 10:
                     message.next = reader.uint64();
                     break;
+                case 11:
+                    message.begTime = reader.int64();
+                    break;
+                case 12:
+                    message.endTime = reader.int64();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -326,7 +360,7 @@ export const OrderResponse = {
         const message = createBaseOrderResponse();
         message.uid = object.uid !== undefined && object.uid !== null ? Long.fromValue(object.uid) : Long.UZERO;
         message.owner = object.owner ?? "";
-        message.active = object.active ?? false;
+        message.status = object.status ?? "";
         message.orderType = object.orderType ?? "";
         message.denomAsk = object.denomAsk ?? "";
         message.denomBid = object.denomBid ?? "";
@@ -334,27 +368,31 @@ export const OrderResponse = {
         message.rate = object.rate?.map(e => e) || [];
         message.prev = object.prev !== undefined && object.prev !== null ? Long.fromValue(object.prev) : Long.UZERO;
         message.next = object.next !== undefined && object.next !== null ? Long.fromValue(object.next) : Long.UZERO;
+        message.begTime = object.begTime !== undefined && object.begTime !== null ? Long.fromValue(object.begTime) : Long.ZERO;
+        message.endTime = object.endTime !== undefined && object.endTime !== null ? Long.fromValue(object.endTime) : Long.ZERO;
         return message;
     },
     fromAmino(object) {
         return {
             uid: Long.fromString(object.uid),
             owner: object.owner,
-            active: object.active,
+            status: object.status,
             orderType: object.orderType,
             denomAsk: object.denomAsk,
             denomBid: object.denomBid,
             amount: object.amount,
             rate: Array.isArray(object?.rate) ? object.rate.map((e) => e) : [],
             prev: Long.fromString(object.prev),
-            next: Long.fromString(object.next)
+            next: Long.fromString(object.next),
+            begTime: Long.fromString(object.beg_time),
+            endTime: Long.fromString(object.end_time)
         };
     },
     toAmino(message) {
         const obj = {};
         obj.uid = message.uid ? message.uid.toString() : undefined;
         obj.owner = message.owner;
-        obj.active = message.active;
+        obj.status = message.status;
         obj.orderType = message.orderType;
         obj.denomAsk = message.denomAsk;
         obj.denomBid = message.denomBid;
@@ -367,6 +405,8 @@ export const OrderResponse = {
         }
         obj.prev = message.prev ? message.prev.toString() : undefined;
         obj.next = message.next ? message.next.toString() : undefined;
+        obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
+        obj.end_time = message.endTime ? message.endTime.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {

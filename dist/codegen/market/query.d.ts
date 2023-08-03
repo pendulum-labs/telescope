@@ -336,11 +336,6 @@ export interface QueryAllBurningsResponseSDKType {
 }
 export interface QueryGetOrderRequest {
     uid: Long;
-    owner: string;
-    active: boolean;
-    orderType: string;
-    denomAsk: string;
-    denomBid: string;
 }
 export interface QueryGetOrderRequestProtoMsg {
     typeUrl: "/pendulumlabs.market.market.QueryGetOrderRequest";
@@ -348,11 +343,6 @@ export interface QueryGetOrderRequestProtoMsg {
 }
 export interface QueryGetOrderRequestAmino {
     uid: string;
-    owner: string;
-    active: boolean;
-    orderType: string;
-    denomAsk: string;
-    denomBid: string;
 }
 export interface QueryGetOrderRequestAminoMsg {
     type: "/pendulumlabs.market.market.QueryGetOrderRequest";
@@ -360,11 +350,6 @@ export interface QueryGetOrderRequestAminoMsg {
 }
 export interface QueryGetOrderRequestSDKType {
     uid: Long;
-    owner: string;
-    active: boolean;
-    orderType: string;
-    denomAsk: string;
-    denomBid: string;
 }
 export interface QueryGetOrderResponse {
     order: Order;
@@ -448,6 +433,7 @@ export interface QueryBookRequestSDKType {
 }
 export interface QueryBookResponse {
     book: OrderResponse[];
+    pagination: PageResponse;
 }
 export interface QueryBookResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.QueryBookResponse";
@@ -455,6 +441,7 @@ export interface QueryBookResponseProtoMsg {
 }
 export interface QueryBookResponseAmino {
     book: OrderResponseAmino[];
+    pagination?: PageResponseAmino;
 }
 export interface QueryBookResponseAminoMsg {
     type: "/pendulumlabs.market.market.QueryBookResponse";
@@ -462,6 +449,7 @@ export interface QueryBookResponseAminoMsg {
 }
 export interface QueryBookResponseSDKType {
     book: OrderResponseSDKType[];
+    pagination: PageResponseSDKType;
 }
 export interface QueryBookendsRequest {
     coinA: string;
@@ -520,6 +508,49 @@ export interface QueryBookendsResponseSDKType {
     rate: string[];
     prev: Long;
     next: Long;
+}
+export interface QueryHistoryRequest {
+    pair: string;
+    length: string;
+    pagination: PageRequest;
+}
+export interface QueryHistoryRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryHistoryRequest";
+    value: Uint8Array;
+}
+export interface QueryHistoryRequestAmino {
+    pair: string;
+    length: string;
+    pagination?: PageRequestAmino;
+}
+export interface QueryHistoryRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryHistoryRequest";
+    value: QueryHistoryRequestAmino;
+}
+export interface QueryHistoryRequestSDKType {
+    pair: string;
+    length: string;
+    pagination: PageRequestSDKType;
+}
+export interface QueryHistoryResponse {
+    history: OrderResponse[];
+    pagination: PageResponse;
+}
+export interface QueryHistoryResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryHistoryResponse";
+    value: Uint8Array;
+}
+export interface QueryHistoryResponseAmino {
+    history: OrderResponseAmino[];
+    pagination?: PageResponseAmino;
+}
+export interface QueryHistoryResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryHistoryResponse";
+    value: QueryHistoryResponseAmino;
+}
+export interface QueryHistoryResponseSDKType {
+    history: OrderResponseSDKType[];
+    pagination: PageResponseSDKType;
 }
 export declare const QueryParamsRequest: {
     encode(_: QueryParamsRequest, writer?: _m0.Writer): _m0.Writer;
@@ -806,4 +837,26 @@ export declare const QueryBookendsResponse: {
     fromProtoMsg(message: QueryBookendsResponseProtoMsg): QueryBookendsResponse;
     toProto(message: QueryBookendsResponse): Uint8Array;
     toProtoMsg(message: QueryBookendsResponse): QueryBookendsResponseProtoMsg;
+};
+export declare const QueryHistoryRequest: {
+    encode(message: QueryHistoryRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryHistoryRequest;
+    fromPartial(object: DeepPartial<QueryHistoryRequest>): QueryHistoryRequest;
+    fromAmino(object: QueryHistoryRequestAmino): QueryHistoryRequest;
+    toAmino(message: QueryHistoryRequest): QueryHistoryRequestAmino;
+    fromAminoMsg(object: QueryHistoryRequestAminoMsg): QueryHistoryRequest;
+    fromProtoMsg(message: QueryHistoryRequestProtoMsg): QueryHistoryRequest;
+    toProto(message: QueryHistoryRequest): Uint8Array;
+    toProtoMsg(message: QueryHistoryRequest): QueryHistoryRequestProtoMsg;
+};
+export declare const QueryHistoryResponse: {
+    encode(message: QueryHistoryResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryHistoryResponse;
+    fromPartial(object: DeepPartial<QueryHistoryResponse>): QueryHistoryResponse;
+    fromAmino(object: QueryHistoryResponseAmino): QueryHistoryResponse;
+    toAmino(message: QueryHistoryResponse): QueryHistoryResponseAmino;
+    fromAminoMsg(object: QueryHistoryResponseAminoMsg): QueryHistoryResponse;
+    fromProtoMsg(message: QueryHistoryResponseProtoMsg): QueryHistoryResponse;
+    toProto(message: QueryHistoryResponse): Uint8Array;
+    toProtoMsg(message: QueryHistoryResponse): QueryHistoryResponseProtoMsg;
 };

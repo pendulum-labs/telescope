@@ -102,6 +102,7 @@ export declare const createRPCQueryClient: ({ rpcEndpoint }: {
                 orderAll(request?: import("../market/query").QueryAllOrderRequest): Promise<import("../market/query").QueryAllOrderResponse>;
                 book(request: import("../market/query").QueryBookRequest): Promise<import("../market/query").QueryBookResponse>;
                 bookends(request: import("../market/query").QueryBookendsRequest): Promise<import("../market/query").QueryBookendsResponse>;
+                history(request: import("../market/query").QueryHistoryRequest): Promise<import("../market/query").QueryHistoryResponse>;
             };
         };
     };

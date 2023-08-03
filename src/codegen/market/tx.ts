@@ -184,7 +184,7 @@ export interface MsgMarketOrder {
   denomAsk: string;
   denomBid: string;
   amountBid: string;
-  quoteAsk: string;
+  /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
   slippage: string;
 }
 export interface MsgMarketOrderProtoMsg {
@@ -196,7 +196,7 @@ export interface MsgMarketOrderAmino {
   denomAsk: string;
   denomBid: string;
   amountBid: string;
-  quoteAsk: string;
+  /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
   slippage: string;
 }
 export interface MsgMarketOrderAminoMsg {
@@ -208,7 +208,6 @@ export interface MsgMarketOrderSDKType {
   denomAsk: string;
   denomBid: string;
   amountBid: string;
-  quoteAsk: string;
   slippage: string;
 }
 export interface MsgMarketOrderResponse {}
@@ -902,7 +901,6 @@ function createBaseMsgMarketOrder(): MsgMarketOrder {
     denomAsk: "",
     denomBid: "",
     amountBid: "",
-    quoteAsk: "",
     slippage: ""
   };
 }
@@ -920,11 +918,8 @@ export const MsgMarketOrder = {
     if (message.amountBid !== "") {
       writer.uint32(34).string(message.amountBid);
     }
-    if (message.quoteAsk !== "") {
-      writer.uint32(42).string(message.quoteAsk);
-    }
     if (message.slippage !== "") {
-      writer.uint32(50).string(message.slippage);
+      writer.uint32(42).string(message.slippage);
     }
     return writer;
   },
@@ -948,9 +943,6 @@ export const MsgMarketOrder = {
           message.amountBid = reader.string();
           break;
         case 5:
-          message.quoteAsk = reader.string();
-          break;
-        case 6:
           message.slippage = reader.string();
           break;
         default:
@@ -966,7 +958,6 @@ export const MsgMarketOrder = {
     message.denomAsk = object.denomAsk ?? "";
     message.denomBid = object.denomBid ?? "";
     message.amountBid = object.amountBid ?? "";
-    message.quoteAsk = object.quoteAsk ?? "";
     message.slippage = object.slippage ?? "";
     return message;
   },
@@ -976,7 +967,6 @@ export const MsgMarketOrder = {
       denomAsk: object.denomAsk,
       denomBid: object.denomBid,
       amountBid: object.amountBid,
-      quoteAsk: object.quoteAsk,
       slippage: object.slippage
     };
   },
@@ -986,7 +976,6 @@ export const MsgMarketOrder = {
     obj.denomAsk = message.denomAsk;
     obj.denomBid = message.denomBid;
     obj.amountBid = message.amountBid;
-    obj.quoteAsk = message.quoteAsk;
     obj.slippage = message.slippage;
     return obj;
   },

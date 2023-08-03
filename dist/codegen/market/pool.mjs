@@ -1,3 +1,4 @@
+import { Long } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 function createBasePool() {
     return {
@@ -5,7 +6,8 @@ function createBasePool() {
         denom1: "",
         denom2: "",
         leaders: [],
-        drops: ""
+        drops: "",
+        history: Long.UZERO
     };
 }
 export const Pool = {
@@ -24,6 +26,9 @@ export const Pool = {
         }
         if (message.drops !== "") {
             writer.uint32(42).string(message.drops);
+        }
+        if (!message.history.isZero()) {
+            writer.uint32(48).uint64(message.history);
         }
         return writer;
     },
@@ -49,6 +54,9 @@ export const Pool = {
                 case 5:
                     message.drops = reader.string();
                     break;
+                case 6:
+                    message.history = reader.uint64();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -63,6 +71,7 @@ export const Pool = {
         message.denom2 = object.denom2 ?? "";
         message.leaders = object.leaders?.map(e => Leader.fromPartial(e)) || [];
         message.drops = object.drops ?? "";
+        message.history = object.history !== undefined && object.history !== null ? Long.fromValue(object.history) : Long.UZERO;
         return message;
     },
     fromAmino(object) {
@@ -71,7 +80,8 @@ export const Pool = {
             denom1: object.denom1,
             denom2: object.denom2,
             leaders: Array.isArray(object?.leaders) ? object.leaders.map((e) => Leader.fromAmino(e)) : [],
-            drops: object.drops
+            drops: object.drops,
+            history: Long.fromString(object.history)
         };
     },
     toAmino(message) {
@@ -86,6 +96,7 @@ export const Pool = {
             obj.leaders = [];
         }
         obj.drops = message.drops;
+        obj.history = message.history ? message.history.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {

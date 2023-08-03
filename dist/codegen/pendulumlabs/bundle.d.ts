@@ -29,6 +29,7 @@ export declare namespace pendulumlabs {
                 orderAll(request?: _79.QueryAllOrderRequest): Promise<_79.QueryAllOrderResponse>;
                 book(request: _79.QueryBookRequest): Promise<_79.QueryBookResponse>;
                 bookends(request: _79.QueryBookendsRequest): Promise<_79.QueryBookendsResponse>;
+                history(request: _79.QueryHistoryRequest): Promise<_79.QueryHistoryResponse>;
             };
             registry: readonly [string, import("@cosmjs/proto-signing").GeneratedType][];
             load: (protoRegistry: import("@cosmjs/proto-signing").Registry) => void;
@@ -285,7 +286,6 @@ export declare namespace pendulumlabs {
                     denomAsk?: string;
                     denomBid?: string;
                     amountBid?: string;
-                    quoteAsk?: string;
                     slippage?: string;
                 }): _80.MsgMarketOrder;
                 fromAmino(object: _80.MsgMarketOrderAmino): _80.MsgMarketOrder;
@@ -361,6 +361,7 @@ export declare namespace pendulumlabs {
                             drops?: string;
                         }[];
                         drops?: string;
+                        history?: string | number | import("long").Long;
                     };
                 }): _79.QueryGetPoolResponse;
                 fromAmino(object: _79.QueryGetPoolResponseAmino): _79.QueryGetPoolResponse;
@@ -402,6 +403,7 @@ export declare namespace pendulumlabs {
                             drops?: string;
                         }[];
                         drops?: string;
+                        history?: string | number | import("long").Long;
                     }[];
                     pagination?: {
                         nextKey?: Uint8Array;
@@ -643,11 +645,6 @@ export declare namespace pendulumlabs {
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryGetOrderRequest;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                    owner?: string;
-                    active?: boolean;
-                    orderType?: string;
-                    denomAsk?: string;
-                    denomBid?: string;
                 }): _79.QueryGetOrderRequest;
                 fromAmino(object: _79.QueryGetOrderRequestAmino): _79.QueryGetOrderRequest;
                 toAmino(message: _79.QueryGetOrderRequest): _79.QueryGetOrderRequestAmino;
@@ -663,7 +660,7 @@ export declare namespace pendulumlabs {
                     order?: {
                         uid?: string | number | import("long").Long;
                         owner?: string;
-                        active?: boolean;
+                        status?: string;
                         orderType?: string;
                         denomAsk?: string;
                         denomBid?: string;
@@ -671,6 +668,8 @@ export declare namespace pendulumlabs {
                         rate?: string[];
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
+                        begTime?: string | number | import("long").Long;
+                        endTime?: string | number | import("long").Long;
                     };
                 }): _79.QueryGetOrderResponse;
                 fromAmino(object: _79.QueryGetOrderResponseAmino): _79.QueryGetOrderResponse;
@@ -706,7 +705,7 @@ export declare namespace pendulumlabs {
                     order?: {
                         uid?: string | number | import("long").Long;
                         owner?: string;
-                        active?: boolean;
+                        status?: string;
                         orderType?: string;
                         denomAsk?: string;
                         denomBid?: string;
@@ -714,6 +713,8 @@ export declare namespace pendulumlabs {
                         rate?: string[];
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
+                        begTime?: string | number | import("long").Long;
+                        endTime?: string | number | import("long").Long;
                     }[];
                     pagination?: {
                         nextKey?: Uint8Array;
@@ -756,7 +757,7 @@ export declare namespace pendulumlabs {
                     book?: {
                         uid?: string | number | import("long").Long;
                         owner?: string;
-                        active?: boolean;
+                        status?: string;
                         orderType?: string;
                         denomAsk?: string;
                         denomBid?: string;
@@ -764,7 +765,13 @@ export declare namespace pendulumlabs {
                         rate?: string[];
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
+                        begTime?: string | number | import("long").Long;
+                        endTime?: string | number | import("long").Long;
                     }[];
+                    pagination?: {
+                        nextKey?: Uint8Array;
+                        total?: string | number | import("long").Long;
+                    };
                 }): _79.QueryBookResponse;
                 fromAmino(object: _79.QueryBookResponseAmino): _79.QueryBookResponse;
                 toAmino(message: _79.QueryBookResponse): _79.QueryBookResponseAmino;
@@ -807,6 +814,57 @@ export declare namespace pendulumlabs {
                 toProto(message: _79.QueryBookendsResponse): Uint8Array;
                 toProtoMsg(message: _79.QueryBookendsResponse): _79.QueryBookendsResponseProtoMsg;
             };
+            QueryHistoryRequest: {
+                encode(message: _79.QueryHistoryRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryHistoryRequest;
+                fromPartial(object: {
+                    pair?: string;
+                    length?: string;
+                    pagination?: {
+                        key?: Uint8Array;
+                        offset?: string | number | import("long").Long;
+                        limit?: string | number | import("long").Long;
+                        countTotal?: boolean;
+                        reverse?: boolean;
+                    };
+                }): _79.QueryHistoryRequest;
+                fromAmino(object: _79.QueryHistoryRequestAmino): _79.QueryHistoryRequest;
+                toAmino(message: _79.QueryHistoryRequest): _79.QueryHistoryRequestAmino;
+                fromAminoMsg(object: _79.QueryHistoryRequestAminoMsg): _79.QueryHistoryRequest;
+                fromProtoMsg(message: _79.QueryHistoryRequestProtoMsg): _79.QueryHistoryRequest;
+                toProto(message: _79.QueryHistoryRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryHistoryRequest): _79.QueryHistoryRequestProtoMsg;
+            };
+            QueryHistoryResponse: {
+                encode(message: _79.QueryHistoryResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryHistoryResponse;
+                fromPartial(object: {
+                    history?: {
+                        uid?: string | number | import("long").Long;
+                        owner?: string;
+                        status?: string;
+                        orderType?: string;
+                        denomAsk?: string;
+                        denomBid?: string;
+                        amount?: string;
+                        rate?: string[];
+                        prev?: string | number | import("long").Long;
+                        next?: string | number | import("long").Long;
+                        begTime?: string | number | import("long").Long;
+                        endTime?: string | number | import("long").Long;
+                    }[];
+                    pagination?: {
+                        nextKey?: Uint8Array;
+                        total?: string | number | import("long").Long;
+                    };
+                }): _79.QueryHistoryResponse;
+                fromAmino(object: _79.QueryHistoryResponseAmino): _79.QueryHistoryResponse;
+                toAmino(message: _79.QueryHistoryResponse): _79.QueryHistoryResponseAmino;
+                fromAminoMsg(object: _79.QueryHistoryResponseAminoMsg): _79.QueryHistoryResponse;
+                fromProtoMsg(message: _79.QueryHistoryResponseProtoMsg): _79.QueryHistoryResponse;
+                toProto(message: _79.QueryHistoryResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryHistoryResponse): _79.QueryHistoryResponseProtoMsg;
+            };
             Pool: {
                 encode(message: _78.Pool, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _78.Pool;
@@ -819,6 +877,7 @@ export declare namespace pendulumlabs {
                         drops?: string;
                     }[];
                     drops?: string;
+                    history?: string | number | import("long").Long;
                 }): _78.Pool;
                 fromAmino(object: _78.PoolAmino): _78.Pool;
                 toAmino(message: _78.Pool): _78.PoolAmino;
@@ -863,7 +922,7 @@ export declare namespace pendulumlabs {
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
                     owner?: string;
-                    active?: boolean;
+                    status?: string;
                     orderType?: string;
                     denomAsk?: string;
                     denomBid?: string;
@@ -871,6 +930,8 @@ export declare namespace pendulumlabs {
                     rate?: string[];
                     prev?: string | number | import("long").Long;
                     next?: string | number | import("long").Long;
+                    begTime?: string | number | import("long").Long;
+                    endTime?: string | number | import("long").Long;
                 }): _76.Order;
                 fromAmino(object: _76.OrderAmino): _76.Order;
                 toAmino(message: _76.Order): _76.OrderAmino;
@@ -898,7 +959,7 @@ export declare namespace pendulumlabs {
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
                     owner?: string;
-                    active?: boolean;
+                    status?: string;
                     orderType?: string;
                     denomAsk?: string;
                     denomBid?: string;
@@ -906,6 +967,8 @@ export declare namespace pendulumlabs {
                     rate?: string[];
                     prev?: string | number | import("long").Long;
                     next?: string | number | import("long").Long;
+                    begTime?: string | number | import("long").Long;
+                    endTime?: string | number | import("long").Long;
                 }): _76.OrderResponse;
                 fromAmino(object: _76.OrderResponseAmino): _76.OrderResponse;
                 toAmino(message: _76.OrderResponse): _76.OrderResponseAmino;
@@ -952,6 +1015,7 @@ export declare namespace pendulumlabs {
                             drops?: string;
                         }[];
                         drops?: string;
+                        history?: string | number | import("long").Long;
                     }[];
                     dropList?: {
                         uid?: string | number | import("long").Long;
@@ -977,7 +1041,7 @@ export declare namespace pendulumlabs {
                     orderList?: {
                         uid?: string | number | import("long").Long;
                         owner?: string;
-                        active?: boolean;
+                        status?: string;
                         orderType?: string;
                         denomAsk?: string;
                         denomBid?: string;
@@ -985,6 +1049,8 @@ export declare namespace pendulumlabs {
                         rate?: string[];
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
+                        begTime?: string | number | import("long").Long;
+                        endTime?: string | number | import("long").Long;
                     }[];
                 }): _74.GenesisState;
                 fromAmino(object: _74.GenesisStateAmino): _74.GenesisState;
@@ -1184,6 +1250,7 @@ export declare namespace pendulumlabs {
                         orderAll(request?: _79.QueryAllOrderRequest): Promise<_79.QueryAllOrderResponse>;
                         book(request: _79.QueryBookRequest): Promise<_79.QueryBookResponse>;
                         bookends(request: _79.QueryBookendsRequest): Promise<_79.QueryBookendsResponse>;
+                        history(request: _79.QueryHistoryRequest): Promise<_79.QueryHistoryResponse>;
                     };
                 };
             };
