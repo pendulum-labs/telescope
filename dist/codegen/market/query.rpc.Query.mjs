@@ -1,6 +1,6 @@
 import * as _m0 from "protobufjs/minimal";
 import { createProtobufRpcClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryOrderOwnerRequest, QueryOrderOwnerResponse, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 export class QueryClientImpl {
     rpc;
     constructor(rpc) {
@@ -16,6 +16,8 @@ export class QueryClientImpl {
         this.burningsAll = this.burningsAll.bind(this);
         this.order = this.order.bind(this);
         this.orderAll = this.orderAll.bind(this);
+        this.orderOwner = this.orderOwner.bind(this);
+        this.orderOwnerUids = this.orderOwnerUids.bind(this);
         this.book = this.book.bind(this);
         this.bookends = this.bookends.bind(this);
         this.history = this.history.bind(this);
@@ -85,6 +87,16 @@ export class QueryClientImpl {
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
         return promise.then(data => QueryAllOrderResponse.decode(new _m0.Reader(data)));
     }
+    orderOwner(request) {
+        const data = QueryOrderOwnerRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwner", data);
+        return promise.then(data => QueryOrderOwnerResponse.decode(new _m0.Reader(data)));
+    }
+    orderOwnerUids(request) {
+        const data = QueryOrderOwnerRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwnerUids", data);
+        return promise.then(data => QueryOrderOwnerUidsResponse.decode(new _m0.Reader(data)));
+    }
     book(request) {
         const data = QueryBookRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Book", data);
@@ -137,6 +149,12 @@ export const createRpcQueryExtension = (base) => {
         },
         orderAll(request) {
             return queryService.orderAll(request);
+        },
+        orderOwner(request) {
+            return queryService.orderOwner(request);
+        },
+        orderOwnerUids(request) {
+            return queryService.orderOwnerUids(request);
         },
         book(request) {
             return queryService.book(request);

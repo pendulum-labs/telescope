@@ -42,6 +42,8 @@ class QueryClientImpl {
         this.burningsAll = this.burningsAll.bind(this);
         this.order = this.order.bind(this);
         this.orderAll = this.orderAll.bind(this);
+        this.orderOwner = this.orderOwner.bind(this);
+        this.orderOwnerUids = this.orderOwnerUids.bind(this);
         this.book = this.book.bind(this);
         this.bookends = this.bookends.bind(this);
         this.history = this.history.bind(this);
@@ -111,6 +113,16 @@ class QueryClientImpl {
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
         return promise.then(data => query_1.QueryAllOrderResponse.decode(new _m0.Reader(data)));
     }
+    orderOwner(request) {
+        const data = query_1.QueryOrderOwnerRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwner", data);
+        return promise.then(data => query_1.QueryOrderOwnerResponse.decode(new _m0.Reader(data)));
+    }
+    orderOwnerUids(request) {
+        const data = query_1.QueryOrderOwnerRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwnerUids", data);
+        return promise.then(data => query_1.QueryOrderOwnerUidsResponse.decode(new _m0.Reader(data)));
+    }
     book(request) {
         const data = query_1.QueryBookRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Book", data);
@@ -164,6 +176,12 @@ const createRpcQueryExtension = (base) => {
         },
         orderAll(request) {
             return queryService.orderAll(request);
+        },
+        orderOwner(request) {
+            return queryService.orderOwner(request);
+        },
+        orderOwnerUids(request) {
+            return queryService.orderOwnerUids(request);
         },
         book(request) {
             return queryService.book(request);

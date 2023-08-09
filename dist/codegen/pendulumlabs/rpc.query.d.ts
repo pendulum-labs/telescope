@@ -100,6 +100,8 @@ export declare const createRPCQueryClient: ({ rpcEndpoint }: {
                 burningsAll(request?: import("../market/query").QueryAllBurningsRequest): Promise<import("../market/query").QueryAllBurningsResponse>;
                 order(request: import("../market/query").QueryGetOrderRequest): Promise<import("../market/query").QueryGetOrderResponse>;
                 orderAll(request?: import("../market/query").QueryAllOrderRequest): Promise<import("../market/query").QueryAllOrderResponse>;
+                orderOwner(request: import("../market/query").QueryOrderOwnerRequest): Promise<import("../market/query").QueryOrderOwnerResponse>;
+                orderOwnerUids(request: import("../market/query").QueryOrderOwnerRequest): Promise<import("../market/query").QueryOrderOwnerUidsResponse>;
                 book(request: import("../market/query").QueryBookRequest): Promise<import("../market/query").QueryBookResponse>;
                 bookends(request: import("../market/query").QueryBookendsRequest): Promise<import("../market/query").QueryBookendsResponse>;
                 history(request: import("../market/query").QueryHistoryRequest): Promise<import("../market/query").QueryHistoryResponse>;

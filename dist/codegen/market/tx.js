@@ -24,6 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MsgMarketOrderResponse = exports.MsgMarketOrder = exports.MsgCancelOrderResponse = exports.MsgCancelOrder = exports.MsgCreateOrderResponse = exports.MsgCreateOrder = exports.MsgRedeemDropResponse = exports.MsgRedeemDrop = exports.MsgCreateDropResponse = exports.MsgCreateDrop = exports.MsgCreatePoolResponse = exports.MsgCreatePool = void 0;
+const helpers_1 = require("../helpers");
 const _m0 = __importStar(require("protobufjs/minimal"));
 function createBaseMsgCreatePool() {
     return {
@@ -535,10 +536,15 @@ exports.MsgCreateOrder = {
     }
 };
 function createBaseMsgCreateOrderResponse() {
-    return {};
+    return {
+        uid: helpers_1.Long.UZERO
+    };
 }
 exports.MsgCreateOrderResponse = {
-    encode(_, writer = _m0.Writer.create()) {
+    encode(message, writer = _m0.Writer.create()) {
+        if (!message.uid.isZero()) {
+            writer.uint32(8).uint64(message.uid);
+        }
         return writer;
     },
     decode(input, length) {
@@ -548,6 +554,9 @@ exports.MsgCreateOrderResponse = {
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
+                case 1:
+                    message.uid = reader.uint64();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -555,15 +564,19 @@ exports.MsgCreateOrderResponse = {
         }
         return message;
     },
-    fromPartial(_) {
+    fromPartial(object) {
         const message = createBaseMsgCreateOrderResponse();
+        message.uid = object.uid !== undefined && object.uid !== null ? helpers_1.Long.fromValue(object.uid) : helpers_1.Long.UZERO;
         return message;
     },
-    fromAmino(_) {
-        return {};
+    fromAmino(object) {
+        return {
+            uid: helpers_1.Long.fromString(object.uid)
+        };
     },
-    toAmino(_) {
+    toAmino(message) {
         const obj = {};
+        obj.uid = message.uid ? message.uid.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {

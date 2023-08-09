@@ -1,3 +1,4 @@
+import { Long } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 function createBaseMsgCreatePool() {
     return {
@@ -509,10 +510,15 @@ export const MsgCreateOrder = {
     }
 };
 function createBaseMsgCreateOrderResponse() {
-    return {};
+    return {
+        uid: Long.UZERO
+    };
 }
 export const MsgCreateOrderResponse = {
-    encode(_, writer = _m0.Writer.create()) {
+    encode(message, writer = _m0.Writer.create()) {
+        if (!message.uid.isZero()) {
+            writer.uint32(8).uint64(message.uid);
+        }
         return writer;
     },
     decode(input, length) {
@@ -522,6 +528,9 @@ export const MsgCreateOrderResponse = {
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
+                case 1:
+                    message.uid = reader.uint64();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -529,15 +538,19 @@ export const MsgCreateOrderResponse = {
         }
         return message;
     },
-    fromPartial(_) {
+    fromPartial(object) {
         const message = createBaseMsgCreateOrderResponse();
+        message.uid = object.uid !== undefined && object.uid !== null ? Long.fromValue(object.uid) : Long.UZERO;
         return message;
     },
-    fromAmino(_) {
-        return {};
+    fromAmino(object) {
+        return {
+            uid: Long.fromString(object.uid)
+        };
     },
-    toAmino(_) {
+    toAmino(message) {
         const obj = {};
+        obj.uid = message.uid ? message.uid.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {

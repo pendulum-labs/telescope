@@ -4,7 +4,7 @@ import { Pool } from "./pool";
 import { Drop } from "./drop";
 import { Member } from "./member";
 import { Burnings } from "./burnings";
-import { Order, OrderResponse } from "./order";
+import { Order, Orders, OrderResponse } from "./order";
 import { Long } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 function createBaseQueryParamsRequest() {
@@ -1397,6 +1397,376 @@ export const QueryAllOrderResponse = {
         return {
             typeUrl: "/pendulumlabs.market.market.QueryAllOrderResponse",
             value: QueryAllOrderResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryOrderOwnerRequest() {
+    return {
+        address: "",
+        pagination: PageRequest.fromPartial({})
+    };
+}
+export const QueryOrderOwnerRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.address !== "") {
+            writer.uint32(10).string(message.address);
+        }
+        if (message.pagination !== undefined) {
+            PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryOrderOwnerRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.address = reader.string();
+                    break;
+                case 2:
+                    message.pagination = PageRequest.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryOrderOwnerRequest();
+        message.address = object.address ?? "";
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageRequest.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            address: object.address,
+            pagination: object?.pagination ? PageRequest.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.address = message.address;
+        obj.pagination = message.pagination ? PageRequest.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryOrderOwnerRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryOrderOwnerRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryOrderOwnerRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerRequest",
+            value: QueryOrderOwnerRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryOrderOwnerResponse() {
+    return {
+        orders: [],
+        pagination: PageResponse.fromPartial({})
+    };
+}
+export const QueryOrderOwnerResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        for (const v of message.orders) {
+            Order.encode(v, writer.uint32(10).fork()).ldelim();
+        }
+        if (message.pagination !== undefined) {
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryOrderOwnerResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.orders.push(Order.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    message.pagination = PageResponse.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryOrderOwnerResponse();
+        message.orders = object.orders?.map(e => Order.fromPartial(e)) || [];
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageResponse.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            orders: Array.isArray(object?.orders) ? object.orders.map((e) => Order.fromAmino(e)) : [],
+            pagination: object?.pagination ? PageResponse.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        if (message.orders) {
+            obj.orders = message.orders.map(e => e ? Order.toAmino(e) : undefined);
+        }
+        else {
+            obj.orders = [];
+        }
+        obj.pagination = message.pagination ? PageResponse.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryOrderOwnerResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryOrderOwnerResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryOrderOwnerResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerResponse",
+            value: QueryOrderOwnerResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryOrderOwnerUidsResponse() {
+    return {
+        orders: Orders.fromPartial({}),
+        pagination: PageResponse.fromPartial({})
+    };
+}
+export const QueryOrderOwnerUidsResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.orders !== undefined) {
+            Orders.encode(message.orders, writer.uint32(10).fork()).ldelim();
+        }
+        if (message.pagination !== undefined) {
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryOrderOwnerUidsResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.orders = Orders.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.pagination = PageResponse.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryOrderOwnerUidsResponse();
+        message.orders = object.orders !== undefined && object.orders !== null ? Orders.fromPartial(object.orders) : undefined;
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageResponse.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            orders: object?.orders ? Orders.fromAmino(object.orders) : undefined,
+            pagination: object?.pagination ? PageResponse.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.orders = message.orders ? Orders.toAmino(message.orders) : undefined;
+        obj.pagination = message.pagination ? PageResponse.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryOrderOwnerUidsResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryOrderOwnerUidsResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryOrderOwnerUidsResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerUidsResponse",
+            value: QueryOrderOwnerUidsResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryOrderOwnerPairRequest() {
+    return {
+        address: "",
+        pair: "",
+        pagination: PageRequest.fromPartial({})
+    };
+}
+export const QueryOrderOwnerPairRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.address !== "") {
+            writer.uint32(10).string(message.address);
+        }
+        if (message.pair !== "") {
+            writer.uint32(18).string(message.pair);
+        }
+        if (message.pagination !== undefined) {
+            PageRequest.encode(message.pagination, writer.uint32(26).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryOrderOwnerPairRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.address = reader.string();
+                    break;
+                case 2:
+                    message.pair = reader.string();
+                    break;
+                case 3:
+                    message.pagination = PageRequest.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryOrderOwnerPairRequest();
+        message.address = object.address ?? "";
+        message.pair = object.pair ?? "";
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageRequest.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            address: object.address,
+            pair: object.pair,
+            pagination: object?.pagination ? PageRequest.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.address = message.address;
+        obj.pair = message.pair;
+        obj.pagination = message.pagination ? PageRequest.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryOrderOwnerPairRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryOrderOwnerPairRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryOrderOwnerPairRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerPairRequest",
+            value: QueryOrderOwnerPairRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryOrderOwnerPairResponse() {
+    return {
+        order: [],
+        pagination: PageResponse.fromPartial({})
+    };
+}
+export const QueryOrderOwnerPairResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        for (const v of message.order) {
+            Order.encode(v, writer.uint32(10).fork()).ldelim();
+        }
+        if (message.pagination !== undefined) {
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryOrderOwnerPairResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.order.push(Order.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    message.pagination = PageResponse.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryOrderOwnerPairResponse();
+        message.order = object.order?.map(e => Order.fromPartial(e)) || [];
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageResponse.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            order: Array.isArray(object?.order) ? object.order.map((e) => Order.fromAmino(e)) : [],
+            pagination: object?.pagination ? PageResponse.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        if (message.order) {
+            obj.order = message.order.map(e => e ? Order.toAmino(e) : undefined);
+        }
+        else {
+            obj.order = [];
+        }
+        obj.pagination = message.pagination ? PageResponse.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryOrderOwnerPairResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryOrderOwnerPairResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryOrderOwnerPairResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerPairResponse",
+            value: QueryOrderOwnerPairResponse.encode(message).finish()
         };
     }
 };

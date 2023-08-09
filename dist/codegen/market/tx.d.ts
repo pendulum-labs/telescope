@@ -1,5 +1,6 @@
+/// <reference types="long" />
+import { Long, DeepPartial } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial } from "../helpers";
 export interface MsgCreatePool {
     creator: string;
     coinA: string;
@@ -147,18 +148,21 @@ export interface MsgCreateOrderSDKType {
     next: string;
 }
 export interface MsgCreateOrderResponse {
+    uid: Long;
 }
 export interface MsgCreateOrderResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.MsgCreateOrderResponse";
     value: Uint8Array;
 }
 export interface MsgCreateOrderResponseAmino {
+    uid: string;
 }
 export interface MsgCreateOrderResponseAminoMsg {
     type: "/pendulumlabs.market.market.MsgCreateOrderResponse";
     value: MsgCreateOrderResponseAmino;
 }
 export interface MsgCreateOrderResponseSDKType {
+    uid: Long;
 }
 export interface MsgCancelOrder {
     creator: string;
@@ -199,7 +203,7 @@ export interface MsgMarketOrder {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
-    /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
+    /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
 export interface MsgMarketOrderProtoMsg {
@@ -211,7 +215,7 @@ export interface MsgMarketOrderAmino {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
-    /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
+    /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
 export interface MsgMarketOrderAminoMsg {
@@ -317,11 +321,11 @@ export declare const MsgCreateOrder: {
     toProtoMsg(message: MsgCreateOrder): MsgCreateOrderProtoMsg;
 };
 export declare const MsgCreateOrderResponse: {
-    encode(_: MsgCreateOrderResponse, writer?: _m0.Writer): _m0.Writer;
+    encode(message: MsgCreateOrderResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgCreateOrderResponse;
-    fromPartial(_: DeepPartial<MsgCreateOrderResponse>): MsgCreateOrderResponse;
-    fromAmino(_: MsgCreateOrderResponseAmino): MsgCreateOrderResponse;
-    toAmino(_: MsgCreateOrderResponse): MsgCreateOrderResponseAmino;
+    fromPartial(object: DeepPartial<MsgCreateOrderResponse>): MsgCreateOrderResponse;
+    fromAmino(object: MsgCreateOrderResponseAmino): MsgCreateOrderResponse;
+    toAmino(message: MsgCreateOrderResponse): MsgCreateOrderResponseAmino;
     fromAminoMsg(object: MsgCreateOrderResponseAminoMsg): MsgCreateOrderResponse;
     fromProtoMsg(message: MsgCreateOrderResponseProtoMsg): MsgCreateOrderResponse;
     toProto(message: MsgCreateOrderResponse): Uint8Array;

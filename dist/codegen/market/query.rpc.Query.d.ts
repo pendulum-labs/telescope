@@ -1,6 +1,6 @@
 import { Rpc } from "../helpers";
 import { QueryClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryOrderOwnerRequest, QueryOrderOwnerResponse, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
     /** Parameters queries the parameters of the module. */
@@ -25,6 +25,10 @@ export interface Query {
     order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
     /** Queries a list of Order items. */
     orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
+    /** Queries a list of Order items. */
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+    /** Queries a list of Order items. */
+    orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
     /** Queries a list of Book items. */
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     /** Queries a list of Bookends items. */
@@ -46,6 +50,8 @@ export declare class QueryClientImpl implements Query {
     burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
     order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
     orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+    orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
     history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;
@@ -62,6 +68,8 @@ export declare const createRpcQueryExtension: (base: QueryClient) => {
     burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
     order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
     orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+    orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
     history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;

@@ -5,7 +5,7 @@ import { Pool, PoolAmino, PoolSDKType } from "./pool";
 import { Drop, DropAmino, DropSDKType } from "./drop";
 import { Member, MemberAmino, MemberSDKType } from "./member";
 import { Burnings, BurningsAmino, BurningsSDKType } from "./burnings";
-import { Order, OrderAmino, OrderSDKType, OrderResponse, OrderResponseAmino, OrderResponseSDKType } from "./order";
+import { Order, OrderAmino, OrderSDKType, Orders, OrdersAmino, OrdersSDKType, OrderResponse, OrderResponseAmino, OrderResponseSDKType } from "./order";
 import { Long, DeepPartial } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 /** QueryParamsRequest is request type for the Query/Params RPC method. */
@@ -405,6 +405,109 @@ export interface QueryAllOrderResponseSDKType {
     order: OrderSDKType[];
     pagination: PageResponseSDKType;
 }
+export interface QueryOrderOwnerRequest {
+    address: string;
+    pagination: PageRequest;
+}
+export interface QueryOrderOwnerRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerRequest";
+    value: Uint8Array;
+}
+export interface QueryOrderOwnerRequestAmino {
+    address: string;
+    pagination?: PageRequestAmino;
+}
+export interface QueryOrderOwnerRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryOrderOwnerRequest";
+    value: QueryOrderOwnerRequestAmino;
+}
+export interface QueryOrderOwnerRequestSDKType {
+    address: string;
+    pagination: PageRequestSDKType;
+}
+export interface QueryOrderOwnerResponse {
+    orders: Order[];
+    pagination: PageResponse;
+}
+export interface QueryOrderOwnerResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerResponse";
+    value: Uint8Array;
+}
+export interface QueryOrderOwnerResponseAmino {
+    orders: OrderAmino[];
+    pagination?: PageResponseAmino;
+}
+export interface QueryOrderOwnerResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryOrderOwnerResponse";
+    value: QueryOrderOwnerResponseAmino;
+}
+export interface QueryOrderOwnerResponseSDKType {
+    orders: OrderSDKType[];
+    pagination: PageResponseSDKType;
+}
+export interface QueryOrderOwnerUidsResponse {
+    orders: Orders;
+    pagination: PageResponse;
+}
+export interface QueryOrderOwnerUidsResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerUidsResponse";
+    value: Uint8Array;
+}
+export interface QueryOrderOwnerUidsResponseAmino {
+    orders?: OrdersAmino;
+    pagination?: PageResponseAmino;
+}
+export interface QueryOrderOwnerUidsResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryOrderOwnerUidsResponse";
+    value: QueryOrderOwnerUidsResponseAmino;
+}
+export interface QueryOrderOwnerUidsResponseSDKType {
+    orders: OrdersSDKType;
+    pagination: PageResponseSDKType;
+}
+export interface QueryOrderOwnerPairRequest {
+    address: string;
+    pair: string;
+    pagination: PageRequest;
+}
+export interface QueryOrderOwnerPairRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerPairRequest";
+    value: Uint8Array;
+}
+export interface QueryOrderOwnerPairRequestAmino {
+    address: string;
+    pair: string;
+    pagination?: PageRequestAmino;
+}
+export interface QueryOrderOwnerPairRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryOrderOwnerPairRequest";
+    value: QueryOrderOwnerPairRequestAmino;
+}
+export interface QueryOrderOwnerPairRequestSDKType {
+    address: string;
+    pair: string;
+    pagination: PageRequestSDKType;
+}
+export interface QueryOrderOwnerPairResponse {
+    order: Order[];
+    pagination: PageResponse;
+}
+export interface QueryOrderOwnerPairResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryOrderOwnerPairResponse";
+    value: Uint8Array;
+}
+export interface QueryOrderOwnerPairResponseAmino {
+    order: OrderAmino[];
+    pagination?: PageResponseAmino;
+}
+export interface QueryOrderOwnerPairResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryOrderOwnerPairResponse";
+    value: QueryOrderOwnerPairResponseAmino;
+}
+export interface QueryOrderOwnerPairResponseSDKType {
+    order: OrderSDKType[];
+    pagination: PageResponseSDKType;
+}
 export interface QueryBookRequest {
     denomA: string;
     denomB: string;
@@ -793,6 +896,61 @@ export declare const QueryAllOrderResponse: {
     fromProtoMsg(message: QueryAllOrderResponseProtoMsg): QueryAllOrderResponse;
     toProto(message: QueryAllOrderResponse): Uint8Array;
     toProtoMsg(message: QueryAllOrderResponse): QueryAllOrderResponseProtoMsg;
+};
+export declare const QueryOrderOwnerRequest: {
+    encode(message: QueryOrderOwnerRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryOrderOwnerRequest;
+    fromPartial(object: DeepPartial<QueryOrderOwnerRequest>): QueryOrderOwnerRequest;
+    fromAmino(object: QueryOrderOwnerRequestAmino): QueryOrderOwnerRequest;
+    toAmino(message: QueryOrderOwnerRequest): QueryOrderOwnerRequestAmino;
+    fromAminoMsg(object: QueryOrderOwnerRequestAminoMsg): QueryOrderOwnerRequest;
+    fromProtoMsg(message: QueryOrderOwnerRequestProtoMsg): QueryOrderOwnerRequest;
+    toProto(message: QueryOrderOwnerRequest): Uint8Array;
+    toProtoMsg(message: QueryOrderOwnerRequest): QueryOrderOwnerRequestProtoMsg;
+};
+export declare const QueryOrderOwnerResponse: {
+    encode(message: QueryOrderOwnerResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryOrderOwnerResponse;
+    fromPartial(object: DeepPartial<QueryOrderOwnerResponse>): QueryOrderOwnerResponse;
+    fromAmino(object: QueryOrderOwnerResponseAmino): QueryOrderOwnerResponse;
+    toAmino(message: QueryOrderOwnerResponse): QueryOrderOwnerResponseAmino;
+    fromAminoMsg(object: QueryOrderOwnerResponseAminoMsg): QueryOrderOwnerResponse;
+    fromProtoMsg(message: QueryOrderOwnerResponseProtoMsg): QueryOrderOwnerResponse;
+    toProto(message: QueryOrderOwnerResponse): Uint8Array;
+    toProtoMsg(message: QueryOrderOwnerResponse): QueryOrderOwnerResponseProtoMsg;
+};
+export declare const QueryOrderOwnerUidsResponse: {
+    encode(message: QueryOrderOwnerUidsResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryOrderOwnerUidsResponse;
+    fromPartial(object: DeepPartial<QueryOrderOwnerUidsResponse>): QueryOrderOwnerUidsResponse;
+    fromAmino(object: QueryOrderOwnerUidsResponseAmino): QueryOrderOwnerUidsResponse;
+    toAmino(message: QueryOrderOwnerUidsResponse): QueryOrderOwnerUidsResponseAmino;
+    fromAminoMsg(object: QueryOrderOwnerUidsResponseAminoMsg): QueryOrderOwnerUidsResponse;
+    fromProtoMsg(message: QueryOrderOwnerUidsResponseProtoMsg): QueryOrderOwnerUidsResponse;
+    toProto(message: QueryOrderOwnerUidsResponse): Uint8Array;
+    toProtoMsg(message: QueryOrderOwnerUidsResponse): QueryOrderOwnerUidsResponseProtoMsg;
+};
+export declare const QueryOrderOwnerPairRequest: {
+    encode(message: QueryOrderOwnerPairRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryOrderOwnerPairRequest;
+    fromPartial(object: DeepPartial<QueryOrderOwnerPairRequest>): QueryOrderOwnerPairRequest;
+    fromAmino(object: QueryOrderOwnerPairRequestAmino): QueryOrderOwnerPairRequest;
+    toAmino(message: QueryOrderOwnerPairRequest): QueryOrderOwnerPairRequestAmino;
+    fromAminoMsg(object: QueryOrderOwnerPairRequestAminoMsg): QueryOrderOwnerPairRequest;
+    fromProtoMsg(message: QueryOrderOwnerPairRequestProtoMsg): QueryOrderOwnerPairRequest;
+    toProto(message: QueryOrderOwnerPairRequest): Uint8Array;
+    toProtoMsg(message: QueryOrderOwnerPairRequest): QueryOrderOwnerPairRequestProtoMsg;
+};
+export declare const QueryOrderOwnerPairResponse: {
+    encode(message: QueryOrderOwnerPairResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryOrderOwnerPairResponse;
+    fromPartial(object: DeepPartial<QueryOrderOwnerPairResponse>): QueryOrderOwnerPairResponse;
+    fromAmino(object: QueryOrderOwnerPairResponseAmino): QueryOrderOwnerPairResponse;
+    toAmino(message: QueryOrderOwnerPairResponse): QueryOrderOwnerPairResponseAmino;
+    fromAminoMsg(object: QueryOrderOwnerPairResponseAminoMsg): QueryOrderOwnerPairResponse;
+    fromProtoMsg(message: QueryOrderOwnerPairResponseProtoMsg): QueryOrderOwnerPairResponse;
+    toProto(message: QueryOrderOwnerPairResponse): Uint8Array;
+    toProtoMsg(message: QueryOrderOwnerPairResponse): QueryOrderOwnerPairResponseProtoMsg;
 };
 export declare const QueryBookRequest: {
     encode(message: QueryBookRequest, writer?: _m0.Writer): _m0.Writer;
