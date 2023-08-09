@@ -1,5 +1,5 @@
+import { Long, DeepPartial } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial } from "../helpers";
 export interface MsgCreatePool {
   creator: string;
   coinA: string;
@@ -137,17 +137,23 @@ export interface MsgCreateOrderSDKType {
   prev: string;
   next: string;
 }
-export interface MsgCreateOrderResponse {}
+export interface MsgCreateOrderResponse {
+  uid: Long;
+}
 export interface MsgCreateOrderResponseProtoMsg {
   typeUrl: "/pendulumlabs.market.market.MsgCreateOrderResponse";
   value: Uint8Array;
 }
-export interface MsgCreateOrderResponseAmino {}
+export interface MsgCreateOrderResponseAmino {
+  uid: string;
+}
 export interface MsgCreateOrderResponseAminoMsg {
   type: "/pendulumlabs.market.market.MsgCreateOrderResponse";
   value: MsgCreateOrderResponseAmino;
 }
-export interface MsgCreateOrderResponseSDKType {}
+export interface MsgCreateOrderResponseSDKType {
+  uid: Long;
+}
 export interface MsgCancelOrder {
   creator: string;
   uid: string;
@@ -184,7 +190,7 @@ export interface MsgMarketOrder {
   denomAsk: string;
   denomBid: string;
   amountBid: string;
-  /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
+  /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
   slippage: string;
 }
 export interface MsgMarketOrderProtoMsg {
@@ -196,7 +202,7 @@ export interface MsgMarketOrderAmino {
   denomAsk: string;
   denomBid: string;
   amountBid: string;
-  /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
+  /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
   slippage: string;
 }
 export interface MsgMarketOrderAminoMsg {
@@ -730,10 +736,15 @@ export const MsgCreateOrder = {
   }
 };
 function createBaseMsgCreateOrderResponse(): MsgCreateOrderResponse {
-  return {};
+  return {
+    uid: Long.UZERO
+  };
 }
 export const MsgCreateOrderResponse = {
-  encode(_: MsgCreateOrderResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgCreateOrderResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (!message.uid.isZero()) {
+      writer.uint32(8).uint64(message.uid);
+    }
     return writer;
   },
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgCreateOrderResponse {
@@ -743,6 +754,9 @@ export const MsgCreateOrderResponse = {
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
+        case 1:
+          message.uid = (reader.uint64() as Long);
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -750,15 +764,19 @@ export const MsgCreateOrderResponse = {
     }
     return message;
   },
-  fromPartial(_: DeepPartial<MsgCreateOrderResponse>): MsgCreateOrderResponse {
+  fromPartial(object: DeepPartial<MsgCreateOrderResponse>): MsgCreateOrderResponse {
     const message = createBaseMsgCreateOrderResponse();
+    message.uid = object.uid !== undefined && object.uid !== null ? Long.fromValue(object.uid) : Long.UZERO;
     return message;
   },
-  fromAmino(_: MsgCreateOrderResponseAmino): MsgCreateOrderResponse {
-    return {};
+  fromAmino(object: MsgCreateOrderResponseAmino): MsgCreateOrderResponse {
+    return {
+      uid: Long.fromString(object.uid)
+    };
   },
-  toAmino(_: MsgCreateOrderResponse): MsgCreateOrderResponseAmino {
+  toAmino(message: MsgCreateOrderResponse): MsgCreateOrderResponseAmino {
     const obj: any = {};
+    obj.uid = message.uid ? message.uid.toString() : undefined;
     return obj;
   },
   fromAminoMsg(object: MsgCreateOrderResponseAminoMsg): MsgCreateOrderResponse {

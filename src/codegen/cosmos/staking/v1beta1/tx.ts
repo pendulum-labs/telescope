@@ -367,7 +367,7 @@ export const MsgCreateValidator = {
       pubkey: encodeBech32Pubkey({
         type: "tendermint/PubKeySecp256k1",
         value: toBase64(object.pubkey.value)
-      }, "cosmos") as any,
+      }, "cosmos"),
       value: object?.value ? Coin.fromAmino(object.value) : undefined
     };
   },
@@ -380,7 +380,7 @@ export const MsgCreateValidator = {
     obj.validator_address = message.validatorAddress;
     obj.pubkey = message.pubkey ? {
       typeUrl: "/cosmos.crypto.secp256k1.PubKey",
-      value: fromBase64(decodeBech32Pubkey(message.pubkey as any).value)
+      value: fromBase64(decodeBech32Pubkey(message.pubkey).value)
     } : undefined;
     obj.value = message.value ? Coin.toAmino(message.value) : undefined;
     return obj;
