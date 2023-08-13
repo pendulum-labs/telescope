@@ -34,6 +34,7 @@ export interface DropSDKType {
 }
 export interface Drops {
   uids: Long[];
+  sum: string;
 }
 export interface DropsProtoMsg {
   typeUrl: "/pendulumlabs.market.market.Drops";
@@ -41,6 +42,7 @@ export interface DropsProtoMsg {
 }
 export interface DropsAmino {
   uids: string[];
+  sum: string;
 }
 export interface DropsAminoMsg {
   type: "/pendulumlabs.market.market.Drops";
@@ -48,23 +50,24 @@ export interface DropsAminoMsg {
 }
 export interface DropsSDKType {
   uids: Long[];
-}
-export interface DropsSum {
   sum: string;
 }
-export interface DropsSumProtoMsg {
-  typeUrl: "/pendulumlabs.market.market.DropsSum";
+export interface DropPairs {
+  pairs: string[];
+}
+export interface DropPairsProtoMsg {
+  typeUrl: "/pendulumlabs.market.market.DropPairs";
   value: Uint8Array;
 }
-export interface DropsSumAmino {
-  sum: string;
+export interface DropPairsAmino {
+  pairs: string[];
 }
-export interface DropsSumAminoMsg {
-  type: "/pendulumlabs.market.market.DropsSum";
-  value: DropsSumAmino;
+export interface DropPairsAminoMsg {
+  type: "/pendulumlabs.market.market.DropPairs";
+  value: DropPairsAmino;
 }
-export interface DropsSumSDKType {
-  sum: string;
+export interface DropPairsSDKType {
+  pairs: string[];
 }
 function createBaseDrop(): Drop {
   return {
@@ -178,7 +181,8 @@ export const Drop = {
 };
 function createBaseDrops(): Drops {
   return {
-    uids: []
+    uids: [],
+    sum: ""
   };
 }
 export const Drops = {
@@ -188,6 +192,9 @@ export const Drops = {
       writer.uint64(v);
     }
     writer.ldelim();
+    if (message.sum !== "") {
+      writer.uint32(18).string(message.sum);
+    }
     return writer;
   },
   decode(input: _m0.Reader | Uint8Array, length?: number): Drops {
@@ -207,6 +214,9 @@ export const Drops = {
             message.uids.push((reader.uint64() as Long));
           }
           break;
+        case 2:
+          message.sum = reader.string();
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -217,11 +227,13 @@ export const Drops = {
   fromPartial(object: DeepPartial<Drops>): Drops {
     const message = createBaseDrops();
     message.uids = object.uids?.map(e => Long.fromValue(e)) || [];
+    message.sum = object.sum ?? "";
     return message;
   },
   fromAmino(object: DropsAmino): Drops {
     return {
-      uids: Array.isArray(object?.uids) ? object.uids.map((e: any) => e) : []
+      uids: Array.isArray(object?.uids) ? object.uids.map((e: any) => e) : [],
+      sum: object.sum
     };
   },
   toAmino(message: Drops): DropsAmino {
@@ -231,6 +243,7 @@ export const Drops = {
     } else {
       obj.uids = [];
     }
+    obj.sum = message.sum;
     return obj;
   },
   fromAminoMsg(object: DropsAminoMsg): Drops {
@@ -249,27 +262,27 @@ export const Drops = {
     };
   }
 };
-function createBaseDropsSum(): DropsSum {
+function createBaseDropPairs(): DropPairs {
   return {
-    sum: ""
+    pairs: []
   };
 }
-export const DropsSum = {
-  encode(message: DropsSum, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.sum !== "") {
-      writer.uint32(10).string(message.sum);
+export const DropPairs = {
+  encode(message: DropPairs, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    for (const v of message.pairs) {
+      writer.uint32(10).string(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): DropsSum {
+  decode(input: _m0.Reader | Uint8Array, length?: number): DropPairs {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseDropsSum();
+    const message = createBaseDropPairs();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.sum = reader.string();
+          message.pairs.push(reader.string());
           break;
         default:
           reader.skipType(tag & 7);
@@ -278,34 +291,38 @@ export const DropsSum = {
     }
     return message;
   },
-  fromPartial(object: DeepPartial<DropsSum>): DropsSum {
-    const message = createBaseDropsSum();
-    message.sum = object.sum ?? "";
+  fromPartial(object: DeepPartial<DropPairs>): DropPairs {
+    const message = createBaseDropPairs();
+    message.pairs = object.pairs?.map(e => e) || [];
     return message;
   },
-  fromAmino(object: DropsSumAmino): DropsSum {
+  fromAmino(object: DropPairsAmino): DropPairs {
     return {
-      sum: object.sum
+      pairs: Array.isArray(object?.pairs) ? object.pairs.map((e: any) => e) : []
     };
   },
-  toAmino(message: DropsSum): DropsSumAmino {
+  toAmino(message: DropPairs): DropPairsAmino {
     const obj: any = {};
-    obj.sum = message.sum;
+    if (message.pairs) {
+      obj.pairs = message.pairs.map(e => e);
+    } else {
+      obj.pairs = [];
+    }
     return obj;
   },
-  fromAminoMsg(object: DropsSumAminoMsg): DropsSum {
-    return DropsSum.fromAmino(object.value);
+  fromAminoMsg(object: DropPairsAminoMsg): DropPairs {
+    return DropPairs.fromAmino(object.value);
   },
-  fromProtoMsg(message: DropsSumProtoMsg): DropsSum {
-    return DropsSum.decode(message.value);
+  fromProtoMsg(message: DropPairsProtoMsg): DropPairs {
+    return DropPairs.decode(message.value);
   },
-  toProto(message: DropsSum): Uint8Array {
-    return DropsSum.encode(message).finish();
+  toProto(message: DropPairs): Uint8Array {
+    return DropPairs.encode(message).finish();
   },
-  toProtoMsg(message: DropsSum): DropsSumProtoMsg {
+  toProtoMsg(message: DropPairs): DropPairsProtoMsg {
     return {
-      typeUrl: "/pendulumlabs.market.market.DropsSum",
-      value: DropsSum.encode(message).finish()
+      typeUrl: "/pendulumlabs.market.market.DropPairs",
+      value: DropPairs.encode(message).finish()
     };
   }
 };
