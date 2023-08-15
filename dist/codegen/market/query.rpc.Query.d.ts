@@ -1,6 +1,6 @@
 import { Rpc } from "../helpers";
 import { QueryClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryOrderOwnerRequest, QueryOrderOwnerResponse, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
     /** Parameters queries the parameters of the module. */
@@ -10,9 +10,15 @@ export interface Query {
     /** Queries a list of Pool items. */
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
     /** Queries a Drop by index. */
-    drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse>;
+    drop(request: QueryDropRequest): Promise<QueryDropResponse>;
+    /** Queries a Drop by index. */
+    dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
+    /** Queries a Drop by index. */
+    dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
+    /** Queries a Drop by index. */
+    dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse>;
     /** Queries a list of Drop items. */
-    dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse>;
+    dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse>;
     /** Queries a Member by index. */
     member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse>;
     /** Queries a list of Member items. */
@@ -22,11 +28,11 @@ export interface Query {
     /** Queries a list of Burnings items. */
     burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
     /** Queries a Order by index. */
-    order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
+    order(request: QueryOrderRequest): Promise<QueryOrderResponse>;
     /** Queries a list of Order items. */
-    orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
+    orderAll(request?: QueryAllOrderRequest): Promise<QueryOrdersResponse>;
     /** Queries a list of Order items. */
-    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrdersResponse>;
     /** Queries a list of Order items. */
     orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
     /** Queries a list of Book items. */
@@ -42,15 +48,18 @@ export declare class QueryClientImpl implements Query {
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
     pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
-    drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse>;
-    dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse>;
+    drop(request: QueryDropRequest): Promise<QueryDropResponse>;
+    dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
+    dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
+    dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse>;
+    dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse>;
     member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse>;
     memberAll(request?: QueryAllMemberRequest): Promise<QueryAllMemberResponse>;
     burnings(request: QueryGetBurningsRequest): Promise<QueryGetBurningsResponse>;
     burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
-    order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
-    orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
-    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+    order(request: QueryOrderRequest): Promise<QueryOrderResponse>;
+    orderAll(request?: QueryAllOrderRequest): Promise<QueryOrdersResponse>;
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrdersResponse>;
     orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
@@ -60,15 +69,18 @@ export declare const createRpcQueryExtension: (base: QueryClient) => {
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
     pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
-    drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse>;
-    dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse>;
+    drop(request: QueryDropRequest): Promise<QueryDropResponse>;
+    dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
+    dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
+    dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse>;
+    dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse>;
     member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse>;
     memberAll(request?: QueryAllMemberRequest): Promise<QueryAllMemberResponse>;
     burnings(request: QueryGetBurningsRequest): Promise<QueryGetBurningsResponse>;
     burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
-    order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
-    orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
-    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+    order(request: QueryOrderRequest): Promise<QueryOrderResponse>;
+    orderAll(request?: QueryAllOrderRequest): Promise<QueryOrdersResponse>;
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrdersResponse>;
     orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
     book(request: QueryBookRequest): Promise<QueryBookResponse>;
     bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;

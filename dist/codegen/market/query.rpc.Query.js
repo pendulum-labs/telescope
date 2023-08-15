@@ -35,6 +35,9 @@ class QueryClientImpl {
         this.pool = this.pool.bind(this);
         this.poolAll = this.poolAll.bind(this);
         this.drop = this.drop.bind(this);
+        this.dropAmounts = this.dropAmounts.bind(this);
+        this.dropPairs = this.dropPairs.bind(this);
+        this.dropOwnerPair = this.dropOwnerPair.bind(this);
         this.dropAll = this.dropAll.bind(this);
         this.member = this.member.bind(this);
         this.memberAll = this.memberAll.bind(this);
@@ -66,16 +69,31 @@ class QueryClientImpl {
         return promise.then(data => query_1.QueryAllPoolResponse.decode(new _m0.Reader(data)));
     }
     drop(request) {
-        const data = query_1.QueryGetDropRequest.encode(request).finish();
+        const data = query_1.QueryDropRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Drop", data);
-        return promise.then(data => query_1.QueryGetDropResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryDropResponse.decode(new _m0.Reader(data)));
+    }
+    dropAmounts(request) {
+        const data = query_1.QueryDropAmountsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAmounts", data);
+        return promise.then(data => query_1.QueryDropAmountsResponse.decode(new _m0.Reader(data)));
+    }
+    dropPairs(request) {
+        const data = query_1.QueryDropPairsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropPairs", data);
+        return promise.then(data => query_1.QueryDropPairsResponse.decode(new _m0.Reader(data)));
+    }
+    dropOwnerPair(request) {
+        const data = query_1.QueryDropOwnerPairRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropOwnerPair", data);
+        return promise.then(data => query_1.QueryDropsResponse.decode(new _m0.Reader(data)));
     }
     dropAll(request = {
         pagination: undefined
     }) {
         const data = query_1.QueryAllDropRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAll", data);
-        return promise.then(data => query_1.QueryAllDropResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryDropsResponse.decode(new _m0.Reader(data)));
     }
     member(request) {
         const data = query_1.QueryGetMemberRequest.encode(request).finish();
@@ -102,21 +120,21 @@ class QueryClientImpl {
         return promise.then(data => query_1.QueryAllBurningsResponse.decode(new _m0.Reader(data)));
     }
     order(request) {
-        const data = query_1.QueryGetOrderRequest.encode(request).finish();
+        const data = query_1.QueryOrderRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Order", data);
-        return promise.then(data => query_1.QueryGetOrderResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryOrderResponse.decode(new _m0.Reader(data)));
     }
     orderAll(request = {
         pagination: undefined
     }) {
         const data = query_1.QueryAllOrderRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
-        return promise.then(data => query_1.QueryAllOrderResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryOrdersResponse.decode(new _m0.Reader(data)));
     }
     orderOwner(request) {
         const data = query_1.QueryOrderOwnerRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwner", data);
-        return promise.then(data => query_1.QueryOrderOwnerResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryOrdersResponse.decode(new _m0.Reader(data)));
     }
     orderOwnerUids(request) {
         const data = query_1.QueryOrderOwnerRequest.encode(request).finish();
@@ -155,6 +173,15 @@ const createRpcQueryExtension = (base) => {
         },
         drop(request) {
             return queryService.drop(request);
+        },
+        dropAmounts(request) {
+            return queryService.dropAmounts(request);
+        },
+        dropPairs(request) {
+            return queryService.dropPairs(request);
+        },
+        dropOwnerPair(request) {
+            return queryService.dropOwnerPair(request);
         },
         dropAll(request) {
             return queryService.dropAll(request);

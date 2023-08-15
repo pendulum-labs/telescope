@@ -1,6 +1,6 @@
 import * as _m0 from "protobufjs/minimal";
 import { createProtobufRpcClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryOrderOwnerRequest, QueryOrderOwnerResponse, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 export class QueryClientImpl {
     rpc;
     constructor(rpc) {
@@ -9,6 +9,9 @@ export class QueryClientImpl {
         this.pool = this.pool.bind(this);
         this.poolAll = this.poolAll.bind(this);
         this.drop = this.drop.bind(this);
+        this.dropAmounts = this.dropAmounts.bind(this);
+        this.dropPairs = this.dropPairs.bind(this);
+        this.dropOwnerPair = this.dropOwnerPair.bind(this);
         this.dropAll = this.dropAll.bind(this);
         this.member = this.member.bind(this);
         this.memberAll = this.memberAll.bind(this);
@@ -40,16 +43,31 @@ export class QueryClientImpl {
         return promise.then(data => QueryAllPoolResponse.decode(new _m0.Reader(data)));
     }
     drop(request) {
-        const data = QueryGetDropRequest.encode(request).finish();
+        const data = QueryDropRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Drop", data);
-        return promise.then(data => QueryGetDropResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => QueryDropResponse.decode(new _m0.Reader(data)));
+    }
+    dropAmounts(request) {
+        const data = QueryDropAmountsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAmounts", data);
+        return promise.then(data => QueryDropAmountsResponse.decode(new _m0.Reader(data)));
+    }
+    dropPairs(request) {
+        const data = QueryDropPairsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropPairs", data);
+        return promise.then(data => QueryDropPairsResponse.decode(new _m0.Reader(data)));
+    }
+    dropOwnerPair(request) {
+        const data = QueryDropOwnerPairRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropOwnerPair", data);
+        return promise.then(data => QueryDropsResponse.decode(new _m0.Reader(data)));
     }
     dropAll(request = {
         pagination: undefined
     }) {
         const data = QueryAllDropRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAll", data);
-        return promise.then(data => QueryAllDropResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => QueryDropsResponse.decode(new _m0.Reader(data)));
     }
     member(request) {
         const data = QueryGetMemberRequest.encode(request).finish();
@@ -76,21 +94,21 @@ export class QueryClientImpl {
         return promise.then(data => QueryAllBurningsResponse.decode(new _m0.Reader(data)));
     }
     order(request) {
-        const data = QueryGetOrderRequest.encode(request).finish();
+        const data = QueryOrderRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Order", data);
-        return promise.then(data => QueryGetOrderResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => QueryOrderResponse.decode(new _m0.Reader(data)));
     }
     orderAll(request = {
         pagination: undefined
     }) {
         const data = QueryAllOrderRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
-        return promise.then(data => QueryAllOrderResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => QueryOrdersResponse.decode(new _m0.Reader(data)));
     }
     orderOwner(request) {
         const data = QueryOrderOwnerRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwner", data);
-        return promise.then(data => QueryOrderOwnerResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => QueryOrdersResponse.decode(new _m0.Reader(data)));
     }
     orderOwnerUids(request) {
         const data = QueryOrderOwnerRequest.encode(request).finish();
@@ -128,6 +146,15 @@ export const createRpcQueryExtension = (base) => {
         },
         drop(request) {
             return queryService.drop(request);
+        },
+        dropAmounts(request) {
+            return queryService.dropAmounts(request);
+        },
+        dropPairs(request) {
+            return queryService.dropPairs(request);
+        },
+        dropOwnerPair(request) {
+            return queryService.dropOwnerPair(request);
         },
         dropAll(request) {
             return queryService.dropAll(request);

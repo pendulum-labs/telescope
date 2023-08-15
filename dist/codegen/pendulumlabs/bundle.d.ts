@@ -19,15 +19,18 @@ export declare namespace pendulumlabs {
                 params(request?: _79.QueryParamsRequest): Promise<_79.QueryParamsResponse>;
                 pool(request: _79.QueryGetPoolRequest): Promise<_79.QueryGetPoolResponse>;
                 poolAll(request?: _79.QueryAllPoolRequest): Promise<_79.QueryAllPoolResponse>;
-                drop(request: _79.QueryGetDropRequest): Promise<_79.QueryGetDropResponse>;
-                dropAll(request?: _79.QueryAllDropRequest): Promise<_79.QueryAllDropResponse>;
+                drop(request: _79.QueryDropRequest): Promise<_79.QueryDropResponse>;
+                dropAmounts(request: _79.QueryDropAmountsRequest): Promise<_79.QueryDropAmountsResponse>;
+                dropPairs(request: _79.QueryDropPairsRequest): Promise<_79.QueryDropPairsResponse>;
+                dropOwnerPair(request: _79.QueryDropOwnerPairRequest): Promise<_79.QueryDropsResponse>;
+                dropAll(request?: _79.QueryAllDropRequest): Promise<_79.QueryDropsResponse>;
                 member(request: _79.QueryGetMemberRequest): Promise<_79.QueryGetMemberResponse>;
                 memberAll(request?: _79.QueryAllMemberRequest): Promise<_79.QueryAllMemberResponse>;
                 burnings(request: _79.QueryGetBurningsRequest): Promise<_79.QueryGetBurningsResponse>;
                 burningsAll(request?: _79.QueryAllBurningsRequest): Promise<_79.QueryAllBurningsResponse>;
-                order(request: _79.QueryGetOrderRequest): Promise<_79.QueryGetOrderResponse>;
-                orderAll(request?: _79.QueryAllOrderRequest): Promise<_79.QueryAllOrderResponse>;
-                orderOwner(request: _79.QueryOrderOwnerRequest): Promise<_79.QueryOrderOwnerResponse>;
+                order(request: _79.QueryOrderRequest): Promise<_79.QueryOrderResponse>;
+                orderAll(request?: _79.QueryAllOrderRequest): Promise<_79.QueryOrdersResponse>;
+                orderOwner(request: _79.QueryOrderOwnerRequest): Promise<_79.QueryOrdersResponse>;
                 orderOwnerUids(request: _79.QueryOrderOwnerRequest): Promise<_79.QueryOrderOwnerUidsResponse>;
                 book(request: _79.QueryBookRequest): Promise<_79.QueryBookResponse>;
                 bookends(request: _79.QueryBookendsRequest): Promise<_79.QueryBookendsResponse>;
@@ -421,22 +424,22 @@ export declare namespace pendulumlabs {
                 toProto(message: _79.QueryAllPoolResponse): Uint8Array;
                 toProtoMsg(message: _79.QueryAllPoolResponse): _79.QueryAllPoolResponseProtoMsg;
             };
-            QueryGetDropRequest: {
-                encode(message: _79.QueryGetDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryGetDropRequest;
+            QueryDropRequest: {
+                encode(message: _79.QueryDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropRequest;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                }): _79.QueryGetDropRequest;
-                fromAmino(object: _79.QueryGetDropRequestAmino): _79.QueryGetDropRequest;
-                toAmino(message: _79.QueryGetDropRequest): _79.QueryGetDropRequestAmino;
-                fromAminoMsg(object: _79.QueryGetDropRequestAminoMsg): _79.QueryGetDropRequest;
-                fromProtoMsg(message: _79.QueryGetDropRequestProtoMsg): _79.QueryGetDropRequest;
-                toProto(message: _79.QueryGetDropRequest): Uint8Array;
-                toProtoMsg(message: _79.QueryGetDropRequest): _79.QueryGetDropRequestProtoMsg;
+                }): _79.QueryDropRequest;
+                fromAmino(object: _79.QueryDropRequestAmino): _79.QueryDropRequest;
+                toAmino(message: _79.QueryDropRequest): _79.QueryDropRequestAmino;
+                fromAminoMsg(object: _79.QueryDropRequestAminoMsg): _79.QueryDropRequest;
+                fromProtoMsg(message: _79.QueryDropRequestProtoMsg): _79.QueryDropRequest;
+                toProto(message: _79.QueryDropRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropRequest): _79.QueryDropRequestProtoMsg;
             };
-            QueryGetDropResponse: {
-                encode(message: _79.QueryGetDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryGetDropResponse;
+            QueryDropResponse: {
+                encode(message: _79.QueryDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropResponse;
                 fromPartial(object: {
                     drop?: {
                         uid?: string | number | import("long").Long;
@@ -446,13 +449,175 @@ export declare namespace pendulumlabs {
                         product?: string;
                         active?: boolean;
                     };
-                }): _79.QueryGetDropResponse;
-                fromAmino(object: _79.QueryGetDropResponseAmino): _79.QueryGetDropResponse;
-                toAmino(message: _79.QueryGetDropResponse): _79.QueryGetDropResponseAmino;
-                fromAminoMsg(object: _79.QueryGetDropResponseAminoMsg): _79.QueryGetDropResponse;
-                fromProtoMsg(message: _79.QueryGetDropResponseProtoMsg): _79.QueryGetDropResponse;
-                toProto(message: _79.QueryGetDropResponse): Uint8Array;
-                toProtoMsg(message: _79.QueryGetDropResponse): _79.QueryGetDropResponseProtoMsg;
+                }): _79.QueryDropResponse;
+                fromAmino(object: _79.QueryDropResponseAmino): _79.QueryDropResponse;
+                toAmino(message: _79.QueryDropResponse): _79.QueryDropResponseAmino;
+                fromAminoMsg(object: _79.QueryDropResponseAminoMsg): _79.QueryDropResponse;
+                fromProtoMsg(message: _79.QueryDropResponseProtoMsg): _79.QueryDropResponse;
+                toProto(message: _79.QueryDropResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryDropResponse): _79.QueryDropResponseProtoMsg;
+            };
+            QueryDropAmountsRequest: {
+                encode(message: _79.QueryDropAmountsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropAmountsRequest;
+                fromPartial(object: {
+                    uid?: string | number | import("long").Long;
+                }): _79.QueryDropAmountsRequest;
+                fromAmino(object: _79.QueryDropAmountsRequestAmino): _79.QueryDropAmountsRequest;
+                toAmino(message: _79.QueryDropAmountsRequest): _79.QueryDropAmountsRequestAmino;
+                fromAminoMsg(object: _79.QueryDropAmountsRequestAminoMsg): _79.QueryDropAmountsRequest;
+                fromProtoMsg(message: _79.QueryDropAmountsRequestProtoMsg): _79.QueryDropAmountsRequest;
+                toProto(message: _79.QueryDropAmountsRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropAmountsRequest): _79.QueryDropAmountsRequestProtoMsg;
+            };
+            QueryDropAmountsResponse: {
+                encode(message: _79.QueryDropAmountsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropAmountsResponse;
+                fromPartial(object: {
+                    denom1?: string;
+                    denom2?: string;
+                    amount1?: string;
+                    amount2?: string;
+                }): _79.QueryDropAmountsResponse;
+                fromAmino(object: _79.QueryDropAmountsResponseAmino): _79.QueryDropAmountsResponse;
+                toAmino(message: _79.QueryDropAmountsResponse): _79.QueryDropAmountsResponseAmino;
+                fromAminoMsg(object: _79.QueryDropAmountsResponseAminoMsg): _79.QueryDropAmountsResponse;
+                fromProtoMsg(message: _79.QueryDropAmountsResponseProtoMsg): _79.QueryDropAmountsResponse;
+                toProto(message: _79.QueryDropAmountsResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryDropAmountsResponse): _79.QueryDropAmountsResponseProtoMsg;
+            };
+            QueryDropPairsRequest: {
+                encode(message: _79.QueryDropPairsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropPairsRequest;
+                fromPartial(object: {
+                    address?: string;
+                }): _79.QueryDropPairsRequest;
+                fromAmino(object: _79.QueryDropPairsRequestAmino): _79.QueryDropPairsRequest;
+                toAmino(message: _79.QueryDropPairsRequest): _79.QueryDropPairsRequestAmino;
+                fromAminoMsg(object: _79.QueryDropPairsRequestAminoMsg): _79.QueryDropPairsRequest;
+                fromProtoMsg(message: _79.QueryDropPairsRequestProtoMsg): _79.QueryDropPairsRequest;
+                toProto(message: _79.QueryDropPairsRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropPairsRequest): _79.QueryDropPairsRequestProtoMsg;
+            };
+            QueryDropPairsResponse: {
+                encode(message: _79.QueryDropPairsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropPairsResponse;
+                fromPartial(object: {
+                    pairs?: string[];
+                }): _79.QueryDropPairsResponse;
+                fromAmino(object: _79.QueryDropPairsResponseAmino): _79.QueryDropPairsResponse;
+                toAmino(message: _79.QueryDropPairsResponse): _79.QueryDropPairsResponseAmino;
+                fromAminoMsg(object: _79.QueryDropPairsResponseAminoMsg): _79.QueryDropPairsResponse;
+                fromProtoMsg(message: _79.QueryDropPairsResponseProtoMsg): _79.QueryDropPairsResponse;
+                toProto(message: _79.QueryDropPairsResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryDropPairsResponse): _79.QueryDropPairsResponseProtoMsg;
+            };
+            QueryDropOwnerPairRequest: {
+                encode(message: _79.QueryDropOwnerPairRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropOwnerPairRequest;
+                fromPartial(object: {
+                    address?: string;
+                    pair?: string;
+                    pagination?: {
+                        key?: Uint8Array;
+                        offset?: string | number | import("long").Long;
+                        limit?: string | number | import("long").Long;
+                        countTotal?: boolean;
+                        reverse?: boolean;
+                    };
+                }): _79.QueryDropOwnerPairRequest;
+                fromAmino(object: _79.QueryDropOwnerPairRequestAmino): _79.QueryDropOwnerPairRequest;
+                toAmino(message: _79.QueryDropOwnerPairRequest): _79.QueryDropOwnerPairRequestAmino;
+                fromAminoMsg(object: _79.QueryDropOwnerPairRequestAminoMsg): _79.QueryDropOwnerPairRequest;
+                fromProtoMsg(message: _79.QueryDropOwnerPairRequestProtoMsg): _79.QueryDropOwnerPairRequest;
+                toProto(message: _79.QueryDropOwnerPairRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropOwnerPairRequest): _79.QueryDropOwnerPairRequestProtoMsg;
+            };
+            QueryDropOwnerPairSumRequest: {
+                encode(message: _79.QueryDropOwnerPairSumRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropOwnerPairSumRequest;
+                fromPartial(object: {
+                    address?: string;
+                    pair?: string;
+                }): _79.QueryDropOwnerPairSumRequest;
+                fromAmino(object: _79.QueryDropOwnerPairSumRequestAmino): _79.QueryDropOwnerPairSumRequest;
+                toAmino(message: _79.QueryDropOwnerPairSumRequest): _79.QueryDropOwnerPairSumRequestAmino;
+                fromAminoMsg(object: _79.QueryDropOwnerPairSumRequestAminoMsg): _79.QueryDropOwnerPairSumRequest;
+                fromProtoMsg(message: _79.QueryDropOwnerPairSumRequestProtoMsg): _79.QueryDropOwnerPairSumRequest;
+                toProto(message: _79.QueryDropOwnerPairSumRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropOwnerPairSumRequest): _79.QueryDropOwnerPairSumRequestProtoMsg;
+            };
+            QueryDropOwnerPairSumResponse: {
+                encode(message: _79.QueryDropOwnerPairSumResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropOwnerPairSumResponse;
+                fromPartial(object: {
+                    sum?: string;
+                }): _79.QueryDropOwnerPairSumResponse;
+                fromAmino(object: _79.QueryDropOwnerPairSumResponseAmino): _79.QueryDropOwnerPairSumResponse;
+                toAmino(message: _79.QueryDropOwnerPairSumResponse): _79.QueryDropOwnerPairSumResponseAmino;
+                fromAminoMsg(object: _79.QueryDropOwnerPairSumResponseAminoMsg): _79.QueryDropOwnerPairSumResponse;
+                fromProtoMsg(message: _79.QueryDropOwnerPairSumResponseProtoMsg): _79.QueryDropOwnerPairSumResponse;
+                toProto(message: _79.QueryDropOwnerPairSumResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryDropOwnerPairSumResponse): _79.QueryDropOwnerPairSumResponseProtoMsg;
+            };
+            QueryDropOwnerPairUidsRequest: {
+                encode(message: _79.QueryDropOwnerPairUidsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropOwnerPairUidsRequest;
+                fromPartial(object: {
+                    address?: string;
+                    pair?: string;
+                    pagination?: {
+                        key?: Uint8Array;
+                        offset?: string | number | import("long").Long;
+                        limit?: string | number | import("long").Long;
+                        countTotal?: boolean;
+                        reverse?: boolean;
+                    };
+                }): _79.QueryDropOwnerPairUidsRequest;
+                fromAmino(object: _79.QueryDropOwnerPairUidsRequestAmino): _79.QueryDropOwnerPairUidsRequest;
+                toAmino(message: _79.QueryDropOwnerPairUidsRequest): _79.QueryDropOwnerPairUidsRequestAmino;
+                fromAminoMsg(object: _79.QueryDropOwnerPairUidsRequestAminoMsg): _79.QueryDropOwnerPairUidsRequest;
+                fromProtoMsg(message: _79.QueryDropOwnerPairUidsRequestProtoMsg): _79.QueryDropOwnerPairUidsRequest;
+                toProto(message: _79.QueryDropOwnerPairUidsRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropOwnerPairUidsRequest): _79.QueryDropOwnerPairUidsRequestProtoMsg;
+            };
+            QueryUidsResponse: {
+                encode(message: _79.QueryUidsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryUidsResponse;
+                fromPartial(object: {
+                    uids?: (string | number | import("long").Long)[];
+                    pagination?: {
+                        nextKey?: Uint8Array;
+                        total?: string | number | import("long").Long;
+                    };
+                }): _79.QueryUidsResponse;
+                fromAmino(object: _79.QueryUidsResponseAmino): _79.QueryUidsResponse;
+                toAmino(message: _79.QueryUidsResponse): _79.QueryUidsResponseAmino;
+                fromAminoMsg(object: _79.QueryUidsResponseAminoMsg): _79.QueryUidsResponse;
+                fromProtoMsg(message: _79.QueryUidsResponseProtoMsg): _79.QueryUidsResponse;
+                toProto(message: _79.QueryUidsResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryUidsResponse): _79.QueryUidsResponseProtoMsg;
+            };
+            QueryDropOwnerPairDetailRequest: {
+                encode(message: _79.QueryDropOwnerPairDetailRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropOwnerPairDetailRequest;
+                fromPartial(object: {
+                    address?: string;
+                    pair?: string;
+                    pagination?: {
+                        key?: Uint8Array;
+                        offset?: string | number | import("long").Long;
+                        limit?: string | number | import("long").Long;
+                        countTotal?: boolean;
+                        reverse?: boolean;
+                    };
+                }): _79.QueryDropOwnerPairDetailRequest;
+                fromAmino(object: _79.QueryDropOwnerPairDetailRequestAmino): _79.QueryDropOwnerPairDetailRequest;
+                toAmino(message: _79.QueryDropOwnerPairDetailRequest): _79.QueryDropOwnerPairDetailRequestAmino;
+                fromAminoMsg(object: _79.QueryDropOwnerPairDetailRequestAminoMsg): _79.QueryDropOwnerPairDetailRequest;
+                fromProtoMsg(message: _79.QueryDropOwnerPairDetailRequestProtoMsg): _79.QueryDropOwnerPairDetailRequest;
+                toProto(message: _79.QueryDropOwnerPairDetailRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryDropOwnerPairDetailRequest): _79.QueryDropOwnerPairDetailRequestProtoMsg;
             };
             QueryAllDropRequest: {
                 encode(message: _79.QueryAllDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -473,11 +638,11 @@ export declare namespace pendulumlabs {
                 toProto(message: _79.QueryAllDropRequest): Uint8Array;
                 toProtoMsg(message: _79.QueryAllDropRequest): _79.QueryAllDropRequestProtoMsg;
             };
-            QueryAllDropResponse: {
-                encode(message: _79.QueryAllDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryAllDropResponse;
+            QueryDropsResponse: {
+                encode(message: _79.QueryDropsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryDropsResponse;
                 fromPartial(object: {
-                    drop?: {
+                    drops?: {
                         uid?: string | number | import("long").Long;
                         owner?: string;
                         pair?: string;
@@ -489,13 +654,13 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _79.QueryAllDropResponse;
-                fromAmino(object: _79.QueryAllDropResponseAmino): _79.QueryAllDropResponse;
-                toAmino(message: _79.QueryAllDropResponse): _79.QueryAllDropResponseAmino;
-                fromAminoMsg(object: _79.QueryAllDropResponseAminoMsg): _79.QueryAllDropResponse;
-                fromProtoMsg(message: _79.QueryAllDropResponseProtoMsg): _79.QueryAllDropResponse;
-                toProto(message: _79.QueryAllDropResponse): Uint8Array;
-                toProtoMsg(message: _79.QueryAllDropResponse): _79.QueryAllDropResponseProtoMsg;
+                }): _79.QueryDropsResponse;
+                fromAmino(object: _79.QueryDropsResponseAmino): _79.QueryDropsResponse;
+                toAmino(message: _79.QueryDropsResponse): _79.QueryDropsResponseAmino;
+                fromAminoMsg(object: _79.QueryDropsResponseAminoMsg): _79.QueryDropsResponse;
+                fromProtoMsg(message: _79.QueryDropsResponseProtoMsg): _79.QueryDropsResponse;
+                toProto(message: _79.QueryDropsResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryDropsResponse): _79.QueryDropsResponseProtoMsg;
             };
             QueryGetMemberRequest: {
                 encode(message: _79.QueryGetMemberRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -644,22 +809,22 @@ export declare namespace pendulumlabs {
                 toProto(message: _79.QueryAllBurningsResponse): Uint8Array;
                 toProtoMsg(message: _79.QueryAllBurningsResponse): _79.QueryAllBurningsResponseProtoMsg;
             };
-            QueryGetOrderRequest: {
-                encode(message: _79.QueryGetOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryGetOrderRequest;
+            QueryOrderRequest: {
+                encode(message: _79.QueryOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryOrderRequest;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                }): _79.QueryGetOrderRequest;
-                fromAmino(object: _79.QueryGetOrderRequestAmino): _79.QueryGetOrderRequest;
-                toAmino(message: _79.QueryGetOrderRequest): _79.QueryGetOrderRequestAmino;
-                fromAminoMsg(object: _79.QueryGetOrderRequestAminoMsg): _79.QueryGetOrderRequest;
-                fromProtoMsg(message: _79.QueryGetOrderRequestProtoMsg): _79.QueryGetOrderRequest;
-                toProto(message: _79.QueryGetOrderRequest): Uint8Array;
-                toProtoMsg(message: _79.QueryGetOrderRequest): _79.QueryGetOrderRequestProtoMsg;
+                }): _79.QueryOrderRequest;
+                fromAmino(object: _79.QueryOrderRequestAmino): _79.QueryOrderRequest;
+                toAmino(message: _79.QueryOrderRequest): _79.QueryOrderRequestAmino;
+                fromAminoMsg(object: _79.QueryOrderRequestAminoMsg): _79.QueryOrderRequest;
+                fromProtoMsg(message: _79.QueryOrderRequestProtoMsg): _79.QueryOrderRequest;
+                toProto(message: _79.QueryOrderRequest): Uint8Array;
+                toProtoMsg(message: _79.QueryOrderRequest): _79.QueryOrderRequestProtoMsg;
             };
-            QueryGetOrderResponse: {
-                encode(message: _79.QueryGetOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryGetOrderResponse;
+            QueryOrderResponse: {
+                encode(message: _79.QueryOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryOrderResponse;
                 fromPartial(object: {
                     order?: {
                         uid?: string | number | import("long").Long;
@@ -675,13 +840,43 @@ export declare namespace pendulumlabs {
                         begTime?: string | number | import("long").Long;
                         endTime?: string | number | import("long").Long;
                     };
-                }): _79.QueryGetOrderResponse;
-                fromAmino(object: _79.QueryGetOrderResponseAmino): _79.QueryGetOrderResponse;
-                toAmino(message: _79.QueryGetOrderResponse): _79.QueryGetOrderResponseAmino;
-                fromAminoMsg(object: _79.QueryGetOrderResponseAminoMsg): _79.QueryGetOrderResponse;
-                fromProtoMsg(message: _79.QueryGetOrderResponseProtoMsg): _79.QueryGetOrderResponse;
-                toProto(message: _79.QueryGetOrderResponse): Uint8Array;
-                toProtoMsg(message: _79.QueryGetOrderResponse): _79.QueryGetOrderResponseProtoMsg;
+                }): _79.QueryOrderResponse;
+                fromAmino(object: _79.QueryOrderResponseAmino): _79.QueryOrderResponse;
+                toAmino(message: _79.QueryOrderResponse): _79.QueryOrderResponseAmino;
+                fromAminoMsg(object: _79.QueryOrderResponseAminoMsg): _79.QueryOrderResponse;
+                fromProtoMsg(message: _79.QueryOrderResponseProtoMsg): _79.QueryOrderResponse;
+                toProto(message: _79.QueryOrderResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryOrderResponse): _79.QueryOrderResponseProtoMsg;
+            };
+            QueryOrdersResponse: {
+                encode(message: _79.QueryOrdersResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryOrdersResponse;
+                fromPartial(object: {
+                    orders?: {
+                        uid?: string | number | import("long").Long;
+                        owner?: string;
+                        status?: string;
+                        orderType?: string;
+                        denomAsk?: string;
+                        denomBid?: string;
+                        amount?: string;
+                        rate?: string[];
+                        prev?: string | number | import("long").Long;
+                        next?: string | number | import("long").Long;
+                        begTime?: string | number | import("long").Long;
+                        endTime?: string | number | import("long").Long;
+                    }[];
+                    pagination?: {
+                        nextKey?: Uint8Array;
+                        total?: string | number | import("long").Long;
+                    };
+                }): _79.QueryOrdersResponse;
+                fromAmino(object: _79.QueryOrdersResponseAmino): _79.QueryOrdersResponse;
+                toAmino(message: _79.QueryOrdersResponse): _79.QueryOrdersResponseAmino;
+                fromAminoMsg(object: _79.QueryOrdersResponseAminoMsg): _79.QueryOrdersResponse;
+                fromProtoMsg(message: _79.QueryOrdersResponseProtoMsg): _79.QueryOrdersResponse;
+                toProto(message: _79.QueryOrdersResponse): Uint8Array;
+                toProtoMsg(message: _79.QueryOrdersResponse): _79.QueryOrdersResponseProtoMsg;
             };
             QueryAllOrderRequest: {
                 encode(message: _79.QueryAllOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -702,36 +897,6 @@ export declare namespace pendulumlabs {
                 toProto(message: _79.QueryAllOrderRequest): Uint8Array;
                 toProtoMsg(message: _79.QueryAllOrderRequest): _79.QueryAllOrderRequestProtoMsg;
             };
-            QueryAllOrderResponse: {
-                encode(message: _79.QueryAllOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryAllOrderResponse;
-                fromPartial(object: {
-                    order?: {
-                        uid?: string | number | import("long").Long;
-                        owner?: string;
-                        status?: string;
-                        orderType?: string;
-                        denomAsk?: string;
-                        denomBid?: string;
-                        amount?: string;
-                        rate?: string[];
-                        prev?: string | number | import("long").Long;
-                        next?: string | number | import("long").Long;
-                        begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
-                    }[];
-                    pagination?: {
-                        nextKey?: Uint8Array;
-                        total?: string | number | import("long").Long;
-                    };
-                }): _79.QueryAllOrderResponse;
-                fromAmino(object: _79.QueryAllOrderResponseAmino): _79.QueryAllOrderResponse;
-                toAmino(message: _79.QueryAllOrderResponse): _79.QueryAllOrderResponseAmino;
-                fromAminoMsg(object: _79.QueryAllOrderResponseAminoMsg): _79.QueryAllOrderResponse;
-                fromProtoMsg(message: _79.QueryAllOrderResponseProtoMsg): _79.QueryAllOrderResponse;
-                toProto(message: _79.QueryAllOrderResponse): Uint8Array;
-                toProtoMsg(message: _79.QueryAllOrderResponse): _79.QueryAllOrderResponseProtoMsg;
-            };
             QueryOrderOwnerRequest: {
                 encode(message: _79.QueryOrderOwnerRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryOrderOwnerRequest;
@@ -751,36 +916,6 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _79.QueryOrderOwnerRequestProtoMsg): _79.QueryOrderOwnerRequest;
                 toProto(message: _79.QueryOrderOwnerRequest): Uint8Array;
                 toProtoMsg(message: _79.QueryOrderOwnerRequest): _79.QueryOrderOwnerRequestProtoMsg;
-            };
-            QueryOrderOwnerResponse: {
-                encode(message: _79.QueryOrderOwnerResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.QueryOrderOwnerResponse;
-                fromPartial(object: {
-                    orders?: {
-                        uid?: string | number | import("long").Long;
-                        owner?: string;
-                        status?: string;
-                        orderType?: string;
-                        denomAsk?: string;
-                        denomBid?: string;
-                        amount?: string;
-                        rate?: string[];
-                        prev?: string | number | import("long").Long;
-                        next?: string | number | import("long").Long;
-                        begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
-                    }[];
-                    pagination?: {
-                        nextKey?: Uint8Array;
-                        total?: string | number | import("long").Long;
-                    };
-                }): _79.QueryOrderOwnerResponse;
-                fromAmino(object: _79.QueryOrderOwnerResponseAmino): _79.QueryOrderOwnerResponse;
-                toAmino(message: _79.QueryOrderOwnerResponse): _79.QueryOrderOwnerResponseAmino;
-                fromAminoMsg(object: _79.QueryOrderOwnerResponseAminoMsg): _79.QueryOrderOwnerResponse;
-                fromProtoMsg(message: _79.QueryOrderOwnerResponseProtoMsg): _79.QueryOrderOwnerResponse;
-                toProto(message: _79.QueryOrderOwnerResponse): Uint8Array;
-                toProtoMsg(message: _79.QueryOrderOwnerResponse): _79.QueryOrderOwnerResponseProtoMsg;
             };
             QueryOrderOwnerUidsResponse: {
                 encode(message: _79.QueryOrderOwnerUidsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -1207,6 +1342,7 @@ export declare namespace pendulumlabs {
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.Drops;
                 fromPartial(object: {
                     uids?: (string | number | import("long").Long)[];
+                    sum?: string;
                 }): _73.Drops;
                 fromAmino(object: _73.DropsAmino): _73.Drops;
                 toAmino(message: _73.Drops): _73.DropsAmino;
@@ -1215,18 +1351,18 @@ export declare namespace pendulumlabs {
                 toProto(message: _73.Drops): Uint8Array;
                 toProtoMsg(message: _73.Drops): _73.DropsProtoMsg;
             };
-            DropsSum: {
-                encode(message: _73.DropsSum, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.DropsSum;
+            DropPairs: {
+                encode(message: _73.DropPairs, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.DropPairs;
                 fromPartial(object: {
-                    sum?: string;
-                }): _73.DropsSum;
-                fromAmino(object: _73.DropsSumAmino): _73.DropsSum;
-                toAmino(message: _73.DropsSum): _73.DropsSumAmino;
-                fromAminoMsg(object: _73.DropsSumAminoMsg): _73.DropsSum;
-                fromProtoMsg(message: _73.DropsSumProtoMsg): _73.DropsSum;
-                toProto(message: _73.DropsSum): Uint8Array;
-                toProtoMsg(message: _73.DropsSum): _73.DropsSumProtoMsg;
+                    pairs?: string[];
+                }): _73.DropPairs;
+                fromAmino(object: _73.DropPairsAmino): _73.DropPairs;
+                toAmino(message: _73.DropPairs): _73.DropPairsAmino;
+                fromAminoMsg(object: _73.DropPairsAminoMsg): _73.DropPairs;
+                fromProtoMsg(message: _73.DropPairsProtoMsg): _73.DropPairs;
+                toProto(message: _73.DropPairs): Uint8Array;
+                toProtoMsg(message: _73.DropPairs): _73.DropPairsProtoMsg;
             };
             Burnings: {
                 encode(message: _72.Burnings, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -1364,15 +1500,18 @@ export declare namespace pendulumlabs {
                         params(request?: _79.QueryParamsRequest): Promise<_79.QueryParamsResponse>;
                         pool(request: _79.QueryGetPoolRequest): Promise<_79.QueryGetPoolResponse>;
                         poolAll(request?: _79.QueryAllPoolRequest): Promise<_79.QueryAllPoolResponse>;
-                        drop(request: _79.QueryGetDropRequest): Promise<_79.QueryGetDropResponse>;
-                        dropAll(request?: _79.QueryAllDropRequest): Promise<_79.QueryAllDropResponse>;
+                        drop(request: _79.QueryDropRequest): Promise<_79.QueryDropResponse>;
+                        dropAmounts(request: _79.QueryDropAmountsRequest): Promise<_79.QueryDropAmountsResponse>;
+                        dropPairs(request: _79.QueryDropPairsRequest): Promise<_79.QueryDropPairsResponse>;
+                        dropOwnerPair(request: _79.QueryDropOwnerPairRequest): Promise<_79.QueryDropsResponse>;
+                        dropAll(request?: _79.QueryAllDropRequest): Promise<_79.QueryDropsResponse>;
                         member(request: _79.QueryGetMemberRequest): Promise<_79.QueryGetMemberResponse>;
                         memberAll(request?: _79.QueryAllMemberRequest): Promise<_79.QueryAllMemberResponse>;
                         burnings(request: _79.QueryGetBurningsRequest): Promise<_79.QueryGetBurningsResponse>;
                         burningsAll(request?: _79.QueryAllBurningsRequest): Promise<_79.QueryAllBurningsResponse>;
-                        order(request: _79.QueryGetOrderRequest): Promise<_79.QueryGetOrderResponse>;
-                        orderAll(request?: _79.QueryAllOrderRequest): Promise<_79.QueryAllOrderResponse>;
-                        orderOwner(request: _79.QueryOrderOwnerRequest): Promise<_79.QueryOrderOwnerResponse>;
+                        order(request: _79.QueryOrderRequest): Promise<_79.QueryOrderResponse>;
+                        orderAll(request?: _79.QueryAllOrderRequest): Promise<_79.QueryOrdersResponse>;
+                        orderOwner(request: _79.QueryOrderOwnerRequest): Promise<_79.QueryOrdersResponse>;
                         orderOwnerUids(request: _79.QueryOrderOwnerRequest): Promise<_79.QueryOrderOwnerUidsResponse>;
                         book(request: _79.QueryBookRequest): Promise<_79.QueryBookResponse>;
                         bookends(request: _79.QueryBookendsRequest): Promise<_79.QueryBookendsResponse>;

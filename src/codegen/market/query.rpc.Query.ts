@@ -1,7 +1,7 @@
 import { Rpc } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryGetDropRequest, QueryGetDropResponse, QueryAllDropRequest, QueryAllDropResponse, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryGetOrderRequest, QueryGetOrderResponse, QueryAllOrderRequest, QueryAllOrderResponse, QueryOrderOwnerRequest, QueryOrderOwnerResponse, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
   /** Parameters queries the parameters of the module. */
@@ -11,9 +11,15 @@ export interface Query {
   /** Queries a list of Pool items. */
   poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
   /** Queries a Drop by index. */
-  drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse>;
+  drop(request: QueryDropRequest): Promise<QueryDropResponse>;
+  /** Queries a Drop by index. */
+  dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
+  /** Queries a Drop by index. */
+  dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
+  /** Queries a Drop by index. */
+  dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse>;
   /** Queries a list of Drop items. */
-  dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse>;
+  dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse>;
   /** Queries a Member by index. */
   member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse>;
   /** Queries a list of Member items. */
@@ -23,11 +29,11 @@ export interface Query {
   /** Queries a list of Burnings items. */
   burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse>;
   /** Queries a Order by index. */
-  order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse>;
+  order(request: QueryOrderRequest): Promise<QueryOrderResponse>;
   /** Queries a list of Order items. */
-  orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse>;
+  orderAll(request?: QueryAllOrderRequest): Promise<QueryOrdersResponse>;
   /** Queries a list of Order items. */
-  orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse>;
+  orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrdersResponse>;
   /** Queries a list of Order items. */
   orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse>;
   /** Queries a list of Book items. */
@@ -45,6 +51,9 @@ export class QueryClientImpl implements Query {
     this.pool = this.pool.bind(this);
     this.poolAll = this.poolAll.bind(this);
     this.drop = this.drop.bind(this);
+    this.dropAmounts = this.dropAmounts.bind(this);
+    this.dropPairs = this.dropPairs.bind(this);
+    this.dropOwnerPair = this.dropOwnerPair.bind(this);
     this.dropAll = this.dropAll.bind(this);
     this.member = this.member.bind(this);
     this.memberAll = this.memberAll.bind(this);
@@ -75,17 +84,32 @@ export class QueryClientImpl implements Query {
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "PoolAll", data);
     return promise.then(data => QueryAllPoolResponse.decode(new _m0.Reader(data)));
   }
-  drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse> {
-    const data = QueryGetDropRequest.encode(request).finish();
+  drop(request: QueryDropRequest): Promise<QueryDropResponse> {
+    const data = QueryDropRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "Drop", data);
-    return promise.then(data => QueryGetDropResponse.decode(new _m0.Reader(data)));
+    return promise.then(data => QueryDropResponse.decode(new _m0.Reader(data)));
+  }
+  dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse> {
+    const data = QueryDropAmountsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAmounts", data);
+    return promise.then(data => QueryDropAmountsResponse.decode(new _m0.Reader(data)));
+  }
+  dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse> {
+    const data = QueryDropPairsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropPairs", data);
+    return promise.then(data => QueryDropPairsResponse.decode(new _m0.Reader(data)));
+  }
+  dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse> {
+    const data = QueryDropOwnerPairRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropOwnerPair", data);
+    return promise.then(data => QueryDropsResponse.decode(new _m0.Reader(data)));
   }
   dropAll(request: QueryAllDropRequest = {
     pagination: undefined
-  }): Promise<QueryAllDropResponse> {
+  }): Promise<QueryDropsResponse> {
     const data = QueryAllDropRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAll", data);
-    return promise.then(data => QueryAllDropResponse.decode(new _m0.Reader(data)));
+    return promise.then(data => QueryDropsResponse.decode(new _m0.Reader(data)));
   }
   member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse> {
     const data = QueryGetMemberRequest.encode(request).finish();
@@ -111,22 +135,22 @@ export class QueryClientImpl implements Query {
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "BurningsAll", data);
     return promise.then(data => QueryAllBurningsResponse.decode(new _m0.Reader(data)));
   }
-  order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse> {
-    const data = QueryGetOrderRequest.encode(request).finish();
+  order(request: QueryOrderRequest): Promise<QueryOrderResponse> {
+    const data = QueryOrderRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "Order", data);
-    return promise.then(data => QueryGetOrderResponse.decode(new _m0.Reader(data)));
+    return promise.then(data => QueryOrderResponse.decode(new _m0.Reader(data)));
   }
   orderAll(request: QueryAllOrderRequest = {
     pagination: undefined
-  }): Promise<QueryAllOrderResponse> {
+  }): Promise<QueryOrdersResponse> {
     const data = QueryAllOrderRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
-    return promise.then(data => QueryAllOrderResponse.decode(new _m0.Reader(data)));
+    return promise.then(data => QueryOrdersResponse.decode(new _m0.Reader(data)));
   }
-  orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse> {
+  orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrdersResponse> {
     const data = QueryOrderOwnerRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwner", data);
-    return promise.then(data => QueryOrderOwnerResponse.decode(new _m0.Reader(data)));
+    return promise.then(data => QueryOrdersResponse.decode(new _m0.Reader(data)));
   }
   orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse> {
     const data = QueryOrderOwnerRequest.encode(request).finish();
@@ -162,10 +186,19 @@ export const createRpcQueryExtension = (base: QueryClient) => {
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse> {
       return queryService.poolAll(request);
     },
-    drop(request: QueryGetDropRequest): Promise<QueryGetDropResponse> {
+    drop(request: QueryDropRequest): Promise<QueryDropResponse> {
       return queryService.drop(request);
     },
-    dropAll(request?: QueryAllDropRequest): Promise<QueryAllDropResponse> {
+    dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse> {
+      return queryService.dropAmounts(request);
+    },
+    dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse> {
+      return queryService.dropPairs(request);
+    },
+    dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse> {
+      return queryService.dropOwnerPair(request);
+    },
+    dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse> {
       return queryService.dropAll(request);
     },
     member(request: QueryGetMemberRequest): Promise<QueryGetMemberResponse> {
@@ -180,13 +213,13 @@ export const createRpcQueryExtension = (base: QueryClient) => {
     burningsAll(request?: QueryAllBurningsRequest): Promise<QueryAllBurningsResponse> {
       return queryService.burningsAll(request);
     },
-    order(request: QueryGetOrderRequest): Promise<QueryGetOrderResponse> {
+    order(request: QueryOrderRequest): Promise<QueryOrderResponse> {
       return queryService.order(request);
     },
-    orderAll(request?: QueryAllOrderRequest): Promise<QueryAllOrderResponse> {
+    orderAll(request?: QueryAllOrderRequest): Promise<QueryOrdersResponse> {
       return queryService.orderAll(request);
     },
-    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerResponse> {
+    orderOwner(request: QueryOrderOwnerRequest): Promise<QueryOrdersResponse> {
       return queryService.orderOwner(request);
     },
     orderOwnerUids(request: QueryOrderOwnerRequest): Promise<QueryOrderOwnerUidsResponse> {

@@ -1,6 +1,6 @@
 {
   "name": "@onomy/telescope",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Onomy Client Core",
   "author": "Onomy <alex@onomy.io>",
   "homepage": "https://github.com/onomy/telescope#readme",
@@ -23,6 +23,7 @@
     "clean": "npm run clean:mjs && npm run clean:dist",
     "build:rename": "publish-scripts --cmd rename --srcDir mjs --outDir dist --findExt js --replaceExt mjs --no-rmDir",
     "build": "npm run clean && npm run build:cjs && npm run build:mjs && npm run build:rename",
+    "update": "yarn codegen && git checkout src/codegen/cosmos && yarn build",
     "codegen": "node scripts/codegen.js",
     "prepare": "npm run build",
     "lint": "eslint src --fix",
