@@ -20,6 +20,9 @@ export const createRPCQueryClient = async ({ rpcEndpoint }) => {
             gov: {
                 v1beta1: (await import("../cosmos/gov/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
             },
+            params: {
+                v1beta1: (await import("../cosmos/params/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
+            },
             staking: {
                 v1beta1: (await import("../cosmos/staking/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
             },

@@ -24,25 +24,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.google = void 0;
-const _42 = __importStar(require("./api/annotations"));
-const _43 = __importStar(require("./api/http"));
-const _44 = __importStar(require("./api/httpbody"));
-const _45 = __importStar(require("./protobuf/any"));
-const _46 = __importStar(require("./protobuf/descriptor"));
-const _47 = __importStar(require("./protobuf/timestamp"));
-const _48 = __importStar(require("./protobuf/duration"));
+const _44 = __importStar(require("./api/annotations"));
+const _45 = __importStar(require("./api/http"));
+const _46 = __importStar(require("./api/httpbody"));
+const _47 = __importStar(require("./protobuf/any"));
+const _48 = __importStar(require("./protobuf/descriptor"));
+const _49 = __importStar(require("./protobuf/timestamp"));
+const _50 = __importStar(require("./protobuf/duration"));
 var google;
 (function (google) {
     google.api = {
-        ..._42,
-        ..._43,
-        ..._44
+        ..._44,
+        ..._45,
+        ..._46
     };
     google.protobuf = {
-        ..._45,
-        ..._46,
         ..._47,
-        ..._48
+        ..._48,
+        ..._49,
+        ..._50
     };
 })(google || (exports.google = google = {}));
 //# sourceMappingURL=bundle.js.map

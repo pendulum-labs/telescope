@@ -53,41 +53,44 @@ const _27 = __importStar(require("./gov/v1beta1/genesis"));
 const _28 = __importStar(require("./gov/v1beta1/gov"));
 const _29 = __importStar(require("./gov/v1beta1/query"));
 const _30 = __importStar(require("./gov/v1beta1/tx"));
-const _31 = __importStar(require("./staking/v1beta1/authz"));
-const _32 = __importStar(require("./staking/v1beta1/genesis"));
-const _33 = __importStar(require("./staking/v1beta1/query"));
-const _34 = __importStar(require("./staking/v1beta1/staking"));
-const _35 = __importStar(require("./staking/v1beta1/tx"));
-const _36 = __importStar(require("./tx/signing/v1beta1/signing"));
-const _37 = __importStar(require("./tx/v1beta1/service"));
-const _38 = __importStar(require("./tx/v1beta1/tx"));
-const _39 = __importStar(require("./upgrade/v1beta1/query"));
-const _40 = __importStar(require("./upgrade/v1beta1/upgrade"));
-const _81 = __importStar(require("./authz/v1beta1/tx.amino"));
-const _82 = __importStar(require("./bank/v1beta1/tx.amino"));
-const _83 = __importStar(require("./distribution/v1beta1/tx.amino"));
-const _84 = __importStar(require("./gov/v1beta1/tx.amino"));
-const _85 = __importStar(require("./staking/v1beta1/tx.amino"));
-const _86 = __importStar(require("./authz/v1beta1/tx.registry"));
-const _87 = __importStar(require("./bank/v1beta1/tx.registry"));
-const _88 = __importStar(require("./distribution/v1beta1/tx.registry"));
-const _89 = __importStar(require("./gov/v1beta1/tx.registry"));
-const _90 = __importStar(require("./staking/v1beta1/tx.registry"));
-const _91 = __importStar(require("./auth/v1beta1/query.rpc.Query"));
-const _92 = __importStar(require("./authz/v1beta1/query.rpc.Query"));
-const _93 = __importStar(require("./bank/v1beta1/query.rpc.Query"));
-const _94 = __importStar(require("./distribution/v1beta1/query.rpc.Query"));
-const _95 = __importStar(require("./gov/v1beta1/query.rpc.Query"));
-const _96 = __importStar(require("./staking/v1beta1/query.rpc.Query"));
-const _97 = __importStar(require("./tx/v1beta1/service.rpc.Service"));
-const _98 = __importStar(require("./upgrade/v1beta1/query.rpc.Query"));
-const _99 = __importStar(require("./authz/v1beta1/tx.rpc.msg"));
-const _100 = __importStar(require("./bank/v1beta1/tx.rpc.msg"));
-const _101 = __importStar(require("./distribution/v1beta1/tx.rpc.msg"));
-const _102 = __importStar(require("./gov/v1beta1/tx.rpc.msg"));
-const _103 = __importStar(require("./staking/v1beta1/tx.rpc.msg"));
-const _113 = __importStar(require("./rpc.query"));
-const _114 = __importStar(require("./rpc.tx"));
+const _31 = __importStar(require("./params/v1beta1/params"));
+const _32 = __importStar(require("./params/v1beta1/query"));
+const _33 = __importStar(require("./staking/v1beta1/authz"));
+const _34 = __importStar(require("./staking/v1beta1/genesis"));
+const _35 = __importStar(require("./staking/v1beta1/query"));
+const _36 = __importStar(require("./staking/v1beta1/staking"));
+const _37 = __importStar(require("./staking/v1beta1/tx"));
+const _38 = __importStar(require("./tx/signing/v1beta1/signing"));
+const _39 = __importStar(require("./tx/v1beta1/service"));
+const _40 = __importStar(require("./tx/v1beta1/tx"));
+const _41 = __importStar(require("./upgrade/v1beta1/query"));
+const _42 = __importStar(require("./upgrade/v1beta1/upgrade"));
+const _83 = __importStar(require("./authz/v1beta1/tx.amino"));
+const _84 = __importStar(require("./bank/v1beta1/tx.amino"));
+const _85 = __importStar(require("./distribution/v1beta1/tx.amino"));
+const _86 = __importStar(require("./gov/v1beta1/tx.amino"));
+const _87 = __importStar(require("./staking/v1beta1/tx.amino"));
+const _88 = __importStar(require("./authz/v1beta1/tx.registry"));
+const _89 = __importStar(require("./bank/v1beta1/tx.registry"));
+const _90 = __importStar(require("./distribution/v1beta1/tx.registry"));
+const _91 = __importStar(require("./gov/v1beta1/tx.registry"));
+const _92 = __importStar(require("./staking/v1beta1/tx.registry"));
+const _93 = __importStar(require("./auth/v1beta1/query.rpc.Query"));
+const _94 = __importStar(require("./authz/v1beta1/query.rpc.Query"));
+const _95 = __importStar(require("./bank/v1beta1/query.rpc.Query"));
+const _96 = __importStar(require("./distribution/v1beta1/query.rpc.Query"));
+const _97 = __importStar(require("./gov/v1beta1/query.rpc.Query"));
+const _98 = __importStar(require("./params/v1beta1/query.rpc.Query"));
+const _99 = __importStar(require("./staking/v1beta1/query.rpc.Query"));
+const _100 = __importStar(require("./tx/v1beta1/service.rpc.Service"));
+const _101 = __importStar(require("./upgrade/v1beta1/query.rpc.Query"));
+const _102 = __importStar(require("./authz/v1beta1/tx.rpc.msg"));
+const _103 = __importStar(require("./bank/v1beta1/tx.rpc.msg"));
+const _104 = __importStar(require("./distribution/v1beta1/tx.rpc.msg"));
+const _105 = __importStar(require("./gov/v1beta1/tx.rpc.msg"));
+const _106 = __importStar(require("./staking/v1beta1/tx.rpc.msg"));
+const _116 = __importStar(require("./rpc.query"));
+const _117 = __importStar(require("./rpc.tx"));
 var cosmos;
 (function (cosmos) {
     let auth;
@@ -96,7 +99,7 @@ var cosmos;
             ..._2,
             ..._3,
             ..._4,
-            ..._91
+            ..._93
         };
     })(auth = cosmos.auth || (cosmos.auth = {}));
     let authz;
@@ -107,10 +110,10 @@ var cosmos;
             ..._7,
             ..._8,
             ..._9,
-            ..._81,
-            ..._86,
-            ..._92,
-            ..._99
+            ..._83,
+            ..._88,
+            ..._94,
+            ..._102
         };
     })(authz = cosmos.authz || (cosmos.authz = {}));
     let bank;
@@ -121,10 +124,10 @@ var cosmos;
             ..._12,
             ..._13,
             ..._14,
-            ..._82,
-            ..._87,
-            ..._93,
-            ..._100
+            ..._84,
+            ..._89,
+            ..._95,
+            ..._103
         };
     })(bank = cosmos.bank || (cosmos.bank = {}));
     let base;
@@ -173,10 +176,10 @@ var cosmos;
             ..._24,
             ..._25,
             ..._26,
-            ..._83,
-            ..._88,
-            ..._94,
-            ..._101
+            ..._85,
+            ..._90,
+            ..._96,
+            ..._104
         };
     })(distribution = cosmos.distribution || (cosmos.distribution = {}));
     let gov;
@@ -186,24 +189,32 @@ var cosmos;
             ..._28,
             ..._29,
             ..._30,
-            ..._84,
-            ..._89,
-            ..._95,
-            ..._102
+            ..._86,
+            ..._91,
+            ..._97,
+            ..._105
         };
     })(gov = cosmos.gov || (cosmos.gov = {}));
+    let params;
+    (function (params) {
+        params.v1beta1 = {
+            ..._31,
+            ..._32,
+            ..._98
+        };
+    })(params = cosmos.params || (cosmos.params = {}));
     let staking;
     (function (staking) {
         staking.v1beta1 = {
-            ..._31,
-            ..._32,
             ..._33,
             ..._34,
             ..._35,
-            ..._85,
-            ..._90,
-            ..._96,
-            ..._103
+            ..._36,
+            ..._37,
+            ..._87,
+            ..._92,
+            ..._99,
+            ..._106
         };
     })(staking = cosmos.staking || (cosmos.staking = {}));
     let tx;
@@ -211,26 +222,26 @@ var cosmos;
         let signing;
         (function (signing) {
             signing.v1beta1 = {
-                ..._36
+                ..._38
             };
         })(signing = tx.signing || (tx.signing = {}));
         tx.v1beta1 = {
-            ..._37,
-            ..._38,
-            ..._97
+            ..._39,
+            ..._40,
+            ..._100
         };
     })(tx = cosmos.tx || (cosmos.tx = {}));
     let upgrade;
     (function (upgrade) {
         upgrade.v1beta1 = {
-            ..._39,
-            ..._40,
-            ..._98
+            ..._41,
+            ..._42,
+            ..._101
         };
     })(upgrade = cosmos.upgrade || (cosmos.upgrade = {}));
     cosmos.ClientFactory = {
-        ..._113,
-        ..._114
+        ..._116,
+        ..._117
     };
 })(cosmos || (exports.cosmos = cosmos = {}));
 //# sourceMappingURL=bundle.js.map

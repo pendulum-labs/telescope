@@ -24,6 +24,9 @@ export const createRPCQueryClient = async ({
       gov: {
         v1beta1: (await import("./gov/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
       },
+      params: {
+        v1beta1: (await import("./params/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
+      },
       staking: {
         v1beta1: (await import("./staking/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
       },

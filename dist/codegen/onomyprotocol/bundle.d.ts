@@ -1,31 +1,31 @@
 /// <reference types="long" />
-import * as _68 from "./dao/v1/dao";
-import * as _69 from "./dao/v1/genesis";
-import * as _70 from "./dao/v1/params";
-import * as _71 from "./dao/v1/query";
-import * as _108 from "./dao/v1/query.rpc.Query";
+import * as _70 from "./dao/v1/dao";
+import * as _71 from "./dao/v1/genesis";
+import * as _72 from "./dao/v1/params";
+import * as _73 from "./dao/v1/query";
+import * as _111 from "./dao/v1/query.rpc.Query";
 export declare namespace onomyprotocol {
     namespace dao {
         const v1: {
-            QueryClientImpl: typeof _108.QueryClientImpl;
+            QueryClientImpl: typeof _111.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
-                params(request?: _71.QueryParamsRequest): Promise<_71.QueryParamsResponse>;
-                treasury(request?: _71.QueryTreasuryRequest): Promise<_71.QueryTreasuryResponse>;
+                params(request?: _73.QueryParamsRequest): Promise<_73.QueryParamsResponse>;
+                treasury(request?: _73.QueryTreasuryRequest): Promise<_73.QueryTreasuryResponse>;
             };
             QueryParamsRequest: {
-                encode(_: _71.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _71.QueryParamsRequest;
-                fromPartial(_: {}): _71.QueryParamsRequest;
-                fromAmino(_: _71.QueryParamsRequestAmino): _71.QueryParamsRequest;
-                toAmino(_: _71.QueryParamsRequest): _71.QueryParamsRequestAmino;
-                fromAminoMsg(object: _71.QueryParamsRequestAminoMsg): _71.QueryParamsRequest;
-                fromProtoMsg(message: _71.QueryParamsRequestProtoMsg): _71.QueryParamsRequest;
-                toProto(message: _71.QueryParamsRequest): Uint8Array;
-                toProtoMsg(message: _71.QueryParamsRequest): _71.QueryParamsRequestProtoMsg;
+                encode(_: _73.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.QueryParamsRequest;
+                fromPartial(_: {}): _73.QueryParamsRequest;
+                fromAmino(_: _73.QueryParamsRequestAmino): _73.QueryParamsRequest;
+                toAmino(_: _73.QueryParamsRequest): _73.QueryParamsRequestAmino;
+                fromAminoMsg(object: _73.QueryParamsRequestAminoMsg): _73.QueryParamsRequest;
+                fromProtoMsg(message: _73.QueryParamsRequestProtoMsg): _73.QueryParamsRequest;
+                toProto(message: _73.QueryParamsRequest): Uint8Array;
+                toProtoMsg(message: _73.QueryParamsRequest): _73.QueryParamsRequestProtoMsg;
             };
             QueryParamsResponse: {
-                encode(message: _71.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _71.QueryParamsResponse;
+                encode(message: _73.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.QueryParamsResponse;
                 fromPartial(object: {
                     params?: {
                         withdrawRewardPeriod?: string | number | import("long").Long;
@@ -33,60 +33,60 @@ export declare namespace onomyprotocol {
                         maxProposalRate?: Uint8Array;
                         maxValCommission?: Uint8Array;
                     };
-                }): _71.QueryParamsResponse;
-                fromAmino(object: _71.QueryParamsResponseAmino): _71.QueryParamsResponse;
-                toAmino(message: _71.QueryParamsResponse): _71.QueryParamsResponseAmino;
-                fromAminoMsg(object: _71.QueryParamsResponseAminoMsg): _71.QueryParamsResponse;
-                fromProtoMsg(message: _71.QueryParamsResponseProtoMsg): _71.QueryParamsResponse;
-                toProto(message: _71.QueryParamsResponse): Uint8Array;
-                toProtoMsg(message: _71.QueryParamsResponse): _71.QueryParamsResponseProtoMsg;
+                }): _73.QueryParamsResponse;
+                fromAmino(object: _73.QueryParamsResponseAmino): _73.QueryParamsResponse;
+                toAmino(message: _73.QueryParamsResponse): _73.QueryParamsResponseAmino;
+                fromAminoMsg(object: _73.QueryParamsResponseAminoMsg): _73.QueryParamsResponse;
+                fromProtoMsg(message: _73.QueryParamsResponseProtoMsg): _73.QueryParamsResponse;
+                toProto(message: _73.QueryParamsResponse): Uint8Array;
+                toProtoMsg(message: _73.QueryParamsResponse): _73.QueryParamsResponseProtoMsg;
             };
             QueryTreasuryRequest: {
-                encode(_: _71.QueryTreasuryRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _71.QueryTreasuryRequest;
-                fromPartial(_: {}): _71.QueryTreasuryRequest;
-                fromAmino(_: _71.QueryTreasuryRequestAmino): _71.QueryTreasuryRequest;
-                toAmino(_: _71.QueryTreasuryRequest): _71.QueryTreasuryRequestAmino;
-                fromAminoMsg(object: _71.QueryTreasuryRequestAminoMsg): _71.QueryTreasuryRequest;
-                fromProtoMsg(message: _71.QueryTreasuryRequestProtoMsg): _71.QueryTreasuryRequest;
-                toProto(message: _71.QueryTreasuryRequest): Uint8Array;
-                toProtoMsg(message: _71.QueryTreasuryRequest): _71.QueryTreasuryRequestProtoMsg;
+                encode(_: _73.QueryTreasuryRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.QueryTreasuryRequest;
+                fromPartial(_: {}): _73.QueryTreasuryRequest;
+                fromAmino(_: _73.QueryTreasuryRequestAmino): _73.QueryTreasuryRequest;
+                toAmino(_: _73.QueryTreasuryRequest): _73.QueryTreasuryRequestAmino;
+                fromAminoMsg(object: _73.QueryTreasuryRequestAminoMsg): _73.QueryTreasuryRequest;
+                fromProtoMsg(message: _73.QueryTreasuryRequestProtoMsg): _73.QueryTreasuryRequest;
+                toProto(message: _73.QueryTreasuryRequest): Uint8Array;
+                toProtoMsg(message: _73.QueryTreasuryRequest): _73.QueryTreasuryRequestProtoMsg;
             };
             QueryTreasuryResponse: {
-                encode(message: _71.QueryTreasuryResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _71.QueryTreasuryResponse;
+                encode(message: _73.QueryTreasuryResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _73.QueryTreasuryResponse;
                 fromPartial(object: {
                     treasuryBalance?: {
                         denom?: string;
                         amount?: string;
                     }[];
-                }): _71.QueryTreasuryResponse;
-                fromAmino(object: _71.QueryTreasuryResponseAmino): _71.QueryTreasuryResponse;
-                toAmino(message: _71.QueryTreasuryResponse): _71.QueryTreasuryResponseAmino;
-                fromAminoMsg(object: _71.QueryTreasuryResponseAminoMsg): _71.QueryTreasuryResponse;
-                fromProtoMsg(message: _71.QueryTreasuryResponseProtoMsg): _71.QueryTreasuryResponse;
-                toProto(message: _71.QueryTreasuryResponse): Uint8Array;
-                toProtoMsg(message: _71.QueryTreasuryResponse): _71.QueryTreasuryResponseProtoMsg;
+                }): _73.QueryTreasuryResponse;
+                fromAmino(object: _73.QueryTreasuryResponseAmino): _73.QueryTreasuryResponse;
+                toAmino(message: _73.QueryTreasuryResponse): _73.QueryTreasuryResponseAmino;
+                fromAminoMsg(object: _73.QueryTreasuryResponseAminoMsg): _73.QueryTreasuryResponse;
+                fromProtoMsg(message: _73.QueryTreasuryResponseProtoMsg): _73.QueryTreasuryResponse;
+                toProto(message: _73.QueryTreasuryResponse): Uint8Array;
+                toProtoMsg(message: _73.QueryTreasuryResponse): _73.QueryTreasuryResponseProtoMsg;
             };
             Params: {
-                encode(message: _70.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _70.Params;
+                encode(message: _72.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _72.Params;
                 fromPartial(object: {
                     withdrawRewardPeriod?: string | number | import("long").Long;
                     poolRate?: Uint8Array;
                     maxProposalRate?: Uint8Array;
                     maxValCommission?: Uint8Array;
-                }): _70.Params;
-                fromAmino(object: _70.ParamsAmino): _70.Params;
-                toAmino(message: _70.Params): _70.ParamsAmino;
-                fromAminoMsg(object: _70.ParamsAminoMsg): _70.Params;
-                fromProtoMsg(message: _70.ParamsProtoMsg): _70.Params;
-                toProto(message: _70.Params): Uint8Array;
-                toProtoMsg(message: _70.Params): _70.ParamsProtoMsg;
+                }): _72.Params;
+                fromAmino(object: _72.ParamsAmino): _72.Params;
+                toAmino(message: _72.Params): _72.ParamsAmino;
+                fromAminoMsg(object: _72.ParamsAminoMsg): _72.Params;
+                fromProtoMsg(message: _72.ParamsProtoMsg): _72.Params;
+                toProto(message: _72.Params): Uint8Array;
+                toProtoMsg(message: _72.Params): _72.ParamsProtoMsg;
             };
             GenesisState: {
-                encode(message: _69.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _69.GenesisState;
+                encode(message: _71.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _71.GenesisState;
                 fromPartial(object: {
                     params?: {
                         withdrawRewardPeriod?: string | number | import("long").Long;
@@ -98,17 +98,17 @@ export declare namespace onomyprotocol {
                         denom?: string;
                         amount?: string;
                     }[];
-                }): _69.GenesisState;
-                fromAmino(object: _69.GenesisStateAmino): _69.GenesisState;
-                toAmino(message: _69.GenesisState): _69.GenesisStateAmino;
-                fromAminoMsg(object: _69.GenesisStateAminoMsg): _69.GenesisState;
-                fromProtoMsg(message: _69.GenesisStateProtoMsg): _69.GenesisState;
-                toProto(message: _69.GenesisState): Uint8Array;
-                toProtoMsg(message: _69.GenesisState): _69.GenesisStateProtoMsg;
+                }): _71.GenesisState;
+                fromAmino(object: _71.GenesisStateAmino): _71.GenesisState;
+                toAmino(message: _71.GenesisState): _71.GenesisStateAmino;
+                fromAminoMsg(object: _71.GenesisStateAminoMsg): _71.GenesisState;
+                fromProtoMsg(message: _71.GenesisStateProtoMsg): _71.GenesisState;
+                toProto(message: _71.GenesisState): Uint8Array;
+                toProtoMsg(message: _71.GenesisState): _71.GenesisStateProtoMsg;
             };
             FundTreasuryProposal: {
-                encode(message: _68.FundTreasuryProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _68.FundTreasuryProposal;
+                encode(message: _70.FundTreasuryProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _70.FundTreasuryProposal;
                 fromPartial(object: {
                     sender?: string;
                     title?: string;
@@ -117,17 +117,17 @@ export declare namespace onomyprotocol {
                         denom?: string;
                         amount?: string;
                     }[];
-                }): _68.FundTreasuryProposal;
-                fromAmino(object: _68.FundTreasuryProposalAmino): _68.FundTreasuryProposal;
-                toAmino(message: _68.FundTreasuryProposal): _68.FundTreasuryProposalAmino;
-                fromAminoMsg(object: _68.FundTreasuryProposalAminoMsg): _68.FundTreasuryProposal;
-                fromProtoMsg(message: _68.FundTreasuryProposalProtoMsg): _68.FundTreasuryProposal;
-                toProto(message: _68.FundTreasuryProposal): Uint8Array;
-                toProtoMsg(message: _68.FundTreasuryProposal): _68.FundTreasuryProposalProtoMsg;
+                }): _70.FundTreasuryProposal;
+                fromAmino(object: _70.FundTreasuryProposalAmino): _70.FundTreasuryProposal;
+                toAmino(message: _70.FundTreasuryProposal): _70.FundTreasuryProposalAmino;
+                fromAminoMsg(object: _70.FundTreasuryProposalAminoMsg): _70.FundTreasuryProposal;
+                fromProtoMsg(message: _70.FundTreasuryProposalProtoMsg): _70.FundTreasuryProposal;
+                toProto(message: _70.FundTreasuryProposal): Uint8Array;
+                toProtoMsg(message: _70.FundTreasuryProposal): _70.FundTreasuryProposalProtoMsg;
             };
             ExchangeWithTreasuryProposal: {
-                encode(message: _68.ExchangeWithTreasuryProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _68.ExchangeWithTreasuryProposal;
+                encode(message: _70.ExchangeWithTreasuryProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _70.ExchangeWithTreasuryProposal;
                 fromPartial(object: {
                     sender?: string;
                     title?: string;
@@ -142,17 +142,17 @@ export declare namespace onomyprotocol {
                             amount?: string;
                         };
                     }[];
-                }): _68.ExchangeWithTreasuryProposal;
-                fromAmino(object: _68.ExchangeWithTreasuryProposalAmino): _68.ExchangeWithTreasuryProposal;
-                toAmino(message: _68.ExchangeWithTreasuryProposal): _68.ExchangeWithTreasuryProposalAmino;
-                fromAminoMsg(object: _68.ExchangeWithTreasuryProposalAminoMsg): _68.ExchangeWithTreasuryProposal;
-                fromProtoMsg(message: _68.ExchangeWithTreasuryProposalProtoMsg): _68.ExchangeWithTreasuryProposal;
-                toProto(message: _68.ExchangeWithTreasuryProposal): Uint8Array;
-                toProtoMsg(message: _68.ExchangeWithTreasuryProposal): _68.ExchangeWithTreasuryProposalProtoMsg;
+                }): _70.ExchangeWithTreasuryProposal;
+                fromAmino(object: _70.ExchangeWithTreasuryProposalAmino): _70.ExchangeWithTreasuryProposal;
+                toAmino(message: _70.ExchangeWithTreasuryProposal): _70.ExchangeWithTreasuryProposalAmino;
+                fromAminoMsg(object: _70.ExchangeWithTreasuryProposalAminoMsg): _70.ExchangeWithTreasuryProposal;
+                fromProtoMsg(message: _70.ExchangeWithTreasuryProposalProtoMsg): _70.ExchangeWithTreasuryProposal;
+                toProto(message: _70.ExchangeWithTreasuryProposal): Uint8Array;
+                toProtoMsg(message: _70.ExchangeWithTreasuryProposal): _70.ExchangeWithTreasuryProposalProtoMsg;
             };
             CoinsExchangePair: {
-                encode(message: _68.CoinsExchangePair, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _68.CoinsExchangePair;
+                encode(message: _70.CoinsExchangePair, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _70.CoinsExchangePair;
                 fromPartial(object: {
                     coinAsk?: {
                         denom?: string;
@@ -162,17 +162,17 @@ export declare namespace onomyprotocol {
                         denom?: string;
                         amount?: string;
                     };
-                }): _68.CoinsExchangePair;
-                fromAmino(object: _68.CoinsExchangePairAmino): _68.CoinsExchangePair;
-                toAmino(message: _68.CoinsExchangePair): _68.CoinsExchangePairAmino;
-                fromAminoMsg(object: _68.CoinsExchangePairAminoMsg): _68.CoinsExchangePair;
-                fromProtoMsg(message: _68.CoinsExchangePairProtoMsg): _68.CoinsExchangePair;
-                toProto(message: _68.CoinsExchangePair): Uint8Array;
-                toProtoMsg(message: _68.CoinsExchangePair): _68.CoinsExchangePairProtoMsg;
+                }): _70.CoinsExchangePair;
+                fromAmino(object: _70.CoinsExchangePairAmino): _70.CoinsExchangePair;
+                toAmino(message: _70.CoinsExchangePair): _70.CoinsExchangePairAmino;
+                fromAminoMsg(object: _70.CoinsExchangePairAminoMsg): _70.CoinsExchangePair;
+                fromProtoMsg(message: _70.CoinsExchangePairProtoMsg): _70.CoinsExchangePair;
+                toProto(message: _70.CoinsExchangePair): Uint8Array;
+                toProtoMsg(message: _70.CoinsExchangePair): _70.CoinsExchangePairProtoMsg;
             };
             FundAccountProposal: {
-                encode(message: _68.FundAccountProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _68.FundAccountProposal;
+                encode(message: _70.FundAccountProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _70.FundAccountProposal;
                 fromPartial(object: {
                     recipient?: string;
                     title?: string;
@@ -181,13 +181,13 @@ export declare namespace onomyprotocol {
                         denom?: string;
                         amount?: string;
                     }[];
-                }): _68.FundAccountProposal;
-                fromAmino(object: _68.FundAccountProposalAmino): _68.FundAccountProposal;
-                toAmino(message: _68.FundAccountProposal): _68.FundAccountProposalAmino;
-                fromAminoMsg(object: _68.FundAccountProposalAminoMsg): _68.FundAccountProposal;
-                fromProtoMsg(message: _68.FundAccountProposalProtoMsg): _68.FundAccountProposal;
-                toProto(message: _68.FundAccountProposal): Uint8Array;
-                toProtoMsg(message: _68.FundAccountProposal): _68.FundAccountProposalProtoMsg;
+                }): _70.FundAccountProposal;
+                fromAmino(object: _70.FundAccountProposalAmino): _70.FundAccountProposal;
+                toAmino(message: _70.FundAccountProposal): _70.FundAccountProposalAmino;
+                fromAminoMsg(object: _70.FundAccountProposalAminoMsg): _70.FundAccountProposal;
+                fromProtoMsg(message: _70.FundAccountProposalProtoMsg): _70.FundAccountProposal;
+                toProto(message: _70.FundAccountProposal): Uint8Array;
+                toProtoMsg(message: _70.FundAccountProposal): _70.FundAccountProposalProtoMsg;
             };
         };
     }
@@ -244,6 +244,11 @@ export declare namespace onomyprotocol {
                         tallyResult(request: import("../cosmos/gov/v1beta1/query").QueryTallyResultRequest): Promise<import("../cosmos/gov/v1beta1/query").QueryTallyResultResponse>;
                     };
                 };
+                params: {
+                    v1beta1: {
+                        params(request: import("../cosmos/params/v1beta1/query").QueryParamsRequest): Promise<import("../cosmos/params/v1beta1/query").QueryParamsResponse>;
+                    };
+                };
                 staking: {
                     v1beta1: {
                         validators(request: import("../cosmos/staking/v1beta1/query").QueryValidatorsRequest): Promise<import("../cosmos/staking/v1beta1/query").QueryValidatorsResponse>;
@@ -282,8 +287,8 @@ export declare namespace onomyprotocol {
             onomyprotocol: {
                 dao: {
                     v1: {
-                        params(request?: _71.QueryParamsRequest): Promise<_71.QueryParamsResponse>;
-                        treasury(request?: _71.QueryTreasuryRequest): Promise<_71.QueryTreasuryResponse>;
+                        params(request?: _73.QueryParamsRequest): Promise<_73.QueryParamsResponse>;
+                        treasury(request?: _73.QueryTreasuryRequest): Promise<_73.QueryTreasuryResponse>;
                     };
                 };
             };
