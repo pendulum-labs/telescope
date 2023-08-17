@@ -31,10 +31,10 @@ const _m0 = __importStar(require("protobufjs/minimal"));
 function createBasePlan() {
     return {
         name: "",
-        time: undefined,
+        time: new Date(),
         height: helpers_1.Long.ZERO,
         info: "",
-        upgradedClientState: undefined
+        upgradedClientState: any_1.Any.fromPartial({})
     };
 }
 exports.Plan = {

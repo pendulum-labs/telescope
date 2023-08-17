@@ -200,7 +200,7 @@ exports.BlockParams = {
 function createBaseEvidenceParams() {
     return {
         maxAgeNumBlocks: helpers_1.Long.ZERO,
-        maxAgeDuration: undefined,
+        maxAgeDuration: duration_1.Duration.fromPartial({}),
         maxBytes: helpers_1.Long.ZERO
     };
 }

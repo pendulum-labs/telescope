@@ -4,7 +4,7 @@ import * as _m0 from "protobufjs/minimal";
 function createBaseBaseAccount() {
     return {
         address: "",
-        pubKey: undefined,
+        pubKey: Any.fromPartial({}),
         accountNumber: Long.UZERO,
         sequence: Long.UZERO
     };

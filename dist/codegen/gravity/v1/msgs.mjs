@@ -273,8 +273,8 @@ function createBaseMsgSendToEth() {
     return {
         sender: "",
         ethDest: "",
-        amount: undefined,
-        bridgeFee: undefined
+        amount: Coin.fromPartial({}),
+        bridgeFee: Coin.fromPartial({})
     };
 }
 export const MsgSendToEth = {
@@ -1756,7 +1756,7 @@ export const MsgCancelSendToEthResponse = {
 };
 function createBaseMsgSubmitBadSignatureEvidence() {
     return {
-        subject: undefined,
+        subject: Any.fromPartial({}),
         signature: "",
         sender: ""
     };

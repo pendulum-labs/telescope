@@ -698,7 +698,7 @@ exports.RequestSetOption = {
 };
 function createBaseRequestInitChain() {
     return {
-        time: undefined,
+        time: new Date(),
         chainId: "",
         consensusParams: exports.ConsensusParams.fromPartial({}),
         validators: [],
@@ -3770,7 +3770,7 @@ function createBaseEvidence() {
         type: 0,
         validator: exports.Validator.fromPartial({}),
         height: helpers_1.Long.ZERO,
-        time: undefined,
+        time: new Date(),
         totalVotingPower: helpers_1.Long.ZERO
     };
 }

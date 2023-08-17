@@ -63,7 +63,7 @@ function createBaseAttestation() {
         observed: false,
         votes: [],
         height: Long.UZERO,
-        claim: undefined
+        claim: Any.fromPartial({})
     };
 }
 export const Attestation = {

@@ -105,7 +105,7 @@ function createBaseDuplicateVoteEvidence() {
         voteB: types_1.Vote.fromPartial({}),
         totalVotingPower: helpers_1.Long.ZERO,
         validatorPower: helpers_1.Long.ZERO,
-        timestamp: undefined
+        timestamp: new Date()
     };
 }
 exports.DuplicateVoteEvidence = {
@@ -205,7 +205,7 @@ function createBaseLightClientAttackEvidence() {
         commonHeight: helpers_1.Long.ZERO,
         byzantineValidators: [],
         totalVotingPower: helpers_1.Long.ZERO,
-        timestamp: undefined
+        timestamp: new Date()
     };
 }
 exports.LightClientAttackEvidence = {

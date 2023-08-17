@@ -106,7 +106,7 @@ exports.QueryBalanceRequest = {
 };
 function createBaseQueryBalanceResponse() {
     return {
-        balance: undefined
+        balance: coin_1.Coin.fromPartial({})
     };
 }
 exports.QueryBalanceResponse = {
@@ -542,7 +542,7 @@ exports.QuerySupplyOfRequest = {
 };
 function createBaseQuerySupplyOfResponse() {
     return {
-        amount: undefined
+        amount: coin_1.Coin.fromPartial({})
     };
 }
 exports.QuerySupplyOfResponse = {

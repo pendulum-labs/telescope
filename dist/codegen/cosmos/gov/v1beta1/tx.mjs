@@ -5,7 +5,7 @@ import { Long, isSet } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 function createBaseMsgSubmitProposal() {
     return {
-        content: undefined,
+        content: Any.fromPartial({}),
         initialDeposit: [],
         proposer: ""
     };

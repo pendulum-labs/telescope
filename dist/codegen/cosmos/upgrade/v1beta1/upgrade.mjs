@@ -5,10 +5,10 @@ import * as _m0 from "protobufjs/minimal";
 function createBasePlan() {
     return {
         name: "",
-        time: undefined,
+        time: new Date(),
         height: Long.ZERO,
         info: "",
-        upgradedClientState: undefined
+        upgradedClientState: Any.fromPartial({})
     };
 }
 export const Plan = {

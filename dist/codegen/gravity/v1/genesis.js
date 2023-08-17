@@ -48,7 +48,7 @@ function createBaseParams() {
         slashFractionLogicCall: new Uint8Array(),
         unbondSlashingValsetsWindow: helpers_1.Long.UZERO,
         slashFractionBadEthSignature: new Uint8Array(),
-        valsetReward: undefined,
+        valsetReward: coin_1.Coin.fromPartial({}),
         bridgeActive: false,
         ethereumBlacklist: [],
         erc20ToDenomPermanentSwap: types_1.ERC20ToDenom.fromPartial({})

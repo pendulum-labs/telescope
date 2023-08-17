@@ -96,8 +96,8 @@ exports.GenericAuthorization = {
 };
 function createBaseGrant() {
     return {
-        authorization: undefined,
-        expiration: undefined
+        authorization: any_1.Any.fromPartial({}),
+        expiration: new Date()
     };
 }
 exports.Grant = {

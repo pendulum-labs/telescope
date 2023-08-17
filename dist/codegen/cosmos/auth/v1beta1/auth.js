@@ -30,7 +30,7 @@ const _m0 = __importStar(require("protobufjs/minimal"));
 function createBaseBaseAccount() {
     return {
         address: "",
-        pubKey: undefined,
+        pubKey: any_1.Any.fromPartial({}),
         accountNumber: helpers_1.Long.UZERO,
         sequence: helpers_1.Long.UZERO
     };

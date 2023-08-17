@@ -91,7 +91,7 @@ function createBaseAttestation() {
         observed: false,
         votes: [],
         height: helpers_1.Long.UZERO,
-        claim: undefined
+        claim: any_1.Any.fromPartial({})
     };
 }
 exports.Attestation = {

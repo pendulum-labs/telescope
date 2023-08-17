@@ -125,8 +125,8 @@ function createBaseGrantAuthorization(): GrantAuthorization {
   return {
     granter: "",
     grantee: "",
-    authorization: undefined,
-    expiration: undefined
+    authorization: Any.fromPartial({}),
+    expiration: new Date()
   };
 }
 export const GrantAuthorization = {

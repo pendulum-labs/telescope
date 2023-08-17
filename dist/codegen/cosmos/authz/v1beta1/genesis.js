@@ -103,8 +103,8 @@ function createBaseGrantAuthorization() {
     return {
         granter: "",
         grantee: "",
-        authorization: undefined,
-        expiration: undefined
+        authorization: any_1.Any.fromPartial({}),
+        expiration: new Date()
     };
 }
 exports.GrantAuthorization = {

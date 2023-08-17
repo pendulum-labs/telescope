@@ -217,7 +217,7 @@ export const QueryAccountRequest = {
 };
 function createBaseQueryAccountResponse() {
     return {
-        account: undefined
+        account: Any.fromPartial({})
     };
 }
 export const QueryAccountResponse = {

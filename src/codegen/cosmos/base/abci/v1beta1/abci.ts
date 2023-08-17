@@ -442,7 +442,7 @@ function createBaseTxResponse(): TxResponse {
     info: "",
     gasWanted: Long.ZERO,
     gasUsed: Long.ZERO,
-    tx: undefined,
+    tx: Any.fromPartial({}),
     timestamp: "",
     events: []
   };

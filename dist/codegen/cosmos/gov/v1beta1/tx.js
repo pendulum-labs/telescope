@@ -31,7 +31,7 @@ const helpers_1 = require("../../../helpers");
 const _m0 = __importStar(require("protobufjs/minimal"));
 function createBaseMsgSubmitProposal() {
     return {
-        content: undefined,
+        content: any_1.Any.fromPartial({}),
         initialDeposit: [],
         proposer: ""
     };

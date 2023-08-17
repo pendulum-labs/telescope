@@ -416,14 +416,14 @@ exports.Deposit = {
 function createBaseProposal() {
     return {
         proposalId: helpers_1.Long.UZERO,
-        content: undefined,
+        content: any_1.Any.fromPartial({}),
         status: 0,
         finalTallyResult: exports.TallyResult.fromPartial({}),
-        submitTime: undefined,
-        depositEndTime: undefined,
+        submitTime: new Date(),
+        depositEndTime: new Date(),
         totalDeposit: [],
-        votingStartTime: undefined,
-        votingEndTime: undefined
+        votingStartTime: new Date(),
+        votingEndTime: new Date()
     };
 }
 exports.Proposal = {
@@ -764,7 +764,7 @@ exports.Vote = {
 function createBaseDepositParams() {
     return {
         minDeposit: [],
-        maxDepositPeriod: undefined
+        maxDepositPeriod: duration_1.Duration.fromPartial({})
     };
 }
 exports.DepositParams = {
@@ -844,7 +844,7 @@ exports.DepositParams = {
 };
 function createBaseVotingParams() {
     return {
-        votingPeriod: undefined
+        votingPeriod: duration_1.Duration.fromPartial({})
     };
 }
 exports.VotingParams = {

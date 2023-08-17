@@ -301,8 +301,8 @@ export const ExchangeWithTreasuryProposal = {
 };
 function createBaseCoinsExchangePair(): CoinsExchangePair {
   return {
-    coinAsk: undefined,
-    coinBid: undefined
+    coinAsk: Coin.fromPartial({}),
+    coinBid: Coin.fromPartial({})
   };
 }
 export const CoinsExchangePair = {

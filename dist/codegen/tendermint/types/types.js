@@ -353,7 +353,7 @@ function createBaseHeader() {
         version: types_1.Consensus.fromPartial({}),
         chainId: "",
         height: helpers_1.Long.ZERO,
-        time: undefined,
+        time: new Date(),
         lastBlockId: exports.BlockID.fromPartial({}),
         lastCommitHash: new Uint8Array(),
         dataHash: new Uint8Array(),
@@ -609,7 +609,7 @@ function createBaseVote() {
         height: helpers_1.Long.ZERO,
         round: 0,
         blockId: exports.BlockID.fromPartial({}),
-        timestamp: undefined,
+        timestamp: new Date(),
         validatorAddress: new Uint8Array(),
         validatorIndex: 0,
         signature: new Uint8Array()
@@ -832,7 +832,7 @@ function createBaseCommitSig() {
     return {
         blockIdFlag: 0,
         validatorAddress: new Uint8Array(),
-        timestamp: undefined,
+        timestamp: new Date(),
         signature: new Uint8Array()
     };
 }
@@ -925,7 +925,7 @@ function createBaseProposal() {
         round: 0,
         polRound: 0,
         blockId: exports.BlockID.fromPartial({}),
-        timestamp: undefined,
+        timestamp: new Date(),
         signature: new Uint8Array()
     };
 }

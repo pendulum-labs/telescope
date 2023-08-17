@@ -243,7 +243,7 @@ exports.QueryAccountRequest = {
 };
 function createBaseQueryAccountResponse() {
     return {
-        account: undefined
+        account: any_1.Any.fromPartial({})
     };
 }
 exports.QueryAccountResponse = {

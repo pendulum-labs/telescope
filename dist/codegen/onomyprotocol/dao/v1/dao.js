@@ -218,8 +218,8 @@ exports.ExchangeWithTreasuryProposal = {
 };
 function createBaseCoinsExchangePair() {
     return {
-        coinAsk: undefined,
-        coinBid: undefined
+        coinAsk: coin_1.Coin.fromPartial({}),
+        coinBid: coin_1.Coin.fromPartial({})
     };
 }
 exports.CoinsExchangePair = {

@@ -299,8 +299,8 @@ function createBaseMsgSendToEth() {
     return {
         sender: "",
         ethDest: "",
-        amount: undefined,
-        bridgeFee: undefined
+        amount: coin_1.Coin.fromPartial({}),
+        bridgeFee: coin_1.Coin.fromPartial({})
     };
 }
 exports.MsgSendToEth = {
@@ -1782,7 +1782,7 @@ exports.MsgCancelSendToEthResponse = {
 };
 function createBaseMsgSubmitBadSignatureEvidence() {
     return {
-        subject: undefined,
+        subject: any_1.Any.fromPartial({}),
         signature: "",
         sender: ""
     };
