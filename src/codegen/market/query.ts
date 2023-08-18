@@ -131,6 +131,46 @@ export interface QueryDropRequestAminoMsg {
 export interface QueryDropRequestSDKType {
   uid: Long;
 }
+export interface QueryDropCoinRequest {
+  coinA: string;
+  denomB: string;
+}
+export interface QueryDropCoinRequestProtoMsg {
+  typeUrl: "/pendulumlabs.market.market.QueryDropCoinRequest";
+  value: Uint8Array;
+}
+export interface QueryDropCoinRequestAmino {
+  coinA: string;
+  denomB: string;
+}
+export interface QueryDropCoinRequestAminoMsg {
+  type: "/pendulumlabs.market.market.QueryDropCoinRequest";
+  value: QueryDropCoinRequestAmino;
+}
+export interface QueryDropCoinRequestSDKType {
+  coinA: string;
+  denomB: string;
+}
+export interface QueryDropCoinResponse {
+  drops: string;
+  amountB: string;
+}
+export interface QueryDropCoinResponseProtoMsg {
+  typeUrl: "/pendulumlabs.market.market.QueryDropCoinResponse";
+  value: Uint8Array;
+}
+export interface QueryDropCoinResponseAmino {
+  drops: string;
+  amountB: string;
+}
+export interface QueryDropCoinResponseAminoMsg {
+  type: "/pendulumlabs.market.market.QueryDropCoinResponse";
+  value: QueryDropCoinResponseAmino;
+}
+export interface QueryDropCoinResponseSDKType {
+  drops: string;
+  amountB: string;
+}
 export interface QueryDropResponse {
   drop: Drop;
 }
@@ -1253,6 +1293,146 @@ export const QueryDropRequest = {
     return {
       typeUrl: "/pendulumlabs.market.market.QueryDropRequest",
       value: QueryDropRequest.encode(message).finish()
+    };
+  }
+};
+function createBaseQueryDropCoinRequest(): QueryDropCoinRequest {
+  return {
+    coinA: "",
+    denomB: ""
+  };
+}
+export const QueryDropCoinRequest = {
+  encode(message: QueryDropCoinRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.coinA !== "") {
+      writer.uint32(10).string(message.coinA);
+    }
+    if (message.denomB !== "") {
+      writer.uint32(18).string(message.denomB);
+    }
+    return writer;
+  },
+  decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropCoinRequest {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryDropCoinRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.coinA = reader.string();
+          break;
+        case 2:
+          message.denomB = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+  fromPartial(object: DeepPartial<QueryDropCoinRequest>): QueryDropCoinRequest {
+    const message = createBaseQueryDropCoinRequest();
+    message.coinA = object.coinA ?? "";
+    message.denomB = object.denomB ?? "";
+    return message;
+  },
+  fromAmino(object: QueryDropCoinRequestAmino): QueryDropCoinRequest {
+    return {
+      coinA: object.coinA,
+      denomB: object.denomB
+    };
+  },
+  toAmino(message: QueryDropCoinRequest): QueryDropCoinRequestAmino {
+    const obj: any = {};
+    obj.coinA = message.coinA;
+    obj.denomB = message.denomB;
+    return obj;
+  },
+  fromAminoMsg(object: QueryDropCoinRequestAminoMsg): QueryDropCoinRequest {
+    return QueryDropCoinRequest.fromAmino(object.value);
+  },
+  fromProtoMsg(message: QueryDropCoinRequestProtoMsg): QueryDropCoinRequest {
+    return QueryDropCoinRequest.decode(message.value);
+  },
+  toProto(message: QueryDropCoinRequest): Uint8Array {
+    return QueryDropCoinRequest.encode(message).finish();
+  },
+  toProtoMsg(message: QueryDropCoinRequest): QueryDropCoinRequestProtoMsg {
+    return {
+      typeUrl: "/pendulumlabs.market.market.QueryDropCoinRequest",
+      value: QueryDropCoinRequest.encode(message).finish()
+    };
+  }
+};
+function createBaseQueryDropCoinResponse(): QueryDropCoinResponse {
+  return {
+    drops: "",
+    amountB: ""
+  };
+}
+export const QueryDropCoinResponse = {
+  encode(message: QueryDropCoinResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.drops !== "") {
+      writer.uint32(10).string(message.drops);
+    }
+    if (message.amountB !== "") {
+      writer.uint32(18).string(message.amountB);
+    }
+    return writer;
+  },
+  decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropCoinResponse {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryDropCoinResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.drops = reader.string();
+          break;
+        case 2:
+          message.amountB = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+  fromPartial(object: DeepPartial<QueryDropCoinResponse>): QueryDropCoinResponse {
+    const message = createBaseQueryDropCoinResponse();
+    message.drops = object.drops ?? "";
+    message.amountB = object.amountB ?? "";
+    return message;
+  },
+  fromAmino(object: QueryDropCoinResponseAmino): QueryDropCoinResponse {
+    return {
+      drops: object.drops,
+      amountB: object.amountB
+    };
+  },
+  toAmino(message: QueryDropCoinResponse): QueryDropCoinResponseAmino {
+    const obj: any = {};
+    obj.drops = message.drops;
+    obj.amountB = message.amountB;
+    return obj;
+  },
+  fromAminoMsg(object: QueryDropCoinResponseAminoMsg): QueryDropCoinResponse {
+    return QueryDropCoinResponse.fromAmino(object.value);
+  },
+  fromProtoMsg(message: QueryDropCoinResponseProtoMsg): QueryDropCoinResponse {
+    return QueryDropCoinResponse.decode(message.value);
+  },
+  toProto(message: QueryDropCoinResponse): Uint8Array {
+    return QueryDropCoinResponse.encode(message).finish();
+  },
+  toProtoMsg(message: QueryDropCoinResponse): QueryDropCoinResponseProtoMsg {
+    return {
+      typeUrl: "/pendulumlabs.market.market.QueryDropCoinResponse",
+      value: QueryDropCoinResponse.encode(message).finish()
     };
   }
 };
