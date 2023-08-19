@@ -24,26 +24,26 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.onomyprotocol = void 0;
-const _70 = __importStar(require("./dao/v1/dao"));
-const _71 = __importStar(require("./dao/v1/genesis"));
-const _72 = __importStar(require("./dao/v1/params"));
-const _73 = __importStar(require("./dao/v1/query"));
-const _111 = __importStar(require("./dao/v1/query.rpc.Query"));
-const _120 = __importStar(require("./rpc.query"));
+const _73 = __importStar(require("./dao/v1/dao"));
+const _74 = __importStar(require("./dao/v1/genesis"));
+const _75 = __importStar(require("./dao/v1/params"));
+const _76 = __importStar(require("./dao/v1/query"));
+const _115 = __importStar(require("./dao/v1/query.rpc.Query"));
+const _124 = __importStar(require("./rpc.query"));
 var onomyprotocol;
 (function (onomyprotocol) {
     let dao;
     (function (dao) {
         dao.v1 = {
-            ..._70,
-            ..._71,
-            ..._72,
             ..._73,
-            ..._111
+            ..._74,
+            ..._75,
+            ..._76,
+            ..._115
         };
     })(dao = onomyprotocol.dao || (onomyprotocol.dao = {}));
     onomyprotocol.ClientFactory = {
-        ..._120
+        ..._124
     };
 })(onomyprotocol || (exports.onomyprotocol = onomyprotocol = {}));
 //# sourceMappingURL=bundle.js.map

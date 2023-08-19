@@ -52,7 +52,7 @@ telescope({
           'cosmos.gov.v1',
           'cosmos.group.v1',
           'cosmos.group.v1beta1',
-          'cosmos.mint.v1beta1',
+          // 'cosmos.mint.v1beta1',
           'cosmos.msg.v1',
           'cosmos.nft.v1beta1',
           'cosmos.orm.v1',

@@ -46,6 +46,9 @@ const createRPCQueryClient = async ({ rpcEndpoint }) => {
             gov: {
                 v1beta1: (await Promise.resolve().then(() => __importStar(require("./gov/v1beta1/query.rpc.Query")))).createRpcQueryExtension(client)
             },
+            mint: {
+                v1beta1: (await Promise.resolve().then(() => __importStar(require("./mint/v1beta1/query.rpc.Query")))).createRpcQueryExtension(client)
+            },
             params: {
                 v1beta1: (await Promise.resolve().then(() => __importStar(require("./params/v1beta1/query.rpc.Query")))).createRpcQueryExtension(client)
             },

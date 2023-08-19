@@ -1,293 +1,293 @@
 /// <reference types="long" />
-import * as _51 from "./v1/attestation";
-import * as _52 from "./v1/batch";
-import * as _53 from "./v1/ethereum_signer";
-import * as _54 from "./v1/genesis";
-import * as _55 from "./v1/msgs";
-import * as _56 from "./v1/pool";
-import * as _57 from "./v1/query";
-import * as _58 from "./v1/types";
-import * as _109 from "./v1/query.rpc.Query";
-import * as _110 from "./v1/msgs.rpc.msg";
+import * as _54 from "./v1/attestation";
+import * as _55 from "./v1/batch";
+import * as _56 from "./v1/ethereum_signer";
+import * as _57 from "./v1/genesis";
+import * as _58 from "./v1/msgs";
+import * as _59 from "./v1/pool";
+import * as _60 from "./v1/query";
+import * as _61 from "./v1/types";
+import * as _113 from "./v1/query.rpc.Query";
+import * as _114 from "./v1/msgs.rpc.msg";
 export declare namespace gravity {
     const v1: {
-        MsgClientImpl: typeof _110.MsgClientImpl;
-        QueryClientImpl: typeof _109.QueryClientImpl;
+        MsgClientImpl: typeof _114.MsgClientImpl;
+        QueryClientImpl: typeof _113.QueryClientImpl;
         createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
-            params(request?: _57.QueryParamsRequest): Promise<_57.QueryParamsResponse>;
-            currentValset(request?: _57.QueryCurrentValsetRequest): Promise<_57.QueryCurrentValsetResponse>;
-            valsetRequest(request: _57.QueryValsetRequestRequest): Promise<_57.QueryValsetRequestResponse>;
-            valsetConfirm(request: _57.QueryValsetConfirmRequest): Promise<_57.QueryValsetConfirmResponse>;
-            valsetConfirmsByNonce(request: _57.QueryValsetConfirmsByNonceRequest): Promise<_57.QueryValsetConfirmsByNonceResponse>;
-            lastValsetRequests(request?: _57.QueryLastValsetRequestsRequest): Promise<_57.QueryLastValsetRequestsResponse>;
-            lastPendingValsetRequestByAddr(request: _57.QueryLastPendingValsetRequestByAddrRequest): Promise<_57.QueryLastPendingValsetRequestByAddrResponse>;
-            lastPendingBatchRequestByAddr(request: _57.QueryLastPendingBatchRequestByAddrRequest): Promise<_57.QueryLastPendingBatchRequestByAddrResponse>;
-            lastPendingLogicCallByAddr(request: _57.QueryLastPendingLogicCallByAddrRequest): Promise<_57.QueryLastPendingLogicCallByAddrResponse>;
-            lastEventNonceByAddr(request: _57.QueryLastEventNonceByAddrRequest): Promise<_57.QueryLastEventNonceByAddrResponse>;
-            batchFees(request?: _57.QueryBatchFeeRequest): Promise<_57.QueryBatchFeeResponse>;
-            outgoingTxBatches(request?: _57.QueryOutgoingTxBatchesRequest): Promise<_57.QueryOutgoingTxBatchesResponse>;
-            outgoingLogicCalls(request?: _57.QueryOutgoingLogicCallsRequest): Promise<_57.QueryOutgoingLogicCallsResponse>;
-            batchRequestByNonce(request: _57.QueryBatchRequestByNonceRequest): Promise<_57.QueryBatchRequestByNonceResponse>;
-            batchConfirms(request: _57.QueryBatchConfirmsRequest): Promise<_57.QueryBatchConfirmsResponse>;
-            logicConfirms(request: _57.QueryLogicConfirmsRequest): Promise<_57.QueryLogicConfirmsResponse>;
-            eRC20ToDenom(request: _57.QueryERC20ToDenomRequest): Promise<_57.QueryERC20ToDenomResponse>;
-            denomToERC20(request: _57.QueryDenomToERC20Request): Promise<_57.QueryDenomToERC20Response>;
-            getAttestations(request: _57.QueryAttestationsRequest): Promise<_57.QueryAttestationsResponse>;
-            getDelegateKeyByValidator(request: _57.QueryDelegateKeysByValidatorAddress): Promise<_57.QueryDelegateKeysByValidatorAddressResponse>;
-            getDelegateKeyByEth(request: _57.QueryDelegateKeysByEthAddress): Promise<_57.QueryDelegateKeysByEthAddressResponse>;
-            getDelegateKeyByOrchestrator(request: _57.QueryDelegateKeysByOrchestratorAddress): Promise<_57.QueryDelegateKeysByOrchestratorAddressResponse>;
-            getPendingSendToEth(request: _57.QueryPendingSendToEth): Promise<_57.QueryPendingSendToEthResponse>;
+            params(request?: _60.QueryParamsRequest): Promise<_60.QueryParamsResponse>;
+            currentValset(request?: _60.QueryCurrentValsetRequest): Promise<_60.QueryCurrentValsetResponse>;
+            valsetRequest(request: _60.QueryValsetRequestRequest): Promise<_60.QueryValsetRequestResponse>;
+            valsetConfirm(request: _60.QueryValsetConfirmRequest): Promise<_60.QueryValsetConfirmResponse>;
+            valsetConfirmsByNonce(request: _60.QueryValsetConfirmsByNonceRequest): Promise<_60.QueryValsetConfirmsByNonceResponse>;
+            lastValsetRequests(request?: _60.QueryLastValsetRequestsRequest): Promise<_60.QueryLastValsetRequestsResponse>;
+            lastPendingValsetRequestByAddr(request: _60.QueryLastPendingValsetRequestByAddrRequest): Promise<_60.QueryLastPendingValsetRequestByAddrResponse>;
+            lastPendingBatchRequestByAddr(request: _60.QueryLastPendingBatchRequestByAddrRequest): Promise<_60.QueryLastPendingBatchRequestByAddrResponse>;
+            lastPendingLogicCallByAddr(request: _60.QueryLastPendingLogicCallByAddrRequest): Promise<_60.QueryLastPendingLogicCallByAddrResponse>;
+            lastEventNonceByAddr(request: _60.QueryLastEventNonceByAddrRequest): Promise<_60.QueryLastEventNonceByAddrResponse>;
+            batchFees(request?: _60.QueryBatchFeeRequest): Promise<_60.QueryBatchFeeResponse>;
+            outgoingTxBatches(request?: _60.QueryOutgoingTxBatchesRequest): Promise<_60.QueryOutgoingTxBatchesResponse>;
+            outgoingLogicCalls(request?: _60.QueryOutgoingLogicCallsRequest): Promise<_60.QueryOutgoingLogicCallsResponse>;
+            batchRequestByNonce(request: _60.QueryBatchRequestByNonceRequest): Promise<_60.QueryBatchRequestByNonceResponse>;
+            batchConfirms(request: _60.QueryBatchConfirmsRequest): Promise<_60.QueryBatchConfirmsResponse>;
+            logicConfirms(request: _60.QueryLogicConfirmsRequest): Promise<_60.QueryLogicConfirmsResponse>;
+            eRC20ToDenom(request: _60.QueryERC20ToDenomRequest): Promise<_60.QueryERC20ToDenomResponse>;
+            denomToERC20(request: _60.QueryDenomToERC20Request): Promise<_60.QueryDenomToERC20Response>;
+            getAttestations(request: _60.QueryAttestationsRequest): Promise<_60.QueryAttestationsResponse>;
+            getDelegateKeyByValidator(request: _60.QueryDelegateKeysByValidatorAddress): Promise<_60.QueryDelegateKeysByValidatorAddressResponse>;
+            getDelegateKeyByEth(request: _60.QueryDelegateKeysByEthAddress): Promise<_60.QueryDelegateKeysByEthAddressResponse>;
+            getDelegateKeyByOrchestrator(request: _60.QueryDelegateKeysByOrchestratorAddress): Promise<_60.QueryDelegateKeysByOrchestratorAddressResponse>;
+            getPendingSendToEth(request: _60.QueryPendingSendToEth): Promise<_60.QueryPendingSendToEthResponse>;
         };
         registry: readonly [string, import("@cosmjs/proto-signing").GeneratedType][];
         load: (protoRegistry: import("@cosmjs/proto-signing").Registry) => void;
         MessageComposer: {
             encoded: {
-                valsetConfirm(value: _55.MsgValsetConfirm): {
+                valsetConfirm(value: _58.MsgValsetConfirm): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                sendToEth(value: _55.MsgSendToEth): {
+                sendToEth(value: _58.MsgSendToEth): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                requestBatch(value: _55.MsgRequestBatch): {
+                requestBatch(value: _58.MsgRequestBatch): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                confirmBatch(value: _55.MsgConfirmBatch): {
+                confirmBatch(value: _58.MsgConfirmBatch): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                confirmLogicCall(value: _55.MsgConfirmLogicCall): {
+                confirmLogicCall(value: _58.MsgConfirmLogicCall): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                sendToCosmosClaim(value: _55.MsgSendToCosmosClaim): {
+                sendToCosmosClaim(value: _58.MsgSendToCosmosClaim): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                batchSendToEthClaim(value: _55.MsgBatchSendToEthClaim): {
+                batchSendToEthClaim(value: _58.MsgBatchSendToEthClaim): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                valsetUpdateClaim(value: _55.MsgValsetUpdatedClaim): {
+                valsetUpdateClaim(value: _58.MsgValsetUpdatedClaim): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                eRC20DeployedClaim(value: _55.MsgERC20DeployedClaim): {
+                eRC20DeployedClaim(value: _58.MsgERC20DeployedClaim): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                logicCallExecutedClaim(value: _55.MsgLogicCallExecutedClaim): {
+                logicCallExecutedClaim(value: _58.MsgLogicCallExecutedClaim): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                setOrchestratorAddress(value: _55.MsgSetOrchestratorAddress): {
+                setOrchestratorAddress(value: _58.MsgSetOrchestratorAddress): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                cancelSendToEth(value: _55.MsgCancelSendToEth): {
+                cancelSendToEth(value: _58.MsgCancelSendToEth): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
-                submitBadSignatureEvidence(value: _55.MsgSubmitBadSignatureEvidence): {
+                submitBadSignatureEvidence(value: _58.MsgSubmitBadSignatureEvidence): {
                     typeUrl: string;
                     value: Uint8Array;
                 };
             };
             withTypeUrl: {
-                valsetConfirm(value: _55.MsgValsetConfirm): {
+                valsetConfirm(value: _58.MsgValsetConfirm): {
                     typeUrl: string;
-                    value: _55.MsgValsetConfirm;
+                    value: _58.MsgValsetConfirm;
                 };
-                sendToEth(value: _55.MsgSendToEth): {
+                sendToEth(value: _58.MsgSendToEth): {
                     typeUrl: string;
-                    value: _55.MsgSendToEth;
+                    value: _58.MsgSendToEth;
                 };
-                requestBatch(value: _55.MsgRequestBatch): {
+                requestBatch(value: _58.MsgRequestBatch): {
                     typeUrl: string;
-                    value: _55.MsgRequestBatch;
+                    value: _58.MsgRequestBatch;
                 };
-                confirmBatch(value: _55.MsgConfirmBatch): {
+                confirmBatch(value: _58.MsgConfirmBatch): {
                     typeUrl: string;
-                    value: _55.MsgConfirmBatch;
+                    value: _58.MsgConfirmBatch;
                 };
-                confirmLogicCall(value: _55.MsgConfirmLogicCall): {
+                confirmLogicCall(value: _58.MsgConfirmLogicCall): {
                     typeUrl: string;
-                    value: _55.MsgConfirmLogicCall;
+                    value: _58.MsgConfirmLogicCall;
                 };
-                sendToCosmosClaim(value: _55.MsgSendToCosmosClaim): {
+                sendToCosmosClaim(value: _58.MsgSendToCosmosClaim): {
                     typeUrl: string;
-                    value: _55.MsgSendToCosmosClaim;
+                    value: _58.MsgSendToCosmosClaim;
                 };
-                batchSendToEthClaim(value: _55.MsgBatchSendToEthClaim): {
+                batchSendToEthClaim(value: _58.MsgBatchSendToEthClaim): {
                     typeUrl: string;
-                    value: _55.MsgBatchSendToEthClaim;
+                    value: _58.MsgBatchSendToEthClaim;
                 };
-                valsetUpdateClaim(value: _55.MsgValsetUpdatedClaim): {
+                valsetUpdateClaim(value: _58.MsgValsetUpdatedClaim): {
                     typeUrl: string;
-                    value: _55.MsgValsetUpdatedClaim;
+                    value: _58.MsgValsetUpdatedClaim;
                 };
-                eRC20DeployedClaim(value: _55.MsgERC20DeployedClaim): {
+                eRC20DeployedClaim(value: _58.MsgERC20DeployedClaim): {
                     typeUrl: string;
-                    value: _55.MsgERC20DeployedClaim;
+                    value: _58.MsgERC20DeployedClaim;
                 };
-                logicCallExecutedClaim(value: _55.MsgLogicCallExecutedClaim): {
+                logicCallExecutedClaim(value: _58.MsgLogicCallExecutedClaim): {
                     typeUrl: string;
-                    value: _55.MsgLogicCallExecutedClaim;
+                    value: _58.MsgLogicCallExecutedClaim;
                 };
-                setOrchestratorAddress(value: _55.MsgSetOrchestratorAddress): {
+                setOrchestratorAddress(value: _58.MsgSetOrchestratorAddress): {
                     typeUrl: string;
-                    value: _55.MsgSetOrchestratorAddress;
+                    value: _58.MsgSetOrchestratorAddress;
                 };
-                cancelSendToEth(value: _55.MsgCancelSendToEth): {
+                cancelSendToEth(value: _58.MsgCancelSendToEth): {
                     typeUrl: string;
-                    value: _55.MsgCancelSendToEth;
+                    value: _58.MsgCancelSendToEth;
                 };
-                submitBadSignatureEvidence(value: _55.MsgSubmitBadSignatureEvidence): {
+                submitBadSignatureEvidence(value: _58.MsgSubmitBadSignatureEvidence): {
                     typeUrl: string;
-                    value: _55.MsgSubmitBadSignatureEvidence;
+                    value: _58.MsgSubmitBadSignatureEvidence;
                 };
             };
             fromPartial: {
-                valsetConfirm(value: _55.MsgValsetConfirm): {
+                valsetConfirm(value: _58.MsgValsetConfirm): {
                     typeUrl: string;
-                    value: _55.MsgValsetConfirm;
+                    value: _58.MsgValsetConfirm;
                 };
-                sendToEth(value: _55.MsgSendToEth): {
+                sendToEth(value: _58.MsgSendToEth): {
                     typeUrl: string;
-                    value: _55.MsgSendToEth;
+                    value: _58.MsgSendToEth;
                 };
-                requestBatch(value: _55.MsgRequestBatch): {
+                requestBatch(value: _58.MsgRequestBatch): {
                     typeUrl: string;
-                    value: _55.MsgRequestBatch;
+                    value: _58.MsgRequestBatch;
                 };
-                confirmBatch(value: _55.MsgConfirmBatch): {
+                confirmBatch(value: _58.MsgConfirmBatch): {
                     typeUrl: string;
-                    value: _55.MsgConfirmBatch;
+                    value: _58.MsgConfirmBatch;
                 };
-                confirmLogicCall(value: _55.MsgConfirmLogicCall): {
+                confirmLogicCall(value: _58.MsgConfirmLogicCall): {
                     typeUrl: string;
-                    value: _55.MsgConfirmLogicCall;
+                    value: _58.MsgConfirmLogicCall;
                 };
-                sendToCosmosClaim(value: _55.MsgSendToCosmosClaim): {
+                sendToCosmosClaim(value: _58.MsgSendToCosmosClaim): {
                     typeUrl: string;
-                    value: _55.MsgSendToCosmosClaim;
+                    value: _58.MsgSendToCosmosClaim;
                 };
-                batchSendToEthClaim(value: _55.MsgBatchSendToEthClaim): {
+                batchSendToEthClaim(value: _58.MsgBatchSendToEthClaim): {
                     typeUrl: string;
-                    value: _55.MsgBatchSendToEthClaim;
+                    value: _58.MsgBatchSendToEthClaim;
                 };
-                valsetUpdateClaim(value: _55.MsgValsetUpdatedClaim): {
+                valsetUpdateClaim(value: _58.MsgValsetUpdatedClaim): {
                     typeUrl: string;
-                    value: _55.MsgValsetUpdatedClaim;
+                    value: _58.MsgValsetUpdatedClaim;
                 };
-                eRC20DeployedClaim(value: _55.MsgERC20DeployedClaim): {
+                eRC20DeployedClaim(value: _58.MsgERC20DeployedClaim): {
                     typeUrl: string;
-                    value: _55.MsgERC20DeployedClaim;
+                    value: _58.MsgERC20DeployedClaim;
                 };
-                logicCallExecutedClaim(value: _55.MsgLogicCallExecutedClaim): {
+                logicCallExecutedClaim(value: _58.MsgLogicCallExecutedClaim): {
                     typeUrl: string;
-                    value: _55.MsgLogicCallExecutedClaim;
+                    value: _58.MsgLogicCallExecutedClaim;
                 };
-                setOrchestratorAddress(value: _55.MsgSetOrchestratorAddress): {
+                setOrchestratorAddress(value: _58.MsgSetOrchestratorAddress): {
                     typeUrl: string;
-                    value: _55.MsgSetOrchestratorAddress;
+                    value: _58.MsgSetOrchestratorAddress;
                 };
-                cancelSendToEth(value: _55.MsgCancelSendToEth): {
+                cancelSendToEth(value: _58.MsgCancelSendToEth): {
                     typeUrl: string;
-                    value: _55.MsgCancelSendToEth;
+                    value: _58.MsgCancelSendToEth;
                 };
-                submitBadSignatureEvidence(value: _55.MsgSubmitBadSignatureEvidence): {
+                submitBadSignatureEvidence(value: _58.MsgSubmitBadSignatureEvidence): {
                     typeUrl: string;
-                    value: _55.MsgSubmitBadSignatureEvidence;
+                    value: _58.MsgSubmitBadSignatureEvidence;
                 };
             };
         };
         AminoConverter: {
             "/gravity.v1.MsgValsetConfirm": {
                 aminoType: string;
-                toAmino: (message: _55.MsgValsetConfirm) => _55.MsgValsetConfirmAmino;
-                fromAmino: (object: _55.MsgValsetConfirmAmino) => _55.MsgValsetConfirm;
+                toAmino: (message: _58.MsgValsetConfirm) => _58.MsgValsetConfirmAmino;
+                fromAmino: (object: _58.MsgValsetConfirmAmino) => _58.MsgValsetConfirm;
             };
             "/gravity.v1.MsgSendToEth": {
                 aminoType: string;
-                toAmino: (message: _55.MsgSendToEth) => _55.MsgSendToEthAmino;
-                fromAmino: (object: _55.MsgSendToEthAmino) => _55.MsgSendToEth;
+                toAmino: (message: _58.MsgSendToEth) => _58.MsgSendToEthAmino;
+                fromAmino: (object: _58.MsgSendToEthAmino) => _58.MsgSendToEth;
             };
             "/gravity.v1.MsgRequestBatch": {
                 aminoType: string;
-                toAmino: (message: _55.MsgRequestBatch) => _55.MsgRequestBatchAmino;
-                fromAmino: (object: _55.MsgRequestBatchAmino) => _55.MsgRequestBatch;
+                toAmino: (message: _58.MsgRequestBatch) => _58.MsgRequestBatchAmino;
+                fromAmino: (object: _58.MsgRequestBatchAmino) => _58.MsgRequestBatch;
             };
             "/gravity.v1.MsgConfirmBatch": {
                 aminoType: string;
-                toAmino: (message: _55.MsgConfirmBatch) => _55.MsgConfirmBatchAmino;
-                fromAmino: (object: _55.MsgConfirmBatchAmino) => _55.MsgConfirmBatch;
+                toAmino: (message: _58.MsgConfirmBatch) => _58.MsgConfirmBatchAmino;
+                fromAmino: (object: _58.MsgConfirmBatchAmino) => _58.MsgConfirmBatch;
             };
             "/gravity.v1.MsgConfirmLogicCall": {
                 aminoType: string;
-                toAmino: (message: _55.MsgConfirmLogicCall) => _55.MsgConfirmLogicCallAmino;
-                fromAmino: (object: _55.MsgConfirmLogicCallAmino) => _55.MsgConfirmLogicCall;
+                toAmino: (message: _58.MsgConfirmLogicCall) => _58.MsgConfirmLogicCallAmino;
+                fromAmino: (object: _58.MsgConfirmLogicCallAmino) => _58.MsgConfirmLogicCall;
             };
             "/gravity.v1.MsgSendToCosmosClaim": {
                 aminoType: string;
-                toAmino: (message: _55.MsgSendToCosmosClaim) => _55.MsgSendToCosmosClaimAmino;
-                fromAmino: (object: _55.MsgSendToCosmosClaimAmino) => _55.MsgSendToCosmosClaim;
+                toAmino: (message: _58.MsgSendToCosmosClaim) => _58.MsgSendToCosmosClaimAmino;
+                fromAmino: (object: _58.MsgSendToCosmosClaimAmino) => _58.MsgSendToCosmosClaim;
             };
             "/gravity.v1.MsgBatchSendToEthClaim": {
                 aminoType: string;
-                toAmino: (message: _55.MsgBatchSendToEthClaim) => _55.MsgBatchSendToEthClaimAmino;
-                fromAmino: (object: _55.MsgBatchSendToEthClaimAmino) => _55.MsgBatchSendToEthClaim;
+                toAmino: (message: _58.MsgBatchSendToEthClaim) => _58.MsgBatchSendToEthClaimAmino;
+                fromAmino: (object: _58.MsgBatchSendToEthClaimAmino) => _58.MsgBatchSendToEthClaim;
             };
             "/gravity.v1.MsgValsetUpdatedClaim": {
                 aminoType: string;
-                toAmino: (message: _55.MsgValsetUpdatedClaim) => _55.MsgValsetUpdatedClaimAmino;
-                fromAmino: (object: _55.MsgValsetUpdatedClaimAmino) => _55.MsgValsetUpdatedClaim;
+                toAmino: (message: _58.MsgValsetUpdatedClaim) => _58.MsgValsetUpdatedClaimAmino;
+                fromAmino: (object: _58.MsgValsetUpdatedClaimAmino) => _58.MsgValsetUpdatedClaim;
             };
             "/gravity.v1.MsgERC20DeployedClaim": {
                 aminoType: string;
-                toAmino: (message: _55.MsgERC20DeployedClaim) => _55.MsgERC20DeployedClaimAmino;
-                fromAmino: (object: _55.MsgERC20DeployedClaimAmino) => _55.MsgERC20DeployedClaim;
+                toAmino: (message: _58.MsgERC20DeployedClaim) => _58.MsgERC20DeployedClaimAmino;
+                fromAmino: (object: _58.MsgERC20DeployedClaimAmino) => _58.MsgERC20DeployedClaim;
             };
             "/gravity.v1.MsgLogicCallExecutedClaim": {
                 aminoType: string;
-                toAmino: (message: _55.MsgLogicCallExecutedClaim) => _55.MsgLogicCallExecutedClaimAmino;
-                fromAmino: (object: _55.MsgLogicCallExecutedClaimAmino) => _55.MsgLogicCallExecutedClaim;
+                toAmino: (message: _58.MsgLogicCallExecutedClaim) => _58.MsgLogicCallExecutedClaimAmino;
+                fromAmino: (object: _58.MsgLogicCallExecutedClaimAmino) => _58.MsgLogicCallExecutedClaim;
             };
             "/gravity.v1.MsgSetOrchestratorAddress": {
                 aminoType: string;
-                toAmino: (message: _55.MsgSetOrchestratorAddress) => _55.MsgSetOrchestratorAddressAmino;
-                fromAmino: (object: _55.MsgSetOrchestratorAddressAmino) => _55.MsgSetOrchestratorAddress;
+                toAmino: (message: _58.MsgSetOrchestratorAddress) => _58.MsgSetOrchestratorAddressAmino;
+                fromAmino: (object: _58.MsgSetOrchestratorAddressAmino) => _58.MsgSetOrchestratorAddress;
             };
             "/gravity.v1.MsgCancelSendToEth": {
                 aminoType: string;
-                toAmino: (message: _55.MsgCancelSendToEth) => _55.MsgCancelSendToEthAmino;
-                fromAmino: (object: _55.MsgCancelSendToEthAmino) => _55.MsgCancelSendToEth;
+                toAmino: (message: _58.MsgCancelSendToEth) => _58.MsgCancelSendToEthAmino;
+                fromAmino: (object: _58.MsgCancelSendToEthAmino) => _58.MsgCancelSendToEth;
             };
             "/gravity.v1.MsgSubmitBadSignatureEvidence": {
                 aminoType: string;
-                toAmino: (message: _55.MsgSubmitBadSignatureEvidence) => _55.MsgSubmitBadSignatureEvidenceAmino;
-                fromAmino: (object: _55.MsgSubmitBadSignatureEvidenceAmino) => _55.MsgSubmitBadSignatureEvidence;
+                toAmino: (message: _58.MsgSubmitBadSignatureEvidence) => _58.MsgSubmitBadSignatureEvidenceAmino;
+                fromAmino: (object: _58.MsgSubmitBadSignatureEvidenceAmino) => _58.MsgSubmitBadSignatureEvidence;
             };
         };
         BridgeValidator: {
-            encode(message: _58.BridgeValidator, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.BridgeValidator;
+            encode(message: _61.BridgeValidator, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.BridgeValidator;
             fromPartial(object: {
                 power?: string | number | import("long").Long;
                 ethereumAddress?: string;
-            }): _58.BridgeValidator;
-            fromAmino(object: _58.BridgeValidatorAmino): _58.BridgeValidator;
-            toAmino(message: _58.BridgeValidator): _58.BridgeValidatorAmino;
-            fromAminoMsg(object: _58.BridgeValidatorAminoMsg): _58.BridgeValidator;
-            fromProtoMsg(message: _58.BridgeValidatorProtoMsg): _58.BridgeValidator;
-            toProto(message: _58.BridgeValidator): Uint8Array;
-            toProtoMsg(message: _58.BridgeValidator): _58.BridgeValidatorProtoMsg;
+            }): _61.BridgeValidator;
+            fromAmino(object: _61.BridgeValidatorAmino): _61.BridgeValidator;
+            toAmino(message: _61.BridgeValidator): _61.BridgeValidatorAmino;
+            fromAminoMsg(object: _61.BridgeValidatorAminoMsg): _61.BridgeValidator;
+            fromProtoMsg(message: _61.BridgeValidatorProtoMsg): _61.BridgeValidator;
+            toProto(message: _61.BridgeValidator): Uint8Array;
+            toProtoMsg(message: _61.BridgeValidator): _61.BridgeValidatorProtoMsg;
         };
         Valset: {
-            encode(message: _58.Valset, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.Valset;
+            encode(message: _61.Valset, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.Valset;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
                 members?: {
@@ -297,77 +297,77 @@ export declare namespace gravity {
                 height?: string | number | import("long").Long;
                 rewardAmount?: string;
                 rewardToken?: string;
-            }): _58.Valset;
-            fromAmino(object: _58.ValsetAmino): _58.Valset;
-            toAmino(message: _58.Valset): _58.ValsetAmino;
-            fromAminoMsg(object: _58.ValsetAminoMsg): _58.Valset;
-            fromProtoMsg(message: _58.ValsetProtoMsg): _58.Valset;
-            toProto(message: _58.Valset): Uint8Array;
-            toProtoMsg(message: _58.Valset): _58.ValsetProtoMsg;
+            }): _61.Valset;
+            fromAmino(object: _61.ValsetAmino): _61.Valset;
+            toAmino(message: _61.Valset): _61.ValsetAmino;
+            fromAminoMsg(object: _61.ValsetAminoMsg): _61.Valset;
+            fromProtoMsg(message: _61.ValsetProtoMsg): _61.Valset;
+            toProto(message: _61.Valset): Uint8Array;
+            toProtoMsg(message: _61.Valset): _61.ValsetProtoMsg;
         };
         LastObservedEthereumBlockHeight: {
-            encode(message: _58.LastObservedEthereumBlockHeight, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.LastObservedEthereumBlockHeight;
+            encode(message: _61.LastObservedEthereumBlockHeight, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.LastObservedEthereumBlockHeight;
             fromPartial(object: {
                 cosmosBlockHeight?: string | number | import("long").Long;
                 ethereumBlockHeight?: string | number | import("long").Long;
-            }): _58.LastObservedEthereumBlockHeight;
-            fromAmino(object: _58.LastObservedEthereumBlockHeightAmino): _58.LastObservedEthereumBlockHeight;
-            toAmino(message: _58.LastObservedEthereumBlockHeight): _58.LastObservedEthereumBlockHeightAmino;
-            fromAminoMsg(object: _58.LastObservedEthereumBlockHeightAminoMsg): _58.LastObservedEthereumBlockHeight;
-            fromProtoMsg(message: _58.LastObservedEthereumBlockHeightProtoMsg): _58.LastObservedEthereumBlockHeight;
-            toProto(message: _58.LastObservedEthereumBlockHeight): Uint8Array;
-            toProtoMsg(message: _58.LastObservedEthereumBlockHeight): _58.LastObservedEthereumBlockHeightProtoMsg;
+            }): _61.LastObservedEthereumBlockHeight;
+            fromAmino(object: _61.LastObservedEthereumBlockHeightAmino): _61.LastObservedEthereumBlockHeight;
+            toAmino(message: _61.LastObservedEthereumBlockHeight): _61.LastObservedEthereumBlockHeightAmino;
+            fromAminoMsg(object: _61.LastObservedEthereumBlockHeightAminoMsg): _61.LastObservedEthereumBlockHeight;
+            fromProtoMsg(message: _61.LastObservedEthereumBlockHeightProtoMsg): _61.LastObservedEthereumBlockHeight;
+            toProto(message: _61.LastObservedEthereumBlockHeight): Uint8Array;
+            toProtoMsg(message: _61.LastObservedEthereumBlockHeight): _61.LastObservedEthereumBlockHeightProtoMsg;
         };
         ERC20ToDenom: {
-            encode(message: _58.ERC20ToDenom, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.ERC20ToDenom;
+            encode(message: _61.ERC20ToDenom, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.ERC20ToDenom;
             fromPartial(object: {
                 erc20?: string;
                 denom?: string;
-            }): _58.ERC20ToDenom;
-            fromAmino(object: _58.ERC20ToDenomAmino): _58.ERC20ToDenom;
-            toAmino(message: _58.ERC20ToDenom): _58.ERC20ToDenomAmino;
-            fromAminoMsg(object: _58.ERC20ToDenomAminoMsg): _58.ERC20ToDenom;
-            fromProtoMsg(message: _58.ERC20ToDenomProtoMsg): _58.ERC20ToDenom;
-            toProto(message: _58.ERC20ToDenom): Uint8Array;
-            toProtoMsg(message: _58.ERC20ToDenom): _58.ERC20ToDenomProtoMsg;
+            }): _61.ERC20ToDenom;
+            fromAmino(object: _61.ERC20ToDenomAmino): _61.ERC20ToDenom;
+            toAmino(message: _61.ERC20ToDenom): _61.ERC20ToDenomAmino;
+            fromAminoMsg(object: _61.ERC20ToDenomAminoMsg): _61.ERC20ToDenom;
+            fromProtoMsg(message: _61.ERC20ToDenomProtoMsg): _61.ERC20ToDenom;
+            toProto(message: _61.ERC20ToDenom): Uint8Array;
+            toProtoMsg(message: _61.ERC20ToDenom): _61.ERC20ToDenomProtoMsg;
         };
         UnhaltBridgeProposal: {
-            encode(message: _58.UnhaltBridgeProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.UnhaltBridgeProposal;
+            encode(message: _61.UnhaltBridgeProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.UnhaltBridgeProposal;
             fromPartial(object: {
                 title?: string;
                 description?: string;
                 targetNonce?: string | number | import("long").Long;
-            }): _58.UnhaltBridgeProposal;
-            fromAmino(object: _58.UnhaltBridgeProposalAmino): _58.UnhaltBridgeProposal;
-            toAmino(message: _58.UnhaltBridgeProposal): _58.UnhaltBridgeProposalAmino;
-            fromAminoMsg(object: _58.UnhaltBridgeProposalAminoMsg): _58.UnhaltBridgeProposal;
-            fromProtoMsg(message: _58.UnhaltBridgeProposalProtoMsg): _58.UnhaltBridgeProposal;
-            toProto(message: _58.UnhaltBridgeProposal): Uint8Array;
-            toProtoMsg(message: _58.UnhaltBridgeProposal): _58.UnhaltBridgeProposalProtoMsg;
+            }): _61.UnhaltBridgeProposal;
+            fromAmino(object: _61.UnhaltBridgeProposalAmino): _61.UnhaltBridgeProposal;
+            toAmino(message: _61.UnhaltBridgeProposal): _61.UnhaltBridgeProposalAmino;
+            fromAminoMsg(object: _61.UnhaltBridgeProposalAminoMsg): _61.UnhaltBridgeProposal;
+            fromProtoMsg(message: _61.UnhaltBridgeProposalProtoMsg): _61.UnhaltBridgeProposal;
+            toProto(message: _61.UnhaltBridgeProposal): Uint8Array;
+            toProtoMsg(message: _61.UnhaltBridgeProposal): _61.UnhaltBridgeProposalProtoMsg;
         };
         AirdropProposal: {
-            encode(message: _58.AirdropProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.AirdropProposal;
+            encode(message: _61.AirdropProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.AirdropProposal;
             fromPartial(object: {
                 title?: string;
                 description?: string;
                 denom?: string;
                 recipients?: Uint8Array;
                 amounts?: (string | number | import("long").Long)[];
-            }): _58.AirdropProposal;
-            fromAmino(object: _58.AirdropProposalAmino): _58.AirdropProposal;
-            toAmino(message: _58.AirdropProposal): _58.AirdropProposalAmino;
-            fromAminoMsg(object: _58.AirdropProposalAminoMsg): _58.AirdropProposal;
-            fromProtoMsg(message: _58.AirdropProposalProtoMsg): _58.AirdropProposal;
-            toProto(message: _58.AirdropProposal): Uint8Array;
-            toProtoMsg(message: _58.AirdropProposal): _58.AirdropProposalProtoMsg;
+            }): _61.AirdropProposal;
+            fromAmino(object: _61.AirdropProposalAmino): _61.AirdropProposal;
+            toAmino(message: _61.AirdropProposal): _61.AirdropProposalAmino;
+            fromAminoMsg(object: _61.AirdropProposalAminoMsg): _61.AirdropProposal;
+            fromProtoMsg(message: _61.AirdropProposalProtoMsg): _61.AirdropProposal;
+            toProto(message: _61.AirdropProposal): Uint8Array;
+            toProtoMsg(message: _61.AirdropProposal): _61.AirdropProposalProtoMsg;
         };
         IBCMetadataProposal: {
-            encode(message: _58.IBCMetadataProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.IBCMetadataProposal;
+            encode(message: _61.IBCMetadataProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _61.IBCMetadataProposal;
             fromPartial(object: {
                 title?: string;
                 description?: string;
@@ -384,28 +384,28 @@ export declare namespace gravity {
                     symbol?: string;
                 };
                 ibcDenom?: string;
-            }): _58.IBCMetadataProposal;
-            fromAmino(object: _58.IBCMetadataProposalAmino): _58.IBCMetadataProposal;
-            toAmino(message: _58.IBCMetadataProposal): _58.IBCMetadataProposalAmino;
-            fromAminoMsg(object: _58.IBCMetadataProposalAminoMsg): _58.IBCMetadataProposal;
-            fromProtoMsg(message: _58.IBCMetadataProposalProtoMsg): _58.IBCMetadataProposal;
-            toProto(message: _58.IBCMetadataProposal): Uint8Array;
-            toProtoMsg(message: _58.IBCMetadataProposal): _58.IBCMetadataProposalProtoMsg;
+            }): _61.IBCMetadataProposal;
+            fromAmino(object: _61.IBCMetadataProposalAmino): _61.IBCMetadataProposal;
+            toAmino(message: _61.IBCMetadataProposal): _61.IBCMetadataProposalAmino;
+            fromAminoMsg(object: _61.IBCMetadataProposalAminoMsg): _61.IBCMetadataProposal;
+            fromProtoMsg(message: _61.IBCMetadataProposalProtoMsg): _61.IBCMetadataProposal;
+            toProto(message: _61.IBCMetadataProposal): Uint8Array;
+            toProtoMsg(message: _61.IBCMetadataProposal): _61.IBCMetadataProposalProtoMsg;
         };
         QueryParamsRequest: {
-            encode(_: _57.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryParamsRequest;
-            fromPartial(_: {}): _57.QueryParamsRequest;
-            fromAmino(_: _57.QueryParamsRequestAmino): _57.QueryParamsRequest;
-            toAmino(_: _57.QueryParamsRequest): _57.QueryParamsRequestAmino;
-            fromAminoMsg(object: _57.QueryParamsRequestAminoMsg): _57.QueryParamsRequest;
-            fromProtoMsg(message: _57.QueryParamsRequestProtoMsg): _57.QueryParamsRequest;
-            toProto(message: _57.QueryParamsRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryParamsRequest): _57.QueryParamsRequestProtoMsg;
+            encode(_: _60.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryParamsRequest;
+            fromPartial(_: {}): _60.QueryParamsRequest;
+            fromAmino(_: _60.QueryParamsRequestAmino): _60.QueryParamsRequest;
+            toAmino(_: _60.QueryParamsRequest): _60.QueryParamsRequestAmino;
+            fromAminoMsg(object: _60.QueryParamsRequestAminoMsg): _60.QueryParamsRequest;
+            fromProtoMsg(message: _60.QueryParamsRequestProtoMsg): _60.QueryParamsRequest;
+            toProto(message: _60.QueryParamsRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryParamsRequest): _60.QueryParamsRequestProtoMsg;
         };
         QueryParamsResponse: {
-            encode(message: _57.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryParamsResponse;
+            encode(message: _60.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryParamsResponse;
             fromPartial(object: {
                 params?: {
                     gravityId?: string;
@@ -434,28 +434,28 @@ export declare namespace gravity {
                         denom?: string;
                     };
                 };
-            }): _57.QueryParamsResponse;
-            fromAmino(object: _57.QueryParamsResponseAmino): _57.QueryParamsResponse;
-            toAmino(message: _57.QueryParamsResponse): _57.QueryParamsResponseAmino;
-            fromAminoMsg(object: _57.QueryParamsResponseAminoMsg): _57.QueryParamsResponse;
-            fromProtoMsg(message: _57.QueryParamsResponseProtoMsg): _57.QueryParamsResponse;
-            toProto(message: _57.QueryParamsResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryParamsResponse): _57.QueryParamsResponseProtoMsg;
+            }): _60.QueryParamsResponse;
+            fromAmino(object: _60.QueryParamsResponseAmino): _60.QueryParamsResponse;
+            toAmino(message: _60.QueryParamsResponse): _60.QueryParamsResponseAmino;
+            fromAminoMsg(object: _60.QueryParamsResponseAminoMsg): _60.QueryParamsResponse;
+            fromProtoMsg(message: _60.QueryParamsResponseProtoMsg): _60.QueryParamsResponse;
+            toProto(message: _60.QueryParamsResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryParamsResponse): _60.QueryParamsResponseProtoMsg;
         };
         QueryCurrentValsetRequest: {
-            encode(_: _57.QueryCurrentValsetRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryCurrentValsetRequest;
-            fromPartial(_: {}): _57.QueryCurrentValsetRequest;
-            fromAmino(_: _57.QueryCurrentValsetRequestAmino): _57.QueryCurrentValsetRequest;
-            toAmino(_: _57.QueryCurrentValsetRequest): _57.QueryCurrentValsetRequestAmino;
-            fromAminoMsg(object: _57.QueryCurrentValsetRequestAminoMsg): _57.QueryCurrentValsetRequest;
-            fromProtoMsg(message: _57.QueryCurrentValsetRequestProtoMsg): _57.QueryCurrentValsetRequest;
-            toProto(message: _57.QueryCurrentValsetRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryCurrentValsetRequest): _57.QueryCurrentValsetRequestProtoMsg;
+            encode(_: _60.QueryCurrentValsetRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryCurrentValsetRequest;
+            fromPartial(_: {}): _60.QueryCurrentValsetRequest;
+            fromAmino(_: _60.QueryCurrentValsetRequestAmino): _60.QueryCurrentValsetRequest;
+            toAmino(_: _60.QueryCurrentValsetRequest): _60.QueryCurrentValsetRequestAmino;
+            fromAminoMsg(object: _60.QueryCurrentValsetRequestAminoMsg): _60.QueryCurrentValsetRequest;
+            fromProtoMsg(message: _60.QueryCurrentValsetRequestProtoMsg): _60.QueryCurrentValsetRequest;
+            toProto(message: _60.QueryCurrentValsetRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryCurrentValsetRequest): _60.QueryCurrentValsetRequestProtoMsg;
         };
         QueryCurrentValsetResponse: {
-            encode(message: _57.QueryCurrentValsetResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryCurrentValsetResponse;
+            encode(message: _60.QueryCurrentValsetResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryCurrentValsetResponse;
             fromPartial(object: {
                 valset?: {
                     nonce?: string | number | import("long").Long;
@@ -467,30 +467,30 @@ export declare namespace gravity {
                     rewardAmount?: string;
                     rewardToken?: string;
                 };
-            }): _57.QueryCurrentValsetResponse;
-            fromAmino(object: _57.QueryCurrentValsetResponseAmino): _57.QueryCurrentValsetResponse;
-            toAmino(message: _57.QueryCurrentValsetResponse): _57.QueryCurrentValsetResponseAmino;
-            fromAminoMsg(object: _57.QueryCurrentValsetResponseAminoMsg): _57.QueryCurrentValsetResponse;
-            fromProtoMsg(message: _57.QueryCurrentValsetResponseProtoMsg): _57.QueryCurrentValsetResponse;
-            toProto(message: _57.QueryCurrentValsetResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryCurrentValsetResponse): _57.QueryCurrentValsetResponseProtoMsg;
+            }): _60.QueryCurrentValsetResponse;
+            fromAmino(object: _60.QueryCurrentValsetResponseAmino): _60.QueryCurrentValsetResponse;
+            toAmino(message: _60.QueryCurrentValsetResponse): _60.QueryCurrentValsetResponseAmino;
+            fromAminoMsg(object: _60.QueryCurrentValsetResponseAminoMsg): _60.QueryCurrentValsetResponse;
+            fromProtoMsg(message: _60.QueryCurrentValsetResponseProtoMsg): _60.QueryCurrentValsetResponse;
+            toProto(message: _60.QueryCurrentValsetResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryCurrentValsetResponse): _60.QueryCurrentValsetResponseProtoMsg;
         };
         QueryValsetRequestRequest: {
-            encode(message: _57.QueryValsetRequestRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryValsetRequestRequest;
+            encode(message: _60.QueryValsetRequestRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryValsetRequestRequest;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
-            }): _57.QueryValsetRequestRequest;
-            fromAmino(object: _57.QueryValsetRequestRequestAmino): _57.QueryValsetRequestRequest;
-            toAmino(message: _57.QueryValsetRequestRequest): _57.QueryValsetRequestRequestAmino;
-            fromAminoMsg(object: _57.QueryValsetRequestRequestAminoMsg): _57.QueryValsetRequestRequest;
-            fromProtoMsg(message: _57.QueryValsetRequestRequestProtoMsg): _57.QueryValsetRequestRequest;
-            toProto(message: _57.QueryValsetRequestRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryValsetRequestRequest): _57.QueryValsetRequestRequestProtoMsg;
+            }): _60.QueryValsetRequestRequest;
+            fromAmino(object: _60.QueryValsetRequestRequestAmino): _60.QueryValsetRequestRequest;
+            toAmino(message: _60.QueryValsetRequestRequest): _60.QueryValsetRequestRequestAmino;
+            fromAminoMsg(object: _60.QueryValsetRequestRequestAminoMsg): _60.QueryValsetRequestRequest;
+            fromProtoMsg(message: _60.QueryValsetRequestRequestProtoMsg): _60.QueryValsetRequestRequest;
+            toProto(message: _60.QueryValsetRequestRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryValsetRequestRequest): _60.QueryValsetRequestRequestProtoMsg;
         };
         QueryValsetRequestResponse: {
-            encode(message: _57.QueryValsetRequestResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryValsetRequestResponse;
+            encode(message: _60.QueryValsetRequestResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryValsetRequestResponse;
             fromPartial(object: {
                 valset?: {
                     nonce?: string | number | import("long").Long;
@@ -502,31 +502,31 @@ export declare namespace gravity {
                     rewardAmount?: string;
                     rewardToken?: string;
                 };
-            }): _57.QueryValsetRequestResponse;
-            fromAmino(object: _57.QueryValsetRequestResponseAmino): _57.QueryValsetRequestResponse;
-            toAmino(message: _57.QueryValsetRequestResponse): _57.QueryValsetRequestResponseAmino;
-            fromAminoMsg(object: _57.QueryValsetRequestResponseAminoMsg): _57.QueryValsetRequestResponse;
-            fromProtoMsg(message: _57.QueryValsetRequestResponseProtoMsg): _57.QueryValsetRequestResponse;
-            toProto(message: _57.QueryValsetRequestResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryValsetRequestResponse): _57.QueryValsetRequestResponseProtoMsg;
+            }): _60.QueryValsetRequestResponse;
+            fromAmino(object: _60.QueryValsetRequestResponseAmino): _60.QueryValsetRequestResponse;
+            toAmino(message: _60.QueryValsetRequestResponse): _60.QueryValsetRequestResponseAmino;
+            fromAminoMsg(object: _60.QueryValsetRequestResponseAminoMsg): _60.QueryValsetRequestResponse;
+            fromProtoMsg(message: _60.QueryValsetRequestResponseProtoMsg): _60.QueryValsetRequestResponse;
+            toProto(message: _60.QueryValsetRequestResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryValsetRequestResponse): _60.QueryValsetRequestResponseProtoMsg;
         };
         QueryValsetConfirmRequest: {
-            encode(message: _57.QueryValsetConfirmRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryValsetConfirmRequest;
+            encode(message: _60.QueryValsetConfirmRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryValsetConfirmRequest;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
                 address?: string;
-            }): _57.QueryValsetConfirmRequest;
-            fromAmino(object: _57.QueryValsetConfirmRequestAmino): _57.QueryValsetConfirmRequest;
-            toAmino(message: _57.QueryValsetConfirmRequest): _57.QueryValsetConfirmRequestAmino;
-            fromAminoMsg(object: _57.QueryValsetConfirmRequestAminoMsg): _57.QueryValsetConfirmRequest;
-            fromProtoMsg(message: _57.QueryValsetConfirmRequestProtoMsg): _57.QueryValsetConfirmRequest;
-            toProto(message: _57.QueryValsetConfirmRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryValsetConfirmRequest): _57.QueryValsetConfirmRequestProtoMsg;
+            }): _60.QueryValsetConfirmRequest;
+            fromAmino(object: _60.QueryValsetConfirmRequestAmino): _60.QueryValsetConfirmRequest;
+            toAmino(message: _60.QueryValsetConfirmRequest): _60.QueryValsetConfirmRequestAmino;
+            fromAminoMsg(object: _60.QueryValsetConfirmRequestAminoMsg): _60.QueryValsetConfirmRequest;
+            fromProtoMsg(message: _60.QueryValsetConfirmRequestProtoMsg): _60.QueryValsetConfirmRequest;
+            toProto(message: _60.QueryValsetConfirmRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryValsetConfirmRequest): _60.QueryValsetConfirmRequestProtoMsg;
         };
         QueryValsetConfirmResponse: {
-            encode(message: _57.QueryValsetConfirmResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryValsetConfirmResponse;
+            encode(message: _60.QueryValsetConfirmResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryValsetConfirmResponse;
             fromPartial(object: {
                 confirm?: {
                     nonce?: string | number | import("long").Long;
@@ -534,30 +534,30 @@ export declare namespace gravity {
                     ethAddress?: string;
                     signature?: string;
                 };
-            }): _57.QueryValsetConfirmResponse;
-            fromAmino(object: _57.QueryValsetConfirmResponseAmino): _57.QueryValsetConfirmResponse;
-            toAmino(message: _57.QueryValsetConfirmResponse): _57.QueryValsetConfirmResponseAmino;
-            fromAminoMsg(object: _57.QueryValsetConfirmResponseAminoMsg): _57.QueryValsetConfirmResponse;
-            fromProtoMsg(message: _57.QueryValsetConfirmResponseProtoMsg): _57.QueryValsetConfirmResponse;
-            toProto(message: _57.QueryValsetConfirmResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryValsetConfirmResponse): _57.QueryValsetConfirmResponseProtoMsg;
+            }): _60.QueryValsetConfirmResponse;
+            fromAmino(object: _60.QueryValsetConfirmResponseAmino): _60.QueryValsetConfirmResponse;
+            toAmino(message: _60.QueryValsetConfirmResponse): _60.QueryValsetConfirmResponseAmino;
+            fromAminoMsg(object: _60.QueryValsetConfirmResponseAminoMsg): _60.QueryValsetConfirmResponse;
+            fromProtoMsg(message: _60.QueryValsetConfirmResponseProtoMsg): _60.QueryValsetConfirmResponse;
+            toProto(message: _60.QueryValsetConfirmResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryValsetConfirmResponse): _60.QueryValsetConfirmResponseProtoMsg;
         };
         QueryValsetConfirmsByNonceRequest: {
-            encode(message: _57.QueryValsetConfirmsByNonceRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryValsetConfirmsByNonceRequest;
+            encode(message: _60.QueryValsetConfirmsByNonceRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryValsetConfirmsByNonceRequest;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
-            }): _57.QueryValsetConfirmsByNonceRequest;
-            fromAmino(object: _57.QueryValsetConfirmsByNonceRequestAmino): _57.QueryValsetConfirmsByNonceRequest;
-            toAmino(message: _57.QueryValsetConfirmsByNonceRequest): _57.QueryValsetConfirmsByNonceRequestAmino;
-            fromAminoMsg(object: _57.QueryValsetConfirmsByNonceRequestAminoMsg): _57.QueryValsetConfirmsByNonceRequest;
-            fromProtoMsg(message: _57.QueryValsetConfirmsByNonceRequestProtoMsg): _57.QueryValsetConfirmsByNonceRequest;
-            toProto(message: _57.QueryValsetConfirmsByNonceRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryValsetConfirmsByNonceRequest): _57.QueryValsetConfirmsByNonceRequestProtoMsg;
+            }): _60.QueryValsetConfirmsByNonceRequest;
+            fromAmino(object: _60.QueryValsetConfirmsByNonceRequestAmino): _60.QueryValsetConfirmsByNonceRequest;
+            toAmino(message: _60.QueryValsetConfirmsByNonceRequest): _60.QueryValsetConfirmsByNonceRequestAmino;
+            fromAminoMsg(object: _60.QueryValsetConfirmsByNonceRequestAminoMsg): _60.QueryValsetConfirmsByNonceRequest;
+            fromProtoMsg(message: _60.QueryValsetConfirmsByNonceRequestProtoMsg): _60.QueryValsetConfirmsByNonceRequest;
+            toProto(message: _60.QueryValsetConfirmsByNonceRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryValsetConfirmsByNonceRequest): _60.QueryValsetConfirmsByNonceRequestProtoMsg;
         };
         QueryValsetConfirmsByNonceResponse: {
-            encode(message: _57.QueryValsetConfirmsByNonceResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryValsetConfirmsByNonceResponse;
+            encode(message: _60.QueryValsetConfirmsByNonceResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryValsetConfirmsByNonceResponse;
             fromPartial(object: {
                 confirms?: {
                     nonce?: string | number | import("long").Long;
@@ -565,28 +565,28 @@ export declare namespace gravity {
                     ethAddress?: string;
                     signature?: string;
                 }[];
-            }): _57.QueryValsetConfirmsByNonceResponse;
-            fromAmino(object: _57.QueryValsetConfirmsByNonceResponseAmino): _57.QueryValsetConfirmsByNonceResponse;
-            toAmino(message: _57.QueryValsetConfirmsByNonceResponse): _57.QueryValsetConfirmsByNonceResponseAmino;
-            fromAminoMsg(object: _57.QueryValsetConfirmsByNonceResponseAminoMsg): _57.QueryValsetConfirmsByNonceResponse;
-            fromProtoMsg(message: _57.QueryValsetConfirmsByNonceResponseProtoMsg): _57.QueryValsetConfirmsByNonceResponse;
-            toProto(message: _57.QueryValsetConfirmsByNonceResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryValsetConfirmsByNonceResponse): _57.QueryValsetConfirmsByNonceResponseProtoMsg;
+            }): _60.QueryValsetConfirmsByNonceResponse;
+            fromAmino(object: _60.QueryValsetConfirmsByNonceResponseAmino): _60.QueryValsetConfirmsByNonceResponse;
+            toAmino(message: _60.QueryValsetConfirmsByNonceResponse): _60.QueryValsetConfirmsByNonceResponseAmino;
+            fromAminoMsg(object: _60.QueryValsetConfirmsByNonceResponseAminoMsg): _60.QueryValsetConfirmsByNonceResponse;
+            fromProtoMsg(message: _60.QueryValsetConfirmsByNonceResponseProtoMsg): _60.QueryValsetConfirmsByNonceResponse;
+            toProto(message: _60.QueryValsetConfirmsByNonceResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryValsetConfirmsByNonceResponse): _60.QueryValsetConfirmsByNonceResponseProtoMsg;
         };
         QueryLastValsetRequestsRequest: {
-            encode(_: _57.QueryLastValsetRequestsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastValsetRequestsRequest;
-            fromPartial(_: {}): _57.QueryLastValsetRequestsRequest;
-            fromAmino(_: _57.QueryLastValsetRequestsRequestAmino): _57.QueryLastValsetRequestsRequest;
-            toAmino(_: _57.QueryLastValsetRequestsRequest): _57.QueryLastValsetRequestsRequestAmino;
-            fromAminoMsg(object: _57.QueryLastValsetRequestsRequestAminoMsg): _57.QueryLastValsetRequestsRequest;
-            fromProtoMsg(message: _57.QueryLastValsetRequestsRequestProtoMsg): _57.QueryLastValsetRequestsRequest;
-            toProto(message: _57.QueryLastValsetRequestsRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryLastValsetRequestsRequest): _57.QueryLastValsetRequestsRequestProtoMsg;
+            encode(_: _60.QueryLastValsetRequestsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastValsetRequestsRequest;
+            fromPartial(_: {}): _60.QueryLastValsetRequestsRequest;
+            fromAmino(_: _60.QueryLastValsetRequestsRequestAmino): _60.QueryLastValsetRequestsRequest;
+            toAmino(_: _60.QueryLastValsetRequestsRequest): _60.QueryLastValsetRequestsRequestAmino;
+            fromAminoMsg(object: _60.QueryLastValsetRequestsRequestAminoMsg): _60.QueryLastValsetRequestsRequest;
+            fromProtoMsg(message: _60.QueryLastValsetRequestsRequestProtoMsg): _60.QueryLastValsetRequestsRequest;
+            toProto(message: _60.QueryLastValsetRequestsRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryLastValsetRequestsRequest): _60.QueryLastValsetRequestsRequestProtoMsg;
         };
         QueryLastValsetRequestsResponse: {
-            encode(message: _57.QueryLastValsetRequestsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastValsetRequestsResponse;
+            encode(message: _60.QueryLastValsetRequestsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastValsetRequestsResponse;
             fromPartial(object: {
                 valsets?: {
                     nonce?: string | number | import("long").Long;
@@ -598,30 +598,30 @@ export declare namespace gravity {
                     rewardAmount?: string;
                     rewardToken?: string;
                 }[];
-            }): _57.QueryLastValsetRequestsResponse;
-            fromAmino(object: _57.QueryLastValsetRequestsResponseAmino): _57.QueryLastValsetRequestsResponse;
-            toAmino(message: _57.QueryLastValsetRequestsResponse): _57.QueryLastValsetRequestsResponseAmino;
-            fromAminoMsg(object: _57.QueryLastValsetRequestsResponseAminoMsg): _57.QueryLastValsetRequestsResponse;
-            fromProtoMsg(message: _57.QueryLastValsetRequestsResponseProtoMsg): _57.QueryLastValsetRequestsResponse;
-            toProto(message: _57.QueryLastValsetRequestsResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryLastValsetRequestsResponse): _57.QueryLastValsetRequestsResponseProtoMsg;
+            }): _60.QueryLastValsetRequestsResponse;
+            fromAmino(object: _60.QueryLastValsetRequestsResponseAmino): _60.QueryLastValsetRequestsResponse;
+            toAmino(message: _60.QueryLastValsetRequestsResponse): _60.QueryLastValsetRequestsResponseAmino;
+            fromAminoMsg(object: _60.QueryLastValsetRequestsResponseAminoMsg): _60.QueryLastValsetRequestsResponse;
+            fromProtoMsg(message: _60.QueryLastValsetRequestsResponseProtoMsg): _60.QueryLastValsetRequestsResponse;
+            toProto(message: _60.QueryLastValsetRequestsResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryLastValsetRequestsResponse): _60.QueryLastValsetRequestsResponseProtoMsg;
         };
         QueryLastPendingValsetRequestByAddrRequest: {
-            encode(message: _57.QueryLastPendingValsetRequestByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastPendingValsetRequestByAddrRequest;
+            encode(message: _60.QueryLastPendingValsetRequestByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastPendingValsetRequestByAddrRequest;
             fromPartial(object: {
                 address?: string;
-            }): _57.QueryLastPendingValsetRequestByAddrRequest;
-            fromAmino(object: _57.QueryLastPendingValsetRequestByAddrRequestAmino): _57.QueryLastPendingValsetRequestByAddrRequest;
-            toAmino(message: _57.QueryLastPendingValsetRequestByAddrRequest): _57.QueryLastPendingValsetRequestByAddrRequestAmino;
-            fromAminoMsg(object: _57.QueryLastPendingValsetRequestByAddrRequestAminoMsg): _57.QueryLastPendingValsetRequestByAddrRequest;
-            fromProtoMsg(message: _57.QueryLastPendingValsetRequestByAddrRequestProtoMsg): _57.QueryLastPendingValsetRequestByAddrRequest;
-            toProto(message: _57.QueryLastPendingValsetRequestByAddrRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryLastPendingValsetRequestByAddrRequest): _57.QueryLastPendingValsetRequestByAddrRequestProtoMsg;
+            }): _60.QueryLastPendingValsetRequestByAddrRequest;
+            fromAmino(object: _60.QueryLastPendingValsetRequestByAddrRequestAmino): _60.QueryLastPendingValsetRequestByAddrRequest;
+            toAmino(message: _60.QueryLastPendingValsetRequestByAddrRequest): _60.QueryLastPendingValsetRequestByAddrRequestAmino;
+            fromAminoMsg(object: _60.QueryLastPendingValsetRequestByAddrRequestAminoMsg): _60.QueryLastPendingValsetRequestByAddrRequest;
+            fromProtoMsg(message: _60.QueryLastPendingValsetRequestByAddrRequestProtoMsg): _60.QueryLastPendingValsetRequestByAddrRequest;
+            toProto(message: _60.QueryLastPendingValsetRequestByAddrRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryLastPendingValsetRequestByAddrRequest): _60.QueryLastPendingValsetRequestByAddrRequestProtoMsg;
         };
         QueryLastPendingValsetRequestByAddrResponse: {
-            encode(message: _57.QueryLastPendingValsetRequestByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastPendingValsetRequestByAddrResponse;
+            encode(message: _60.QueryLastPendingValsetRequestByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastPendingValsetRequestByAddrResponse;
             fromPartial(object: {
                 valsets?: {
                     nonce?: string | number | import("long").Long;
@@ -633,58 +633,58 @@ export declare namespace gravity {
                     rewardAmount?: string;
                     rewardToken?: string;
                 }[];
-            }): _57.QueryLastPendingValsetRequestByAddrResponse;
-            fromAmino(object: _57.QueryLastPendingValsetRequestByAddrResponseAmino): _57.QueryLastPendingValsetRequestByAddrResponse;
-            toAmino(message: _57.QueryLastPendingValsetRequestByAddrResponse): _57.QueryLastPendingValsetRequestByAddrResponseAmino;
-            fromAminoMsg(object: _57.QueryLastPendingValsetRequestByAddrResponseAminoMsg): _57.QueryLastPendingValsetRequestByAddrResponse;
-            fromProtoMsg(message: _57.QueryLastPendingValsetRequestByAddrResponseProtoMsg): _57.QueryLastPendingValsetRequestByAddrResponse;
-            toProto(message: _57.QueryLastPendingValsetRequestByAddrResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryLastPendingValsetRequestByAddrResponse): _57.QueryLastPendingValsetRequestByAddrResponseProtoMsg;
+            }): _60.QueryLastPendingValsetRequestByAddrResponse;
+            fromAmino(object: _60.QueryLastPendingValsetRequestByAddrResponseAmino): _60.QueryLastPendingValsetRequestByAddrResponse;
+            toAmino(message: _60.QueryLastPendingValsetRequestByAddrResponse): _60.QueryLastPendingValsetRequestByAddrResponseAmino;
+            fromAminoMsg(object: _60.QueryLastPendingValsetRequestByAddrResponseAminoMsg): _60.QueryLastPendingValsetRequestByAddrResponse;
+            fromProtoMsg(message: _60.QueryLastPendingValsetRequestByAddrResponseProtoMsg): _60.QueryLastPendingValsetRequestByAddrResponse;
+            toProto(message: _60.QueryLastPendingValsetRequestByAddrResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryLastPendingValsetRequestByAddrResponse): _60.QueryLastPendingValsetRequestByAddrResponseProtoMsg;
         };
         QueryBatchFeeRequest: {
-            encode(_: _57.QueryBatchFeeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryBatchFeeRequest;
-            fromPartial(_: {}): _57.QueryBatchFeeRequest;
-            fromAmino(_: _57.QueryBatchFeeRequestAmino): _57.QueryBatchFeeRequest;
-            toAmino(_: _57.QueryBatchFeeRequest): _57.QueryBatchFeeRequestAmino;
-            fromAminoMsg(object: _57.QueryBatchFeeRequestAminoMsg): _57.QueryBatchFeeRequest;
-            fromProtoMsg(message: _57.QueryBatchFeeRequestProtoMsg): _57.QueryBatchFeeRequest;
-            toProto(message: _57.QueryBatchFeeRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryBatchFeeRequest): _57.QueryBatchFeeRequestProtoMsg;
+            encode(_: _60.QueryBatchFeeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryBatchFeeRequest;
+            fromPartial(_: {}): _60.QueryBatchFeeRequest;
+            fromAmino(_: _60.QueryBatchFeeRequestAmino): _60.QueryBatchFeeRequest;
+            toAmino(_: _60.QueryBatchFeeRequest): _60.QueryBatchFeeRequestAmino;
+            fromAminoMsg(object: _60.QueryBatchFeeRequestAminoMsg): _60.QueryBatchFeeRequest;
+            fromProtoMsg(message: _60.QueryBatchFeeRequestProtoMsg): _60.QueryBatchFeeRequest;
+            toProto(message: _60.QueryBatchFeeRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryBatchFeeRequest): _60.QueryBatchFeeRequestProtoMsg;
         };
         QueryBatchFeeResponse: {
-            encode(message: _57.QueryBatchFeeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryBatchFeeResponse;
+            encode(message: _60.QueryBatchFeeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryBatchFeeResponse;
             fromPartial(object: {
                 batchFees?: {
                     token?: string;
                     totalFees?: string;
                     txCount?: string | number | import("long").Long;
                 }[];
-            }): _57.QueryBatchFeeResponse;
-            fromAmino(object: _57.QueryBatchFeeResponseAmino): _57.QueryBatchFeeResponse;
-            toAmino(message: _57.QueryBatchFeeResponse): _57.QueryBatchFeeResponseAmino;
-            fromAminoMsg(object: _57.QueryBatchFeeResponseAminoMsg): _57.QueryBatchFeeResponse;
-            fromProtoMsg(message: _57.QueryBatchFeeResponseProtoMsg): _57.QueryBatchFeeResponse;
-            toProto(message: _57.QueryBatchFeeResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryBatchFeeResponse): _57.QueryBatchFeeResponseProtoMsg;
+            }): _60.QueryBatchFeeResponse;
+            fromAmino(object: _60.QueryBatchFeeResponseAmino): _60.QueryBatchFeeResponse;
+            toAmino(message: _60.QueryBatchFeeResponse): _60.QueryBatchFeeResponseAmino;
+            fromAminoMsg(object: _60.QueryBatchFeeResponseAminoMsg): _60.QueryBatchFeeResponse;
+            fromProtoMsg(message: _60.QueryBatchFeeResponseProtoMsg): _60.QueryBatchFeeResponse;
+            toProto(message: _60.QueryBatchFeeResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryBatchFeeResponse): _60.QueryBatchFeeResponseProtoMsg;
         };
         QueryLastPendingBatchRequestByAddrRequest: {
-            encode(message: _57.QueryLastPendingBatchRequestByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastPendingBatchRequestByAddrRequest;
+            encode(message: _60.QueryLastPendingBatchRequestByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastPendingBatchRequestByAddrRequest;
             fromPartial(object: {
                 address?: string;
-            }): _57.QueryLastPendingBatchRequestByAddrRequest;
-            fromAmino(object: _57.QueryLastPendingBatchRequestByAddrRequestAmino): _57.QueryLastPendingBatchRequestByAddrRequest;
-            toAmino(message: _57.QueryLastPendingBatchRequestByAddrRequest): _57.QueryLastPendingBatchRequestByAddrRequestAmino;
-            fromAminoMsg(object: _57.QueryLastPendingBatchRequestByAddrRequestAminoMsg): _57.QueryLastPendingBatchRequestByAddrRequest;
-            fromProtoMsg(message: _57.QueryLastPendingBatchRequestByAddrRequestProtoMsg): _57.QueryLastPendingBatchRequestByAddrRequest;
-            toProto(message: _57.QueryLastPendingBatchRequestByAddrRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryLastPendingBatchRequestByAddrRequest): _57.QueryLastPendingBatchRequestByAddrRequestProtoMsg;
+            }): _60.QueryLastPendingBatchRequestByAddrRequest;
+            fromAmino(object: _60.QueryLastPendingBatchRequestByAddrRequestAmino): _60.QueryLastPendingBatchRequestByAddrRequest;
+            toAmino(message: _60.QueryLastPendingBatchRequestByAddrRequest): _60.QueryLastPendingBatchRequestByAddrRequestAmino;
+            fromAminoMsg(object: _60.QueryLastPendingBatchRequestByAddrRequestAminoMsg): _60.QueryLastPendingBatchRequestByAddrRequest;
+            fromProtoMsg(message: _60.QueryLastPendingBatchRequestByAddrRequestProtoMsg): _60.QueryLastPendingBatchRequestByAddrRequest;
+            toProto(message: _60.QueryLastPendingBatchRequestByAddrRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryLastPendingBatchRequestByAddrRequest): _60.QueryLastPendingBatchRequestByAddrRequestProtoMsg;
         };
         QueryLastPendingBatchRequestByAddrResponse: {
-            encode(message: _57.QueryLastPendingBatchRequestByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastPendingBatchRequestByAddrResponse;
+            encode(message: _60.QueryLastPendingBatchRequestByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastPendingBatchRequestByAddrResponse;
             fromPartial(object: {
                 batch?: {
                     batchNonce?: string | number | import("long").Long;
@@ -705,30 +705,30 @@ export declare namespace gravity {
                     tokenContract?: string;
                     block?: string | number | import("long").Long;
                 }[];
-            }): _57.QueryLastPendingBatchRequestByAddrResponse;
-            fromAmino(object: _57.QueryLastPendingBatchRequestByAddrResponseAmino): _57.QueryLastPendingBatchRequestByAddrResponse;
-            toAmino(message: _57.QueryLastPendingBatchRequestByAddrResponse): _57.QueryLastPendingBatchRequestByAddrResponseAmino;
-            fromAminoMsg(object: _57.QueryLastPendingBatchRequestByAddrResponseAminoMsg): _57.QueryLastPendingBatchRequestByAddrResponse;
-            fromProtoMsg(message: _57.QueryLastPendingBatchRequestByAddrResponseProtoMsg): _57.QueryLastPendingBatchRequestByAddrResponse;
-            toProto(message: _57.QueryLastPendingBatchRequestByAddrResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryLastPendingBatchRequestByAddrResponse): _57.QueryLastPendingBatchRequestByAddrResponseProtoMsg;
+            }): _60.QueryLastPendingBatchRequestByAddrResponse;
+            fromAmino(object: _60.QueryLastPendingBatchRequestByAddrResponseAmino): _60.QueryLastPendingBatchRequestByAddrResponse;
+            toAmino(message: _60.QueryLastPendingBatchRequestByAddrResponse): _60.QueryLastPendingBatchRequestByAddrResponseAmino;
+            fromAminoMsg(object: _60.QueryLastPendingBatchRequestByAddrResponseAminoMsg): _60.QueryLastPendingBatchRequestByAddrResponse;
+            fromProtoMsg(message: _60.QueryLastPendingBatchRequestByAddrResponseProtoMsg): _60.QueryLastPendingBatchRequestByAddrResponse;
+            toProto(message: _60.QueryLastPendingBatchRequestByAddrResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryLastPendingBatchRequestByAddrResponse): _60.QueryLastPendingBatchRequestByAddrResponseProtoMsg;
         };
         QueryLastPendingLogicCallByAddrRequest: {
-            encode(message: _57.QueryLastPendingLogicCallByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastPendingLogicCallByAddrRequest;
+            encode(message: _60.QueryLastPendingLogicCallByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastPendingLogicCallByAddrRequest;
             fromPartial(object: {
                 address?: string;
-            }): _57.QueryLastPendingLogicCallByAddrRequest;
-            fromAmino(object: _57.QueryLastPendingLogicCallByAddrRequestAmino): _57.QueryLastPendingLogicCallByAddrRequest;
-            toAmino(message: _57.QueryLastPendingLogicCallByAddrRequest): _57.QueryLastPendingLogicCallByAddrRequestAmino;
-            fromAminoMsg(object: _57.QueryLastPendingLogicCallByAddrRequestAminoMsg): _57.QueryLastPendingLogicCallByAddrRequest;
-            fromProtoMsg(message: _57.QueryLastPendingLogicCallByAddrRequestProtoMsg): _57.QueryLastPendingLogicCallByAddrRequest;
-            toProto(message: _57.QueryLastPendingLogicCallByAddrRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryLastPendingLogicCallByAddrRequest): _57.QueryLastPendingLogicCallByAddrRequestProtoMsg;
+            }): _60.QueryLastPendingLogicCallByAddrRequest;
+            fromAmino(object: _60.QueryLastPendingLogicCallByAddrRequestAmino): _60.QueryLastPendingLogicCallByAddrRequest;
+            toAmino(message: _60.QueryLastPendingLogicCallByAddrRequest): _60.QueryLastPendingLogicCallByAddrRequestAmino;
+            fromAminoMsg(object: _60.QueryLastPendingLogicCallByAddrRequestAminoMsg): _60.QueryLastPendingLogicCallByAddrRequest;
+            fromProtoMsg(message: _60.QueryLastPendingLogicCallByAddrRequestProtoMsg): _60.QueryLastPendingLogicCallByAddrRequest;
+            toProto(message: _60.QueryLastPendingLogicCallByAddrRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryLastPendingLogicCallByAddrRequest): _60.QueryLastPendingLogicCallByAddrRequestProtoMsg;
         };
         QueryLastPendingLogicCallByAddrResponse: {
-            encode(message: _57.QueryLastPendingLogicCallByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastPendingLogicCallByAddrResponse;
+            encode(message: _60.QueryLastPendingLogicCallByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastPendingLogicCallByAddrResponse;
             fromPartial(object: {
                 call?: {
                     transfers?: {
@@ -746,28 +746,28 @@ export declare namespace gravity {
                     invalidationNonce?: string | number | import("long").Long;
                     block?: string | number | import("long").Long;
                 }[];
-            }): _57.QueryLastPendingLogicCallByAddrResponse;
-            fromAmino(object: _57.QueryLastPendingLogicCallByAddrResponseAmino): _57.QueryLastPendingLogicCallByAddrResponse;
-            toAmino(message: _57.QueryLastPendingLogicCallByAddrResponse): _57.QueryLastPendingLogicCallByAddrResponseAmino;
-            fromAminoMsg(object: _57.QueryLastPendingLogicCallByAddrResponseAminoMsg): _57.QueryLastPendingLogicCallByAddrResponse;
-            fromProtoMsg(message: _57.QueryLastPendingLogicCallByAddrResponseProtoMsg): _57.QueryLastPendingLogicCallByAddrResponse;
-            toProto(message: _57.QueryLastPendingLogicCallByAddrResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryLastPendingLogicCallByAddrResponse): _57.QueryLastPendingLogicCallByAddrResponseProtoMsg;
+            }): _60.QueryLastPendingLogicCallByAddrResponse;
+            fromAmino(object: _60.QueryLastPendingLogicCallByAddrResponseAmino): _60.QueryLastPendingLogicCallByAddrResponse;
+            toAmino(message: _60.QueryLastPendingLogicCallByAddrResponse): _60.QueryLastPendingLogicCallByAddrResponseAmino;
+            fromAminoMsg(object: _60.QueryLastPendingLogicCallByAddrResponseAminoMsg): _60.QueryLastPendingLogicCallByAddrResponse;
+            fromProtoMsg(message: _60.QueryLastPendingLogicCallByAddrResponseProtoMsg): _60.QueryLastPendingLogicCallByAddrResponse;
+            toProto(message: _60.QueryLastPendingLogicCallByAddrResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryLastPendingLogicCallByAddrResponse): _60.QueryLastPendingLogicCallByAddrResponseProtoMsg;
         };
         QueryOutgoingTxBatchesRequest: {
-            encode(_: _57.QueryOutgoingTxBatchesRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryOutgoingTxBatchesRequest;
-            fromPartial(_: {}): _57.QueryOutgoingTxBatchesRequest;
-            fromAmino(_: _57.QueryOutgoingTxBatchesRequestAmino): _57.QueryOutgoingTxBatchesRequest;
-            toAmino(_: _57.QueryOutgoingTxBatchesRequest): _57.QueryOutgoingTxBatchesRequestAmino;
-            fromAminoMsg(object: _57.QueryOutgoingTxBatchesRequestAminoMsg): _57.QueryOutgoingTxBatchesRequest;
-            fromProtoMsg(message: _57.QueryOutgoingTxBatchesRequestProtoMsg): _57.QueryOutgoingTxBatchesRequest;
-            toProto(message: _57.QueryOutgoingTxBatchesRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryOutgoingTxBatchesRequest): _57.QueryOutgoingTxBatchesRequestProtoMsg;
+            encode(_: _60.QueryOutgoingTxBatchesRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryOutgoingTxBatchesRequest;
+            fromPartial(_: {}): _60.QueryOutgoingTxBatchesRequest;
+            fromAmino(_: _60.QueryOutgoingTxBatchesRequestAmino): _60.QueryOutgoingTxBatchesRequest;
+            toAmino(_: _60.QueryOutgoingTxBatchesRequest): _60.QueryOutgoingTxBatchesRequestAmino;
+            fromAminoMsg(object: _60.QueryOutgoingTxBatchesRequestAminoMsg): _60.QueryOutgoingTxBatchesRequest;
+            fromProtoMsg(message: _60.QueryOutgoingTxBatchesRequestProtoMsg): _60.QueryOutgoingTxBatchesRequest;
+            toProto(message: _60.QueryOutgoingTxBatchesRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryOutgoingTxBatchesRequest): _60.QueryOutgoingTxBatchesRequestProtoMsg;
         };
         QueryOutgoingTxBatchesResponse: {
-            encode(message: _57.QueryOutgoingTxBatchesResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryOutgoingTxBatchesResponse;
+            encode(message: _60.QueryOutgoingTxBatchesResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryOutgoingTxBatchesResponse;
             fromPartial(object: {
                 batches?: {
                     batchNonce?: string | number | import("long").Long;
@@ -788,28 +788,28 @@ export declare namespace gravity {
                     tokenContract?: string;
                     block?: string | number | import("long").Long;
                 }[];
-            }): _57.QueryOutgoingTxBatchesResponse;
-            fromAmino(object: _57.QueryOutgoingTxBatchesResponseAmino): _57.QueryOutgoingTxBatchesResponse;
-            toAmino(message: _57.QueryOutgoingTxBatchesResponse): _57.QueryOutgoingTxBatchesResponseAmino;
-            fromAminoMsg(object: _57.QueryOutgoingTxBatchesResponseAminoMsg): _57.QueryOutgoingTxBatchesResponse;
-            fromProtoMsg(message: _57.QueryOutgoingTxBatchesResponseProtoMsg): _57.QueryOutgoingTxBatchesResponse;
-            toProto(message: _57.QueryOutgoingTxBatchesResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryOutgoingTxBatchesResponse): _57.QueryOutgoingTxBatchesResponseProtoMsg;
+            }): _60.QueryOutgoingTxBatchesResponse;
+            fromAmino(object: _60.QueryOutgoingTxBatchesResponseAmino): _60.QueryOutgoingTxBatchesResponse;
+            toAmino(message: _60.QueryOutgoingTxBatchesResponse): _60.QueryOutgoingTxBatchesResponseAmino;
+            fromAminoMsg(object: _60.QueryOutgoingTxBatchesResponseAminoMsg): _60.QueryOutgoingTxBatchesResponse;
+            fromProtoMsg(message: _60.QueryOutgoingTxBatchesResponseProtoMsg): _60.QueryOutgoingTxBatchesResponse;
+            toProto(message: _60.QueryOutgoingTxBatchesResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryOutgoingTxBatchesResponse): _60.QueryOutgoingTxBatchesResponseProtoMsg;
         };
         QueryOutgoingLogicCallsRequest: {
-            encode(_: _57.QueryOutgoingLogicCallsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryOutgoingLogicCallsRequest;
-            fromPartial(_: {}): _57.QueryOutgoingLogicCallsRequest;
-            fromAmino(_: _57.QueryOutgoingLogicCallsRequestAmino): _57.QueryOutgoingLogicCallsRequest;
-            toAmino(_: _57.QueryOutgoingLogicCallsRequest): _57.QueryOutgoingLogicCallsRequestAmino;
-            fromAminoMsg(object: _57.QueryOutgoingLogicCallsRequestAminoMsg): _57.QueryOutgoingLogicCallsRequest;
-            fromProtoMsg(message: _57.QueryOutgoingLogicCallsRequestProtoMsg): _57.QueryOutgoingLogicCallsRequest;
-            toProto(message: _57.QueryOutgoingLogicCallsRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryOutgoingLogicCallsRequest): _57.QueryOutgoingLogicCallsRequestProtoMsg;
+            encode(_: _60.QueryOutgoingLogicCallsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryOutgoingLogicCallsRequest;
+            fromPartial(_: {}): _60.QueryOutgoingLogicCallsRequest;
+            fromAmino(_: _60.QueryOutgoingLogicCallsRequestAmino): _60.QueryOutgoingLogicCallsRequest;
+            toAmino(_: _60.QueryOutgoingLogicCallsRequest): _60.QueryOutgoingLogicCallsRequestAmino;
+            fromAminoMsg(object: _60.QueryOutgoingLogicCallsRequestAminoMsg): _60.QueryOutgoingLogicCallsRequest;
+            fromProtoMsg(message: _60.QueryOutgoingLogicCallsRequestProtoMsg): _60.QueryOutgoingLogicCallsRequest;
+            toProto(message: _60.QueryOutgoingLogicCallsRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryOutgoingLogicCallsRequest): _60.QueryOutgoingLogicCallsRequestProtoMsg;
         };
         QueryOutgoingLogicCallsResponse: {
-            encode(message: _57.QueryOutgoingLogicCallsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryOutgoingLogicCallsResponse;
+            encode(message: _60.QueryOutgoingLogicCallsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryOutgoingLogicCallsResponse;
             fromPartial(object: {
                 calls?: {
                     transfers?: {
@@ -827,31 +827,31 @@ export declare namespace gravity {
                     invalidationNonce?: string | number | import("long").Long;
                     block?: string | number | import("long").Long;
                 }[];
-            }): _57.QueryOutgoingLogicCallsResponse;
-            fromAmino(object: _57.QueryOutgoingLogicCallsResponseAmino): _57.QueryOutgoingLogicCallsResponse;
-            toAmino(message: _57.QueryOutgoingLogicCallsResponse): _57.QueryOutgoingLogicCallsResponseAmino;
-            fromAminoMsg(object: _57.QueryOutgoingLogicCallsResponseAminoMsg): _57.QueryOutgoingLogicCallsResponse;
-            fromProtoMsg(message: _57.QueryOutgoingLogicCallsResponseProtoMsg): _57.QueryOutgoingLogicCallsResponse;
-            toProto(message: _57.QueryOutgoingLogicCallsResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryOutgoingLogicCallsResponse): _57.QueryOutgoingLogicCallsResponseProtoMsg;
+            }): _60.QueryOutgoingLogicCallsResponse;
+            fromAmino(object: _60.QueryOutgoingLogicCallsResponseAmino): _60.QueryOutgoingLogicCallsResponse;
+            toAmino(message: _60.QueryOutgoingLogicCallsResponse): _60.QueryOutgoingLogicCallsResponseAmino;
+            fromAminoMsg(object: _60.QueryOutgoingLogicCallsResponseAminoMsg): _60.QueryOutgoingLogicCallsResponse;
+            fromProtoMsg(message: _60.QueryOutgoingLogicCallsResponseProtoMsg): _60.QueryOutgoingLogicCallsResponse;
+            toProto(message: _60.QueryOutgoingLogicCallsResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryOutgoingLogicCallsResponse): _60.QueryOutgoingLogicCallsResponseProtoMsg;
         };
         QueryBatchRequestByNonceRequest: {
-            encode(message: _57.QueryBatchRequestByNonceRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryBatchRequestByNonceRequest;
+            encode(message: _60.QueryBatchRequestByNonceRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryBatchRequestByNonceRequest;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
                 contractAddress?: string;
-            }): _57.QueryBatchRequestByNonceRequest;
-            fromAmino(object: _57.QueryBatchRequestByNonceRequestAmino): _57.QueryBatchRequestByNonceRequest;
-            toAmino(message: _57.QueryBatchRequestByNonceRequest): _57.QueryBatchRequestByNonceRequestAmino;
-            fromAminoMsg(object: _57.QueryBatchRequestByNonceRequestAminoMsg): _57.QueryBatchRequestByNonceRequest;
-            fromProtoMsg(message: _57.QueryBatchRequestByNonceRequestProtoMsg): _57.QueryBatchRequestByNonceRequest;
-            toProto(message: _57.QueryBatchRequestByNonceRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryBatchRequestByNonceRequest): _57.QueryBatchRequestByNonceRequestProtoMsg;
+            }): _60.QueryBatchRequestByNonceRequest;
+            fromAmino(object: _60.QueryBatchRequestByNonceRequestAmino): _60.QueryBatchRequestByNonceRequest;
+            toAmino(message: _60.QueryBatchRequestByNonceRequest): _60.QueryBatchRequestByNonceRequestAmino;
+            fromAminoMsg(object: _60.QueryBatchRequestByNonceRequestAminoMsg): _60.QueryBatchRequestByNonceRequest;
+            fromProtoMsg(message: _60.QueryBatchRequestByNonceRequestProtoMsg): _60.QueryBatchRequestByNonceRequest;
+            toProto(message: _60.QueryBatchRequestByNonceRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryBatchRequestByNonceRequest): _60.QueryBatchRequestByNonceRequestProtoMsg;
         };
         QueryBatchRequestByNonceResponse: {
-            encode(message: _57.QueryBatchRequestByNonceResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryBatchRequestByNonceResponse;
+            encode(message: _60.QueryBatchRequestByNonceResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryBatchRequestByNonceResponse;
             fromPartial(object: {
                 batch?: {
                     batchNonce?: string | number | import("long").Long;
@@ -872,31 +872,31 @@ export declare namespace gravity {
                     tokenContract?: string;
                     block?: string | number | import("long").Long;
                 };
-            }): _57.QueryBatchRequestByNonceResponse;
-            fromAmino(object: _57.QueryBatchRequestByNonceResponseAmino): _57.QueryBatchRequestByNonceResponse;
-            toAmino(message: _57.QueryBatchRequestByNonceResponse): _57.QueryBatchRequestByNonceResponseAmino;
-            fromAminoMsg(object: _57.QueryBatchRequestByNonceResponseAminoMsg): _57.QueryBatchRequestByNonceResponse;
-            fromProtoMsg(message: _57.QueryBatchRequestByNonceResponseProtoMsg): _57.QueryBatchRequestByNonceResponse;
-            toProto(message: _57.QueryBatchRequestByNonceResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryBatchRequestByNonceResponse): _57.QueryBatchRequestByNonceResponseProtoMsg;
+            }): _60.QueryBatchRequestByNonceResponse;
+            fromAmino(object: _60.QueryBatchRequestByNonceResponseAmino): _60.QueryBatchRequestByNonceResponse;
+            toAmino(message: _60.QueryBatchRequestByNonceResponse): _60.QueryBatchRequestByNonceResponseAmino;
+            fromAminoMsg(object: _60.QueryBatchRequestByNonceResponseAminoMsg): _60.QueryBatchRequestByNonceResponse;
+            fromProtoMsg(message: _60.QueryBatchRequestByNonceResponseProtoMsg): _60.QueryBatchRequestByNonceResponse;
+            toProto(message: _60.QueryBatchRequestByNonceResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryBatchRequestByNonceResponse): _60.QueryBatchRequestByNonceResponseProtoMsg;
         };
         QueryBatchConfirmsRequest: {
-            encode(message: _57.QueryBatchConfirmsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryBatchConfirmsRequest;
+            encode(message: _60.QueryBatchConfirmsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryBatchConfirmsRequest;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
                 contractAddress?: string;
-            }): _57.QueryBatchConfirmsRequest;
-            fromAmino(object: _57.QueryBatchConfirmsRequestAmino): _57.QueryBatchConfirmsRequest;
-            toAmino(message: _57.QueryBatchConfirmsRequest): _57.QueryBatchConfirmsRequestAmino;
-            fromAminoMsg(object: _57.QueryBatchConfirmsRequestAminoMsg): _57.QueryBatchConfirmsRequest;
-            fromProtoMsg(message: _57.QueryBatchConfirmsRequestProtoMsg): _57.QueryBatchConfirmsRequest;
-            toProto(message: _57.QueryBatchConfirmsRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryBatchConfirmsRequest): _57.QueryBatchConfirmsRequestProtoMsg;
+            }): _60.QueryBatchConfirmsRequest;
+            fromAmino(object: _60.QueryBatchConfirmsRequestAmino): _60.QueryBatchConfirmsRequest;
+            toAmino(message: _60.QueryBatchConfirmsRequest): _60.QueryBatchConfirmsRequestAmino;
+            fromAminoMsg(object: _60.QueryBatchConfirmsRequestAminoMsg): _60.QueryBatchConfirmsRequest;
+            fromProtoMsg(message: _60.QueryBatchConfirmsRequestProtoMsg): _60.QueryBatchConfirmsRequest;
+            toProto(message: _60.QueryBatchConfirmsRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryBatchConfirmsRequest): _60.QueryBatchConfirmsRequestProtoMsg;
         };
         QueryBatchConfirmsResponse: {
-            encode(message: _57.QueryBatchConfirmsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryBatchConfirmsResponse;
+            encode(message: _60.QueryBatchConfirmsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryBatchConfirmsResponse;
             fromPartial(object: {
                 confirms?: {
                     nonce?: string | number | import("long").Long;
@@ -905,31 +905,31 @@ export declare namespace gravity {
                     orchestrator?: string;
                     signature?: string;
                 }[];
-            }): _57.QueryBatchConfirmsResponse;
-            fromAmino(object: _57.QueryBatchConfirmsResponseAmino): _57.QueryBatchConfirmsResponse;
-            toAmino(message: _57.QueryBatchConfirmsResponse): _57.QueryBatchConfirmsResponseAmino;
-            fromAminoMsg(object: _57.QueryBatchConfirmsResponseAminoMsg): _57.QueryBatchConfirmsResponse;
-            fromProtoMsg(message: _57.QueryBatchConfirmsResponseProtoMsg): _57.QueryBatchConfirmsResponse;
-            toProto(message: _57.QueryBatchConfirmsResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryBatchConfirmsResponse): _57.QueryBatchConfirmsResponseProtoMsg;
+            }): _60.QueryBatchConfirmsResponse;
+            fromAmino(object: _60.QueryBatchConfirmsResponseAmino): _60.QueryBatchConfirmsResponse;
+            toAmino(message: _60.QueryBatchConfirmsResponse): _60.QueryBatchConfirmsResponseAmino;
+            fromAminoMsg(object: _60.QueryBatchConfirmsResponseAminoMsg): _60.QueryBatchConfirmsResponse;
+            fromProtoMsg(message: _60.QueryBatchConfirmsResponseProtoMsg): _60.QueryBatchConfirmsResponse;
+            toProto(message: _60.QueryBatchConfirmsResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryBatchConfirmsResponse): _60.QueryBatchConfirmsResponseProtoMsg;
         };
         QueryLogicConfirmsRequest: {
-            encode(message: _57.QueryLogicConfirmsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLogicConfirmsRequest;
+            encode(message: _60.QueryLogicConfirmsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLogicConfirmsRequest;
             fromPartial(object: {
                 invalidationId?: Uint8Array;
                 invalidationNonce?: string | number | import("long").Long;
-            }): _57.QueryLogicConfirmsRequest;
-            fromAmino(object: _57.QueryLogicConfirmsRequestAmino): _57.QueryLogicConfirmsRequest;
-            toAmino(message: _57.QueryLogicConfirmsRequest): _57.QueryLogicConfirmsRequestAmino;
-            fromAminoMsg(object: _57.QueryLogicConfirmsRequestAminoMsg): _57.QueryLogicConfirmsRequest;
-            fromProtoMsg(message: _57.QueryLogicConfirmsRequestProtoMsg): _57.QueryLogicConfirmsRequest;
-            toProto(message: _57.QueryLogicConfirmsRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryLogicConfirmsRequest): _57.QueryLogicConfirmsRequestProtoMsg;
+            }): _60.QueryLogicConfirmsRequest;
+            fromAmino(object: _60.QueryLogicConfirmsRequestAmino): _60.QueryLogicConfirmsRequest;
+            toAmino(message: _60.QueryLogicConfirmsRequest): _60.QueryLogicConfirmsRequestAmino;
+            fromAminoMsg(object: _60.QueryLogicConfirmsRequestAminoMsg): _60.QueryLogicConfirmsRequest;
+            fromProtoMsg(message: _60.QueryLogicConfirmsRequestProtoMsg): _60.QueryLogicConfirmsRequest;
+            toProto(message: _60.QueryLogicConfirmsRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryLogicConfirmsRequest): _60.QueryLogicConfirmsRequestProtoMsg;
         };
         QueryLogicConfirmsResponse: {
-            encode(message: _57.QueryLogicConfirmsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLogicConfirmsResponse;
+            encode(message: _60.QueryLogicConfirmsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLogicConfirmsResponse;
             fromPartial(object: {
                 confirms?: {
                     invalidationId?: string;
@@ -938,110 +938,110 @@ export declare namespace gravity {
                     orchestrator?: string;
                     signature?: string;
                 }[];
-            }): _57.QueryLogicConfirmsResponse;
-            fromAmino(object: _57.QueryLogicConfirmsResponseAmino): _57.QueryLogicConfirmsResponse;
-            toAmino(message: _57.QueryLogicConfirmsResponse): _57.QueryLogicConfirmsResponseAmino;
-            fromAminoMsg(object: _57.QueryLogicConfirmsResponseAminoMsg): _57.QueryLogicConfirmsResponse;
-            fromProtoMsg(message: _57.QueryLogicConfirmsResponseProtoMsg): _57.QueryLogicConfirmsResponse;
-            toProto(message: _57.QueryLogicConfirmsResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryLogicConfirmsResponse): _57.QueryLogicConfirmsResponseProtoMsg;
+            }): _60.QueryLogicConfirmsResponse;
+            fromAmino(object: _60.QueryLogicConfirmsResponseAmino): _60.QueryLogicConfirmsResponse;
+            toAmino(message: _60.QueryLogicConfirmsResponse): _60.QueryLogicConfirmsResponseAmino;
+            fromAminoMsg(object: _60.QueryLogicConfirmsResponseAminoMsg): _60.QueryLogicConfirmsResponse;
+            fromProtoMsg(message: _60.QueryLogicConfirmsResponseProtoMsg): _60.QueryLogicConfirmsResponse;
+            toProto(message: _60.QueryLogicConfirmsResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryLogicConfirmsResponse): _60.QueryLogicConfirmsResponseProtoMsg;
         };
         QueryLastEventNonceByAddrRequest: {
-            encode(message: _57.QueryLastEventNonceByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastEventNonceByAddrRequest;
+            encode(message: _60.QueryLastEventNonceByAddrRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastEventNonceByAddrRequest;
             fromPartial(object: {
                 address?: string;
-            }): _57.QueryLastEventNonceByAddrRequest;
-            fromAmino(object: _57.QueryLastEventNonceByAddrRequestAmino): _57.QueryLastEventNonceByAddrRequest;
-            toAmino(message: _57.QueryLastEventNonceByAddrRequest): _57.QueryLastEventNonceByAddrRequestAmino;
-            fromAminoMsg(object: _57.QueryLastEventNonceByAddrRequestAminoMsg): _57.QueryLastEventNonceByAddrRequest;
-            fromProtoMsg(message: _57.QueryLastEventNonceByAddrRequestProtoMsg): _57.QueryLastEventNonceByAddrRequest;
-            toProto(message: _57.QueryLastEventNonceByAddrRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryLastEventNonceByAddrRequest): _57.QueryLastEventNonceByAddrRequestProtoMsg;
+            }): _60.QueryLastEventNonceByAddrRequest;
+            fromAmino(object: _60.QueryLastEventNonceByAddrRequestAmino): _60.QueryLastEventNonceByAddrRequest;
+            toAmino(message: _60.QueryLastEventNonceByAddrRequest): _60.QueryLastEventNonceByAddrRequestAmino;
+            fromAminoMsg(object: _60.QueryLastEventNonceByAddrRequestAminoMsg): _60.QueryLastEventNonceByAddrRequest;
+            fromProtoMsg(message: _60.QueryLastEventNonceByAddrRequestProtoMsg): _60.QueryLastEventNonceByAddrRequest;
+            toProto(message: _60.QueryLastEventNonceByAddrRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryLastEventNonceByAddrRequest): _60.QueryLastEventNonceByAddrRequestProtoMsg;
         };
         QueryLastEventNonceByAddrResponse: {
-            encode(message: _57.QueryLastEventNonceByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryLastEventNonceByAddrResponse;
+            encode(message: _60.QueryLastEventNonceByAddrResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryLastEventNonceByAddrResponse;
             fromPartial(object: {
                 eventNonce?: string | number | import("long").Long;
-            }): _57.QueryLastEventNonceByAddrResponse;
-            fromAmino(object: _57.QueryLastEventNonceByAddrResponseAmino): _57.QueryLastEventNonceByAddrResponse;
-            toAmino(message: _57.QueryLastEventNonceByAddrResponse): _57.QueryLastEventNonceByAddrResponseAmino;
-            fromAminoMsg(object: _57.QueryLastEventNonceByAddrResponseAminoMsg): _57.QueryLastEventNonceByAddrResponse;
-            fromProtoMsg(message: _57.QueryLastEventNonceByAddrResponseProtoMsg): _57.QueryLastEventNonceByAddrResponse;
-            toProto(message: _57.QueryLastEventNonceByAddrResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryLastEventNonceByAddrResponse): _57.QueryLastEventNonceByAddrResponseProtoMsg;
+            }): _60.QueryLastEventNonceByAddrResponse;
+            fromAmino(object: _60.QueryLastEventNonceByAddrResponseAmino): _60.QueryLastEventNonceByAddrResponse;
+            toAmino(message: _60.QueryLastEventNonceByAddrResponse): _60.QueryLastEventNonceByAddrResponseAmino;
+            fromAminoMsg(object: _60.QueryLastEventNonceByAddrResponseAminoMsg): _60.QueryLastEventNonceByAddrResponse;
+            fromProtoMsg(message: _60.QueryLastEventNonceByAddrResponseProtoMsg): _60.QueryLastEventNonceByAddrResponse;
+            toProto(message: _60.QueryLastEventNonceByAddrResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryLastEventNonceByAddrResponse): _60.QueryLastEventNonceByAddrResponseProtoMsg;
         };
         QueryERC20ToDenomRequest: {
-            encode(message: _57.QueryERC20ToDenomRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryERC20ToDenomRequest;
+            encode(message: _60.QueryERC20ToDenomRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryERC20ToDenomRequest;
             fromPartial(object: {
                 erc20?: string;
-            }): _57.QueryERC20ToDenomRequest;
-            fromAmino(object: _57.QueryERC20ToDenomRequestAmino): _57.QueryERC20ToDenomRequest;
-            toAmino(message: _57.QueryERC20ToDenomRequest): _57.QueryERC20ToDenomRequestAmino;
-            fromAminoMsg(object: _57.QueryERC20ToDenomRequestAminoMsg): _57.QueryERC20ToDenomRequest;
-            fromProtoMsg(message: _57.QueryERC20ToDenomRequestProtoMsg): _57.QueryERC20ToDenomRequest;
-            toProto(message: _57.QueryERC20ToDenomRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryERC20ToDenomRequest): _57.QueryERC20ToDenomRequestProtoMsg;
+            }): _60.QueryERC20ToDenomRequest;
+            fromAmino(object: _60.QueryERC20ToDenomRequestAmino): _60.QueryERC20ToDenomRequest;
+            toAmino(message: _60.QueryERC20ToDenomRequest): _60.QueryERC20ToDenomRequestAmino;
+            fromAminoMsg(object: _60.QueryERC20ToDenomRequestAminoMsg): _60.QueryERC20ToDenomRequest;
+            fromProtoMsg(message: _60.QueryERC20ToDenomRequestProtoMsg): _60.QueryERC20ToDenomRequest;
+            toProto(message: _60.QueryERC20ToDenomRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryERC20ToDenomRequest): _60.QueryERC20ToDenomRequestProtoMsg;
         };
         QueryERC20ToDenomResponse: {
-            encode(message: _57.QueryERC20ToDenomResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryERC20ToDenomResponse;
+            encode(message: _60.QueryERC20ToDenomResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryERC20ToDenomResponse;
             fromPartial(object: {
                 denom?: string;
                 cosmosOriginated?: boolean;
-            }): _57.QueryERC20ToDenomResponse;
-            fromAmino(object: _57.QueryERC20ToDenomResponseAmino): _57.QueryERC20ToDenomResponse;
-            toAmino(message: _57.QueryERC20ToDenomResponse): _57.QueryERC20ToDenomResponseAmino;
-            fromAminoMsg(object: _57.QueryERC20ToDenomResponseAminoMsg): _57.QueryERC20ToDenomResponse;
-            fromProtoMsg(message: _57.QueryERC20ToDenomResponseProtoMsg): _57.QueryERC20ToDenomResponse;
-            toProto(message: _57.QueryERC20ToDenomResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryERC20ToDenomResponse): _57.QueryERC20ToDenomResponseProtoMsg;
+            }): _60.QueryERC20ToDenomResponse;
+            fromAmino(object: _60.QueryERC20ToDenomResponseAmino): _60.QueryERC20ToDenomResponse;
+            toAmino(message: _60.QueryERC20ToDenomResponse): _60.QueryERC20ToDenomResponseAmino;
+            fromAminoMsg(object: _60.QueryERC20ToDenomResponseAminoMsg): _60.QueryERC20ToDenomResponse;
+            fromProtoMsg(message: _60.QueryERC20ToDenomResponseProtoMsg): _60.QueryERC20ToDenomResponse;
+            toProto(message: _60.QueryERC20ToDenomResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryERC20ToDenomResponse): _60.QueryERC20ToDenomResponseProtoMsg;
         };
         QueryDenomToERC20Request: {
-            encode(message: _57.QueryDenomToERC20Request, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDenomToERC20Request;
+            encode(message: _60.QueryDenomToERC20Request, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDenomToERC20Request;
             fromPartial(object: {
                 denom?: string;
-            }): _57.QueryDenomToERC20Request;
-            fromAmino(object: _57.QueryDenomToERC20RequestAmino): _57.QueryDenomToERC20Request;
-            toAmino(message: _57.QueryDenomToERC20Request): _57.QueryDenomToERC20RequestAmino;
-            fromAminoMsg(object: _57.QueryDenomToERC20RequestAminoMsg): _57.QueryDenomToERC20Request;
-            fromProtoMsg(message: _57.QueryDenomToERC20RequestProtoMsg): _57.QueryDenomToERC20Request;
-            toProto(message: _57.QueryDenomToERC20Request): Uint8Array;
-            toProtoMsg(message: _57.QueryDenomToERC20Request): _57.QueryDenomToERC20RequestProtoMsg;
+            }): _60.QueryDenomToERC20Request;
+            fromAmino(object: _60.QueryDenomToERC20RequestAmino): _60.QueryDenomToERC20Request;
+            toAmino(message: _60.QueryDenomToERC20Request): _60.QueryDenomToERC20RequestAmino;
+            fromAminoMsg(object: _60.QueryDenomToERC20RequestAminoMsg): _60.QueryDenomToERC20Request;
+            fromProtoMsg(message: _60.QueryDenomToERC20RequestProtoMsg): _60.QueryDenomToERC20Request;
+            toProto(message: _60.QueryDenomToERC20Request): Uint8Array;
+            toProtoMsg(message: _60.QueryDenomToERC20Request): _60.QueryDenomToERC20RequestProtoMsg;
         };
         QueryDenomToERC20Response: {
-            encode(message: _57.QueryDenomToERC20Response, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDenomToERC20Response;
+            encode(message: _60.QueryDenomToERC20Response, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDenomToERC20Response;
             fromPartial(object: {
                 erc20?: string;
                 cosmosOriginated?: boolean;
-            }): _57.QueryDenomToERC20Response;
-            fromAmino(object: _57.QueryDenomToERC20ResponseAmino): _57.QueryDenomToERC20Response;
-            toAmino(message: _57.QueryDenomToERC20Response): _57.QueryDenomToERC20ResponseAmino;
-            fromAminoMsg(object: _57.QueryDenomToERC20ResponseAminoMsg): _57.QueryDenomToERC20Response;
-            fromProtoMsg(message: _57.QueryDenomToERC20ResponseProtoMsg): _57.QueryDenomToERC20Response;
-            toProto(message: _57.QueryDenomToERC20Response): Uint8Array;
-            toProtoMsg(message: _57.QueryDenomToERC20Response): _57.QueryDenomToERC20ResponseProtoMsg;
+            }): _60.QueryDenomToERC20Response;
+            fromAmino(object: _60.QueryDenomToERC20ResponseAmino): _60.QueryDenomToERC20Response;
+            toAmino(message: _60.QueryDenomToERC20Response): _60.QueryDenomToERC20ResponseAmino;
+            fromAminoMsg(object: _60.QueryDenomToERC20ResponseAminoMsg): _60.QueryDenomToERC20Response;
+            fromProtoMsg(message: _60.QueryDenomToERC20ResponseProtoMsg): _60.QueryDenomToERC20Response;
+            toProto(message: _60.QueryDenomToERC20Response): Uint8Array;
+            toProtoMsg(message: _60.QueryDenomToERC20Response): _60.QueryDenomToERC20ResponseProtoMsg;
         };
         QueryAttestationsRequest: {
-            encode(message: _57.QueryAttestationsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryAttestationsRequest;
+            encode(message: _60.QueryAttestationsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryAttestationsRequest;
             fromPartial(object: {
                 limit?: string | number | import("long").Long;
-            }): _57.QueryAttestationsRequest;
-            fromAmino(object: _57.QueryAttestationsRequestAmino): _57.QueryAttestationsRequest;
-            toAmino(message: _57.QueryAttestationsRequest): _57.QueryAttestationsRequestAmino;
-            fromAminoMsg(object: _57.QueryAttestationsRequestAminoMsg): _57.QueryAttestationsRequest;
-            fromProtoMsg(message: _57.QueryAttestationsRequestProtoMsg): _57.QueryAttestationsRequest;
-            toProto(message: _57.QueryAttestationsRequest): Uint8Array;
-            toProtoMsg(message: _57.QueryAttestationsRequest): _57.QueryAttestationsRequestProtoMsg;
+            }): _60.QueryAttestationsRequest;
+            fromAmino(object: _60.QueryAttestationsRequestAmino): _60.QueryAttestationsRequest;
+            toAmino(message: _60.QueryAttestationsRequest): _60.QueryAttestationsRequestAmino;
+            fromAminoMsg(object: _60.QueryAttestationsRequestAminoMsg): _60.QueryAttestationsRequest;
+            fromProtoMsg(message: _60.QueryAttestationsRequestProtoMsg): _60.QueryAttestationsRequest;
+            toProto(message: _60.QueryAttestationsRequest): Uint8Array;
+            toProtoMsg(message: _60.QueryAttestationsRequest): _60.QueryAttestationsRequestProtoMsg;
         };
         QueryAttestationsResponse: {
-            encode(message: _57.QueryAttestationsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryAttestationsResponse;
+            encode(message: _60.QueryAttestationsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryAttestationsResponse;
             fromPartial(object: {
                 attestations?: {
                     observed?: boolean;
@@ -1052,111 +1052,111 @@ export declare namespace gravity {
                         value?: Uint8Array;
                     };
                 }[];
-            }): _57.QueryAttestationsResponse;
-            fromAmino(object: _57.QueryAttestationsResponseAmino): _57.QueryAttestationsResponse;
-            toAmino(message: _57.QueryAttestationsResponse): _57.QueryAttestationsResponseAmino;
-            fromAminoMsg(object: _57.QueryAttestationsResponseAminoMsg): _57.QueryAttestationsResponse;
-            fromProtoMsg(message: _57.QueryAttestationsResponseProtoMsg): _57.QueryAttestationsResponse;
-            toProto(message: _57.QueryAttestationsResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryAttestationsResponse): _57.QueryAttestationsResponseProtoMsg;
+            }): _60.QueryAttestationsResponse;
+            fromAmino(object: _60.QueryAttestationsResponseAmino): _60.QueryAttestationsResponse;
+            toAmino(message: _60.QueryAttestationsResponse): _60.QueryAttestationsResponseAmino;
+            fromAminoMsg(object: _60.QueryAttestationsResponseAminoMsg): _60.QueryAttestationsResponse;
+            fromProtoMsg(message: _60.QueryAttestationsResponseProtoMsg): _60.QueryAttestationsResponse;
+            toProto(message: _60.QueryAttestationsResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryAttestationsResponse): _60.QueryAttestationsResponseProtoMsg;
         };
         QueryDelegateKeysByValidatorAddress: {
-            encode(message: _57.QueryDelegateKeysByValidatorAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDelegateKeysByValidatorAddress;
+            encode(message: _60.QueryDelegateKeysByValidatorAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDelegateKeysByValidatorAddress;
             fromPartial(object: {
                 validatorAddress?: string;
-            }): _57.QueryDelegateKeysByValidatorAddress;
-            fromAmino(object: _57.QueryDelegateKeysByValidatorAddressAmino): _57.QueryDelegateKeysByValidatorAddress;
-            toAmino(message: _57.QueryDelegateKeysByValidatorAddress): _57.QueryDelegateKeysByValidatorAddressAmino;
-            fromAminoMsg(object: _57.QueryDelegateKeysByValidatorAddressAminoMsg): _57.QueryDelegateKeysByValidatorAddress;
-            fromProtoMsg(message: _57.QueryDelegateKeysByValidatorAddressProtoMsg): _57.QueryDelegateKeysByValidatorAddress;
-            toProto(message: _57.QueryDelegateKeysByValidatorAddress): Uint8Array;
-            toProtoMsg(message: _57.QueryDelegateKeysByValidatorAddress): _57.QueryDelegateKeysByValidatorAddressProtoMsg;
+            }): _60.QueryDelegateKeysByValidatorAddress;
+            fromAmino(object: _60.QueryDelegateKeysByValidatorAddressAmino): _60.QueryDelegateKeysByValidatorAddress;
+            toAmino(message: _60.QueryDelegateKeysByValidatorAddress): _60.QueryDelegateKeysByValidatorAddressAmino;
+            fromAminoMsg(object: _60.QueryDelegateKeysByValidatorAddressAminoMsg): _60.QueryDelegateKeysByValidatorAddress;
+            fromProtoMsg(message: _60.QueryDelegateKeysByValidatorAddressProtoMsg): _60.QueryDelegateKeysByValidatorAddress;
+            toProto(message: _60.QueryDelegateKeysByValidatorAddress): Uint8Array;
+            toProtoMsg(message: _60.QueryDelegateKeysByValidatorAddress): _60.QueryDelegateKeysByValidatorAddressProtoMsg;
         };
         QueryDelegateKeysByValidatorAddressResponse: {
-            encode(message: _57.QueryDelegateKeysByValidatorAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDelegateKeysByValidatorAddressResponse;
+            encode(message: _60.QueryDelegateKeysByValidatorAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDelegateKeysByValidatorAddressResponse;
             fromPartial(object: {
                 ethAddress?: string;
                 orchestratorAddress?: string;
-            }): _57.QueryDelegateKeysByValidatorAddressResponse;
-            fromAmino(object: _57.QueryDelegateKeysByValidatorAddressResponseAmino): _57.QueryDelegateKeysByValidatorAddressResponse;
-            toAmino(message: _57.QueryDelegateKeysByValidatorAddressResponse): _57.QueryDelegateKeysByValidatorAddressResponseAmino;
-            fromAminoMsg(object: _57.QueryDelegateKeysByValidatorAddressResponseAminoMsg): _57.QueryDelegateKeysByValidatorAddressResponse;
-            fromProtoMsg(message: _57.QueryDelegateKeysByValidatorAddressResponseProtoMsg): _57.QueryDelegateKeysByValidatorAddressResponse;
-            toProto(message: _57.QueryDelegateKeysByValidatorAddressResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryDelegateKeysByValidatorAddressResponse): _57.QueryDelegateKeysByValidatorAddressResponseProtoMsg;
+            }): _60.QueryDelegateKeysByValidatorAddressResponse;
+            fromAmino(object: _60.QueryDelegateKeysByValidatorAddressResponseAmino): _60.QueryDelegateKeysByValidatorAddressResponse;
+            toAmino(message: _60.QueryDelegateKeysByValidatorAddressResponse): _60.QueryDelegateKeysByValidatorAddressResponseAmino;
+            fromAminoMsg(object: _60.QueryDelegateKeysByValidatorAddressResponseAminoMsg): _60.QueryDelegateKeysByValidatorAddressResponse;
+            fromProtoMsg(message: _60.QueryDelegateKeysByValidatorAddressResponseProtoMsg): _60.QueryDelegateKeysByValidatorAddressResponse;
+            toProto(message: _60.QueryDelegateKeysByValidatorAddressResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryDelegateKeysByValidatorAddressResponse): _60.QueryDelegateKeysByValidatorAddressResponseProtoMsg;
         };
         QueryDelegateKeysByEthAddress: {
-            encode(message: _57.QueryDelegateKeysByEthAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDelegateKeysByEthAddress;
+            encode(message: _60.QueryDelegateKeysByEthAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDelegateKeysByEthAddress;
             fromPartial(object: {
                 ethAddress?: string;
-            }): _57.QueryDelegateKeysByEthAddress;
-            fromAmino(object: _57.QueryDelegateKeysByEthAddressAmino): _57.QueryDelegateKeysByEthAddress;
-            toAmino(message: _57.QueryDelegateKeysByEthAddress): _57.QueryDelegateKeysByEthAddressAmino;
-            fromAminoMsg(object: _57.QueryDelegateKeysByEthAddressAminoMsg): _57.QueryDelegateKeysByEthAddress;
-            fromProtoMsg(message: _57.QueryDelegateKeysByEthAddressProtoMsg): _57.QueryDelegateKeysByEthAddress;
-            toProto(message: _57.QueryDelegateKeysByEthAddress): Uint8Array;
-            toProtoMsg(message: _57.QueryDelegateKeysByEthAddress): _57.QueryDelegateKeysByEthAddressProtoMsg;
+            }): _60.QueryDelegateKeysByEthAddress;
+            fromAmino(object: _60.QueryDelegateKeysByEthAddressAmino): _60.QueryDelegateKeysByEthAddress;
+            toAmino(message: _60.QueryDelegateKeysByEthAddress): _60.QueryDelegateKeysByEthAddressAmino;
+            fromAminoMsg(object: _60.QueryDelegateKeysByEthAddressAminoMsg): _60.QueryDelegateKeysByEthAddress;
+            fromProtoMsg(message: _60.QueryDelegateKeysByEthAddressProtoMsg): _60.QueryDelegateKeysByEthAddress;
+            toProto(message: _60.QueryDelegateKeysByEthAddress): Uint8Array;
+            toProtoMsg(message: _60.QueryDelegateKeysByEthAddress): _60.QueryDelegateKeysByEthAddressProtoMsg;
         };
         QueryDelegateKeysByEthAddressResponse: {
-            encode(message: _57.QueryDelegateKeysByEthAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDelegateKeysByEthAddressResponse;
+            encode(message: _60.QueryDelegateKeysByEthAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDelegateKeysByEthAddressResponse;
             fromPartial(object: {
                 validatorAddress?: string;
                 orchestratorAddress?: string;
-            }): _57.QueryDelegateKeysByEthAddressResponse;
-            fromAmino(object: _57.QueryDelegateKeysByEthAddressResponseAmino): _57.QueryDelegateKeysByEthAddressResponse;
-            toAmino(message: _57.QueryDelegateKeysByEthAddressResponse): _57.QueryDelegateKeysByEthAddressResponseAmino;
-            fromAminoMsg(object: _57.QueryDelegateKeysByEthAddressResponseAminoMsg): _57.QueryDelegateKeysByEthAddressResponse;
-            fromProtoMsg(message: _57.QueryDelegateKeysByEthAddressResponseProtoMsg): _57.QueryDelegateKeysByEthAddressResponse;
-            toProto(message: _57.QueryDelegateKeysByEthAddressResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryDelegateKeysByEthAddressResponse): _57.QueryDelegateKeysByEthAddressResponseProtoMsg;
+            }): _60.QueryDelegateKeysByEthAddressResponse;
+            fromAmino(object: _60.QueryDelegateKeysByEthAddressResponseAmino): _60.QueryDelegateKeysByEthAddressResponse;
+            toAmino(message: _60.QueryDelegateKeysByEthAddressResponse): _60.QueryDelegateKeysByEthAddressResponseAmino;
+            fromAminoMsg(object: _60.QueryDelegateKeysByEthAddressResponseAminoMsg): _60.QueryDelegateKeysByEthAddressResponse;
+            fromProtoMsg(message: _60.QueryDelegateKeysByEthAddressResponseProtoMsg): _60.QueryDelegateKeysByEthAddressResponse;
+            toProto(message: _60.QueryDelegateKeysByEthAddressResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryDelegateKeysByEthAddressResponse): _60.QueryDelegateKeysByEthAddressResponseProtoMsg;
         };
         QueryDelegateKeysByOrchestratorAddress: {
-            encode(message: _57.QueryDelegateKeysByOrchestratorAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDelegateKeysByOrchestratorAddress;
+            encode(message: _60.QueryDelegateKeysByOrchestratorAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDelegateKeysByOrchestratorAddress;
             fromPartial(object: {
                 orchestratorAddress?: string;
-            }): _57.QueryDelegateKeysByOrchestratorAddress;
-            fromAmino(object: _57.QueryDelegateKeysByOrchestratorAddressAmino): _57.QueryDelegateKeysByOrchestratorAddress;
-            toAmino(message: _57.QueryDelegateKeysByOrchestratorAddress): _57.QueryDelegateKeysByOrchestratorAddressAmino;
-            fromAminoMsg(object: _57.QueryDelegateKeysByOrchestratorAddressAminoMsg): _57.QueryDelegateKeysByOrchestratorAddress;
-            fromProtoMsg(message: _57.QueryDelegateKeysByOrchestratorAddressProtoMsg): _57.QueryDelegateKeysByOrchestratorAddress;
-            toProto(message: _57.QueryDelegateKeysByOrchestratorAddress): Uint8Array;
-            toProtoMsg(message: _57.QueryDelegateKeysByOrchestratorAddress): _57.QueryDelegateKeysByOrchestratorAddressProtoMsg;
+            }): _60.QueryDelegateKeysByOrchestratorAddress;
+            fromAmino(object: _60.QueryDelegateKeysByOrchestratorAddressAmino): _60.QueryDelegateKeysByOrchestratorAddress;
+            toAmino(message: _60.QueryDelegateKeysByOrchestratorAddress): _60.QueryDelegateKeysByOrchestratorAddressAmino;
+            fromAminoMsg(object: _60.QueryDelegateKeysByOrchestratorAddressAminoMsg): _60.QueryDelegateKeysByOrchestratorAddress;
+            fromProtoMsg(message: _60.QueryDelegateKeysByOrchestratorAddressProtoMsg): _60.QueryDelegateKeysByOrchestratorAddress;
+            toProto(message: _60.QueryDelegateKeysByOrchestratorAddress): Uint8Array;
+            toProtoMsg(message: _60.QueryDelegateKeysByOrchestratorAddress): _60.QueryDelegateKeysByOrchestratorAddressProtoMsg;
         };
         QueryDelegateKeysByOrchestratorAddressResponse: {
-            encode(message: _57.QueryDelegateKeysByOrchestratorAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryDelegateKeysByOrchestratorAddressResponse;
+            encode(message: _60.QueryDelegateKeysByOrchestratorAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryDelegateKeysByOrchestratorAddressResponse;
             fromPartial(object: {
                 validatorAddress?: string;
                 ethAddress?: string;
-            }): _57.QueryDelegateKeysByOrchestratorAddressResponse;
-            fromAmino(object: _57.QueryDelegateKeysByOrchestratorAddressResponseAmino): _57.QueryDelegateKeysByOrchestratorAddressResponse;
-            toAmino(message: _57.QueryDelegateKeysByOrchestratorAddressResponse): _57.QueryDelegateKeysByOrchestratorAddressResponseAmino;
-            fromAminoMsg(object: _57.QueryDelegateKeysByOrchestratorAddressResponseAminoMsg): _57.QueryDelegateKeysByOrchestratorAddressResponse;
-            fromProtoMsg(message: _57.QueryDelegateKeysByOrchestratorAddressResponseProtoMsg): _57.QueryDelegateKeysByOrchestratorAddressResponse;
-            toProto(message: _57.QueryDelegateKeysByOrchestratorAddressResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryDelegateKeysByOrchestratorAddressResponse): _57.QueryDelegateKeysByOrchestratorAddressResponseProtoMsg;
+            }): _60.QueryDelegateKeysByOrchestratorAddressResponse;
+            fromAmino(object: _60.QueryDelegateKeysByOrchestratorAddressResponseAmino): _60.QueryDelegateKeysByOrchestratorAddressResponse;
+            toAmino(message: _60.QueryDelegateKeysByOrchestratorAddressResponse): _60.QueryDelegateKeysByOrchestratorAddressResponseAmino;
+            fromAminoMsg(object: _60.QueryDelegateKeysByOrchestratorAddressResponseAminoMsg): _60.QueryDelegateKeysByOrchestratorAddressResponse;
+            fromProtoMsg(message: _60.QueryDelegateKeysByOrchestratorAddressResponseProtoMsg): _60.QueryDelegateKeysByOrchestratorAddressResponse;
+            toProto(message: _60.QueryDelegateKeysByOrchestratorAddressResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryDelegateKeysByOrchestratorAddressResponse): _60.QueryDelegateKeysByOrchestratorAddressResponseProtoMsg;
         };
         QueryPendingSendToEth: {
-            encode(message: _57.QueryPendingSendToEth, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryPendingSendToEth;
+            encode(message: _60.QueryPendingSendToEth, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryPendingSendToEth;
             fromPartial(object: {
                 senderAddress?: string;
-            }): _57.QueryPendingSendToEth;
-            fromAmino(object: _57.QueryPendingSendToEthAmino): _57.QueryPendingSendToEth;
-            toAmino(message: _57.QueryPendingSendToEth): _57.QueryPendingSendToEthAmino;
-            fromAminoMsg(object: _57.QueryPendingSendToEthAminoMsg): _57.QueryPendingSendToEth;
-            fromProtoMsg(message: _57.QueryPendingSendToEthProtoMsg): _57.QueryPendingSendToEth;
-            toProto(message: _57.QueryPendingSendToEth): Uint8Array;
-            toProtoMsg(message: _57.QueryPendingSendToEth): _57.QueryPendingSendToEthProtoMsg;
+            }): _60.QueryPendingSendToEth;
+            fromAmino(object: _60.QueryPendingSendToEthAmino): _60.QueryPendingSendToEth;
+            toAmino(message: _60.QueryPendingSendToEth): _60.QueryPendingSendToEthAmino;
+            fromAminoMsg(object: _60.QueryPendingSendToEthAminoMsg): _60.QueryPendingSendToEth;
+            fromProtoMsg(message: _60.QueryPendingSendToEthProtoMsg): _60.QueryPendingSendToEth;
+            toProto(message: _60.QueryPendingSendToEth): Uint8Array;
+            toProtoMsg(message: _60.QueryPendingSendToEth): _60.QueryPendingSendToEthProtoMsg;
         };
         QueryPendingSendToEthResponse: {
-            encode(message: _57.QueryPendingSendToEthResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.QueryPendingSendToEthResponse;
+            encode(message: _60.QueryPendingSendToEthResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _60.QueryPendingSendToEthResponse;
             fromPartial(object: {
                 transfersInBatches?: {
                     id?: string | number | import("long").Long;
@@ -1184,98 +1184,98 @@ export declare namespace gravity {
                         amount?: string;
                     };
                 }[];
-            }): _57.QueryPendingSendToEthResponse;
-            fromAmino(object: _57.QueryPendingSendToEthResponseAmino): _57.QueryPendingSendToEthResponse;
-            toAmino(message: _57.QueryPendingSendToEthResponse): _57.QueryPendingSendToEthResponseAmino;
-            fromAminoMsg(object: _57.QueryPendingSendToEthResponseAminoMsg): _57.QueryPendingSendToEthResponse;
-            fromProtoMsg(message: _57.QueryPendingSendToEthResponseProtoMsg): _57.QueryPendingSendToEthResponse;
-            toProto(message: _57.QueryPendingSendToEthResponse): Uint8Array;
-            toProtoMsg(message: _57.QueryPendingSendToEthResponse): _57.QueryPendingSendToEthResponseProtoMsg;
+            }): _60.QueryPendingSendToEthResponse;
+            fromAmino(object: _60.QueryPendingSendToEthResponseAmino): _60.QueryPendingSendToEthResponse;
+            toAmino(message: _60.QueryPendingSendToEthResponse): _60.QueryPendingSendToEthResponseAmino;
+            fromAminoMsg(object: _60.QueryPendingSendToEthResponseAminoMsg): _60.QueryPendingSendToEthResponse;
+            fromProtoMsg(message: _60.QueryPendingSendToEthResponseProtoMsg): _60.QueryPendingSendToEthResponse;
+            toProto(message: _60.QueryPendingSendToEthResponse): Uint8Array;
+            toProtoMsg(message: _60.QueryPendingSendToEthResponse): _60.QueryPendingSendToEthResponseProtoMsg;
         };
         IDSet: {
-            encode(message: _56.IDSet, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _56.IDSet;
+            encode(message: _59.IDSet, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _59.IDSet;
             fromPartial(object: {
                 ids?: (string | number | import("long").Long)[];
-            }): _56.IDSet;
-            fromAmino(object: _56.IDSetAmino): _56.IDSet;
-            toAmino(message: _56.IDSet): _56.IDSetAmino;
-            fromAminoMsg(object: _56.IDSetAminoMsg): _56.IDSet;
-            fromProtoMsg(message: _56.IDSetProtoMsg): _56.IDSet;
-            toProto(message: _56.IDSet): Uint8Array;
-            toProtoMsg(message: _56.IDSet): _56.IDSetProtoMsg;
+            }): _59.IDSet;
+            fromAmino(object: _59.IDSetAmino): _59.IDSet;
+            toAmino(message: _59.IDSet): _59.IDSetAmino;
+            fromAminoMsg(object: _59.IDSetAminoMsg): _59.IDSet;
+            fromProtoMsg(message: _59.IDSetProtoMsg): _59.IDSet;
+            toProto(message: _59.IDSet): Uint8Array;
+            toProtoMsg(message: _59.IDSet): _59.IDSetProtoMsg;
         };
         BatchFees: {
-            encode(message: _56.BatchFees, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _56.BatchFees;
+            encode(message: _59.BatchFees, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _59.BatchFees;
             fromPartial(object: {
                 token?: string;
                 totalFees?: string;
                 txCount?: string | number | import("long").Long;
-            }): _56.BatchFees;
-            fromAmino(object: _56.BatchFeesAmino): _56.BatchFees;
-            toAmino(message: _56.BatchFees): _56.BatchFeesAmino;
-            fromAminoMsg(object: _56.BatchFeesAminoMsg): _56.BatchFees;
-            fromProtoMsg(message: _56.BatchFeesProtoMsg): _56.BatchFees;
-            toProto(message: _56.BatchFees): Uint8Array;
-            toProtoMsg(message: _56.BatchFees): _56.BatchFeesProtoMsg;
+            }): _59.BatchFees;
+            fromAmino(object: _59.BatchFeesAmino): _59.BatchFees;
+            toAmino(message: _59.BatchFees): _59.BatchFeesAmino;
+            fromAminoMsg(object: _59.BatchFeesAminoMsg): _59.BatchFees;
+            fromProtoMsg(message: _59.BatchFeesProtoMsg): _59.BatchFees;
+            toProto(message: _59.BatchFees): Uint8Array;
+            toProtoMsg(message: _59.BatchFees): _59.BatchFeesProtoMsg;
         };
         MsgSetOrchestratorAddress: {
-            encode(message: _55.MsgSetOrchestratorAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSetOrchestratorAddress;
+            encode(message: _58.MsgSetOrchestratorAddress, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSetOrchestratorAddress;
             fromPartial(object: {
                 validator?: string;
                 orchestrator?: string;
                 ethAddress?: string;
-            }): _55.MsgSetOrchestratorAddress;
-            fromAmino(object: _55.MsgSetOrchestratorAddressAmino): _55.MsgSetOrchestratorAddress;
-            toAmino(message: _55.MsgSetOrchestratorAddress): _55.MsgSetOrchestratorAddressAmino;
-            fromAminoMsg(object: _55.MsgSetOrchestratorAddressAminoMsg): _55.MsgSetOrchestratorAddress;
-            fromProtoMsg(message: _55.MsgSetOrchestratorAddressProtoMsg): _55.MsgSetOrchestratorAddress;
-            toProto(message: _55.MsgSetOrchestratorAddress): Uint8Array;
-            toProtoMsg(message: _55.MsgSetOrchestratorAddress): _55.MsgSetOrchestratorAddressProtoMsg;
+            }): _58.MsgSetOrchestratorAddress;
+            fromAmino(object: _58.MsgSetOrchestratorAddressAmino): _58.MsgSetOrchestratorAddress;
+            toAmino(message: _58.MsgSetOrchestratorAddress): _58.MsgSetOrchestratorAddressAmino;
+            fromAminoMsg(object: _58.MsgSetOrchestratorAddressAminoMsg): _58.MsgSetOrchestratorAddress;
+            fromProtoMsg(message: _58.MsgSetOrchestratorAddressProtoMsg): _58.MsgSetOrchestratorAddress;
+            toProto(message: _58.MsgSetOrchestratorAddress): Uint8Array;
+            toProtoMsg(message: _58.MsgSetOrchestratorAddress): _58.MsgSetOrchestratorAddressProtoMsg;
         };
         MsgSetOrchestratorAddressResponse: {
-            encode(_: _55.MsgSetOrchestratorAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSetOrchestratorAddressResponse;
-            fromPartial(_: {}): _55.MsgSetOrchestratorAddressResponse;
-            fromAmino(_: _55.MsgSetOrchestratorAddressResponseAmino): _55.MsgSetOrchestratorAddressResponse;
-            toAmino(_: _55.MsgSetOrchestratorAddressResponse): _55.MsgSetOrchestratorAddressResponseAmino;
-            fromAminoMsg(object: _55.MsgSetOrchestratorAddressResponseAminoMsg): _55.MsgSetOrchestratorAddressResponse;
-            fromProtoMsg(message: _55.MsgSetOrchestratorAddressResponseProtoMsg): _55.MsgSetOrchestratorAddressResponse;
-            toProto(message: _55.MsgSetOrchestratorAddressResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgSetOrchestratorAddressResponse): _55.MsgSetOrchestratorAddressResponseProtoMsg;
+            encode(_: _58.MsgSetOrchestratorAddressResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSetOrchestratorAddressResponse;
+            fromPartial(_: {}): _58.MsgSetOrchestratorAddressResponse;
+            fromAmino(_: _58.MsgSetOrchestratorAddressResponseAmino): _58.MsgSetOrchestratorAddressResponse;
+            toAmino(_: _58.MsgSetOrchestratorAddressResponse): _58.MsgSetOrchestratorAddressResponseAmino;
+            fromAminoMsg(object: _58.MsgSetOrchestratorAddressResponseAminoMsg): _58.MsgSetOrchestratorAddressResponse;
+            fromProtoMsg(message: _58.MsgSetOrchestratorAddressResponseProtoMsg): _58.MsgSetOrchestratorAddressResponse;
+            toProto(message: _58.MsgSetOrchestratorAddressResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgSetOrchestratorAddressResponse): _58.MsgSetOrchestratorAddressResponseProtoMsg;
         };
         MsgValsetConfirm: {
-            encode(message: _55.MsgValsetConfirm, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgValsetConfirm;
+            encode(message: _58.MsgValsetConfirm, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgValsetConfirm;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
                 orchestrator?: string;
                 ethAddress?: string;
                 signature?: string;
-            }): _55.MsgValsetConfirm;
-            fromAmino(object: _55.MsgValsetConfirmAmino): _55.MsgValsetConfirm;
-            toAmino(message: _55.MsgValsetConfirm): _55.MsgValsetConfirmAmino;
-            fromAminoMsg(object: _55.MsgValsetConfirmAminoMsg): _55.MsgValsetConfirm;
-            fromProtoMsg(message: _55.MsgValsetConfirmProtoMsg): _55.MsgValsetConfirm;
-            toProto(message: _55.MsgValsetConfirm): Uint8Array;
-            toProtoMsg(message: _55.MsgValsetConfirm): _55.MsgValsetConfirmProtoMsg;
+            }): _58.MsgValsetConfirm;
+            fromAmino(object: _58.MsgValsetConfirmAmino): _58.MsgValsetConfirm;
+            toAmino(message: _58.MsgValsetConfirm): _58.MsgValsetConfirmAmino;
+            fromAminoMsg(object: _58.MsgValsetConfirmAminoMsg): _58.MsgValsetConfirm;
+            fromProtoMsg(message: _58.MsgValsetConfirmProtoMsg): _58.MsgValsetConfirm;
+            toProto(message: _58.MsgValsetConfirm): Uint8Array;
+            toProtoMsg(message: _58.MsgValsetConfirm): _58.MsgValsetConfirmProtoMsg;
         };
         MsgValsetConfirmResponse: {
-            encode(_: _55.MsgValsetConfirmResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgValsetConfirmResponse;
-            fromPartial(_: {}): _55.MsgValsetConfirmResponse;
-            fromAmino(_: _55.MsgValsetConfirmResponseAmino): _55.MsgValsetConfirmResponse;
-            toAmino(_: _55.MsgValsetConfirmResponse): _55.MsgValsetConfirmResponseAmino;
-            fromAminoMsg(object: _55.MsgValsetConfirmResponseAminoMsg): _55.MsgValsetConfirmResponse;
-            fromProtoMsg(message: _55.MsgValsetConfirmResponseProtoMsg): _55.MsgValsetConfirmResponse;
-            toProto(message: _55.MsgValsetConfirmResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgValsetConfirmResponse): _55.MsgValsetConfirmResponseProtoMsg;
+            encode(_: _58.MsgValsetConfirmResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgValsetConfirmResponse;
+            fromPartial(_: {}): _58.MsgValsetConfirmResponse;
+            fromAmino(_: _58.MsgValsetConfirmResponseAmino): _58.MsgValsetConfirmResponse;
+            toAmino(_: _58.MsgValsetConfirmResponse): _58.MsgValsetConfirmResponseAmino;
+            fromAminoMsg(object: _58.MsgValsetConfirmResponseAminoMsg): _58.MsgValsetConfirmResponse;
+            fromProtoMsg(message: _58.MsgValsetConfirmResponseProtoMsg): _58.MsgValsetConfirmResponse;
+            toProto(message: _58.MsgValsetConfirmResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgValsetConfirmResponse): _58.MsgValsetConfirmResponseProtoMsg;
         };
         MsgSendToEth: {
-            encode(message: _55.MsgSendToEth, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSendToEth;
+            encode(message: _58.MsgSendToEth, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSendToEth;
             fromPartial(object: {
                 sender?: string;
                 ethDest?: string;
@@ -1287,109 +1287,109 @@ export declare namespace gravity {
                     denom?: string;
                     amount?: string;
                 };
-            }): _55.MsgSendToEth;
-            fromAmino(object: _55.MsgSendToEthAmino): _55.MsgSendToEth;
-            toAmino(message: _55.MsgSendToEth): _55.MsgSendToEthAmino;
-            fromAminoMsg(object: _55.MsgSendToEthAminoMsg): _55.MsgSendToEth;
-            fromProtoMsg(message: _55.MsgSendToEthProtoMsg): _55.MsgSendToEth;
-            toProto(message: _55.MsgSendToEth): Uint8Array;
-            toProtoMsg(message: _55.MsgSendToEth): _55.MsgSendToEthProtoMsg;
+            }): _58.MsgSendToEth;
+            fromAmino(object: _58.MsgSendToEthAmino): _58.MsgSendToEth;
+            toAmino(message: _58.MsgSendToEth): _58.MsgSendToEthAmino;
+            fromAminoMsg(object: _58.MsgSendToEthAminoMsg): _58.MsgSendToEth;
+            fromProtoMsg(message: _58.MsgSendToEthProtoMsg): _58.MsgSendToEth;
+            toProto(message: _58.MsgSendToEth): Uint8Array;
+            toProtoMsg(message: _58.MsgSendToEth): _58.MsgSendToEthProtoMsg;
         };
         MsgSendToEthResponse: {
-            encode(_: _55.MsgSendToEthResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSendToEthResponse;
-            fromPartial(_: {}): _55.MsgSendToEthResponse;
-            fromAmino(_: _55.MsgSendToEthResponseAmino): _55.MsgSendToEthResponse;
-            toAmino(_: _55.MsgSendToEthResponse): _55.MsgSendToEthResponseAmino;
-            fromAminoMsg(object: _55.MsgSendToEthResponseAminoMsg): _55.MsgSendToEthResponse;
-            fromProtoMsg(message: _55.MsgSendToEthResponseProtoMsg): _55.MsgSendToEthResponse;
-            toProto(message: _55.MsgSendToEthResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgSendToEthResponse): _55.MsgSendToEthResponseProtoMsg;
+            encode(_: _58.MsgSendToEthResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSendToEthResponse;
+            fromPartial(_: {}): _58.MsgSendToEthResponse;
+            fromAmino(_: _58.MsgSendToEthResponseAmino): _58.MsgSendToEthResponse;
+            toAmino(_: _58.MsgSendToEthResponse): _58.MsgSendToEthResponseAmino;
+            fromAminoMsg(object: _58.MsgSendToEthResponseAminoMsg): _58.MsgSendToEthResponse;
+            fromProtoMsg(message: _58.MsgSendToEthResponseProtoMsg): _58.MsgSendToEthResponse;
+            toProto(message: _58.MsgSendToEthResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgSendToEthResponse): _58.MsgSendToEthResponseProtoMsg;
         };
         MsgRequestBatch: {
-            encode(message: _55.MsgRequestBatch, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgRequestBatch;
+            encode(message: _58.MsgRequestBatch, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgRequestBatch;
             fromPartial(object: {
                 sender?: string;
                 denom?: string;
-            }): _55.MsgRequestBatch;
-            fromAmino(object: _55.MsgRequestBatchAmino): _55.MsgRequestBatch;
-            toAmino(message: _55.MsgRequestBatch): _55.MsgRequestBatchAmino;
-            fromAminoMsg(object: _55.MsgRequestBatchAminoMsg): _55.MsgRequestBatch;
-            fromProtoMsg(message: _55.MsgRequestBatchProtoMsg): _55.MsgRequestBatch;
-            toProto(message: _55.MsgRequestBatch): Uint8Array;
-            toProtoMsg(message: _55.MsgRequestBatch): _55.MsgRequestBatchProtoMsg;
+            }): _58.MsgRequestBatch;
+            fromAmino(object: _58.MsgRequestBatchAmino): _58.MsgRequestBatch;
+            toAmino(message: _58.MsgRequestBatch): _58.MsgRequestBatchAmino;
+            fromAminoMsg(object: _58.MsgRequestBatchAminoMsg): _58.MsgRequestBatch;
+            fromProtoMsg(message: _58.MsgRequestBatchProtoMsg): _58.MsgRequestBatch;
+            toProto(message: _58.MsgRequestBatch): Uint8Array;
+            toProtoMsg(message: _58.MsgRequestBatch): _58.MsgRequestBatchProtoMsg;
         };
         MsgRequestBatchResponse: {
-            encode(_: _55.MsgRequestBatchResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgRequestBatchResponse;
-            fromPartial(_: {}): _55.MsgRequestBatchResponse;
-            fromAmino(_: _55.MsgRequestBatchResponseAmino): _55.MsgRequestBatchResponse;
-            toAmino(_: _55.MsgRequestBatchResponse): _55.MsgRequestBatchResponseAmino;
-            fromAminoMsg(object: _55.MsgRequestBatchResponseAminoMsg): _55.MsgRequestBatchResponse;
-            fromProtoMsg(message: _55.MsgRequestBatchResponseProtoMsg): _55.MsgRequestBatchResponse;
-            toProto(message: _55.MsgRequestBatchResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgRequestBatchResponse): _55.MsgRequestBatchResponseProtoMsg;
+            encode(_: _58.MsgRequestBatchResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgRequestBatchResponse;
+            fromPartial(_: {}): _58.MsgRequestBatchResponse;
+            fromAmino(_: _58.MsgRequestBatchResponseAmino): _58.MsgRequestBatchResponse;
+            toAmino(_: _58.MsgRequestBatchResponse): _58.MsgRequestBatchResponseAmino;
+            fromAminoMsg(object: _58.MsgRequestBatchResponseAminoMsg): _58.MsgRequestBatchResponse;
+            fromProtoMsg(message: _58.MsgRequestBatchResponseProtoMsg): _58.MsgRequestBatchResponse;
+            toProto(message: _58.MsgRequestBatchResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgRequestBatchResponse): _58.MsgRequestBatchResponseProtoMsg;
         };
         MsgConfirmBatch: {
-            encode(message: _55.MsgConfirmBatch, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgConfirmBatch;
+            encode(message: _58.MsgConfirmBatch, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgConfirmBatch;
             fromPartial(object: {
                 nonce?: string | number | import("long").Long;
                 tokenContract?: string;
                 ethSigner?: string;
                 orchestrator?: string;
                 signature?: string;
-            }): _55.MsgConfirmBatch;
-            fromAmino(object: _55.MsgConfirmBatchAmino): _55.MsgConfirmBatch;
-            toAmino(message: _55.MsgConfirmBatch): _55.MsgConfirmBatchAmino;
-            fromAminoMsg(object: _55.MsgConfirmBatchAminoMsg): _55.MsgConfirmBatch;
-            fromProtoMsg(message: _55.MsgConfirmBatchProtoMsg): _55.MsgConfirmBatch;
-            toProto(message: _55.MsgConfirmBatch): Uint8Array;
-            toProtoMsg(message: _55.MsgConfirmBatch): _55.MsgConfirmBatchProtoMsg;
+            }): _58.MsgConfirmBatch;
+            fromAmino(object: _58.MsgConfirmBatchAmino): _58.MsgConfirmBatch;
+            toAmino(message: _58.MsgConfirmBatch): _58.MsgConfirmBatchAmino;
+            fromAminoMsg(object: _58.MsgConfirmBatchAminoMsg): _58.MsgConfirmBatch;
+            fromProtoMsg(message: _58.MsgConfirmBatchProtoMsg): _58.MsgConfirmBatch;
+            toProto(message: _58.MsgConfirmBatch): Uint8Array;
+            toProtoMsg(message: _58.MsgConfirmBatch): _58.MsgConfirmBatchProtoMsg;
         };
         MsgConfirmBatchResponse: {
-            encode(_: _55.MsgConfirmBatchResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgConfirmBatchResponse;
-            fromPartial(_: {}): _55.MsgConfirmBatchResponse;
-            fromAmino(_: _55.MsgConfirmBatchResponseAmino): _55.MsgConfirmBatchResponse;
-            toAmino(_: _55.MsgConfirmBatchResponse): _55.MsgConfirmBatchResponseAmino;
-            fromAminoMsg(object: _55.MsgConfirmBatchResponseAminoMsg): _55.MsgConfirmBatchResponse;
-            fromProtoMsg(message: _55.MsgConfirmBatchResponseProtoMsg): _55.MsgConfirmBatchResponse;
-            toProto(message: _55.MsgConfirmBatchResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgConfirmBatchResponse): _55.MsgConfirmBatchResponseProtoMsg;
+            encode(_: _58.MsgConfirmBatchResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgConfirmBatchResponse;
+            fromPartial(_: {}): _58.MsgConfirmBatchResponse;
+            fromAmino(_: _58.MsgConfirmBatchResponseAmino): _58.MsgConfirmBatchResponse;
+            toAmino(_: _58.MsgConfirmBatchResponse): _58.MsgConfirmBatchResponseAmino;
+            fromAminoMsg(object: _58.MsgConfirmBatchResponseAminoMsg): _58.MsgConfirmBatchResponse;
+            fromProtoMsg(message: _58.MsgConfirmBatchResponseProtoMsg): _58.MsgConfirmBatchResponse;
+            toProto(message: _58.MsgConfirmBatchResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgConfirmBatchResponse): _58.MsgConfirmBatchResponseProtoMsg;
         };
         MsgConfirmLogicCall: {
-            encode(message: _55.MsgConfirmLogicCall, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgConfirmLogicCall;
+            encode(message: _58.MsgConfirmLogicCall, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgConfirmLogicCall;
             fromPartial(object: {
                 invalidationId?: string;
                 invalidationNonce?: string | number | import("long").Long;
                 ethSigner?: string;
                 orchestrator?: string;
                 signature?: string;
-            }): _55.MsgConfirmLogicCall;
-            fromAmino(object: _55.MsgConfirmLogicCallAmino): _55.MsgConfirmLogicCall;
-            toAmino(message: _55.MsgConfirmLogicCall): _55.MsgConfirmLogicCallAmino;
-            fromAminoMsg(object: _55.MsgConfirmLogicCallAminoMsg): _55.MsgConfirmLogicCall;
-            fromProtoMsg(message: _55.MsgConfirmLogicCallProtoMsg): _55.MsgConfirmLogicCall;
-            toProto(message: _55.MsgConfirmLogicCall): Uint8Array;
-            toProtoMsg(message: _55.MsgConfirmLogicCall): _55.MsgConfirmLogicCallProtoMsg;
+            }): _58.MsgConfirmLogicCall;
+            fromAmino(object: _58.MsgConfirmLogicCallAmino): _58.MsgConfirmLogicCall;
+            toAmino(message: _58.MsgConfirmLogicCall): _58.MsgConfirmLogicCallAmino;
+            fromAminoMsg(object: _58.MsgConfirmLogicCallAminoMsg): _58.MsgConfirmLogicCall;
+            fromProtoMsg(message: _58.MsgConfirmLogicCallProtoMsg): _58.MsgConfirmLogicCall;
+            toProto(message: _58.MsgConfirmLogicCall): Uint8Array;
+            toProtoMsg(message: _58.MsgConfirmLogicCall): _58.MsgConfirmLogicCallProtoMsg;
         };
         MsgConfirmLogicCallResponse: {
-            encode(_: _55.MsgConfirmLogicCallResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgConfirmLogicCallResponse;
-            fromPartial(_: {}): _55.MsgConfirmLogicCallResponse;
-            fromAmino(_: _55.MsgConfirmLogicCallResponseAmino): _55.MsgConfirmLogicCallResponse;
-            toAmino(_: _55.MsgConfirmLogicCallResponse): _55.MsgConfirmLogicCallResponseAmino;
-            fromAminoMsg(object: _55.MsgConfirmLogicCallResponseAminoMsg): _55.MsgConfirmLogicCallResponse;
-            fromProtoMsg(message: _55.MsgConfirmLogicCallResponseProtoMsg): _55.MsgConfirmLogicCallResponse;
-            toProto(message: _55.MsgConfirmLogicCallResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgConfirmLogicCallResponse): _55.MsgConfirmLogicCallResponseProtoMsg;
+            encode(_: _58.MsgConfirmLogicCallResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgConfirmLogicCallResponse;
+            fromPartial(_: {}): _58.MsgConfirmLogicCallResponse;
+            fromAmino(_: _58.MsgConfirmLogicCallResponseAmino): _58.MsgConfirmLogicCallResponse;
+            toAmino(_: _58.MsgConfirmLogicCallResponse): _58.MsgConfirmLogicCallResponseAmino;
+            fromAminoMsg(object: _58.MsgConfirmLogicCallResponseAminoMsg): _58.MsgConfirmLogicCallResponse;
+            fromProtoMsg(message: _58.MsgConfirmLogicCallResponseProtoMsg): _58.MsgConfirmLogicCallResponse;
+            toProto(message: _58.MsgConfirmLogicCallResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgConfirmLogicCallResponse): _58.MsgConfirmLogicCallResponseProtoMsg;
         };
         MsgSendToCosmosClaim: {
-            encode(message: _55.MsgSendToCosmosClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSendToCosmosClaim;
+            encode(message: _58.MsgSendToCosmosClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSendToCosmosClaim;
             fromPartial(object: {
                 eventNonce?: string | number | import("long").Long;
                 blockHeight?: string | number | import("long").Long;
@@ -1398,56 +1398,56 @@ export declare namespace gravity {
                 ethereumSender?: string;
                 cosmosReceiver?: string;
                 orchestrator?: string;
-            }): _55.MsgSendToCosmosClaim;
-            fromAmino(object: _55.MsgSendToCosmosClaimAmino): _55.MsgSendToCosmosClaim;
-            toAmino(message: _55.MsgSendToCosmosClaim): _55.MsgSendToCosmosClaimAmino;
-            fromAminoMsg(object: _55.MsgSendToCosmosClaimAminoMsg): _55.MsgSendToCosmosClaim;
-            fromProtoMsg(message: _55.MsgSendToCosmosClaimProtoMsg): _55.MsgSendToCosmosClaim;
-            toProto(message: _55.MsgSendToCosmosClaim): Uint8Array;
-            toProtoMsg(message: _55.MsgSendToCosmosClaim): _55.MsgSendToCosmosClaimProtoMsg;
+            }): _58.MsgSendToCosmosClaim;
+            fromAmino(object: _58.MsgSendToCosmosClaimAmino): _58.MsgSendToCosmosClaim;
+            toAmino(message: _58.MsgSendToCosmosClaim): _58.MsgSendToCosmosClaimAmino;
+            fromAminoMsg(object: _58.MsgSendToCosmosClaimAminoMsg): _58.MsgSendToCosmosClaim;
+            fromProtoMsg(message: _58.MsgSendToCosmosClaimProtoMsg): _58.MsgSendToCosmosClaim;
+            toProto(message: _58.MsgSendToCosmosClaim): Uint8Array;
+            toProtoMsg(message: _58.MsgSendToCosmosClaim): _58.MsgSendToCosmosClaimProtoMsg;
         };
         MsgSendToCosmosClaimResponse: {
-            encode(_: _55.MsgSendToCosmosClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSendToCosmosClaimResponse;
-            fromPartial(_: {}): _55.MsgSendToCosmosClaimResponse;
-            fromAmino(_: _55.MsgSendToCosmosClaimResponseAmino): _55.MsgSendToCosmosClaimResponse;
-            toAmino(_: _55.MsgSendToCosmosClaimResponse): _55.MsgSendToCosmosClaimResponseAmino;
-            fromAminoMsg(object: _55.MsgSendToCosmosClaimResponseAminoMsg): _55.MsgSendToCosmosClaimResponse;
-            fromProtoMsg(message: _55.MsgSendToCosmosClaimResponseProtoMsg): _55.MsgSendToCosmosClaimResponse;
-            toProto(message: _55.MsgSendToCosmosClaimResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgSendToCosmosClaimResponse): _55.MsgSendToCosmosClaimResponseProtoMsg;
+            encode(_: _58.MsgSendToCosmosClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSendToCosmosClaimResponse;
+            fromPartial(_: {}): _58.MsgSendToCosmosClaimResponse;
+            fromAmino(_: _58.MsgSendToCosmosClaimResponseAmino): _58.MsgSendToCosmosClaimResponse;
+            toAmino(_: _58.MsgSendToCosmosClaimResponse): _58.MsgSendToCosmosClaimResponseAmino;
+            fromAminoMsg(object: _58.MsgSendToCosmosClaimResponseAminoMsg): _58.MsgSendToCosmosClaimResponse;
+            fromProtoMsg(message: _58.MsgSendToCosmosClaimResponseProtoMsg): _58.MsgSendToCosmosClaimResponse;
+            toProto(message: _58.MsgSendToCosmosClaimResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgSendToCosmosClaimResponse): _58.MsgSendToCosmosClaimResponseProtoMsg;
         };
         MsgBatchSendToEthClaim: {
-            encode(message: _55.MsgBatchSendToEthClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgBatchSendToEthClaim;
+            encode(message: _58.MsgBatchSendToEthClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgBatchSendToEthClaim;
             fromPartial(object: {
                 eventNonce?: string | number | import("long").Long;
                 blockHeight?: string | number | import("long").Long;
                 batchNonce?: string | number | import("long").Long;
                 tokenContract?: string;
                 orchestrator?: string;
-            }): _55.MsgBatchSendToEthClaim;
-            fromAmino(object: _55.MsgBatchSendToEthClaimAmino): _55.MsgBatchSendToEthClaim;
-            toAmino(message: _55.MsgBatchSendToEthClaim): _55.MsgBatchSendToEthClaimAmino;
-            fromAminoMsg(object: _55.MsgBatchSendToEthClaimAminoMsg): _55.MsgBatchSendToEthClaim;
-            fromProtoMsg(message: _55.MsgBatchSendToEthClaimProtoMsg): _55.MsgBatchSendToEthClaim;
-            toProto(message: _55.MsgBatchSendToEthClaim): Uint8Array;
-            toProtoMsg(message: _55.MsgBatchSendToEthClaim): _55.MsgBatchSendToEthClaimProtoMsg;
+            }): _58.MsgBatchSendToEthClaim;
+            fromAmino(object: _58.MsgBatchSendToEthClaimAmino): _58.MsgBatchSendToEthClaim;
+            toAmino(message: _58.MsgBatchSendToEthClaim): _58.MsgBatchSendToEthClaimAmino;
+            fromAminoMsg(object: _58.MsgBatchSendToEthClaimAminoMsg): _58.MsgBatchSendToEthClaim;
+            fromProtoMsg(message: _58.MsgBatchSendToEthClaimProtoMsg): _58.MsgBatchSendToEthClaim;
+            toProto(message: _58.MsgBatchSendToEthClaim): Uint8Array;
+            toProtoMsg(message: _58.MsgBatchSendToEthClaim): _58.MsgBatchSendToEthClaimProtoMsg;
         };
         MsgBatchSendToEthClaimResponse: {
-            encode(_: _55.MsgBatchSendToEthClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgBatchSendToEthClaimResponse;
-            fromPartial(_: {}): _55.MsgBatchSendToEthClaimResponse;
-            fromAmino(_: _55.MsgBatchSendToEthClaimResponseAmino): _55.MsgBatchSendToEthClaimResponse;
-            toAmino(_: _55.MsgBatchSendToEthClaimResponse): _55.MsgBatchSendToEthClaimResponseAmino;
-            fromAminoMsg(object: _55.MsgBatchSendToEthClaimResponseAminoMsg): _55.MsgBatchSendToEthClaimResponse;
-            fromProtoMsg(message: _55.MsgBatchSendToEthClaimResponseProtoMsg): _55.MsgBatchSendToEthClaimResponse;
-            toProto(message: _55.MsgBatchSendToEthClaimResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgBatchSendToEthClaimResponse): _55.MsgBatchSendToEthClaimResponseProtoMsg;
+            encode(_: _58.MsgBatchSendToEthClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgBatchSendToEthClaimResponse;
+            fromPartial(_: {}): _58.MsgBatchSendToEthClaimResponse;
+            fromAmino(_: _58.MsgBatchSendToEthClaimResponseAmino): _58.MsgBatchSendToEthClaimResponse;
+            toAmino(_: _58.MsgBatchSendToEthClaimResponse): _58.MsgBatchSendToEthClaimResponseAmino;
+            fromAminoMsg(object: _58.MsgBatchSendToEthClaimResponseAminoMsg): _58.MsgBatchSendToEthClaimResponse;
+            fromProtoMsg(message: _58.MsgBatchSendToEthClaimResponseProtoMsg): _58.MsgBatchSendToEthClaimResponse;
+            toProto(message: _58.MsgBatchSendToEthClaimResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgBatchSendToEthClaimResponse): _58.MsgBatchSendToEthClaimResponseProtoMsg;
         };
         MsgERC20DeployedClaim: {
-            encode(message: _55.MsgERC20DeployedClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgERC20DeployedClaim;
+            encode(message: _58.MsgERC20DeployedClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgERC20DeployedClaim;
             fromPartial(object: {
                 eventNonce?: string | number | import("long").Long;
                 blockHeight?: string | number | import("long").Long;
@@ -1457,56 +1457,56 @@ export declare namespace gravity {
                 symbol?: string;
                 decimals?: string | number | import("long").Long;
                 orchestrator?: string;
-            }): _55.MsgERC20DeployedClaim;
-            fromAmino(object: _55.MsgERC20DeployedClaimAmino): _55.MsgERC20DeployedClaim;
-            toAmino(message: _55.MsgERC20DeployedClaim): _55.MsgERC20DeployedClaimAmino;
-            fromAminoMsg(object: _55.MsgERC20DeployedClaimAminoMsg): _55.MsgERC20DeployedClaim;
-            fromProtoMsg(message: _55.MsgERC20DeployedClaimProtoMsg): _55.MsgERC20DeployedClaim;
-            toProto(message: _55.MsgERC20DeployedClaim): Uint8Array;
-            toProtoMsg(message: _55.MsgERC20DeployedClaim): _55.MsgERC20DeployedClaimProtoMsg;
+            }): _58.MsgERC20DeployedClaim;
+            fromAmino(object: _58.MsgERC20DeployedClaimAmino): _58.MsgERC20DeployedClaim;
+            toAmino(message: _58.MsgERC20DeployedClaim): _58.MsgERC20DeployedClaimAmino;
+            fromAminoMsg(object: _58.MsgERC20DeployedClaimAminoMsg): _58.MsgERC20DeployedClaim;
+            fromProtoMsg(message: _58.MsgERC20DeployedClaimProtoMsg): _58.MsgERC20DeployedClaim;
+            toProto(message: _58.MsgERC20DeployedClaim): Uint8Array;
+            toProtoMsg(message: _58.MsgERC20DeployedClaim): _58.MsgERC20DeployedClaimProtoMsg;
         };
         MsgERC20DeployedClaimResponse: {
-            encode(_: _55.MsgERC20DeployedClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgERC20DeployedClaimResponse;
-            fromPartial(_: {}): _55.MsgERC20DeployedClaimResponse;
-            fromAmino(_: _55.MsgERC20DeployedClaimResponseAmino): _55.MsgERC20DeployedClaimResponse;
-            toAmino(_: _55.MsgERC20DeployedClaimResponse): _55.MsgERC20DeployedClaimResponseAmino;
-            fromAminoMsg(object: _55.MsgERC20DeployedClaimResponseAminoMsg): _55.MsgERC20DeployedClaimResponse;
-            fromProtoMsg(message: _55.MsgERC20DeployedClaimResponseProtoMsg): _55.MsgERC20DeployedClaimResponse;
-            toProto(message: _55.MsgERC20DeployedClaimResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgERC20DeployedClaimResponse): _55.MsgERC20DeployedClaimResponseProtoMsg;
+            encode(_: _58.MsgERC20DeployedClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgERC20DeployedClaimResponse;
+            fromPartial(_: {}): _58.MsgERC20DeployedClaimResponse;
+            fromAmino(_: _58.MsgERC20DeployedClaimResponseAmino): _58.MsgERC20DeployedClaimResponse;
+            toAmino(_: _58.MsgERC20DeployedClaimResponse): _58.MsgERC20DeployedClaimResponseAmino;
+            fromAminoMsg(object: _58.MsgERC20DeployedClaimResponseAminoMsg): _58.MsgERC20DeployedClaimResponse;
+            fromProtoMsg(message: _58.MsgERC20DeployedClaimResponseProtoMsg): _58.MsgERC20DeployedClaimResponse;
+            toProto(message: _58.MsgERC20DeployedClaimResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgERC20DeployedClaimResponse): _58.MsgERC20DeployedClaimResponseProtoMsg;
         };
         MsgLogicCallExecutedClaim: {
-            encode(message: _55.MsgLogicCallExecutedClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgLogicCallExecutedClaim;
+            encode(message: _58.MsgLogicCallExecutedClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgLogicCallExecutedClaim;
             fromPartial(object: {
                 eventNonce?: string | number | import("long").Long;
                 blockHeight?: string | number | import("long").Long;
                 invalidationId?: Uint8Array;
                 invalidationNonce?: string | number | import("long").Long;
                 orchestrator?: string;
-            }): _55.MsgLogicCallExecutedClaim;
-            fromAmino(object: _55.MsgLogicCallExecutedClaimAmino): _55.MsgLogicCallExecutedClaim;
-            toAmino(message: _55.MsgLogicCallExecutedClaim): _55.MsgLogicCallExecutedClaimAmino;
-            fromAminoMsg(object: _55.MsgLogicCallExecutedClaimAminoMsg): _55.MsgLogicCallExecutedClaim;
-            fromProtoMsg(message: _55.MsgLogicCallExecutedClaimProtoMsg): _55.MsgLogicCallExecutedClaim;
-            toProto(message: _55.MsgLogicCallExecutedClaim): Uint8Array;
-            toProtoMsg(message: _55.MsgLogicCallExecutedClaim): _55.MsgLogicCallExecutedClaimProtoMsg;
+            }): _58.MsgLogicCallExecutedClaim;
+            fromAmino(object: _58.MsgLogicCallExecutedClaimAmino): _58.MsgLogicCallExecutedClaim;
+            toAmino(message: _58.MsgLogicCallExecutedClaim): _58.MsgLogicCallExecutedClaimAmino;
+            fromAminoMsg(object: _58.MsgLogicCallExecutedClaimAminoMsg): _58.MsgLogicCallExecutedClaim;
+            fromProtoMsg(message: _58.MsgLogicCallExecutedClaimProtoMsg): _58.MsgLogicCallExecutedClaim;
+            toProto(message: _58.MsgLogicCallExecutedClaim): Uint8Array;
+            toProtoMsg(message: _58.MsgLogicCallExecutedClaim): _58.MsgLogicCallExecutedClaimProtoMsg;
         };
         MsgLogicCallExecutedClaimResponse: {
-            encode(_: _55.MsgLogicCallExecutedClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgLogicCallExecutedClaimResponse;
-            fromPartial(_: {}): _55.MsgLogicCallExecutedClaimResponse;
-            fromAmino(_: _55.MsgLogicCallExecutedClaimResponseAmino): _55.MsgLogicCallExecutedClaimResponse;
-            toAmino(_: _55.MsgLogicCallExecutedClaimResponse): _55.MsgLogicCallExecutedClaimResponseAmino;
-            fromAminoMsg(object: _55.MsgLogicCallExecutedClaimResponseAminoMsg): _55.MsgLogicCallExecutedClaimResponse;
-            fromProtoMsg(message: _55.MsgLogicCallExecutedClaimResponseProtoMsg): _55.MsgLogicCallExecutedClaimResponse;
-            toProto(message: _55.MsgLogicCallExecutedClaimResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgLogicCallExecutedClaimResponse): _55.MsgLogicCallExecutedClaimResponseProtoMsg;
+            encode(_: _58.MsgLogicCallExecutedClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgLogicCallExecutedClaimResponse;
+            fromPartial(_: {}): _58.MsgLogicCallExecutedClaimResponse;
+            fromAmino(_: _58.MsgLogicCallExecutedClaimResponseAmino): _58.MsgLogicCallExecutedClaimResponse;
+            toAmino(_: _58.MsgLogicCallExecutedClaimResponse): _58.MsgLogicCallExecutedClaimResponseAmino;
+            fromAminoMsg(object: _58.MsgLogicCallExecutedClaimResponseAminoMsg): _58.MsgLogicCallExecutedClaimResponse;
+            fromProtoMsg(message: _58.MsgLogicCallExecutedClaimResponseProtoMsg): _58.MsgLogicCallExecutedClaimResponse;
+            toProto(message: _58.MsgLogicCallExecutedClaimResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgLogicCallExecutedClaimResponse): _58.MsgLogicCallExecutedClaimResponseProtoMsg;
         };
         MsgValsetUpdatedClaim: {
-            encode(message: _55.MsgValsetUpdatedClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgValsetUpdatedClaim;
+            encode(message: _58.MsgValsetUpdatedClaim, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgValsetUpdatedClaim;
             fromPartial(object: {
                 eventNonce?: string | number | import("long").Long;
                 valsetNonce?: string | number | import("long").Long;
@@ -1518,53 +1518,53 @@ export declare namespace gravity {
                 rewardAmount?: string;
                 rewardToken?: string;
                 orchestrator?: string;
-            }): _55.MsgValsetUpdatedClaim;
-            fromAmino(object: _55.MsgValsetUpdatedClaimAmino): _55.MsgValsetUpdatedClaim;
-            toAmino(message: _55.MsgValsetUpdatedClaim): _55.MsgValsetUpdatedClaimAmino;
-            fromAminoMsg(object: _55.MsgValsetUpdatedClaimAminoMsg): _55.MsgValsetUpdatedClaim;
-            fromProtoMsg(message: _55.MsgValsetUpdatedClaimProtoMsg): _55.MsgValsetUpdatedClaim;
-            toProto(message: _55.MsgValsetUpdatedClaim): Uint8Array;
-            toProtoMsg(message: _55.MsgValsetUpdatedClaim): _55.MsgValsetUpdatedClaimProtoMsg;
+            }): _58.MsgValsetUpdatedClaim;
+            fromAmino(object: _58.MsgValsetUpdatedClaimAmino): _58.MsgValsetUpdatedClaim;
+            toAmino(message: _58.MsgValsetUpdatedClaim): _58.MsgValsetUpdatedClaimAmino;
+            fromAminoMsg(object: _58.MsgValsetUpdatedClaimAminoMsg): _58.MsgValsetUpdatedClaim;
+            fromProtoMsg(message: _58.MsgValsetUpdatedClaimProtoMsg): _58.MsgValsetUpdatedClaim;
+            toProto(message: _58.MsgValsetUpdatedClaim): Uint8Array;
+            toProtoMsg(message: _58.MsgValsetUpdatedClaim): _58.MsgValsetUpdatedClaimProtoMsg;
         };
         MsgValsetUpdatedClaimResponse: {
-            encode(_: _55.MsgValsetUpdatedClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgValsetUpdatedClaimResponse;
-            fromPartial(_: {}): _55.MsgValsetUpdatedClaimResponse;
-            fromAmino(_: _55.MsgValsetUpdatedClaimResponseAmino): _55.MsgValsetUpdatedClaimResponse;
-            toAmino(_: _55.MsgValsetUpdatedClaimResponse): _55.MsgValsetUpdatedClaimResponseAmino;
-            fromAminoMsg(object: _55.MsgValsetUpdatedClaimResponseAminoMsg): _55.MsgValsetUpdatedClaimResponse;
-            fromProtoMsg(message: _55.MsgValsetUpdatedClaimResponseProtoMsg): _55.MsgValsetUpdatedClaimResponse;
-            toProto(message: _55.MsgValsetUpdatedClaimResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgValsetUpdatedClaimResponse): _55.MsgValsetUpdatedClaimResponseProtoMsg;
+            encode(_: _58.MsgValsetUpdatedClaimResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgValsetUpdatedClaimResponse;
+            fromPartial(_: {}): _58.MsgValsetUpdatedClaimResponse;
+            fromAmino(_: _58.MsgValsetUpdatedClaimResponseAmino): _58.MsgValsetUpdatedClaimResponse;
+            toAmino(_: _58.MsgValsetUpdatedClaimResponse): _58.MsgValsetUpdatedClaimResponseAmino;
+            fromAminoMsg(object: _58.MsgValsetUpdatedClaimResponseAminoMsg): _58.MsgValsetUpdatedClaimResponse;
+            fromProtoMsg(message: _58.MsgValsetUpdatedClaimResponseProtoMsg): _58.MsgValsetUpdatedClaimResponse;
+            toProto(message: _58.MsgValsetUpdatedClaimResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgValsetUpdatedClaimResponse): _58.MsgValsetUpdatedClaimResponseProtoMsg;
         };
         MsgCancelSendToEth: {
-            encode(message: _55.MsgCancelSendToEth, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgCancelSendToEth;
+            encode(message: _58.MsgCancelSendToEth, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgCancelSendToEth;
             fromPartial(object: {
                 transactionId?: string | number | import("long").Long;
                 sender?: string;
-            }): _55.MsgCancelSendToEth;
-            fromAmino(object: _55.MsgCancelSendToEthAmino): _55.MsgCancelSendToEth;
-            toAmino(message: _55.MsgCancelSendToEth): _55.MsgCancelSendToEthAmino;
-            fromAminoMsg(object: _55.MsgCancelSendToEthAminoMsg): _55.MsgCancelSendToEth;
-            fromProtoMsg(message: _55.MsgCancelSendToEthProtoMsg): _55.MsgCancelSendToEth;
-            toProto(message: _55.MsgCancelSendToEth): Uint8Array;
-            toProtoMsg(message: _55.MsgCancelSendToEth): _55.MsgCancelSendToEthProtoMsg;
+            }): _58.MsgCancelSendToEth;
+            fromAmino(object: _58.MsgCancelSendToEthAmino): _58.MsgCancelSendToEth;
+            toAmino(message: _58.MsgCancelSendToEth): _58.MsgCancelSendToEthAmino;
+            fromAminoMsg(object: _58.MsgCancelSendToEthAminoMsg): _58.MsgCancelSendToEth;
+            fromProtoMsg(message: _58.MsgCancelSendToEthProtoMsg): _58.MsgCancelSendToEth;
+            toProto(message: _58.MsgCancelSendToEth): Uint8Array;
+            toProtoMsg(message: _58.MsgCancelSendToEth): _58.MsgCancelSendToEthProtoMsg;
         };
         MsgCancelSendToEthResponse: {
-            encode(_: _55.MsgCancelSendToEthResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgCancelSendToEthResponse;
-            fromPartial(_: {}): _55.MsgCancelSendToEthResponse;
-            fromAmino(_: _55.MsgCancelSendToEthResponseAmino): _55.MsgCancelSendToEthResponse;
-            toAmino(_: _55.MsgCancelSendToEthResponse): _55.MsgCancelSendToEthResponseAmino;
-            fromAminoMsg(object: _55.MsgCancelSendToEthResponseAminoMsg): _55.MsgCancelSendToEthResponse;
-            fromProtoMsg(message: _55.MsgCancelSendToEthResponseProtoMsg): _55.MsgCancelSendToEthResponse;
-            toProto(message: _55.MsgCancelSendToEthResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgCancelSendToEthResponse): _55.MsgCancelSendToEthResponseProtoMsg;
+            encode(_: _58.MsgCancelSendToEthResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgCancelSendToEthResponse;
+            fromPartial(_: {}): _58.MsgCancelSendToEthResponse;
+            fromAmino(_: _58.MsgCancelSendToEthResponseAmino): _58.MsgCancelSendToEthResponse;
+            toAmino(_: _58.MsgCancelSendToEthResponse): _58.MsgCancelSendToEthResponseAmino;
+            fromAminoMsg(object: _58.MsgCancelSendToEthResponseAminoMsg): _58.MsgCancelSendToEthResponse;
+            fromProtoMsg(message: _58.MsgCancelSendToEthResponseProtoMsg): _58.MsgCancelSendToEthResponse;
+            toProto(message: _58.MsgCancelSendToEthResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgCancelSendToEthResponse): _58.MsgCancelSendToEthResponseProtoMsg;
         };
         MsgSubmitBadSignatureEvidence: {
-            encode(message: _55.MsgSubmitBadSignatureEvidence, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSubmitBadSignatureEvidence;
+            encode(message: _58.MsgSubmitBadSignatureEvidence, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSubmitBadSignatureEvidence;
             fromPartial(object: {
                 subject?: {
                     typeUrl?: string;
@@ -1572,28 +1572,28 @@ export declare namespace gravity {
                 };
                 signature?: string;
                 sender?: string;
-            }): _55.MsgSubmitBadSignatureEvidence;
-            fromAmino(object: _55.MsgSubmitBadSignatureEvidenceAmino): _55.MsgSubmitBadSignatureEvidence;
-            toAmino(message: _55.MsgSubmitBadSignatureEvidence): _55.MsgSubmitBadSignatureEvidenceAmino;
-            fromAminoMsg(object: _55.MsgSubmitBadSignatureEvidenceAminoMsg): _55.MsgSubmitBadSignatureEvidence;
-            fromProtoMsg(message: _55.MsgSubmitBadSignatureEvidenceProtoMsg): _55.MsgSubmitBadSignatureEvidence;
-            toProto(message: _55.MsgSubmitBadSignatureEvidence): Uint8Array;
-            toProtoMsg(message: _55.MsgSubmitBadSignatureEvidence): _55.MsgSubmitBadSignatureEvidenceProtoMsg;
+            }): _58.MsgSubmitBadSignatureEvidence;
+            fromAmino(object: _58.MsgSubmitBadSignatureEvidenceAmino): _58.MsgSubmitBadSignatureEvidence;
+            toAmino(message: _58.MsgSubmitBadSignatureEvidence): _58.MsgSubmitBadSignatureEvidenceAmino;
+            fromAminoMsg(object: _58.MsgSubmitBadSignatureEvidenceAminoMsg): _58.MsgSubmitBadSignatureEvidence;
+            fromProtoMsg(message: _58.MsgSubmitBadSignatureEvidenceProtoMsg): _58.MsgSubmitBadSignatureEvidence;
+            toProto(message: _58.MsgSubmitBadSignatureEvidence): Uint8Array;
+            toProtoMsg(message: _58.MsgSubmitBadSignatureEvidence): _58.MsgSubmitBadSignatureEvidenceProtoMsg;
         };
         MsgSubmitBadSignatureEvidenceResponse: {
-            encode(_: _55.MsgSubmitBadSignatureEvidenceResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.MsgSubmitBadSignatureEvidenceResponse;
-            fromPartial(_: {}): _55.MsgSubmitBadSignatureEvidenceResponse;
-            fromAmino(_: _55.MsgSubmitBadSignatureEvidenceResponseAmino): _55.MsgSubmitBadSignatureEvidenceResponse;
-            toAmino(_: _55.MsgSubmitBadSignatureEvidenceResponse): _55.MsgSubmitBadSignatureEvidenceResponseAmino;
-            fromAminoMsg(object: _55.MsgSubmitBadSignatureEvidenceResponseAminoMsg): _55.MsgSubmitBadSignatureEvidenceResponse;
-            fromProtoMsg(message: _55.MsgSubmitBadSignatureEvidenceResponseProtoMsg): _55.MsgSubmitBadSignatureEvidenceResponse;
-            toProto(message: _55.MsgSubmitBadSignatureEvidenceResponse): Uint8Array;
-            toProtoMsg(message: _55.MsgSubmitBadSignatureEvidenceResponse): _55.MsgSubmitBadSignatureEvidenceResponseProtoMsg;
+            encode(_: _58.MsgSubmitBadSignatureEvidenceResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _58.MsgSubmitBadSignatureEvidenceResponse;
+            fromPartial(_: {}): _58.MsgSubmitBadSignatureEvidenceResponse;
+            fromAmino(_: _58.MsgSubmitBadSignatureEvidenceResponseAmino): _58.MsgSubmitBadSignatureEvidenceResponse;
+            toAmino(_: _58.MsgSubmitBadSignatureEvidenceResponse): _58.MsgSubmitBadSignatureEvidenceResponseAmino;
+            fromAminoMsg(object: _58.MsgSubmitBadSignatureEvidenceResponseAminoMsg): _58.MsgSubmitBadSignatureEvidenceResponse;
+            fromProtoMsg(message: _58.MsgSubmitBadSignatureEvidenceResponseProtoMsg): _58.MsgSubmitBadSignatureEvidenceResponse;
+            toProto(message: _58.MsgSubmitBadSignatureEvidenceResponse): Uint8Array;
+            toProtoMsg(message: _58.MsgSubmitBadSignatureEvidenceResponse): _58.MsgSubmitBadSignatureEvidenceResponseProtoMsg;
         };
         Params: {
-            encode(message: _54.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _54.Params;
+            encode(message: _57.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.Params;
             fromPartial(object: {
                 gravityId?: string;
                 contractSourceHash?: string;
@@ -1620,17 +1620,17 @@ export declare namespace gravity {
                     erc20?: string;
                     denom?: string;
                 };
-            }): _54.Params;
-            fromAmino(object: _54.ParamsAmino): _54.Params;
-            toAmino(message: _54.Params): _54.ParamsAmino;
-            fromAminoMsg(object: _54.ParamsAminoMsg): _54.Params;
-            fromProtoMsg(message: _54.ParamsProtoMsg): _54.Params;
-            toProto(message: _54.Params): Uint8Array;
-            toProtoMsg(message: _54.Params): _54.ParamsProtoMsg;
+            }): _57.Params;
+            fromAmino(object: _57.ParamsAmino): _57.Params;
+            toAmino(message: _57.Params): _57.ParamsAmino;
+            fromAminoMsg(object: _57.ParamsAminoMsg): _57.Params;
+            fromProtoMsg(message: _57.ParamsProtoMsg): _57.Params;
+            toProto(message: _57.Params): Uint8Array;
+            toProtoMsg(message: _57.Params): _57.ParamsProtoMsg;
         };
         GenesisState: {
-            encode(message: _54.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _54.GenesisState;
+            encode(message: _57.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.GenesisState;
             fromPartial(object: {
                 params?: {
                     gravityId?: string;
@@ -1764,17 +1764,17 @@ export declare namespace gravity {
                         amount?: string;
                     };
                 }[];
-            }): _54.GenesisState;
-            fromAmino(object: _54.GenesisStateAmino): _54.GenesisState;
-            toAmino(message: _54.GenesisState): _54.GenesisStateAmino;
-            fromAminoMsg(object: _54.GenesisStateAminoMsg): _54.GenesisState;
-            fromProtoMsg(message: _54.GenesisStateProtoMsg): _54.GenesisState;
-            toProto(message: _54.GenesisState): Uint8Array;
-            toProtoMsg(message: _54.GenesisState): _54.GenesisStateProtoMsg;
+            }): _57.GenesisState;
+            fromAmino(object: _57.GenesisStateAmino): _57.GenesisState;
+            toAmino(message: _57.GenesisState): _57.GenesisStateAmino;
+            fromAminoMsg(object: _57.GenesisStateAminoMsg): _57.GenesisState;
+            fromProtoMsg(message: _57.GenesisStateProtoMsg): _57.GenesisState;
+            toProto(message: _57.GenesisState): Uint8Array;
+            toProtoMsg(message: _57.GenesisState): _57.GenesisStateProtoMsg;
         };
         GravityNonces: {
-            encode(message: _54.GravityNonces, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _54.GravityNonces;
+            encode(message: _57.GravityNonces, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _57.GravityNonces;
             fromPartial(object: {
                 latestValsetNonce?: string | number | import("long").Long;
                 lastObservedNonce?: string | number | import("long").Long;
@@ -1783,22 +1783,22 @@ export declare namespace gravity {
                 lastSlashedLogicCallBlock?: string | number | import("long").Long;
                 lastTxPoolId?: string | number | import("long").Long;
                 lastBatchId?: string | number | import("long").Long;
-            }): _54.GravityNonces;
-            fromAmino(object: _54.GravityNoncesAmino): _54.GravityNonces;
-            toAmino(message: _54.GravityNonces): _54.GravityNoncesAmino;
-            fromAminoMsg(object: _54.GravityNoncesAminoMsg): _54.GravityNonces;
-            fromProtoMsg(message: _54.GravityNoncesProtoMsg): _54.GravityNonces;
-            toProto(message: _54.GravityNonces): Uint8Array;
-            toProtoMsg(message: _54.GravityNonces): _54.GravityNoncesProtoMsg;
+            }): _57.GravityNonces;
+            fromAmino(object: _57.GravityNoncesAmino): _57.GravityNonces;
+            toAmino(message: _57.GravityNonces): _57.GravityNoncesAmino;
+            fromAminoMsg(object: _57.GravityNoncesAminoMsg): _57.GravityNonces;
+            fromProtoMsg(message: _57.GravityNoncesProtoMsg): _57.GravityNonces;
+            toProto(message: _57.GravityNonces): Uint8Array;
+            toProtoMsg(message: _57.GravityNonces): _57.GravityNoncesProtoMsg;
         };
-        signTypeFromJSON(object: any): _53.SignType;
-        signTypeToJSON(object: _53.SignType): string;
-        SignType: typeof _53.SignType;
-        SignTypeSDKType: typeof _53.SignType;
-        SignTypeAmino: typeof _53.SignType;
+        signTypeFromJSON(object: any): _56.SignType;
+        signTypeToJSON(object: _56.SignType): string;
+        SignType: typeof _56.SignType;
+        SignTypeSDKType: typeof _56.SignType;
+        SignTypeAmino: typeof _56.SignType;
         OutgoingTxBatch: {
-            encode(message: _52.OutgoingTxBatch, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _52.OutgoingTxBatch;
+            encode(message: _55.OutgoingTxBatch, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.OutgoingTxBatch;
             fromPartial(object: {
                 batchNonce?: string | number | import("long").Long;
                 batchTimeout?: string | number | import("long").Long;
@@ -1817,17 +1817,17 @@ export declare namespace gravity {
                 }[];
                 tokenContract?: string;
                 block?: string | number | import("long").Long;
-            }): _52.OutgoingTxBatch;
-            fromAmino(object: _52.OutgoingTxBatchAmino): _52.OutgoingTxBatch;
-            toAmino(message: _52.OutgoingTxBatch): _52.OutgoingTxBatchAmino;
-            fromAminoMsg(object: _52.OutgoingTxBatchAminoMsg): _52.OutgoingTxBatch;
-            fromProtoMsg(message: _52.OutgoingTxBatchProtoMsg): _52.OutgoingTxBatch;
-            toProto(message: _52.OutgoingTxBatch): Uint8Array;
-            toProtoMsg(message: _52.OutgoingTxBatch): _52.OutgoingTxBatchProtoMsg;
+            }): _55.OutgoingTxBatch;
+            fromAmino(object: _55.OutgoingTxBatchAmino): _55.OutgoingTxBatch;
+            toAmino(message: _55.OutgoingTxBatch): _55.OutgoingTxBatchAmino;
+            fromAminoMsg(object: _55.OutgoingTxBatchAminoMsg): _55.OutgoingTxBatch;
+            fromProtoMsg(message: _55.OutgoingTxBatchProtoMsg): _55.OutgoingTxBatch;
+            toProto(message: _55.OutgoingTxBatch): Uint8Array;
+            toProtoMsg(message: _55.OutgoingTxBatch): _55.OutgoingTxBatchProtoMsg;
         };
         OutgoingTransferTx: {
-            encode(message: _52.OutgoingTransferTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _52.OutgoingTransferTx;
+            encode(message: _55.OutgoingTransferTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.OutgoingTransferTx;
             fromPartial(object: {
                 id?: string | number | import("long").Long;
                 sender?: string;
@@ -1840,17 +1840,17 @@ export declare namespace gravity {
                     contract?: string;
                     amount?: string;
                 };
-            }): _52.OutgoingTransferTx;
-            fromAmino(object: _52.OutgoingTransferTxAmino): _52.OutgoingTransferTx;
-            toAmino(message: _52.OutgoingTransferTx): _52.OutgoingTransferTxAmino;
-            fromAminoMsg(object: _52.OutgoingTransferTxAminoMsg): _52.OutgoingTransferTx;
-            fromProtoMsg(message: _52.OutgoingTransferTxProtoMsg): _52.OutgoingTransferTx;
-            toProto(message: _52.OutgoingTransferTx): Uint8Array;
-            toProtoMsg(message: _52.OutgoingTransferTx): _52.OutgoingTransferTxProtoMsg;
+            }): _55.OutgoingTransferTx;
+            fromAmino(object: _55.OutgoingTransferTxAmino): _55.OutgoingTransferTx;
+            toAmino(message: _55.OutgoingTransferTx): _55.OutgoingTransferTxAmino;
+            fromAminoMsg(object: _55.OutgoingTransferTxAminoMsg): _55.OutgoingTransferTx;
+            fromProtoMsg(message: _55.OutgoingTransferTxProtoMsg): _55.OutgoingTransferTx;
+            toProto(message: _55.OutgoingTransferTx): Uint8Array;
+            toProtoMsg(message: _55.OutgoingTransferTx): _55.OutgoingTransferTxProtoMsg;
         };
         OutgoingLogicCall: {
-            encode(message: _52.OutgoingLogicCall, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _52.OutgoingLogicCall;
+            encode(message: _55.OutgoingLogicCall, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _55.OutgoingLogicCall;
             fromPartial(object: {
                 transfers?: {
                     contract?: string;
@@ -1866,22 +1866,22 @@ export declare namespace gravity {
                 invalidationId?: Uint8Array;
                 invalidationNonce?: string | number | import("long").Long;
                 block?: string | number | import("long").Long;
-            }): _52.OutgoingLogicCall;
-            fromAmino(object: _52.OutgoingLogicCallAmino): _52.OutgoingLogicCall;
-            toAmino(message: _52.OutgoingLogicCall): _52.OutgoingLogicCallAmino;
-            fromAminoMsg(object: _52.OutgoingLogicCallAminoMsg): _52.OutgoingLogicCall;
-            fromProtoMsg(message: _52.OutgoingLogicCallProtoMsg): _52.OutgoingLogicCall;
-            toProto(message: _52.OutgoingLogicCall): Uint8Array;
-            toProtoMsg(message: _52.OutgoingLogicCall): _52.OutgoingLogicCallProtoMsg;
+            }): _55.OutgoingLogicCall;
+            fromAmino(object: _55.OutgoingLogicCallAmino): _55.OutgoingLogicCall;
+            toAmino(message: _55.OutgoingLogicCall): _55.OutgoingLogicCallAmino;
+            fromAminoMsg(object: _55.OutgoingLogicCallAminoMsg): _55.OutgoingLogicCall;
+            fromProtoMsg(message: _55.OutgoingLogicCallProtoMsg): _55.OutgoingLogicCall;
+            toProto(message: _55.OutgoingLogicCall): Uint8Array;
+            toProtoMsg(message: _55.OutgoingLogicCall): _55.OutgoingLogicCallProtoMsg;
         };
-        claimTypeFromJSON(object: any): _51.ClaimType;
-        claimTypeToJSON(object: _51.ClaimType): string;
-        ClaimType: typeof _51.ClaimType;
-        ClaimTypeSDKType: typeof _51.ClaimType;
-        ClaimTypeAmino: typeof _51.ClaimType;
+        claimTypeFromJSON(object: any): _54.ClaimType;
+        claimTypeToJSON(object: _54.ClaimType): string;
+        ClaimType: typeof _54.ClaimType;
+        ClaimTypeSDKType: typeof _54.ClaimType;
+        ClaimTypeAmino: typeof _54.ClaimType;
         Attestation: {
-            encode(message: _51.Attestation, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _51.Attestation;
+            encode(message: _54.Attestation, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _54.Attestation;
             fromPartial(object: {
                 observed?: boolean;
                 votes?: string[];
@@ -1890,27 +1890,27 @@ export declare namespace gravity {
                     typeUrl?: string;
                     value?: Uint8Array;
                 };
-            }): _51.Attestation;
-            fromAmino(object: _51.AttestationAmino): _51.Attestation;
-            toAmino(message: _51.Attestation): _51.AttestationAmino;
-            fromAminoMsg(object: _51.AttestationAminoMsg): _51.Attestation;
-            fromProtoMsg(message: _51.AttestationProtoMsg): _51.Attestation;
-            toProto(message: _51.Attestation): Uint8Array;
-            toProtoMsg(message: _51.Attestation): _51.AttestationProtoMsg;
+            }): _54.Attestation;
+            fromAmino(object: _54.AttestationAmino): _54.Attestation;
+            toAmino(message: _54.Attestation): _54.AttestationAmino;
+            fromAminoMsg(object: _54.AttestationAminoMsg): _54.Attestation;
+            fromProtoMsg(message: _54.AttestationProtoMsg): _54.Attestation;
+            toProto(message: _54.Attestation): Uint8Array;
+            toProtoMsg(message: _54.Attestation): _54.AttestationProtoMsg;
         };
         ERC20Token: {
-            encode(message: _51.ERC20Token, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _51.ERC20Token;
+            encode(message: _54.ERC20Token, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _54.ERC20Token;
             fromPartial(object: {
                 contract?: string;
                 amount?: string;
-            }): _51.ERC20Token;
-            fromAmino(object: _51.ERC20TokenAmino): _51.ERC20Token;
-            toAmino(message: _51.ERC20Token): _51.ERC20TokenAmino;
-            fromAminoMsg(object: _51.ERC20TokenAminoMsg): _51.ERC20Token;
-            fromProtoMsg(message: _51.ERC20TokenProtoMsg): _51.ERC20Token;
-            toProto(message: _51.ERC20Token): Uint8Array;
-            toProtoMsg(message: _51.ERC20Token): _51.ERC20TokenProtoMsg;
+            }): _54.ERC20Token;
+            fromAmino(object: _54.ERC20TokenAmino): _54.ERC20Token;
+            toAmino(message: _54.ERC20Token): _54.ERC20TokenAmino;
+            fromAminoMsg(object: _54.ERC20TokenAminoMsg): _54.ERC20Token;
+            fromProtoMsg(message: _54.ERC20TokenProtoMsg): _54.ERC20Token;
+            toProto(message: _54.ERC20Token): Uint8Array;
+            toProtoMsg(message: _54.ERC20Token): _54.ERC20TokenProtoMsg;
         };
     };
     const ClientFactory: {
@@ -1935,7 +1935,7 @@ export declare namespace gravity {
                 };
             };
             gravity: {
-                v1: _110.MsgClientImpl;
+                v1: _114.MsgClientImpl;
             };
         }>;
         createRPCQueryClient: ({ rpcEndpoint }: {
@@ -1990,6 +1990,13 @@ export declare namespace gravity {
                         tallyResult(request: import("../cosmos/gov/v1beta1/query").QueryTallyResultRequest): Promise<import("../cosmos/gov/v1beta1/query").QueryTallyResultResponse>;
                     };
                 };
+                mint: {
+                    v1beta1: {
+                        params(request?: import("../cosmos/mint/v1beta1/query").QueryParamsRequest): Promise<import("../cosmos/mint/v1beta1/query").QueryParamsResponse>;
+                        inflation(request?: import("../cosmos/mint/v1beta1/query").QueryInflationRequest): Promise<import("../cosmos/mint/v1beta1/query").QueryInflationResponse>;
+                        annualProvisions(request?: import("../cosmos/mint/v1beta1/query").QueryAnnualProvisionsRequest): Promise<import("../cosmos/mint/v1beta1/query").QueryAnnualProvisionsResponse>;
+                    };
+                };
                 params: {
                     v1beta1: {
                         params(request: import("../cosmos/params/v1beta1/query").QueryParamsRequest): Promise<import("../cosmos/params/v1beta1/query").QueryParamsResponse>;
@@ -2032,29 +2039,29 @@ export declare namespace gravity {
             };
             gravity: {
                 v1: {
-                    params(request?: _57.QueryParamsRequest): Promise<_57.QueryParamsResponse>;
-                    currentValset(request?: _57.QueryCurrentValsetRequest): Promise<_57.QueryCurrentValsetResponse>;
-                    valsetRequest(request: _57.QueryValsetRequestRequest): Promise<_57.QueryValsetRequestResponse>;
-                    valsetConfirm(request: _57.QueryValsetConfirmRequest): Promise<_57.QueryValsetConfirmResponse>;
-                    valsetConfirmsByNonce(request: _57.QueryValsetConfirmsByNonceRequest): Promise<_57.QueryValsetConfirmsByNonceResponse>;
-                    lastValsetRequests(request?: _57.QueryLastValsetRequestsRequest): Promise<_57.QueryLastValsetRequestsResponse>;
-                    lastPendingValsetRequestByAddr(request: _57.QueryLastPendingValsetRequestByAddrRequest): Promise<_57.QueryLastPendingValsetRequestByAddrResponse>;
-                    lastPendingBatchRequestByAddr(request: _57.QueryLastPendingBatchRequestByAddrRequest): Promise<_57.QueryLastPendingBatchRequestByAddrResponse>;
-                    lastPendingLogicCallByAddr(request: _57.QueryLastPendingLogicCallByAddrRequest): Promise<_57.QueryLastPendingLogicCallByAddrResponse>;
-                    lastEventNonceByAddr(request: _57.QueryLastEventNonceByAddrRequest): Promise<_57.QueryLastEventNonceByAddrResponse>;
-                    batchFees(request?: _57.QueryBatchFeeRequest): Promise<_57.QueryBatchFeeResponse>;
-                    outgoingTxBatches(request?: _57.QueryOutgoingTxBatchesRequest): Promise<_57.QueryOutgoingTxBatchesResponse>;
-                    outgoingLogicCalls(request?: _57.QueryOutgoingLogicCallsRequest): Promise<_57.QueryOutgoingLogicCallsResponse>;
-                    batchRequestByNonce(request: _57.QueryBatchRequestByNonceRequest): Promise<_57.QueryBatchRequestByNonceResponse>;
-                    batchConfirms(request: _57.QueryBatchConfirmsRequest): Promise<_57.QueryBatchConfirmsResponse>;
-                    logicConfirms(request: _57.QueryLogicConfirmsRequest): Promise<_57.QueryLogicConfirmsResponse>;
-                    eRC20ToDenom(request: _57.QueryERC20ToDenomRequest): Promise<_57.QueryERC20ToDenomResponse>;
-                    denomToERC20(request: _57.QueryDenomToERC20Request): Promise<_57.QueryDenomToERC20Response>;
-                    getAttestations(request: _57.QueryAttestationsRequest): Promise<_57.QueryAttestationsResponse>;
-                    getDelegateKeyByValidator(request: _57.QueryDelegateKeysByValidatorAddress): Promise<_57.QueryDelegateKeysByValidatorAddressResponse>;
-                    getDelegateKeyByEth(request: _57.QueryDelegateKeysByEthAddress): Promise<_57.QueryDelegateKeysByEthAddressResponse>;
-                    getDelegateKeyByOrchestrator(request: _57.QueryDelegateKeysByOrchestratorAddress): Promise<_57.QueryDelegateKeysByOrchestratorAddressResponse>;
-                    getPendingSendToEth(request: _57.QueryPendingSendToEth): Promise<_57.QueryPendingSendToEthResponse>;
+                    params(request?: _60.QueryParamsRequest): Promise<_60.QueryParamsResponse>;
+                    currentValset(request?: _60.QueryCurrentValsetRequest): Promise<_60.QueryCurrentValsetResponse>;
+                    valsetRequest(request: _60.QueryValsetRequestRequest): Promise<_60.QueryValsetRequestResponse>;
+                    valsetConfirm(request: _60.QueryValsetConfirmRequest): Promise<_60.QueryValsetConfirmResponse>;
+                    valsetConfirmsByNonce(request: _60.QueryValsetConfirmsByNonceRequest): Promise<_60.QueryValsetConfirmsByNonceResponse>;
+                    lastValsetRequests(request?: _60.QueryLastValsetRequestsRequest): Promise<_60.QueryLastValsetRequestsResponse>;
+                    lastPendingValsetRequestByAddr(request: _60.QueryLastPendingValsetRequestByAddrRequest): Promise<_60.QueryLastPendingValsetRequestByAddrResponse>;
+                    lastPendingBatchRequestByAddr(request: _60.QueryLastPendingBatchRequestByAddrRequest): Promise<_60.QueryLastPendingBatchRequestByAddrResponse>;
+                    lastPendingLogicCallByAddr(request: _60.QueryLastPendingLogicCallByAddrRequest): Promise<_60.QueryLastPendingLogicCallByAddrResponse>;
+                    lastEventNonceByAddr(request: _60.QueryLastEventNonceByAddrRequest): Promise<_60.QueryLastEventNonceByAddrResponse>;
+                    batchFees(request?: _60.QueryBatchFeeRequest): Promise<_60.QueryBatchFeeResponse>;
+                    outgoingTxBatches(request?: _60.QueryOutgoingTxBatchesRequest): Promise<_60.QueryOutgoingTxBatchesResponse>;
+                    outgoingLogicCalls(request?: _60.QueryOutgoingLogicCallsRequest): Promise<_60.QueryOutgoingLogicCallsResponse>;
+                    batchRequestByNonce(request: _60.QueryBatchRequestByNonceRequest): Promise<_60.QueryBatchRequestByNonceResponse>;
+                    batchConfirms(request: _60.QueryBatchConfirmsRequest): Promise<_60.QueryBatchConfirmsResponse>;
+                    logicConfirms(request: _60.QueryLogicConfirmsRequest): Promise<_60.QueryLogicConfirmsResponse>;
+                    eRC20ToDenom(request: _60.QueryERC20ToDenomRequest): Promise<_60.QueryERC20ToDenomResponse>;
+                    denomToERC20(request: _60.QueryDenomToERC20Request): Promise<_60.QueryDenomToERC20Response>;
+                    getAttestations(request: _60.QueryAttestationsRequest): Promise<_60.QueryAttestationsResponse>;
+                    getDelegateKeyByValidator(request: _60.QueryDelegateKeysByValidatorAddress): Promise<_60.QueryDelegateKeysByValidatorAddressResponse>;
+                    getDelegateKeyByEth(request: _60.QueryDelegateKeysByEthAddress): Promise<_60.QueryDelegateKeysByEthAddressResponse>;
+                    getDelegateKeyByOrchestrator(request: _60.QueryDelegateKeysByOrchestratorAddress): Promise<_60.QueryDelegateKeysByOrchestratorAddressResponse>;
+                    getPendingSendToEth(request: _60.QueryPendingSendToEth): Promise<_60.QueryPendingSendToEthResponse>;
                 };
             };
         }>;

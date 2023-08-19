@@ -24,39 +24,39 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gravity = void 0;
-const _51 = __importStar(require("./v1/attestation"));
-const _52 = __importStar(require("./v1/batch"));
-const _53 = __importStar(require("./v1/ethereum_signer"));
-const _54 = __importStar(require("./v1/genesis"));
-const _55 = __importStar(require("./v1/msgs"));
-const _56 = __importStar(require("./v1/pool"));
-const _57 = __importStar(require("./v1/query"));
-const _58 = __importStar(require("./v1/types"));
-const _107 = __importStar(require("./v1/msgs.amino"));
-const _108 = __importStar(require("./v1/msgs.registry"));
-const _109 = __importStar(require("./v1/query.rpc.Query"));
-const _110 = __importStar(require("./v1/msgs.rpc.msg"));
-const _118 = __importStar(require("./rpc.query"));
-const _119 = __importStar(require("./rpc.tx"));
+const _54 = __importStar(require("./v1/attestation"));
+const _55 = __importStar(require("./v1/batch"));
+const _56 = __importStar(require("./v1/ethereum_signer"));
+const _57 = __importStar(require("./v1/genesis"));
+const _58 = __importStar(require("./v1/msgs"));
+const _59 = __importStar(require("./v1/pool"));
+const _60 = __importStar(require("./v1/query"));
+const _61 = __importStar(require("./v1/types"));
+const _111 = __importStar(require("./v1/msgs.amino"));
+const _112 = __importStar(require("./v1/msgs.registry"));
+const _113 = __importStar(require("./v1/query.rpc.Query"));
+const _114 = __importStar(require("./v1/msgs.rpc.msg"));
+const _122 = __importStar(require("./rpc.query"));
+const _123 = __importStar(require("./rpc.tx"));
 var gravity;
 (function (gravity) {
     gravity.v1 = {
-        ..._51,
-        ..._52,
-        ..._53,
         ..._54,
         ..._55,
         ..._56,
         ..._57,
         ..._58,
-        ..._107,
-        ..._108,
-        ..._109,
-        ..._110
+        ..._59,
+        ..._60,
+        ..._61,
+        ..._111,
+        ..._112,
+        ..._113,
+        ..._114
     };
     gravity.ClientFactory = {
-        ..._118,
-        ..._119
+        ..._122,
+        ..._123
     };
 })(gravity || (exports.gravity = gravity = {}));
 //# sourceMappingURL=bundle.js.map

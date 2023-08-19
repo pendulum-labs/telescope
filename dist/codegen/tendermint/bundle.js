@@ -24,44 +24,44 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.tendermint = void 0;
-const _59 = __importStar(require("./abci/types"));
-const _60 = __importStar(require("./crypto/keys"));
-const _61 = __importStar(require("./crypto/proof"));
-const _62 = __importStar(require("./libs/bits/types"));
-const _63 = __importStar(require("./p2p/types"));
-const _64 = __importStar(require("./types/block"));
-const _65 = __importStar(require("./types/evidence"));
-const _66 = __importStar(require("./types/params"));
-const _67 = __importStar(require("./types/types"));
-const _68 = __importStar(require("./types/validator"));
-const _69 = __importStar(require("./version/types"));
+const _62 = __importStar(require("./abci/types"));
+const _63 = __importStar(require("./crypto/keys"));
+const _64 = __importStar(require("./crypto/proof"));
+const _65 = __importStar(require("./libs/bits/types"));
+const _66 = __importStar(require("./p2p/types"));
+const _67 = __importStar(require("./types/block"));
+const _68 = __importStar(require("./types/evidence"));
+const _69 = __importStar(require("./types/params"));
+const _70 = __importStar(require("./types/types"));
+const _71 = __importStar(require("./types/validator"));
+const _72 = __importStar(require("./version/types"));
 var tendermint;
 (function (tendermint) {
     tendermint.abci = {
-        ..._59
+        ..._62
     };
     tendermint.crypto = {
-        ..._60,
-        ..._61
+        ..._63,
+        ..._64
     };
     let libs;
     (function (libs) {
         libs.bits = {
-            ..._62
+            ..._65
         };
     })(libs = tendermint.libs || (tendermint.libs = {}));
     tendermint.p2p = {
-        ..._63
+        ..._66
     };
     tendermint.types = {
-        ..._64,
-        ..._65,
-        ..._66,
         ..._67,
-        ..._68
+        ..._68,
+        ..._69,
+        ..._70,
+        ..._71
     };
     tendermint.version = {
-        ..._69
+        ..._72
     };
 })(tendermint || (exports.tendermint = tendermint = {}));
 //# sourceMappingURL=bundle.js.map
