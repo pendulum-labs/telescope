@@ -132,24 +132,27 @@ export interface QueryDropRequestSDKType {
   uid: Long;
 }
 export interface QueryDropCoinRequest {
-  coinA: string;
+  denomA: string;
   denomB: string;
+  amountA: string;
 }
 export interface QueryDropCoinRequestProtoMsg {
   typeUrl: "/pendulumlabs.market.market.QueryDropCoinRequest";
   value: Uint8Array;
 }
 export interface QueryDropCoinRequestAmino {
-  coinA: string;
+  denomA: string;
   denomB: string;
+  amountA: string;
 }
 export interface QueryDropCoinRequestAminoMsg {
   type: "/pendulumlabs.market.market.QueryDropCoinRequest";
   value: QueryDropCoinRequestAmino;
 }
 export interface QueryDropCoinRequestSDKType {
-  coinA: string;
+  denomA: string;
   denomB: string;
+  amountA: string;
 }
 export interface QueryDropCoinResponse {
   drops: string;
@@ -1298,17 +1301,21 @@ export const QueryDropRequest = {
 };
 function createBaseQueryDropCoinRequest(): QueryDropCoinRequest {
   return {
-    coinA: "",
-    denomB: ""
+    denomA: "",
+    denomB: "",
+    amountA: ""
   };
 }
 export const QueryDropCoinRequest = {
   encode(message: QueryDropCoinRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.coinA !== "") {
-      writer.uint32(10).string(message.coinA);
+    if (message.denomA !== "") {
+      writer.uint32(10).string(message.denomA);
     }
     if (message.denomB !== "") {
       writer.uint32(18).string(message.denomB);
+    }
+    if (message.amountA !== "") {
+      writer.uint32(26).string(message.amountA);
     }
     return writer;
   },
@@ -1320,10 +1327,13 @@ export const QueryDropCoinRequest = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.coinA = reader.string();
+          message.denomA = reader.string();
           break;
         case 2:
           message.denomB = reader.string();
+          break;
+        case 3:
+          message.amountA = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
@@ -1334,20 +1344,23 @@ export const QueryDropCoinRequest = {
   },
   fromPartial(object: DeepPartial<QueryDropCoinRequest>): QueryDropCoinRequest {
     const message = createBaseQueryDropCoinRequest();
-    message.coinA = object.coinA ?? "";
+    message.denomA = object.denomA ?? "";
     message.denomB = object.denomB ?? "";
+    message.amountA = object.amountA ?? "";
     return message;
   },
   fromAmino(object: QueryDropCoinRequestAmino): QueryDropCoinRequest {
     return {
-      coinA: object.coinA,
-      denomB: object.denomB
+      denomA: object.denomA,
+      denomB: object.denomB,
+      amountA: object.amountA
     };
   },
   toAmino(message: QueryDropCoinRequest): QueryDropCoinRequestAmino {
     const obj: any = {};
-    obj.coinA = message.coinA;
+    obj.denomA = message.denomA;
     obj.denomB = message.denomB;
+    obj.amountA = message.amountA;
     return obj;
   },
   fromAminoMsg(object: QueryDropCoinRequestAminoMsg): QueryDropCoinRequest {
