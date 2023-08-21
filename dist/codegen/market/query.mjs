@@ -430,6 +430,156 @@ export const QueryDropRequest = {
         };
     }
 };
+function createBaseQueryDropCoinRequest() {
+    return {
+        denomA: "",
+        denomB: "",
+        amountA: ""
+    };
+}
+export const QueryDropCoinRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denomA !== "") {
+            writer.uint32(10).string(message.denomA);
+        }
+        if (message.denomB !== "") {
+            writer.uint32(18).string(message.denomB);
+        }
+        if (message.amountA !== "") {
+            writer.uint32(26).string(message.amountA);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryDropCoinRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denomA = reader.string();
+                    break;
+                case 2:
+                    message.denomB = reader.string();
+                    break;
+                case 3:
+                    message.amountA = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryDropCoinRequest();
+        message.denomA = object.denomA ?? "";
+        message.denomB = object.denomB ?? "";
+        message.amountA = object.amountA ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denomA: object.denomA,
+            denomB: object.denomB,
+            amountA: object.amountA
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denomA = message.denomA;
+        obj.denomB = message.denomB;
+        obj.amountA = message.amountA;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryDropCoinRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryDropCoinRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryDropCoinRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryDropCoinRequest",
+            value: QueryDropCoinRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryDropCoinResponse() {
+    return {
+        drops: "",
+        amountB: ""
+    };
+}
+export const QueryDropCoinResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.drops !== "") {
+            writer.uint32(10).string(message.drops);
+        }
+        if (message.amountB !== "") {
+            writer.uint32(18).string(message.amountB);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryDropCoinResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.drops = reader.string();
+                    break;
+                case 2:
+                    message.amountB = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryDropCoinResponse();
+        message.drops = object.drops ?? "";
+        message.amountB = object.amountB ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            drops: object.drops,
+            amountB: object.amountB
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.drops = message.drops;
+        obj.amountB = message.amountB;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryDropCoinResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryDropCoinResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryDropCoinResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryDropCoinResponse",
+            value: QueryDropCoinResponse.encode(message).finish()
+        };
+    }
+};
 function createBaseQueryDropResponse() {
     return {
         drop: Drop.fromPartial({})

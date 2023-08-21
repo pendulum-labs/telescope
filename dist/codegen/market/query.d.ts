@@ -135,6 +135,49 @@ export interface QueryDropRequestAminoMsg {
 export interface QueryDropRequestSDKType {
     uid: Long;
 }
+export interface QueryDropCoinRequest {
+    denomA: string;
+    denomB: string;
+    amountA: string;
+}
+export interface QueryDropCoinRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryDropCoinRequest";
+    value: Uint8Array;
+}
+export interface QueryDropCoinRequestAmino {
+    denomA: string;
+    denomB: string;
+    amountA: string;
+}
+export interface QueryDropCoinRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryDropCoinRequest";
+    value: QueryDropCoinRequestAmino;
+}
+export interface QueryDropCoinRequestSDKType {
+    denomA: string;
+    denomB: string;
+    amountA: string;
+}
+export interface QueryDropCoinResponse {
+    drops: string;
+    amountB: string;
+}
+export interface QueryDropCoinResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryDropCoinResponse";
+    value: Uint8Array;
+}
+export interface QueryDropCoinResponseAmino {
+    drops: string;
+    amountB: string;
+}
+export interface QueryDropCoinResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryDropCoinResponse";
+    value: QueryDropCoinResponseAmino;
+}
+export interface QueryDropCoinResponseSDKType {
+    drops: string;
+    amountB: string;
+}
 export interface QueryDropResponse {
     drop: Drop;
 }
@@ -914,6 +957,28 @@ export declare const QueryDropRequest: {
     fromProtoMsg(message: QueryDropRequestProtoMsg): QueryDropRequest;
     toProto(message: QueryDropRequest): Uint8Array;
     toProtoMsg(message: QueryDropRequest): QueryDropRequestProtoMsg;
+};
+export declare const QueryDropCoinRequest: {
+    encode(message: QueryDropCoinRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropCoinRequest;
+    fromPartial(object: DeepPartial<QueryDropCoinRequest>): QueryDropCoinRequest;
+    fromAmino(object: QueryDropCoinRequestAmino): QueryDropCoinRequest;
+    toAmino(message: QueryDropCoinRequest): QueryDropCoinRequestAmino;
+    fromAminoMsg(object: QueryDropCoinRequestAminoMsg): QueryDropCoinRequest;
+    fromProtoMsg(message: QueryDropCoinRequestProtoMsg): QueryDropCoinRequest;
+    toProto(message: QueryDropCoinRequest): Uint8Array;
+    toProtoMsg(message: QueryDropCoinRequest): QueryDropCoinRequestProtoMsg;
+};
+export declare const QueryDropCoinResponse: {
+    encode(message: QueryDropCoinResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropCoinResponse;
+    fromPartial(object: DeepPartial<QueryDropCoinResponse>): QueryDropCoinResponse;
+    fromAmino(object: QueryDropCoinResponseAmino): QueryDropCoinResponse;
+    toAmino(message: QueryDropCoinResponse): QueryDropCoinResponseAmino;
+    fromAminoMsg(object: QueryDropCoinResponseAminoMsg): QueryDropCoinResponse;
+    fromProtoMsg(message: QueryDropCoinResponseProtoMsg): QueryDropCoinResponse;
+    toProto(message: QueryDropCoinResponse): Uint8Array;
+    toProtoMsg(message: QueryDropCoinResponse): QueryDropCoinResponseProtoMsg;
 };
 export declare const QueryDropResponse: {
     encode(message: QueryDropResponse, writer?: _m0.Writer): _m0.Writer;

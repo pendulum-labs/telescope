@@ -21,6 +21,7 @@ export declare namespace pendulumlabs {
                 poolAll(request?: _84.QueryAllPoolRequest): Promise<_84.QueryAllPoolResponse>;
                 drop(request: _84.QueryDropRequest): Promise<_84.QueryDropResponse>;
                 dropAmounts(request: _84.QueryDropAmountsRequest): Promise<_84.QueryDropAmountsResponse>;
+                dropCoin(request: _84.QueryDropCoinRequest): Promise<_84.QueryDropCoinResponse>;
                 dropPairs(request: _84.QueryDropPairsRequest): Promise<_84.QueryDropPairsResponse>;
                 dropOwnerPair(request: _84.QueryDropOwnerPairRequest): Promise<_84.QueryDropsResponse>;
                 dropAll(request?: _84.QueryAllDropRequest): Promise<_84.QueryDropsResponse>;
@@ -436,6 +437,35 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _84.QueryDropRequestProtoMsg): _84.QueryDropRequest;
                 toProto(message: _84.QueryDropRequest): Uint8Array;
                 toProtoMsg(message: _84.QueryDropRequest): _84.QueryDropRequestProtoMsg;
+            };
+            QueryDropCoinRequest: {
+                encode(message: _84.QueryDropCoinRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryDropCoinRequest;
+                fromPartial(object: {
+                    denomA?: string;
+                    denomB?: string;
+                    amountA?: string;
+                }): _84.QueryDropCoinRequest;
+                fromAmino(object: _84.QueryDropCoinRequestAmino): _84.QueryDropCoinRequest;
+                toAmino(message: _84.QueryDropCoinRequest): _84.QueryDropCoinRequestAmino;
+                fromAminoMsg(object: _84.QueryDropCoinRequestAminoMsg): _84.QueryDropCoinRequest;
+                fromProtoMsg(message: _84.QueryDropCoinRequestProtoMsg): _84.QueryDropCoinRequest;
+                toProto(message: _84.QueryDropCoinRequest): Uint8Array;
+                toProtoMsg(message: _84.QueryDropCoinRequest): _84.QueryDropCoinRequestProtoMsg;
+            };
+            QueryDropCoinResponse: {
+                encode(message: _84.QueryDropCoinResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryDropCoinResponse;
+                fromPartial(object: {
+                    drops?: string;
+                    amountB?: string;
+                }): _84.QueryDropCoinResponse;
+                fromAmino(object: _84.QueryDropCoinResponseAmino): _84.QueryDropCoinResponse;
+                toAmino(message: _84.QueryDropCoinResponse): _84.QueryDropCoinResponseAmino;
+                fromAminoMsg(object: _84.QueryDropCoinResponseAminoMsg): _84.QueryDropCoinResponse;
+                fromProtoMsg(message: _84.QueryDropCoinResponseProtoMsg): _84.QueryDropCoinResponse;
+                toProto(message: _84.QueryDropCoinResponse): Uint8Array;
+                toProtoMsg(message: _84.QueryDropCoinResponse): _84.QueryDropCoinResponseProtoMsg;
             };
             QueryDropResponse: {
                 encode(message: _84.QueryDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -1514,6 +1544,7 @@ export declare namespace pendulumlabs {
                         poolAll(request?: _84.QueryAllPoolRequest): Promise<_84.QueryAllPoolResponse>;
                         drop(request: _84.QueryDropRequest): Promise<_84.QueryDropResponse>;
                         dropAmounts(request: _84.QueryDropAmountsRequest): Promise<_84.QueryDropAmountsResponse>;
+                        dropCoin(request: _84.QueryDropCoinRequest): Promise<_84.QueryDropCoinResponse>;
                         dropPairs(request: _84.QueryDropPairsRequest): Promise<_84.QueryDropPairsResponse>;
                         dropOwnerPair(request: _84.QueryDropOwnerPairRequest): Promise<_84.QueryDropsResponse>;
                         dropAll(request?: _84.QueryAllDropRequest): Promise<_84.QueryDropsResponse>;

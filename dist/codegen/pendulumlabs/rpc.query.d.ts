@@ -106,6 +106,7 @@ export declare const createRPCQueryClient: ({ rpcEndpoint }: {
                 poolAll(request?: import("../market/query").QueryAllPoolRequest): Promise<import("../market/query").QueryAllPoolResponse>;
                 drop(request: import("../market/query").QueryDropRequest): Promise<import("../market/query").QueryDropResponse>;
                 dropAmounts(request: import("../market/query").QueryDropAmountsRequest): Promise<import("../market/query").QueryDropAmountsResponse>;
+                dropCoin(request: import("../market/query").QueryDropCoinRequest): Promise<import("../market/query").QueryDropCoinResponse>;
                 dropPairs(request: import("../market/query").QueryDropPairsRequest): Promise<import("../market/query").QueryDropPairsResponse>;
                 dropOwnerPair(request: import("../market/query").QueryDropOwnerPairRequest): Promise<import("../market/query").QueryDropsResponse>;
                 dropAll(request?: import("../market/query").QueryAllDropRequest): Promise<import("../market/query").QueryDropsResponse>;
