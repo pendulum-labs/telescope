@@ -282,8 +282,8 @@ function createBaseMsgCreateValidator(): MsgCreateValidator {
     minSelfDelegation: "",
     delegatorAddress: "",
     validatorAddress: "",
-    pubkey: undefined,
-    value: undefined
+    pubkey: Any.fromPartial({}),
+    value: Coin.fromPartial({})
   };
 }
 export const MsgCreateValidator = {
@@ -367,7 +367,7 @@ export const MsgCreateValidator = {
       pubkey: encodeBech32Pubkey({
         type: "tendermint/PubKeySecp256k1",
         value: toBase64(object.pubkey.value)
-      }, "cosmos") as any,
+      }, "cosmos"),
       value: object?.value ? Coin.fromAmino(object.value) : undefined
     };
   },
@@ -380,7 +380,7 @@ export const MsgCreateValidator = {
     obj.validator_address = message.validatorAddress;
     obj.pubkey = message.pubkey ? {
       typeUrl: "/cosmos.crypto.secp256k1.PubKey",
-      value: fromBase64(decodeBech32Pubkey(message.pubkey as any).value)
+      value: fromBase64(decodeBech32Pubkey(message.pubkey).value)
     } : undefined;
     obj.value = message.value ? Coin.toAmino(message.value) : undefined;
     return obj;
@@ -615,7 +615,7 @@ function createBaseMsgDelegate(): MsgDelegate {
   return {
     delegatorAddress: "",
     validatorAddress: "",
-    amount: undefined
+    amount: Coin.fromPartial({})
   };
 }
 export const MsgDelegate = {
@@ -756,7 +756,7 @@ function createBaseMsgBeginRedelegate(): MsgBeginRedelegate {
     delegatorAddress: "",
     validatorSrcAddress: "",
     validatorDstAddress: "",
-    amount: undefined
+    amount: Coin.fromPartial({})
   };
 }
 export const MsgBeginRedelegate = {
@@ -849,7 +849,7 @@ export const MsgBeginRedelegate = {
 };
 function createBaseMsgBeginRedelegateResponse(): MsgBeginRedelegateResponse {
   return {
-    completionTime: undefined
+    completionTime: new Date()
   };
 }
 export const MsgBeginRedelegateResponse = {
@@ -917,7 +917,7 @@ function createBaseMsgUndelegate(): MsgUndelegate {
   return {
     delegatorAddress: "",
     validatorAddress: "",
-    amount: undefined
+    amount: Coin.fromPartial({})
   };
 }
 export const MsgUndelegate = {
@@ -1001,7 +1001,7 @@ export const MsgUndelegate = {
 };
 function createBaseMsgUndelegateResponse(): MsgUndelegateResponse {
   return {
-    completionTime: undefined
+    completionTime: new Date()
   };
 }
 export const MsgUndelegateResponse = {

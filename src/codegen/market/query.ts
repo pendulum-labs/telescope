@@ -234,6 +234,26 @@ export interface QueryDropAmountsResponseSDKType {
   amount1: string;
   amount2: string;
 }
+export interface QueryDropsToCoinsRequest {
+  pair: string;
+  drops: string;
+}
+export interface QueryDropsToCoinsRequestProtoMsg {
+  typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsRequest";
+  value: Uint8Array;
+}
+export interface QueryDropsToCoinsRequestAmino {
+  pair: string;
+  drops: string;
+}
+export interface QueryDropsToCoinsRequestAminoMsg {
+  type: "/pendulumlabs.market.market.QueryDropsToCoinsRequest";
+  value: QueryDropsToCoinsRequestAmino;
+}
+export interface QueryDropsToCoinsRequestSDKType {
+  pair: string;
+  drops: string;
+}
 export interface QueryDropPairsRequest {
   address: string;
 }
@@ -1656,6 +1676,76 @@ export const QueryDropAmountsResponse = {
     return {
       typeUrl: "/pendulumlabs.market.market.QueryDropAmountsResponse",
       value: QueryDropAmountsResponse.encode(message).finish()
+    };
+  }
+};
+function createBaseQueryDropsToCoinsRequest(): QueryDropsToCoinsRequest {
+  return {
+    pair: "",
+    drops: ""
+  };
+}
+export const QueryDropsToCoinsRequest = {
+  encode(message: QueryDropsToCoinsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.pair !== "") {
+      writer.uint32(10).string(message.pair);
+    }
+    if (message.drops !== "") {
+      writer.uint32(18).string(message.drops);
+    }
+    return writer;
+  },
+  decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropsToCoinsRequest {
+    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryDropsToCoinsRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          message.pair = reader.string();
+          break;
+        case 2:
+          message.drops = reader.string();
+          break;
+        default:
+          reader.skipType(tag & 7);
+          break;
+      }
+    }
+    return message;
+  },
+  fromPartial(object: DeepPartial<QueryDropsToCoinsRequest>): QueryDropsToCoinsRequest {
+    const message = createBaseQueryDropsToCoinsRequest();
+    message.pair = object.pair ?? "";
+    message.drops = object.drops ?? "";
+    return message;
+  },
+  fromAmino(object: QueryDropsToCoinsRequestAmino): QueryDropsToCoinsRequest {
+    return {
+      pair: object.pair,
+      drops: object.drops
+    };
+  },
+  toAmino(message: QueryDropsToCoinsRequest): QueryDropsToCoinsRequestAmino {
+    const obj: any = {};
+    obj.pair = message.pair;
+    obj.drops = message.drops;
+    return obj;
+  },
+  fromAminoMsg(object: QueryDropsToCoinsRequestAminoMsg): QueryDropsToCoinsRequest {
+    return QueryDropsToCoinsRequest.fromAmino(object.value);
+  },
+  fromProtoMsg(message: QueryDropsToCoinsRequestProtoMsg): QueryDropsToCoinsRequest {
+    return QueryDropsToCoinsRequest.decode(message.value);
+  },
+  toProto(message: QueryDropsToCoinsRequest): Uint8Array {
+    return QueryDropsToCoinsRequest.encode(message).finish();
+  },
+  toProtoMsg(message: QueryDropsToCoinsRequest): QueryDropsToCoinsRequestProtoMsg {
+    return {
+      typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsRequest",
+      value: QueryDropsToCoinsRequest.encode(message).finish()
     };
   }
 };

@@ -1,7 +1,7 @@
 import { Rpc } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropCoinRequest, QueryDropCoinResponse, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropCoinRequest, QueryDropCoinResponse, QueryDropsToCoinsRequest, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
   /** Parameters queries the parameters of the module. */
@@ -16,6 +16,8 @@ export interface Query {
   dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
   /** Queries a Drop by index. */
   dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse>;
+  /** Queries a Drop by index. */
+  dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse>;
   /** Queries a Drop by index. */
   dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
   /** Queries a Drop by index. */
@@ -55,6 +57,7 @@ export class QueryClientImpl implements Query {
     this.drop = this.drop.bind(this);
     this.dropAmounts = this.dropAmounts.bind(this);
     this.dropCoin = this.dropCoin.bind(this);
+    this.dropsToCoins = this.dropsToCoins.bind(this);
     this.dropPairs = this.dropPairs.bind(this);
     this.dropOwnerPair = this.dropOwnerPair.bind(this);
     this.dropAll = this.dropAll.bind(this);
@@ -101,6 +104,11 @@ export class QueryClientImpl implements Query {
     const data = QueryDropCoinRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropCoin", data);
     return promise.then(data => QueryDropCoinResponse.decode(new _m0.Reader(data)));
+  }
+  dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse> {
+    const data = QueryDropsToCoinsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropsToCoins", data);
+    return promise.then(data => QueryDropAmountsResponse.decode(new _m0.Reader(data)));
   }
   dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse> {
     const data = QueryDropPairsRequest.encode(request).finish();
@@ -202,6 +210,9 @@ export const createRpcQueryExtension = (base: QueryClient) => {
     },
     dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse> {
       return queryService.dropCoin(request);
+    },
+    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse> {
+      return queryService.dropsToCoins(request);
     },
     dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse> {
       return queryService.dropPairs(request);

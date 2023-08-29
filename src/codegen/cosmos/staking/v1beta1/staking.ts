@@ -994,7 +994,7 @@ export const CommissionRates = {
 function createBaseCommission(): Commission {
   return {
     commissionRates: CommissionRates.fromPartial({}),
-    updateTime: undefined
+    updateTime: new Date()
   };
 }
 export const Commission = {
@@ -1176,14 +1176,14 @@ export const Description = {
 function createBaseValidator(): Validator {
   return {
     operatorAddress: "",
-    consensusPubkey: undefined,
+    consensusPubkey: Any.fromPartial({}),
     jailed: false,
     status: 0,
     tokens: "",
     delegatorShares: "",
     description: Description.fromPartial({}),
     unbondingHeight: Long.ZERO,
-    unbondingTime: undefined,
+    unbondingTime: new Date(),
     commission: Commission.fromPartial({}),
     minSelfDelegation: ""
   };
@@ -1293,7 +1293,7 @@ export const Validator = {
       consensusPubkey: encodeBech32Pubkey({
         type: "tendermint/PubKeySecp256k1",
         value: toBase64(object.consensus_pubkey.value)
-      }, "cosmos") as any,
+      }, "cosmos"),
       jailed: object.jailed,
       status: isSet(object.status) ? bondStatusFromJSON(object.status) : -1,
       tokens: object.tokens,
@@ -1310,7 +1310,7 @@ export const Validator = {
     obj.operator_address = message.operatorAddress;
     obj.consensus_pubkey = message.consensusPubkey ? {
       typeUrl: "/cosmos.crypto.secp256k1.PubKey",
-      value: fromBase64(decodeBech32Pubkey(message.consensusPubkey as any).value)
+      value: fromBase64(decodeBech32Pubkey(message.consensusPubkey).value)
     } : undefined;
     obj.jailed = message.jailed;
     obj.status = message.status;
@@ -1896,7 +1896,7 @@ export const UnbondingDelegation = {
 function createBaseUnbondingDelegationEntry(): UnbondingDelegationEntry {
   return {
     creationHeight: Long.ZERO,
-    completionTime: undefined,
+    completionTime: new Date(),
     initialBalance: "",
     balance: ""
   };
@@ -1992,7 +1992,7 @@ export const UnbondingDelegationEntry = {
 function createBaseRedelegationEntry(): RedelegationEntry {
   return {
     creationHeight: Long.ZERO,
-    completionTime: undefined,
+    completionTime: new Date(),
     initialBalance: "",
     sharesDst: ""
   };
@@ -2187,7 +2187,7 @@ export const Redelegation = {
 };
 function createBaseParams(): Params {
   return {
-    unbondingTime: undefined,
+    unbondingTime: Duration.fromPartial({}),
     maxValidators: 0,
     maxEntries: 0,
     historicalEntries: 0,
@@ -2304,7 +2304,7 @@ export const Params = {
 function createBaseDelegationResponse(): DelegationResponse {
   return {
     delegation: Delegation.fromPartial({}),
-    balance: undefined
+    balance: Coin.fromPartial({})
   };
 }
 export const DelegationResponse = {
