@@ -39,8 +39,8 @@ function createBaseMsgCreateValidator() {
         minSelfDelegation: "",
         delegatorAddress: "",
         validatorAddress: "",
-        pubkey: undefined,
-        value: undefined
+        pubkey: any_1.Any.fromPartial({}),
+        value: coin_1.Coin.fromPartial({})
     };
 }
 exports.MsgCreateValidator = {
@@ -372,7 +372,7 @@ function createBaseMsgDelegate() {
     return {
         delegatorAddress: "",
         validatorAddress: "",
-        amount: undefined
+        amount: coin_1.Coin.fromPartial({})
     };
 }
 exports.MsgDelegate = {
@@ -513,7 +513,7 @@ function createBaseMsgBeginRedelegate() {
         delegatorAddress: "",
         validatorSrcAddress: "",
         validatorDstAddress: "",
-        amount: undefined
+        amount: coin_1.Coin.fromPartial({})
     };
 }
 exports.MsgBeginRedelegate = {
@@ -606,7 +606,7 @@ exports.MsgBeginRedelegate = {
 };
 function createBaseMsgBeginRedelegateResponse() {
     return {
-        completionTime: undefined
+        completionTime: new Date()
     };
 }
 exports.MsgBeginRedelegateResponse = {
@@ -674,7 +674,7 @@ function createBaseMsgUndelegate() {
     return {
         delegatorAddress: "",
         validatorAddress: "",
-        amount: undefined
+        amount: coin_1.Coin.fromPartial({})
     };
 }
 exports.MsgUndelegate = {
@@ -758,7 +758,7 @@ exports.MsgUndelegate = {
 };
 function createBaseMsgUndelegateResponse() {
     return {
-        completionTime: undefined
+        completionTime: new Date()
     };
 }
 exports.MsgUndelegateResponse = {

@@ -486,7 +486,7 @@ export const AuthInfo = {
 };
 function createBaseSignerInfo() {
     return {
-        publicKey: undefined,
+        publicKey: Any.fromPartial({}),
         modeInfo: ModeInfo.fromPartial({}),
         sequence: Long.UZERO
     };

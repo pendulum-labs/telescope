@@ -790,6 +790,76 @@ export const QueryDropAmountsResponse = {
         };
     }
 };
+function createBaseQueryDropsToCoinsRequest() {
+    return {
+        pair: "",
+        drops: ""
+    };
+}
+export const QueryDropsToCoinsRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.pair !== "") {
+            writer.uint32(10).string(message.pair);
+        }
+        if (message.drops !== "") {
+            writer.uint32(18).string(message.drops);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryDropsToCoinsRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.pair = reader.string();
+                    break;
+                case 2:
+                    message.drops = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryDropsToCoinsRequest();
+        message.pair = object.pair ?? "";
+        message.drops = object.drops ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            pair: object.pair,
+            drops: object.drops
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.pair = message.pair;
+        obj.drops = message.drops;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryDropsToCoinsRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryDropsToCoinsRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryDropsToCoinsRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsRequest",
+            value: QueryDropsToCoinsRequest.encode(message).finish()
+        };
+    }
+};
 function createBaseQueryDropPairsRequest() {
     return {
         address: ""

@@ -85,7 +85,7 @@ function authorizationTypeToJSON(object) {
 exports.authorizationTypeToJSON = authorizationTypeToJSON;
 function createBaseStakeAuthorization() {
     return {
-        maxTokens: undefined,
+        maxTokens: coin_1.Coin.fromPartial({}),
         allowList: undefined,
         denyList: undefined,
         authorizationType: 0

@@ -255,7 +255,7 @@ exports.CommissionRates = {
 function createBaseCommission() {
     return {
         commissionRates: exports.CommissionRates.fromPartial({}),
-        updateTime: undefined
+        updateTime: new Date()
     };
 }
 exports.Commission = {
@@ -437,14 +437,14 @@ exports.Description = {
 function createBaseValidator() {
     return {
         operatorAddress: "",
-        consensusPubkey: undefined,
+        consensusPubkey: any_1.Any.fromPartial({}),
         jailed: false,
         status: 0,
         tokens: "",
         delegatorShares: "",
         description: exports.Description.fromPartial({}),
         unbondingHeight: helpers_1.Long.ZERO,
-        unbondingTime: undefined,
+        unbondingTime: new Date(),
         commission: exports.Commission.fromPartial({}),
         minSelfDelegation: ""
     };
@@ -1161,7 +1161,7 @@ exports.UnbondingDelegation = {
 function createBaseUnbondingDelegationEntry() {
     return {
         creationHeight: helpers_1.Long.ZERO,
-        completionTime: undefined,
+        completionTime: new Date(),
         initialBalance: "",
         balance: ""
     };
@@ -1257,7 +1257,7 @@ exports.UnbondingDelegationEntry = {
 function createBaseRedelegationEntry() {
     return {
         creationHeight: helpers_1.Long.ZERO,
-        completionTime: undefined,
+        completionTime: new Date(),
         initialBalance: "",
         sharesDst: ""
     };
@@ -1453,7 +1453,7 @@ exports.Redelegation = {
 };
 function createBaseParams() {
     return {
-        unbondingTime: undefined,
+        unbondingTime: duration_1.Duration.fromPartial({}),
         maxValidators: 0,
         maxEntries: 0,
         historicalEntries: 0,
@@ -1570,7 +1570,7 @@ exports.Params = {
 function createBaseDelegationResponse() {
     return {
         delegation: exports.Delegation.fromPartial({}),
-        balance: undefined
+        balance: coin_1.Coin.fromPartial({})
     };
 }
 exports.DelegationResponse = {

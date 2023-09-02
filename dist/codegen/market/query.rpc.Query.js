@@ -37,6 +37,7 @@ class QueryClientImpl {
         this.drop = this.drop.bind(this);
         this.dropAmounts = this.dropAmounts.bind(this);
         this.dropCoin = this.dropCoin.bind(this);
+        this.dropsToCoins = this.dropsToCoins.bind(this);
         this.dropPairs = this.dropPairs.bind(this);
         this.dropOwnerPair = this.dropOwnerPair.bind(this);
         this.dropAll = this.dropAll.bind(this);
@@ -83,6 +84,11 @@ class QueryClientImpl {
         const data = query_1.QueryDropCoinRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropCoin", data);
         return promise.then(data => query_1.QueryDropCoinResponse.decode(new _m0.Reader(data)));
+    }
+    dropsToCoins(request) {
+        const data = query_1.QueryDropsToCoinsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropsToCoins", data);
+        return promise.then(data => query_1.QueryDropAmountsResponse.decode(new _m0.Reader(data)));
     }
     dropPairs(request) {
         const data = query_1.QueryDropPairsRequest.encode(request).finish();
@@ -185,6 +191,9 @@ const createRpcQueryExtension = (base) => {
         },
         dropCoin(request) {
             return queryService.dropCoin(request);
+        },
+        dropsToCoins(request) {
+            return queryService.dropsToCoins(request);
         },
         dropPairs(request) {
             return queryService.dropPairs(request);

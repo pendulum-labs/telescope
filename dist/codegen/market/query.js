@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QueryHistoryResponse = exports.QueryHistoryRequest = exports.QueryBookendsResponse = exports.QueryBookendsRequest = exports.QueryBookResponse = exports.QueryBookRequest = exports.QueryOrderOwnerPairResponse = exports.QueryOrderOwnerPairRequest = exports.QueryOrderOwnerUidsResponse = exports.QueryOrderOwnerRequest = exports.QueryAllOrderRequest = exports.QueryOrdersResponse = exports.QueryOrderResponse = exports.QueryOrderRequest = exports.QueryAllBurningsResponse = exports.QueryAllBurningsRequest = exports.QueryGetBurningsResponse = exports.QueryGetBurningsRequest = exports.QueryAllMemberResponse = exports.QueryAllMemberRequest = exports.QueryGetMemberResponse = exports.QueryGetMemberRequest = exports.QueryDropsResponse = exports.QueryAllDropRequest = exports.QueryDropOwnerPairDetailRequest = exports.QueryUidsResponse = exports.QueryDropOwnerPairUidsRequest = exports.QueryDropOwnerPairSumResponse = exports.QueryDropOwnerPairSumRequest = exports.QueryDropOwnerPairRequest = exports.QueryDropPairsResponse = exports.QueryDropPairsRequest = exports.QueryDropAmountsResponse = exports.QueryDropAmountsRequest = exports.QueryDropResponse = exports.QueryDropCoinResponse = exports.QueryDropCoinRequest = exports.QueryDropRequest = exports.QueryAllPoolResponse = exports.QueryAllPoolRequest = exports.QueryGetPoolResponse = exports.QueryGetPoolRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = void 0;
+exports.QueryHistoryResponse = exports.QueryHistoryRequest = exports.QueryBookendsResponse = exports.QueryBookendsRequest = exports.QueryBookResponse = exports.QueryBookRequest = exports.QueryOrderOwnerPairResponse = exports.QueryOrderOwnerPairRequest = exports.QueryOrderOwnerUidsResponse = exports.QueryOrderOwnerRequest = exports.QueryAllOrderRequest = exports.QueryOrdersResponse = exports.QueryOrderResponse = exports.QueryOrderRequest = exports.QueryAllBurningsResponse = exports.QueryAllBurningsRequest = exports.QueryGetBurningsResponse = exports.QueryGetBurningsRequest = exports.QueryAllMemberResponse = exports.QueryAllMemberRequest = exports.QueryGetMemberResponse = exports.QueryGetMemberRequest = exports.QueryDropsResponse = exports.QueryAllDropRequest = exports.QueryDropOwnerPairDetailRequest = exports.QueryUidsResponse = exports.QueryDropOwnerPairUidsRequest = exports.QueryDropOwnerPairSumResponse = exports.QueryDropOwnerPairSumRequest = exports.QueryDropOwnerPairRequest = exports.QueryDropPairsResponse = exports.QueryDropPairsRequest = exports.QueryDropsToCoinsRequest = exports.QueryDropAmountsResponse = exports.QueryDropAmountsRequest = exports.QueryDropResponse = exports.QueryDropCoinResponse = exports.QueryDropCoinRequest = exports.QueryDropRequest = exports.QueryAllPoolResponse = exports.QueryAllPoolRequest = exports.QueryGetPoolResponse = exports.QueryGetPoolRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = void 0;
 const pagination_1 = require("../cosmos/base/query/v1beta1/pagination");
 const params_1 = require("./params");
 const pool_1 = require("./pool");
@@ -813,6 +813,76 @@ exports.QueryDropAmountsResponse = {
         return {
             typeUrl: "/pendulumlabs.market.market.QueryDropAmountsResponse",
             value: exports.QueryDropAmountsResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryDropsToCoinsRequest() {
+    return {
+        pair: "",
+        drops: ""
+    };
+}
+exports.QueryDropsToCoinsRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.pair !== "") {
+            writer.uint32(10).string(message.pair);
+        }
+        if (message.drops !== "") {
+            writer.uint32(18).string(message.drops);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryDropsToCoinsRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.pair = reader.string();
+                    break;
+                case 2:
+                    message.drops = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryDropsToCoinsRequest();
+        message.pair = object.pair ?? "";
+        message.drops = object.drops ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            pair: object.pair,
+            drops: object.drops
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.pair = message.pair;
+        obj.drops = message.drops;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return exports.QueryDropsToCoinsRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return exports.QueryDropsToCoinsRequest.decode(message.value);
+    },
+    toProto(message) {
+        return exports.QueryDropsToCoinsRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsRequest",
+            value: exports.QueryDropsToCoinsRequest.encode(message).finish()
         };
     }
 };

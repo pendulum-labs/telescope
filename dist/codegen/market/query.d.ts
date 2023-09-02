@@ -238,6 +238,26 @@ export interface QueryDropAmountsResponseSDKType {
     amount1: string;
     amount2: string;
 }
+export interface QueryDropsToCoinsRequest {
+    pair: string;
+    drops: string;
+}
+export interface QueryDropsToCoinsRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsRequest";
+    value: Uint8Array;
+}
+export interface QueryDropsToCoinsRequestAmino {
+    pair: string;
+    drops: string;
+}
+export interface QueryDropsToCoinsRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryDropsToCoinsRequest";
+    value: QueryDropsToCoinsRequestAmino;
+}
+export interface QueryDropsToCoinsRequestSDKType {
+    pair: string;
+    drops: string;
+}
 export interface QueryDropPairsRequest {
     address: string;
 }
@@ -1012,6 +1032,17 @@ export declare const QueryDropAmountsResponse: {
     fromProtoMsg(message: QueryDropAmountsResponseProtoMsg): QueryDropAmountsResponse;
     toProto(message: QueryDropAmountsResponse): Uint8Array;
     toProtoMsg(message: QueryDropAmountsResponse): QueryDropAmountsResponseProtoMsg;
+};
+export declare const QueryDropsToCoinsRequest: {
+    encode(message: QueryDropsToCoinsRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropsToCoinsRequest;
+    fromPartial(object: DeepPartial<QueryDropsToCoinsRequest>): QueryDropsToCoinsRequest;
+    fromAmino(object: QueryDropsToCoinsRequestAmino): QueryDropsToCoinsRequest;
+    toAmino(message: QueryDropsToCoinsRequest): QueryDropsToCoinsRequestAmino;
+    fromAminoMsg(object: QueryDropsToCoinsRequestAminoMsg): QueryDropsToCoinsRequest;
+    fromProtoMsg(message: QueryDropsToCoinsRequestProtoMsg): QueryDropsToCoinsRequest;
+    toProto(message: QueryDropsToCoinsRequest): Uint8Array;
+    toProtoMsg(message: QueryDropsToCoinsRequest): QueryDropsToCoinsRequestProtoMsg;
 };
 export declare const QueryDropPairsRequest: {
     encode(message: QueryDropPairsRequest, writer?: _m0.Writer): _m0.Writer;

@@ -13,8 +13,8 @@ function createBaseMsgCreateValidator() {
         minSelfDelegation: "",
         delegatorAddress: "",
         validatorAddress: "",
-        pubkey: undefined,
-        value: undefined
+        pubkey: Any.fromPartial({}),
+        value: Coin.fromPartial({})
     };
 }
 export const MsgCreateValidator = {
@@ -346,7 +346,7 @@ function createBaseMsgDelegate() {
     return {
         delegatorAddress: "",
         validatorAddress: "",
-        amount: undefined
+        amount: Coin.fromPartial({})
     };
 }
 export const MsgDelegate = {
@@ -487,7 +487,7 @@ function createBaseMsgBeginRedelegate() {
         delegatorAddress: "",
         validatorSrcAddress: "",
         validatorDstAddress: "",
-        amount: undefined
+        amount: Coin.fromPartial({})
     };
 }
 export const MsgBeginRedelegate = {
@@ -580,7 +580,7 @@ export const MsgBeginRedelegate = {
 };
 function createBaseMsgBeginRedelegateResponse() {
     return {
-        completionTime: undefined
+        completionTime: new Date()
     };
 }
 export const MsgBeginRedelegateResponse = {
@@ -648,7 +648,7 @@ function createBaseMsgUndelegate() {
     return {
         delegatorAddress: "",
         validatorAddress: "",
-        amount: undefined
+        amount: Coin.fromPartial({})
     };
 }
 export const MsgUndelegate = {
@@ -732,7 +732,7 @@ export const MsgUndelegate = {
 };
 function createBaseMsgUndelegateResponse() {
     return {
-        completionTime: undefined
+        completionTime: new Date()
     };
 }
 export const MsgUndelegateResponse = {

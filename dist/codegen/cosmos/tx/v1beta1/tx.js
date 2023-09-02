@@ -512,7 +512,7 @@ exports.AuthInfo = {
 };
 function createBaseSignerInfo() {
     return {
-        publicKey: undefined,
+        publicKey: any_1.Any.fromPartial({}),
         modeInfo: exports.ModeInfo.fromPartial({}),
         sequence: helpers_1.Long.UZERO
     };

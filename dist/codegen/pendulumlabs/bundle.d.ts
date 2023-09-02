@@ -22,6 +22,7 @@ export declare namespace pendulumlabs {
                 drop(request: _84.QueryDropRequest): Promise<_84.QueryDropResponse>;
                 dropAmounts(request: _84.QueryDropAmountsRequest): Promise<_84.QueryDropAmountsResponse>;
                 dropCoin(request: _84.QueryDropCoinRequest): Promise<_84.QueryDropCoinResponse>;
+                dropsToCoins(request: _84.QueryDropsToCoinsRequest): Promise<_84.QueryDropAmountsResponse>;
                 dropPairs(request: _84.QueryDropPairsRequest): Promise<_84.QueryDropPairsResponse>;
                 dropOwnerPair(request: _84.QueryDropOwnerPairRequest): Promise<_84.QueryDropsResponse>;
                 dropAll(request?: _84.QueryAllDropRequest): Promise<_84.QueryDropsResponse>;
@@ -515,6 +516,20 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _84.QueryDropAmountsResponseProtoMsg): _84.QueryDropAmountsResponse;
                 toProto(message: _84.QueryDropAmountsResponse): Uint8Array;
                 toProtoMsg(message: _84.QueryDropAmountsResponse): _84.QueryDropAmountsResponseProtoMsg;
+            };
+            QueryDropsToCoinsRequest: {
+                encode(message: _84.QueryDropsToCoinsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryDropsToCoinsRequest;
+                fromPartial(object: {
+                    pair?: string;
+                    drops?: string;
+                }): _84.QueryDropsToCoinsRequest;
+                fromAmino(object: _84.QueryDropsToCoinsRequestAmino): _84.QueryDropsToCoinsRequest;
+                toAmino(message: _84.QueryDropsToCoinsRequest): _84.QueryDropsToCoinsRequestAmino;
+                fromAminoMsg(object: _84.QueryDropsToCoinsRequestAminoMsg): _84.QueryDropsToCoinsRequest;
+                fromProtoMsg(message: _84.QueryDropsToCoinsRequestProtoMsg): _84.QueryDropsToCoinsRequest;
+                toProto(message: _84.QueryDropsToCoinsRequest): Uint8Array;
+                toProtoMsg(message: _84.QueryDropsToCoinsRequest): _84.QueryDropsToCoinsRequestProtoMsg;
             };
             QueryDropPairsRequest: {
                 encode(message: _84.QueryDropPairsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -1545,6 +1560,7 @@ export declare namespace pendulumlabs {
                         drop(request: _84.QueryDropRequest): Promise<_84.QueryDropResponse>;
                         dropAmounts(request: _84.QueryDropAmountsRequest): Promise<_84.QueryDropAmountsResponse>;
                         dropCoin(request: _84.QueryDropCoinRequest): Promise<_84.QueryDropCoinResponse>;
+                        dropsToCoins(request: _84.QueryDropsToCoinsRequest): Promise<_84.QueryDropAmountsResponse>;
                         dropPairs(request: _84.QueryDropPairsRequest): Promise<_84.QueryDropPairsResponse>;
                         dropOwnerPair(request: _84.QueryDropOwnerPairRequest): Promise<_84.QueryDropsResponse>;
                         dropAll(request?: _84.QueryAllDropRequest): Promise<_84.QueryDropsResponse>;
