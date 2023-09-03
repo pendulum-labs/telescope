@@ -203,6 +203,7 @@ export interface MsgMarketOrder {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
+    amountAsk: string;
     /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
@@ -215,6 +216,7 @@ export interface MsgMarketOrderAmino {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
+    amountAsk: string;
     /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
@@ -227,21 +229,31 @@ export interface MsgMarketOrderSDKType {
     denomAsk: string;
     denomBid: string;
     amountBid: string;
+    amountAsk: string;
     slippage: string;
 }
 export interface MsgMarketOrderResponse {
+    amountBid: string;
+    amountAsk: string;
+    slippage: string;
 }
 export interface MsgMarketOrderResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.MsgMarketOrderResponse";
     value: Uint8Array;
 }
 export interface MsgMarketOrderResponseAmino {
+    amountBid: string;
+    amountAsk: string;
+    slippage: string;
 }
 export interface MsgMarketOrderResponseAminoMsg {
     type: "/pendulumlabs.market.market.MsgMarketOrderResponse";
     value: MsgMarketOrderResponseAmino;
 }
 export interface MsgMarketOrderResponseSDKType {
+    amountBid: string;
+    amountAsk: string;
+    slippage: string;
 }
 export declare const MsgCreatePool: {
     encode(message: MsgCreatePool, writer?: _m0.Writer): _m0.Writer;
@@ -365,11 +377,11 @@ export declare const MsgMarketOrder: {
     toProtoMsg(message: MsgMarketOrder): MsgMarketOrderProtoMsg;
 };
 export declare const MsgMarketOrderResponse: {
-    encode(_: MsgMarketOrderResponse, writer?: _m0.Writer): _m0.Writer;
+    encode(message: MsgMarketOrderResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgMarketOrderResponse;
-    fromPartial(_: DeepPartial<MsgMarketOrderResponse>): MsgMarketOrderResponse;
-    fromAmino(_: MsgMarketOrderResponseAmino): MsgMarketOrderResponse;
-    toAmino(_: MsgMarketOrderResponse): MsgMarketOrderResponseAmino;
+    fromPartial(object: DeepPartial<MsgMarketOrderResponse>): MsgMarketOrderResponse;
+    fromAmino(object: MsgMarketOrderResponseAmino): MsgMarketOrderResponse;
+    toAmino(message: MsgMarketOrderResponse): MsgMarketOrderResponseAmino;
     fromAminoMsg(object: MsgMarketOrderResponseAminoMsg): MsgMarketOrderResponse;
     fromProtoMsg(message: MsgMarketOrderResponseProtoMsg): MsgMarketOrderResponse;
     toProto(message: MsgMarketOrderResponse): Uint8Array;

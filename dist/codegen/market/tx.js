@@ -719,6 +719,7 @@ function createBaseMsgMarketOrder() {
         denomAsk: "",
         denomBid: "",
         amountBid: "",
+        amountAsk: "",
         slippage: ""
     };
 }
@@ -736,8 +737,11 @@ exports.MsgMarketOrder = {
         if (message.amountBid !== "") {
             writer.uint32(34).string(message.amountBid);
         }
+        if (message.amountAsk !== "") {
+            writer.uint32(42).string(message.amountAsk);
+        }
         if (message.slippage !== "") {
-            writer.uint32(42).string(message.slippage);
+            writer.uint32(50).string(message.slippage);
         }
         return writer;
     },
@@ -761,6 +765,9 @@ exports.MsgMarketOrder = {
                     message.amountBid = reader.string();
                     break;
                 case 5:
+                    message.amountAsk = reader.string();
+                    break;
+                case 6:
                     message.slippage = reader.string();
                     break;
                 default:
@@ -776,6 +783,7 @@ exports.MsgMarketOrder = {
         message.denomAsk = object.denomAsk ?? "";
         message.denomBid = object.denomBid ?? "";
         message.amountBid = object.amountBid ?? "";
+        message.amountAsk = object.amountAsk ?? "";
         message.slippage = object.slippage ?? "";
         return message;
     },
@@ -785,6 +793,7 @@ exports.MsgMarketOrder = {
             denomAsk: object.denomAsk,
             denomBid: object.denomBid,
             amountBid: object.amountBid,
+            amountAsk: object.amountAsk,
             slippage: object.slippage
         };
     },
@@ -794,6 +803,7 @@ exports.MsgMarketOrder = {
         obj.denomAsk = message.denomAsk;
         obj.denomBid = message.denomBid;
         obj.amountBid = message.amountBid;
+        obj.amountAsk = message.amountAsk;
         obj.slippage = message.slippage;
         return obj;
     },
@@ -814,10 +824,23 @@ exports.MsgMarketOrder = {
     }
 };
 function createBaseMsgMarketOrderResponse() {
-    return {};
+    return {
+        amountBid: "",
+        amountAsk: "",
+        slippage: ""
+    };
 }
 exports.MsgMarketOrderResponse = {
-    encode(_, writer = _m0.Writer.create()) {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.amountBid !== "") {
+            writer.uint32(10).string(message.amountBid);
+        }
+        if (message.amountAsk !== "") {
+            writer.uint32(18).string(message.amountAsk);
+        }
+        if (message.slippage !== "") {
+            writer.uint32(26).string(message.slippage);
+        }
         return writer;
     },
     decode(input, length) {
@@ -827,6 +850,15 @@ exports.MsgMarketOrderResponse = {
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
+                case 1:
+                    message.amountBid = reader.string();
+                    break;
+                case 2:
+                    message.amountAsk = reader.string();
+                    break;
+                case 3:
+                    message.slippage = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -834,15 +866,25 @@ exports.MsgMarketOrderResponse = {
         }
         return message;
     },
-    fromPartial(_) {
+    fromPartial(object) {
         const message = createBaseMsgMarketOrderResponse();
+        message.amountBid = object.amountBid ?? "";
+        message.amountAsk = object.amountAsk ?? "";
+        message.slippage = object.slippage ?? "";
         return message;
     },
-    fromAmino(_) {
-        return {};
+    fromAmino(object) {
+        return {
+            amountBid: object.amountBid,
+            amountAsk: object.amountAsk,
+            slippage: object.slippage
+        };
     },
-    toAmino(_) {
+    toAmino(message) {
         const obj = {};
+        obj.amountBid = message.amountBid;
+        obj.amountAsk = message.amountAsk;
+        obj.slippage = message.slippage;
         return obj;
     },
     fromAminoMsg(object) {

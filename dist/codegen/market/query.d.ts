@@ -901,6 +901,55 @@ export interface QueryHistoryResponseSDKType {
     history: OrderResponseSDKType[];
     pagination: PageResponseSDKType;
 }
+/** Market Quote: denom is the denom that is input for quote */
+export interface QueryQuoteRequest {
+    denomAsk: string;
+    denomBid: string;
+    denomAmount: string;
+    amount: string;
+}
+export interface QueryQuoteRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryQuoteRequest";
+    value: Uint8Array;
+}
+/** Market Quote: denom is the denom that is input for quote */
+export interface QueryQuoteRequestAmino {
+    denomAsk: string;
+    denomBid: string;
+    denomAmount: string;
+    amount: string;
+}
+export interface QueryQuoteRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryQuoteRequest";
+    value: QueryQuoteRequestAmino;
+}
+/** Market Quote: denom is the denom that is input for quote */
+export interface QueryQuoteRequestSDKType {
+    denomAsk: string;
+    denomBid: string;
+    denomAmount: string;
+    amount: string;
+}
+export interface QueryQuoteResponse {
+    denom: string;
+    amount: string;
+}
+export interface QueryQuoteResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryQuoteResponse";
+    value: Uint8Array;
+}
+export interface QueryQuoteResponseAmino {
+    denom: string;
+    amount: string;
+}
+export interface QueryQuoteResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryQuoteResponse";
+    value: QueryQuoteResponseAmino;
+}
+export interface QueryQuoteResponseSDKType {
+    denom: string;
+    amount: string;
+}
 export declare const QueryParamsRequest: {
     encode(_: QueryParamsRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
@@ -1395,4 +1444,26 @@ export declare const QueryHistoryResponse: {
     fromProtoMsg(message: QueryHistoryResponseProtoMsg): QueryHistoryResponse;
     toProto(message: QueryHistoryResponse): Uint8Array;
     toProtoMsg(message: QueryHistoryResponse): QueryHistoryResponseProtoMsg;
+};
+export declare const QueryQuoteRequest: {
+    encode(message: QueryQuoteRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryQuoteRequest;
+    fromPartial(object: DeepPartial<QueryQuoteRequest>): QueryQuoteRequest;
+    fromAmino(object: QueryQuoteRequestAmino): QueryQuoteRequest;
+    toAmino(message: QueryQuoteRequest): QueryQuoteRequestAmino;
+    fromAminoMsg(object: QueryQuoteRequestAminoMsg): QueryQuoteRequest;
+    fromProtoMsg(message: QueryQuoteRequestProtoMsg): QueryQuoteRequest;
+    toProto(message: QueryQuoteRequest): Uint8Array;
+    toProtoMsg(message: QueryQuoteRequest): QueryQuoteRequestProtoMsg;
+};
+export declare const QueryQuoteResponse: {
+    encode(message: QueryQuoteResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryQuoteResponse;
+    fromPartial(object: DeepPartial<QueryQuoteResponse>): QueryQuoteResponse;
+    fromAmino(object: QueryQuoteResponseAmino): QueryQuoteResponse;
+    toAmino(message: QueryQuoteResponse): QueryQuoteResponseAmino;
+    fromAminoMsg(object: QueryQuoteResponseAminoMsg): QueryQuoteResponse;
+    fromProtoMsg(message: QueryQuoteResponseProtoMsg): QueryQuoteResponse;
+    toProto(message: QueryQuoteResponse): Uint8Array;
+    toProtoMsg(message: QueryQuoteResponse): QueryQuoteResponseProtoMsg;
 };

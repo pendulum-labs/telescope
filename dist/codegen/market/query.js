@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QueryHistoryResponse = exports.QueryHistoryRequest = exports.QueryBookendsResponse = exports.QueryBookendsRequest = exports.QueryBookResponse = exports.QueryBookRequest = exports.QueryOrderOwnerPairResponse = exports.QueryOrderOwnerPairRequest = exports.QueryOrderOwnerUidsResponse = exports.QueryOrderOwnerRequest = exports.QueryAllOrderRequest = exports.QueryOrdersResponse = exports.QueryOrderResponse = exports.QueryOrderRequest = exports.QueryAllBurningsResponse = exports.QueryAllBurningsRequest = exports.QueryGetBurningsResponse = exports.QueryGetBurningsRequest = exports.QueryAllMemberResponse = exports.QueryAllMemberRequest = exports.QueryGetMemberResponse = exports.QueryGetMemberRequest = exports.QueryDropsResponse = exports.QueryAllDropRequest = exports.QueryDropOwnerPairDetailRequest = exports.QueryUidsResponse = exports.QueryDropOwnerPairUidsRequest = exports.QueryDropOwnerPairSumResponse = exports.QueryDropOwnerPairSumRequest = exports.QueryDropOwnerPairRequest = exports.QueryDropPairsResponse = exports.QueryDropPairsRequest = exports.QueryDropsToCoinsRequest = exports.QueryDropAmountsResponse = exports.QueryDropAmountsRequest = exports.QueryDropResponse = exports.QueryDropCoinResponse = exports.QueryDropCoinRequest = exports.QueryDropRequest = exports.QueryAllPoolResponse = exports.QueryAllPoolRequest = exports.QueryGetPoolResponse = exports.QueryGetPoolRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = void 0;
+exports.QueryQuoteResponse = exports.QueryQuoteRequest = exports.QueryHistoryResponse = exports.QueryHistoryRequest = exports.QueryBookendsResponse = exports.QueryBookendsRequest = exports.QueryBookResponse = exports.QueryBookRequest = exports.QueryOrderOwnerPairResponse = exports.QueryOrderOwnerPairRequest = exports.QueryOrderOwnerUidsResponse = exports.QueryOrderOwnerRequest = exports.QueryAllOrderRequest = exports.QueryOrdersResponse = exports.QueryOrderResponse = exports.QueryOrderRequest = exports.QueryAllBurningsResponse = exports.QueryAllBurningsRequest = exports.QueryGetBurningsResponse = exports.QueryGetBurningsRequest = exports.QueryAllMemberResponse = exports.QueryAllMemberRequest = exports.QueryGetMemberResponse = exports.QueryGetMemberRequest = exports.QueryDropsResponse = exports.QueryAllDropRequest = exports.QueryDropOwnerPairDetailRequest = exports.QueryUidsResponse = exports.QueryDropOwnerPairUidsRequest = exports.QueryDropOwnerPairSumResponse = exports.QueryDropOwnerPairSumRequest = exports.QueryDropOwnerPairRequest = exports.QueryDropPairsResponse = exports.QueryDropPairsRequest = exports.QueryDropsToCoinsRequest = exports.QueryDropAmountsResponse = exports.QueryDropAmountsRequest = exports.QueryDropResponse = exports.QueryDropCoinResponse = exports.QueryDropCoinRequest = exports.QueryDropRequest = exports.QueryAllPoolResponse = exports.QueryAllPoolRequest = exports.QueryGetPoolResponse = exports.QueryGetPoolRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = void 0;
 const pagination_1 = require("../cosmos/base/query/v1beta1/pagination");
 const params_1 = require("./params");
 const pool_1 = require("./pool");
@@ -3198,6 +3198,166 @@ exports.QueryHistoryResponse = {
         return {
             typeUrl: "/pendulumlabs.market.market.QueryHistoryResponse",
             value: exports.QueryHistoryResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryQuoteRequest() {
+    return {
+        denomAsk: "",
+        denomBid: "",
+        denomAmount: "",
+        amount: ""
+    };
+}
+exports.QueryQuoteRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denomAsk !== "") {
+            writer.uint32(10).string(message.denomAsk);
+        }
+        if (message.denomBid !== "") {
+            writer.uint32(18).string(message.denomBid);
+        }
+        if (message.denomAmount !== "") {
+            writer.uint32(26).string(message.denomAmount);
+        }
+        if (message.amount !== "") {
+            writer.uint32(34).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryQuoteRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denomAsk = reader.string();
+                    break;
+                case 2:
+                    message.denomBid = reader.string();
+                    break;
+                case 3:
+                    message.denomAmount = reader.string();
+                    break;
+                case 4:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryQuoteRequest();
+        message.denomAsk = object.denomAsk ?? "";
+        message.denomBid = object.denomBid ?? "";
+        message.denomAmount = object.denomAmount ?? "";
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denomAsk: object.denomAsk,
+            denomBid: object.denomBid,
+            denomAmount: object.denomAmount,
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denomAsk = message.denomAsk;
+        obj.denomBid = message.denomBid;
+        obj.denomAmount = message.denomAmount;
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return exports.QueryQuoteRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return exports.QueryQuoteRequest.decode(message.value);
+    },
+    toProto(message) {
+        return exports.QueryQuoteRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryQuoteRequest",
+            value: exports.QueryQuoteRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryQuoteResponse() {
+    return {
+        denom: "",
+        amount: ""
+    };
+}
+exports.QueryQuoteResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denom !== "") {
+            writer.uint32(10).string(message.denom);
+        }
+        if (message.amount !== "") {
+            writer.uint32(18).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryQuoteResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denom = reader.string();
+                    break;
+                case 2:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryQuoteResponse();
+        message.denom = object.denom ?? "";
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denom: object.denom,
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denom = message.denom;
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return exports.QueryQuoteResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return exports.QueryQuoteResponse.decode(message.value);
+    },
+    toProto(message) {
+        return exports.QueryQuoteResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryQuoteResponse",
+            value: exports.QueryQuoteResponse.encode(message).finish()
         };
     }
 };

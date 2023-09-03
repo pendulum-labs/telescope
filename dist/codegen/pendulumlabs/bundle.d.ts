@@ -37,6 +37,7 @@ export declare namespace pendulumlabs {
                 book(request: _84.QueryBookRequest): Promise<_84.QueryBookResponse>;
                 bookends(request: _84.QueryBookendsRequest): Promise<_84.QueryBookendsResponse>;
                 history(request: _84.QueryHistoryRequest): Promise<_84.QueryHistoryResponse>;
+                quote(request: _84.QueryQuoteRequest): Promise<_84.QueryQuoteResponse>;
             };
             registry: readonly [string, import("@cosmjs/proto-signing").GeneratedType][];
             load: (protoRegistry: import("@cosmjs/proto-signing").Registry) => void;
@@ -295,6 +296,7 @@ export declare namespace pendulumlabs {
                     denomAsk?: string;
                     denomBid?: string;
                     amountBid?: string;
+                    amountAsk?: string;
                     slippage?: string;
                 }): _85.MsgMarketOrder;
                 fromAmino(object: _85.MsgMarketOrderAmino): _85.MsgMarketOrder;
@@ -305,11 +307,15 @@ export declare namespace pendulumlabs {
                 toProtoMsg(message: _85.MsgMarketOrder): _85.MsgMarketOrderProtoMsg;
             };
             MsgMarketOrderResponse: {
-                encode(_: _85.MsgMarketOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                encode(message: _85.MsgMarketOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _85.MsgMarketOrderResponse;
-                fromPartial(_: {}): _85.MsgMarketOrderResponse;
-                fromAmino(_: _85.MsgMarketOrderResponseAmino): _85.MsgMarketOrderResponse;
-                toAmino(_: _85.MsgMarketOrderResponse): _85.MsgMarketOrderResponseAmino;
+                fromPartial(object: {
+                    amountBid?: string;
+                    amountAsk?: string;
+                    slippage?: string;
+                }): _85.MsgMarketOrderResponse;
+                fromAmino(object: _85.MsgMarketOrderResponseAmino): _85.MsgMarketOrderResponse;
+                toAmino(message: _85.MsgMarketOrderResponse): _85.MsgMarketOrderResponseAmino;
                 fromAminoMsg(object: _85.MsgMarketOrderResponseAminoMsg): _85.MsgMarketOrderResponse;
                 fromProtoMsg(message: _85.MsgMarketOrderResponseProtoMsg): _85.MsgMarketOrderResponse;
                 toProto(message: _85.MsgMarketOrderResponse): Uint8Array;
@@ -1169,6 +1175,36 @@ export declare namespace pendulumlabs {
                 toProto(message: _84.QueryHistoryResponse): Uint8Array;
                 toProtoMsg(message: _84.QueryHistoryResponse): _84.QueryHistoryResponseProtoMsg;
             };
+            QueryQuoteRequest: {
+                encode(message: _84.QueryQuoteRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryQuoteRequest;
+                fromPartial(object: {
+                    denomAsk?: string;
+                    denomBid?: string;
+                    denomAmount?: string;
+                    amount?: string;
+                }): _84.QueryQuoteRequest;
+                fromAmino(object: _84.QueryQuoteRequestAmino): _84.QueryQuoteRequest;
+                toAmino(message: _84.QueryQuoteRequest): _84.QueryQuoteRequestAmino;
+                fromAminoMsg(object: _84.QueryQuoteRequestAminoMsg): _84.QueryQuoteRequest;
+                fromProtoMsg(message: _84.QueryQuoteRequestProtoMsg): _84.QueryQuoteRequest;
+                toProto(message: _84.QueryQuoteRequest): Uint8Array;
+                toProtoMsg(message: _84.QueryQuoteRequest): _84.QueryQuoteRequestProtoMsg;
+            };
+            QueryQuoteResponse: {
+                encode(message: _84.QueryQuoteResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryQuoteResponse;
+                fromPartial(object: {
+                    denom?: string;
+                    amount?: string;
+                }): _84.QueryQuoteResponse;
+                fromAmino(object: _84.QueryQuoteResponseAmino): _84.QueryQuoteResponse;
+                toAmino(message: _84.QueryQuoteResponse): _84.QueryQuoteResponseAmino;
+                fromAminoMsg(object: _84.QueryQuoteResponseAminoMsg): _84.QueryQuoteResponse;
+                fromProtoMsg(message: _84.QueryQuoteResponseProtoMsg): _84.QueryQuoteResponse;
+                toProto(message: _84.QueryQuoteResponse): Uint8Array;
+                toProtoMsg(message: _84.QueryQuoteResponse): _84.QueryQuoteResponseProtoMsg;
+            };
             Pool: {
                 encode(message: _83.Pool, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _83.Pool;
@@ -1575,6 +1611,7 @@ export declare namespace pendulumlabs {
                         book(request: _84.QueryBookRequest): Promise<_84.QueryBookResponse>;
                         bookends(request: _84.QueryBookendsRequest): Promise<_84.QueryBookendsResponse>;
                         history(request: _84.QueryHistoryRequest): Promise<_84.QueryHistoryResponse>;
+                        quote(request: _84.QueryQuoteRequest): Promise<_84.QueryQuoteResponse>;
                     };
                 };
             };
