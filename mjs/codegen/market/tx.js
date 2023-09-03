@@ -691,9 +691,9 @@ function createBaseMsgMarketOrder() {
     return {
         creator: "",
         denomAsk: "",
+        amountAsk: "",
         denomBid: "",
         amountBid: "",
-        amountAsk: "",
         slippage: ""
     };
 }
@@ -705,14 +705,14 @@ export const MsgMarketOrder = {
         if (message.denomAsk !== "") {
             writer.uint32(18).string(message.denomAsk);
         }
+        if (message.amountAsk !== "") {
+            writer.uint32(26).string(message.amountAsk);
+        }
         if (message.denomBid !== "") {
-            writer.uint32(26).string(message.denomBid);
+            writer.uint32(34).string(message.denomBid);
         }
         if (message.amountBid !== "") {
-            writer.uint32(34).string(message.amountBid);
-        }
-        if (message.amountAsk !== "") {
-            writer.uint32(42).string(message.amountAsk);
+            writer.uint32(42).string(message.amountBid);
         }
         if (message.slippage !== "") {
             writer.uint32(50).string(message.slippage);
@@ -733,13 +733,13 @@ export const MsgMarketOrder = {
                     message.denomAsk = reader.string();
                     break;
                 case 3:
-                    message.denomBid = reader.string();
+                    message.amountAsk = reader.string();
                     break;
                 case 4:
-                    message.amountBid = reader.string();
+                    message.denomBid = reader.string();
                     break;
                 case 5:
-                    message.amountAsk = reader.string();
+                    message.amountBid = reader.string();
                     break;
                 case 6:
                     message.slippage = reader.string();
@@ -755,9 +755,9 @@ export const MsgMarketOrder = {
         const message = createBaseMsgMarketOrder();
         message.creator = object.creator ?? "";
         message.denomAsk = object.denomAsk ?? "";
+        message.amountAsk = object.amountAsk ?? "";
         message.denomBid = object.denomBid ?? "";
         message.amountBid = object.amountBid ?? "";
-        message.amountAsk = object.amountAsk ?? "";
         message.slippage = object.slippage ?? "";
         return message;
     },
@@ -765,9 +765,9 @@ export const MsgMarketOrder = {
         return {
             creator: object.creator,
             denomAsk: object.denomAsk,
+            amountAsk: object.amountAsk,
             denomBid: object.denomBid,
             amountBid: object.amountBid,
-            amountAsk: object.amountAsk,
             slippage: object.slippage
         };
     },
@@ -775,9 +775,9 @@ export const MsgMarketOrder = {
         const obj = {};
         obj.creator = message.creator;
         obj.denomAsk = message.denomAsk;
+        obj.amountAsk = message.amountAsk;
         obj.denomBid = message.denomBid;
         obj.amountBid = message.amountBid;
-        obj.amountAsk = message.amountAsk;
         obj.slippage = message.slippage;
         return obj;
     },

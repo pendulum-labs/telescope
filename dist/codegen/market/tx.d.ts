@@ -201,9 +201,9 @@ export interface MsgCancelOrderResponseSDKType {
 export interface MsgMarketOrder {
     creator: string;
     denomAsk: string;
+    amountAsk: string;
     denomBid: string;
     amountBid: string;
-    amountAsk: string;
     /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
@@ -214,9 +214,9 @@ export interface MsgMarketOrderProtoMsg {
 export interface MsgMarketOrderAmino {
     creator: string;
     denomAsk: string;
+    amountAsk: string;
     denomBid: string;
     amountBid: string;
-    amountAsk: string;
     /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
@@ -227,9 +227,9 @@ export interface MsgMarketOrderAminoMsg {
 export interface MsgMarketOrderSDKType {
     creator: string;
     denomAsk: string;
+    amountAsk: string;
     denomBid: string;
     amountBid: string;
-    amountAsk: string;
     slippage: string;
 }
 export interface MsgMarketOrderResponse {

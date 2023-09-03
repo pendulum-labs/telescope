@@ -294,9 +294,9 @@ export declare namespace pendulumlabs {
                 fromPartial(object: {
                     creator?: string;
                     denomAsk?: string;
+                    amountAsk?: string;
                     denomBid?: string;
                     amountBid?: string;
-                    amountAsk?: string;
                     slippage?: string;
                 }): _85.MsgMarketOrder;
                 fromAmino(object: _85.MsgMarketOrderAmino): _85.MsgMarketOrder;
