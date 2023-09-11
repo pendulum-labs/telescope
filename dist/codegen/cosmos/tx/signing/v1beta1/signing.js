@@ -167,7 +167,6 @@ exports.SignatureDescriptors = {
 function createBaseSignatureDescriptor() {
     return {
         publicKey: undefined,
-        // @ts-ignore
         data: Data.fromPartial({}),
         sequence: helpers_1.Long.UZERO
     };

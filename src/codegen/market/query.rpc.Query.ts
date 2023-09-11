@@ -1,11 +1,13 @@
 import { Rpc } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropCoinRequest, QueryDropCoinResponse, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryBurnedRequest, QueryBurnedResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropCoinRequest, QueryDropCoinResponse, QueryDropsToCoinsRequest, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse, QueryQuoteRequest, QueryQuoteResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
   /** Parameters queries the parameters of the module. */
   params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
+  /** Queries total burned. */
+  burned(request?: QueryBurnedRequest): Promise<QueryBurnedResponse>;
   /** Queries a Pool by index. */
   pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
   /** Queries a list of Pool items. */
@@ -16,6 +18,8 @@ export interface Query {
   dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
   /** Queries a Drop by index. */
   dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse>;
+  /** Converts drops to coin amounts */
+  dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse>;
   /** Queries a Drop by index. */
   dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
   /** Queries a Drop by index. */
@@ -44,17 +48,21 @@ export interface Query {
   bookends(request: QueryBookendsRequest): Promise<QueryBookendsResponse>;
   /** Queries pool trade history. */
   history(request: QueryHistoryRequest): Promise<QueryHistoryResponse>;
+  /** Queries pool trade history. */
+  quote(request: QueryQuoteRequest): Promise<QueryQuoteResponse>;
 }
 export class QueryClientImpl implements Query {
   private readonly rpc: Rpc;
   constructor(rpc: Rpc) {
     this.rpc = rpc;
     this.params = this.params.bind(this);
+    this.burned = this.burned.bind(this);
     this.pool = this.pool.bind(this);
     this.poolAll = this.poolAll.bind(this);
     this.drop = this.drop.bind(this);
     this.dropAmounts = this.dropAmounts.bind(this);
     this.dropCoin = this.dropCoin.bind(this);
+    this.dropsToCoins = this.dropsToCoins.bind(this);
     this.dropPairs = this.dropPairs.bind(this);
     this.dropOwnerPair = this.dropOwnerPair.bind(this);
     this.dropAll = this.dropAll.bind(this);
@@ -69,11 +77,17 @@ export class QueryClientImpl implements Query {
     this.book = this.book.bind(this);
     this.bookends = this.bookends.bind(this);
     this.history = this.history.bind(this);
+    this.quote = this.quote.bind(this);
   }
   params(request: QueryParamsRequest = {}): Promise<QueryParamsResponse> {
     const data = QueryParamsRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "Params", data);
     return promise.then(data => QueryParamsResponse.decode(new _m0.Reader(data)));
+  }
+  burned(request: QueryBurnedRequest = {}): Promise<QueryBurnedResponse> {
+    const data = QueryBurnedRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Burned", data);
+    return promise.then(data => QueryBurnedResponse.decode(new _m0.Reader(data)));
   }
   pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse> {
     const data = QueryGetPoolRequest.encode(request).finish();
@@ -101,6 +115,11 @@ export class QueryClientImpl implements Query {
     const data = QueryDropCoinRequest.encode(request).finish();
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropCoin", data);
     return promise.then(data => QueryDropCoinResponse.decode(new _m0.Reader(data)));
+  }
+  dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse> {
+    const data = QueryDropsToCoinsRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropsToCoins", data);
+    return promise.then(data => QueryDropAmountsResponse.decode(new _m0.Reader(data)));
   }
   dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse> {
     const data = QueryDropPairsRequest.encode(request).finish();
@@ -180,6 +199,11 @@ export class QueryClientImpl implements Query {
     const promise = this.rpc.request("pendulumlabs.market.market.Query", "History", data);
     return promise.then(data => QueryHistoryResponse.decode(new _m0.Reader(data)));
   }
+  quote(request: QueryQuoteRequest): Promise<QueryQuoteResponse> {
+    const data = QueryQuoteRequest.encode(request).finish();
+    const promise = this.rpc.request("pendulumlabs.market.market.Query", "Quote", data);
+    return promise.then(data => QueryQuoteResponse.decode(new _m0.Reader(data)));
+  }
 }
 export const createRpcQueryExtension = (base: QueryClient) => {
   const rpc = createProtobufRpcClient(base);
@@ -187,6 +211,9 @@ export const createRpcQueryExtension = (base: QueryClient) => {
   return {
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse> {
       return queryService.params(request);
+    },
+    burned(request?: QueryBurnedRequest): Promise<QueryBurnedResponse> {
+      return queryService.burned(request);
     },
     pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse> {
       return queryService.pool(request);
@@ -202,6 +229,9 @@ export const createRpcQueryExtension = (base: QueryClient) => {
     },
     dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse> {
       return queryService.dropCoin(request);
+    },
+    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse> {
+      return queryService.dropsToCoins(request);
     },
     dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse> {
       return queryService.dropPairs(request);
@@ -244,6 +274,9 @@ export const createRpcQueryExtension = (base: QueryClient) => {
     },
     history(request: QueryHistoryRequest): Promise<QueryHistoryResponse> {
       return queryService.history(request);
+    },
+    quote(request: QueryQuoteRequest): Promise<QueryQuoteResponse> {
+      return queryService.quote(request);
     }
   };
 };

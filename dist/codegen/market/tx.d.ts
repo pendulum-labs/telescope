@@ -1,5 +1,6 @@
+/// <reference types="long" />
+import { Long, DeepPartial } from "../helpers";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial } from "../helpers";
 export interface MsgCreatePool {
     creator: string;
     coinA: string;
@@ -147,18 +148,21 @@ export interface MsgCreateOrderSDKType {
     next: string;
 }
 export interface MsgCreateOrderResponse {
+    uid: Long;
 }
 export interface MsgCreateOrderResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.MsgCreateOrderResponse";
     value: Uint8Array;
 }
 export interface MsgCreateOrderResponseAmino {
+    uid: string;
 }
 export interface MsgCreateOrderResponseAminoMsg {
     type: "/pendulumlabs.market.market.MsgCreateOrderResponse";
     value: MsgCreateOrderResponseAmino;
 }
 export interface MsgCreateOrderResponseSDKType {
+    uid: Long;
 }
 export interface MsgCancelOrder {
     creator: string;
@@ -197,9 +201,10 @@ export interface MsgCancelOrderResponseSDKType {
 export interface MsgMarketOrder {
     creator: string;
     denomAsk: string;
+    amountAsk: string;
     denomBid: string;
     amountBid: string;
-    /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
+    /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
 export interface MsgMarketOrderProtoMsg {
@@ -209,9 +214,10 @@ export interface MsgMarketOrderProtoMsg {
 export interface MsgMarketOrderAmino {
     creator: string;
     denomAsk: string;
+    amountAsk: string;
     denomBid: string;
     amountBid: string;
-    /** Slippage is percentage based on (parameter / 1000), 9999 representing as 99.99% */
+    /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
     slippage: string;
 }
 export interface MsgMarketOrderAminoMsg {
@@ -221,23 +227,33 @@ export interface MsgMarketOrderAminoMsg {
 export interface MsgMarketOrderSDKType {
     creator: string;
     denomAsk: string;
+    amountAsk: string;
     denomBid: string;
     amountBid: string;
     slippage: string;
 }
 export interface MsgMarketOrderResponse {
+    amountBid: string;
+    amountAsk: string;
+    slippage: string;
 }
 export interface MsgMarketOrderResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.MsgMarketOrderResponse";
     value: Uint8Array;
 }
 export interface MsgMarketOrderResponseAmino {
+    amountBid: string;
+    amountAsk: string;
+    slippage: string;
 }
 export interface MsgMarketOrderResponseAminoMsg {
     type: "/pendulumlabs.market.market.MsgMarketOrderResponse";
     value: MsgMarketOrderResponseAmino;
 }
 export interface MsgMarketOrderResponseSDKType {
+    amountBid: string;
+    amountAsk: string;
+    slippage: string;
 }
 export declare const MsgCreatePool: {
     encode(message: MsgCreatePool, writer?: _m0.Writer): _m0.Writer;
@@ -317,11 +333,11 @@ export declare const MsgCreateOrder: {
     toProtoMsg(message: MsgCreateOrder): MsgCreateOrderProtoMsg;
 };
 export declare const MsgCreateOrderResponse: {
-    encode(_: MsgCreateOrderResponse, writer?: _m0.Writer): _m0.Writer;
+    encode(message: MsgCreateOrderResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgCreateOrderResponse;
-    fromPartial(_: DeepPartial<MsgCreateOrderResponse>): MsgCreateOrderResponse;
-    fromAmino(_: MsgCreateOrderResponseAmino): MsgCreateOrderResponse;
-    toAmino(_: MsgCreateOrderResponse): MsgCreateOrderResponseAmino;
+    fromPartial(object: DeepPartial<MsgCreateOrderResponse>): MsgCreateOrderResponse;
+    fromAmino(object: MsgCreateOrderResponseAmino): MsgCreateOrderResponse;
+    toAmino(message: MsgCreateOrderResponse): MsgCreateOrderResponseAmino;
     fromAminoMsg(object: MsgCreateOrderResponseAminoMsg): MsgCreateOrderResponse;
     fromProtoMsg(message: MsgCreateOrderResponseProtoMsg): MsgCreateOrderResponse;
     toProto(message: MsgCreateOrderResponse): Uint8Array;
@@ -361,11 +377,11 @@ export declare const MsgMarketOrder: {
     toProtoMsg(message: MsgMarketOrder): MsgMarketOrderProtoMsg;
 };
 export declare const MsgMarketOrderResponse: {
-    encode(_: MsgMarketOrderResponse, writer?: _m0.Writer): _m0.Writer;
+    encode(message: MsgMarketOrderResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgMarketOrderResponse;
-    fromPartial(_: DeepPartial<MsgMarketOrderResponse>): MsgMarketOrderResponse;
-    fromAmino(_: MsgMarketOrderResponseAmino): MsgMarketOrderResponse;
-    toAmino(_: MsgMarketOrderResponse): MsgMarketOrderResponseAmino;
+    fromPartial(object: DeepPartial<MsgMarketOrderResponse>): MsgMarketOrderResponse;
+    fromAmino(object: MsgMarketOrderResponseAmino): MsgMarketOrderResponse;
+    toAmino(message: MsgMarketOrderResponse): MsgMarketOrderResponseAmino;
     fromAminoMsg(object: MsgMarketOrderResponseAminoMsg): MsgMarketOrderResponse;
     fromProtoMsg(message: MsgMarketOrderResponseProtoMsg): MsgMarketOrderResponse;
     toProto(message: MsgMarketOrderResponse): Uint8Array;

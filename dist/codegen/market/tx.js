@@ -24,6 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MsgMarketOrderResponse = exports.MsgMarketOrder = exports.MsgCancelOrderResponse = exports.MsgCancelOrder = exports.MsgCreateOrderResponse = exports.MsgCreateOrder = exports.MsgRedeemDropResponse = exports.MsgRedeemDrop = exports.MsgCreateDropResponse = exports.MsgCreateDrop = exports.MsgCreatePoolResponse = exports.MsgCreatePool = void 0;
+const helpers_1 = require("../helpers");
 const _m0 = __importStar(require("protobufjs/minimal"));
 function createBaseMsgCreatePool() {
     return {
@@ -535,10 +536,15 @@ exports.MsgCreateOrder = {
     }
 };
 function createBaseMsgCreateOrderResponse() {
-    return {};
+    return {
+        uid: helpers_1.Long.UZERO
+    };
 }
 exports.MsgCreateOrderResponse = {
-    encode(_, writer = _m0.Writer.create()) {
+    encode(message, writer = _m0.Writer.create()) {
+        if (!message.uid.isZero()) {
+            writer.uint32(8).uint64(message.uid);
+        }
         return writer;
     },
     decode(input, length) {
@@ -548,6 +554,9 @@ exports.MsgCreateOrderResponse = {
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
+                case 1:
+                    message.uid = reader.uint64();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -555,15 +564,19 @@ exports.MsgCreateOrderResponse = {
         }
         return message;
     },
-    fromPartial(_) {
+    fromPartial(object) {
         const message = createBaseMsgCreateOrderResponse();
+        message.uid = object.uid !== undefined && object.uid !== null ? helpers_1.Long.fromValue(object.uid) : helpers_1.Long.UZERO;
         return message;
     },
-    fromAmino(_) {
-        return {};
+    fromAmino(object) {
+        return {
+            uid: helpers_1.Long.fromString(object.uid)
+        };
     },
-    toAmino(_) {
+    toAmino(message) {
         const obj = {};
+        obj.uid = message.uid ? message.uid.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {
@@ -704,6 +717,7 @@ function createBaseMsgMarketOrder() {
     return {
         creator: "",
         denomAsk: "",
+        amountAsk: "",
         denomBid: "",
         amountBid: "",
         slippage: ""
@@ -717,14 +731,17 @@ exports.MsgMarketOrder = {
         if (message.denomAsk !== "") {
             writer.uint32(18).string(message.denomAsk);
         }
+        if (message.amountAsk !== "") {
+            writer.uint32(26).string(message.amountAsk);
+        }
         if (message.denomBid !== "") {
-            writer.uint32(26).string(message.denomBid);
+            writer.uint32(34).string(message.denomBid);
         }
         if (message.amountBid !== "") {
-            writer.uint32(34).string(message.amountBid);
+            writer.uint32(42).string(message.amountBid);
         }
         if (message.slippage !== "") {
-            writer.uint32(42).string(message.slippage);
+            writer.uint32(50).string(message.slippage);
         }
         return writer;
     },
@@ -742,12 +759,15 @@ exports.MsgMarketOrder = {
                     message.denomAsk = reader.string();
                     break;
                 case 3:
-                    message.denomBid = reader.string();
+                    message.amountAsk = reader.string();
                     break;
                 case 4:
-                    message.amountBid = reader.string();
+                    message.denomBid = reader.string();
                     break;
                 case 5:
+                    message.amountBid = reader.string();
+                    break;
+                case 6:
                     message.slippage = reader.string();
                     break;
                 default:
@@ -761,6 +781,7 @@ exports.MsgMarketOrder = {
         const message = createBaseMsgMarketOrder();
         message.creator = object.creator ?? "";
         message.denomAsk = object.denomAsk ?? "";
+        message.amountAsk = object.amountAsk ?? "";
         message.denomBid = object.denomBid ?? "";
         message.amountBid = object.amountBid ?? "";
         message.slippage = object.slippage ?? "";
@@ -770,6 +791,7 @@ exports.MsgMarketOrder = {
         return {
             creator: object.creator,
             denomAsk: object.denomAsk,
+            amountAsk: object.amountAsk,
             denomBid: object.denomBid,
             amountBid: object.amountBid,
             slippage: object.slippage
@@ -779,6 +801,7 @@ exports.MsgMarketOrder = {
         const obj = {};
         obj.creator = message.creator;
         obj.denomAsk = message.denomAsk;
+        obj.amountAsk = message.amountAsk;
         obj.denomBid = message.denomBid;
         obj.amountBid = message.amountBid;
         obj.slippage = message.slippage;
@@ -801,10 +824,23 @@ exports.MsgMarketOrder = {
     }
 };
 function createBaseMsgMarketOrderResponse() {
-    return {};
+    return {
+        amountBid: "",
+        amountAsk: "",
+        slippage: ""
+    };
 }
 exports.MsgMarketOrderResponse = {
-    encode(_, writer = _m0.Writer.create()) {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.amountBid !== "") {
+            writer.uint32(10).string(message.amountBid);
+        }
+        if (message.amountAsk !== "") {
+            writer.uint32(18).string(message.amountAsk);
+        }
+        if (message.slippage !== "") {
+            writer.uint32(26).string(message.slippage);
+        }
         return writer;
     },
     decode(input, length) {
@@ -814,6 +850,15 @@ exports.MsgMarketOrderResponse = {
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
+                case 1:
+                    message.amountBid = reader.string();
+                    break;
+                case 2:
+                    message.amountAsk = reader.string();
+                    break;
+                case 3:
+                    message.slippage = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -821,15 +866,25 @@ exports.MsgMarketOrderResponse = {
         }
         return message;
     },
-    fromPartial(_) {
+    fromPartial(object) {
         const message = createBaseMsgMarketOrderResponse();
+        message.amountBid = object.amountBid ?? "";
+        message.amountAsk = object.amountAsk ?? "";
+        message.slippage = object.slippage ?? "";
         return message;
     },
-    fromAmino(_) {
-        return {};
+    fromAmino(object) {
+        return {
+            amountBid: object.amountBid,
+            amountAsk: object.amountAsk,
+            slippage: object.slippage
+        };
     },
-    toAmino(_) {
+    toAmino(message) {
         const obj = {};
+        obj.amountBid = message.amountBid;
+        obj.amountAsk = message.amountAsk;
+        obj.slippage = message.slippage;
         return obj;
     },
     fromAminoMsg(object) {

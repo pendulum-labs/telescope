@@ -112,7 +112,8 @@ export const Drop = {
 };
 function createBaseDrops() {
     return {
-        uids: []
+        uids: [],
+        sum: ""
     };
 }
 export const Drops = {
@@ -122,6 +123,9 @@ export const Drops = {
             writer.uint64(v);
         }
         writer.ldelim();
+        if (message.sum !== "") {
+            writer.uint32(18).string(message.sum);
+        }
         return writer;
     },
     decode(input, length) {
@@ -142,6 +146,9 @@ export const Drops = {
                         message.uids.push(reader.uint64());
                     }
                     break;
+                case 2:
+                    message.sum = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -152,11 +159,13 @@ export const Drops = {
     fromPartial(object) {
         const message = createBaseDrops();
         message.uids = object.uids?.map(e => Long.fromValue(e)) || [];
+        message.sum = object.sum ?? "";
         return message;
     },
     fromAmino(object) {
         return {
-            uids: Array.isArray(object?.uids) ? object.uids.map((e) => e) : []
+            uids: Array.isArray(object?.uids) ? object.uids.map((e) => e) : [],
+            sum: object.sum
         };
     },
     toAmino(message) {
@@ -167,6 +176,7 @@ export const Drops = {
         else {
             obj.uids = [];
         }
+        obj.sum = message.sum;
         return obj;
     },
     fromAminoMsg(object) {
@@ -185,27 +195,27 @@ export const Drops = {
         };
     }
 };
-function createBaseDropsSum() {
+function createBaseDropPairs() {
     return {
-        sum: ""
+        pairs: []
     };
 }
-export const DropsSum = {
+export const DropPairs = {
     encode(message, writer = _m0.Writer.create()) {
-        if (message.sum !== "") {
-            writer.uint32(10).string(message.sum);
+        for (const v of message.pairs) {
+            writer.uint32(10).string(v);
         }
         return writer;
     },
     decode(input, length) {
         const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
-        const message = createBaseDropsSum();
+        const message = createBaseDropPairs();
         while (reader.pos < end) {
             const tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
-                    message.sum = reader.string();
+                    message.pairs.push(reader.string());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -215,33 +225,38 @@ export const DropsSum = {
         return message;
     },
     fromPartial(object) {
-        const message = createBaseDropsSum();
-        message.sum = object.sum ?? "";
+        const message = createBaseDropPairs();
+        message.pairs = object.pairs?.map(e => e) || [];
         return message;
     },
     fromAmino(object) {
         return {
-            sum: object.sum
+            pairs: Array.isArray(object?.pairs) ? object.pairs.map((e) => e) : []
         };
     },
     toAmino(message) {
         const obj = {};
-        obj.sum = message.sum;
+        if (message.pairs) {
+            obj.pairs = message.pairs.map(e => e);
+        }
+        else {
+            obj.pairs = [];
+        }
         return obj;
     },
     fromAminoMsg(object) {
-        return DropsSum.fromAmino(object.value);
+        return DropPairs.fromAmino(object.value);
     },
     fromProtoMsg(message) {
-        return DropsSum.decode(message.value);
+        return DropPairs.decode(message.value);
     },
     toProto(message) {
-        return DropsSum.encode(message).finish();
+        return DropPairs.encode(message).finish();
     },
     toProtoMsg(message) {
         return {
-            typeUrl: "/pendulumlabs.market.market.DropsSum",
-            value: DropsSum.encode(message).finish()
+            typeUrl: "/pendulumlabs.market.market.DropPairs",
+            value: DropPairs.encode(message).finish()
         };
     }
 };

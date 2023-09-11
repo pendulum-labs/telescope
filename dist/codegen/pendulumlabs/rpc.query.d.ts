@@ -90,19 +90,28 @@ export declare const createRPCQueryClient: ({ rpcEndpoint }: {
         market: {
             market: {
                 params(request?: import("../market/query").QueryParamsRequest): Promise<import("../market/query").QueryParamsResponse>;
+                burned(request?: import("../market/query").QueryBurnedRequest): Promise<import("../market/query").QueryBurnedResponse>;
                 pool(request: import("../market/query").QueryGetPoolRequest): Promise<import("../market/query").QueryGetPoolResponse>;
                 poolAll(request?: import("../market/query").QueryAllPoolRequest): Promise<import("../market/query").QueryAllPoolResponse>;
-                drop(request: import("../market/query").QueryGetDropRequest): Promise<import("../market/query").QueryGetDropResponse>;
-                dropAll(request?: import("../market/query").QueryAllDropRequest): Promise<import("../market/query").QueryAllDropResponse>;
+                drop(request: import("../market/query").QueryDropRequest): Promise<import("../market/query").QueryDropResponse>;
+                dropAmounts(request: import("../market/query").QueryDropAmountsRequest): Promise<import("../market/query").QueryDropAmountsResponse>;
+                dropCoin(request: import("../market/query").QueryDropCoinRequest): Promise<import("../market/query").QueryDropCoinResponse>;
+                dropsToCoins(request: import("../market/query").QueryDropsToCoinsRequest): Promise<import("../market/query").QueryDropAmountsResponse>;
+                dropPairs(request: import("../market/query").QueryDropPairsRequest): Promise<import("../market/query").QueryDropPairsResponse>;
+                dropOwnerPair(request: import("../market/query").QueryDropOwnerPairRequest): Promise<import("../market/query").QueryDropsResponse>;
+                dropAll(request?: import("../market/query").QueryAllDropRequest): Promise<import("../market/query").QueryDropsResponse>;
                 member(request: import("../market/query").QueryGetMemberRequest): Promise<import("../market/query").QueryGetMemberResponse>;
                 memberAll(request?: import("../market/query").QueryAllMemberRequest): Promise<import("../market/query").QueryAllMemberResponse>;
                 burnings(request: import("../market/query").QueryGetBurningsRequest): Promise<import("../market/query").QueryGetBurningsResponse>;
                 burningsAll(request?: import("../market/query").QueryAllBurningsRequest): Promise<import("../market/query").QueryAllBurningsResponse>;
-                order(request: import("../market/query").QueryGetOrderRequest): Promise<import("../market/query").QueryGetOrderResponse>;
-                orderAll(request?: import("../market/query").QueryAllOrderRequest): Promise<import("../market/query").QueryAllOrderResponse>;
+                order(request: import("../market/query").QueryOrderRequest): Promise<import("../market/query").QueryOrderResponse>;
+                orderAll(request?: import("../market/query").QueryAllOrderRequest): Promise<import("../market/query").QueryOrdersResponse>;
+                orderOwner(request: import("../market/query").QueryOrderOwnerRequest): Promise<import("../market/query").QueryOrdersResponse>;
+                orderOwnerUids(request: import("../market/query").QueryOrderOwnerRequest): Promise<import("../market/query").QueryOrderOwnerUidsResponse>;
                 book(request: import("../market/query").QueryBookRequest): Promise<import("../market/query").QueryBookResponse>;
                 bookends(request: import("../market/query").QueryBookendsRequest): Promise<import("../market/query").QueryBookendsResponse>;
                 history(request: import("../market/query").QueryHistoryRequest): Promise<import("../market/query").QueryHistoryResponse>;
+                quote(request: import("../market/query").QueryQuoteRequest): Promise<import("../market/query").QueryQuoteResponse>;
             };
         };
     };

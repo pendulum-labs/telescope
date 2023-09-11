@@ -32,9 +32,15 @@ class QueryClientImpl {
     constructor(rpc) {
         this.rpc = rpc;
         this.params = this.params.bind(this);
+        this.burned = this.burned.bind(this);
         this.pool = this.pool.bind(this);
         this.poolAll = this.poolAll.bind(this);
         this.drop = this.drop.bind(this);
+        this.dropAmounts = this.dropAmounts.bind(this);
+        this.dropCoin = this.dropCoin.bind(this);
+        this.dropsToCoins = this.dropsToCoins.bind(this);
+        this.dropPairs = this.dropPairs.bind(this);
+        this.dropOwnerPair = this.dropOwnerPair.bind(this);
         this.dropAll = this.dropAll.bind(this);
         this.member = this.member.bind(this);
         this.memberAll = this.memberAll.bind(this);
@@ -42,14 +48,22 @@ class QueryClientImpl {
         this.burningsAll = this.burningsAll.bind(this);
         this.order = this.order.bind(this);
         this.orderAll = this.orderAll.bind(this);
+        this.orderOwner = this.orderOwner.bind(this);
+        this.orderOwnerUids = this.orderOwnerUids.bind(this);
         this.book = this.book.bind(this);
         this.bookends = this.bookends.bind(this);
         this.history = this.history.bind(this);
+        this.quote = this.quote.bind(this);
     }
     params(request = {}) {
         const data = query_1.QueryParamsRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Params", data);
         return promise.then(data => query_1.QueryParamsResponse.decode(new _m0.Reader(data)));
+    }
+    burned(request = {}) {
+        const data = query_1.QueryBurnedRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "Burned", data);
+        return promise.then(data => query_1.QueryBurnedResponse.decode(new _m0.Reader(data)));
     }
     pool(request) {
         const data = query_1.QueryGetPoolRequest.encode(request).finish();
@@ -64,16 +78,41 @@ class QueryClientImpl {
         return promise.then(data => query_1.QueryAllPoolResponse.decode(new _m0.Reader(data)));
     }
     drop(request) {
-        const data = query_1.QueryGetDropRequest.encode(request).finish();
+        const data = query_1.QueryDropRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Drop", data);
-        return promise.then(data => query_1.QueryGetDropResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryDropResponse.decode(new _m0.Reader(data)));
+    }
+    dropAmounts(request) {
+        const data = query_1.QueryDropAmountsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAmounts", data);
+        return promise.then(data => query_1.QueryDropAmountsResponse.decode(new _m0.Reader(data)));
+    }
+    dropCoin(request) {
+        const data = query_1.QueryDropCoinRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropCoin", data);
+        return promise.then(data => query_1.QueryDropCoinResponse.decode(new _m0.Reader(data)));
+    }
+    dropsToCoins(request) {
+        const data = query_1.QueryDropsToCoinsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropsToCoins", data);
+        return promise.then(data => query_1.QueryDropAmountsResponse.decode(new _m0.Reader(data)));
+    }
+    dropPairs(request) {
+        const data = query_1.QueryDropPairsRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropPairs", data);
+        return promise.then(data => query_1.QueryDropPairsResponse.decode(new _m0.Reader(data)));
+    }
+    dropOwnerPair(request) {
+        const data = query_1.QueryDropOwnerPairRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropOwnerPair", data);
+        return promise.then(data => query_1.QueryDropsResponse.decode(new _m0.Reader(data)));
     }
     dropAll(request = {
         pagination: undefined
     }) {
         const data = query_1.QueryAllDropRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "DropAll", data);
-        return promise.then(data => query_1.QueryAllDropResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryDropsResponse.decode(new _m0.Reader(data)));
     }
     member(request) {
         const data = query_1.QueryGetMemberRequest.encode(request).finish();
@@ -100,16 +139,26 @@ class QueryClientImpl {
         return promise.then(data => query_1.QueryAllBurningsResponse.decode(new _m0.Reader(data)));
     }
     order(request) {
-        const data = query_1.QueryGetOrderRequest.encode(request).finish();
+        const data = query_1.QueryOrderRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "Order", data);
-        return promise.then(data => query_1.QueryGetOrderResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryOrderResponse.decode(new _m0.Reader(data)));
     }
     orderAll(request = {
         pagination: undefined
     }) {
         const data = query_1.QueryAllOrderRequest.encode(request).finish();
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderAll", data);
-        return promise.then(data => query_1.QueryAllOrderResponse.decode(new _m0.Reader(data)));
+        return promise.then(data => query_1.QueryOrdersResponse.decode(new _m0.Reader(data)));
+    }
+    orderOwner(request) {
+        const data = query_1.QueryOrderOwnerRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwner", data);
+        return promise.then(data => query_1.QueryOrdersResponse.decode(new _m0.Reader(data)));
+    }
+    orderOwnerUids(request) {
+        const data = query_1.QueryOrderOwnerRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "OrderOwnerUids", data);
+        return promise.then(data => query_1.QueryOrderOwnerUidsResponse.decode(new _m0.Reader(data)));
     }
     book(request) {
         const data = query_1.QueryBookRequest.encode(request).finish();
@@ -126,6 +175,11 @@ class QueryClientImpl {
         const promise = this.rpc.request("pendulumlabs.market.market.Query", "History", data);
         return promise.then(data => query_1.QueryHistoryResponse.decode(new _m0.Reader(data)));
     }
+    quote(request) {
+        const data = query_1.QueryQuoteRequest.encode(request).finish();
+        const promise = this.rpc.request("pendulumlabs.market.market.Query", "Quote", data);
+        return promise.then(data => query_1.QueryQuoteResponse.decode(new _m0.Reader(data)));
+    }
 }
 exports.QueryClientImpl = QueryClientImpl;
 const createRpcQueryExtension = (base) => {
@@ -135,6 +189,9 @@ const createRpcQueryExtension = (base) => {
         params(request) {
             return queryService.params(request);
         },
+        burned(request) {
+            return queryService.burned(request);
+        },
         pool(request) {
             return queryService.pool(request);
         },
@@ -143,6 +200,21 @@ const createRpcQueryExtension = (base) => {
         },
         drop(request) {
             return queryService.drop(request);
+        },
+        dropAmounts(request) {
+            return queryService.dropAmounts(request);
+        },
+        dropCoin(request) {
+            return queryService.dropCoin(request);
+        },
+        dropsToCoins(request) {
+            return queryService.dropsToCoins(request);
+        },
+        dropPairs(request) {
+            return queryService.dropPairs(request);
+        },
+        dropOwnerPair(request) {
+            return queryService.dropOwnerPair(request);
         },
         dropAll(request) {
             return queryService.dropAll(request);
@@ -165,6 +237,12 @@ const createRpcQueryExtension = (base) => {
         orderAll(request) {
             return queryService.orderAll(request);
         },
+        orderOwner(request) {
+            return queryService.orderOwner(request);
+        },
+        orderOwnerUids(request) {
+            return queryService.orderOwnerUids(request);
+        },
         book(request) {
             return queryService.book(request);
         },
@@ -173,6 +251,9 @@ const createRpcQueryExtension = (base) => {
         },
         history(request) {
             return queryService.history(request);
+        },
+        quote(request) {
+            return queryService.quote(request);
         }
     };
 };

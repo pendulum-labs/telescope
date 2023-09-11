@@ -188,6 +188,7 @@ export interface MsgCancelOrderResponseSDKType {}
 export interface MsgMarketOrder {
   creator: string;
   denomAsk: string;
+  amountAsk: string;
   denomBid: string;
   amountBid: string;
   /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
@@ -200,6 +201,7 @@ export interface MsgMarketOrderProtoMsg {
 export interface MsgMarketOrderAmino {
   creator: string;
   denomAsk: string;
+  amountAsk: string;
   denomBid: string;
   amountBid: string;
   /** Slippage is percentage based on (parameter / 10000), 9999 representing as 99.99% */
@@ -212,21 +214,34 @@ export interface MsgMarketOrderAminoMsg {
 export interface MsgMarketOrderSDKType {
   creator: string;
   denomAsk: string;
+  amountAsk: string;
   denomBid: string;
   amountBid: string;
   slippage: string;
 }
-export interface MsgMarketOrderResponse {}
+export interface MsgMarketOrderResponse {
+  amountBid: string;
+  amountAsk: string;
+  slippage: string;
+}
 export interface MsgMarketOrderResponseProtoMsg {
   typeUrl: "/pendulumlabs.market.market.MsgMarketOrderResponse";
   value: Uint8Array;
 }
-export interface MsgMarketOrderResponseAmino {}
+export interface MsgMarketOrderResponseAmino {
+  amountBid: string;
+  amountAsk: string;
+  slippage: string;
+}
 export interface MsgMarketOrderResponseAminoMsg {
   type: "/pendulumlabs.market.market.MsgMarketOrderResponse";
   value: MsgMarketOrderResponseAmino;
 }
-export interface MsgMarketOrderResponseSDKType {}
+export interface MsgMarketOrderResponseSDKType {
+  amountBid: string;
+  amountAsk: string;
+  slippage: string;
+}
 function createBaseMsgCreatePool(): MsgCreatePool {
   return {
     creator: "",
@@ -917,6 +932,7 @@ function createBaseMsgMarketOrder(): MsgMarketOrder {
   return {
     creator: "",
     denomAsk: "",
+    amountAsk: "",
     denomBid: "",
     amountBid: "",
     slippage: ""
@@ -930,14 +946,17 @@ export const MsgMarketOrder = {
     if (message.denomAsk !== "") {
       writer.uint32(18).string(message.denomAsk);
     }
+    if (message.amountAsk !== "") {
+      writer.uint32(26).string(message.amountAsk);
+    }
     if (message.denomBid !== "") {
-      writer.uint32(26).string(message.denomBid);
+      writer.uint32(34).string(message.denomBid);
     }
     if (message.amountBid !== "") {
-      writer.uint32(34).string(message.amountBid);
+      writer.uint32(42).string(message.amountBid);
     }
     if (message.slippage !== "") {
-      writer.uint32(42).string(message.slippage);
+      writer.uint32(50).string(message.slippage);
     }
     return writer;
   },
@@ -955,12 +974,15 @@ export const MsgMarketOrder = {
           message.denomAsk = reader.string();
           break;
         case 3:
-          message.denomBid = reader.string();
+          message.amountAsk = reader.string();
           break;
         case 4:
-          message.amountBid = reader.string();
+          message.denomBid = reader.string();
           break;
         case 5:
+          message.amountBid = reader.string();
+          break;
+        case 6:
           message.slippage = reader.string();
           break;
         default:
@@ -974,6 +996,7 @@ export const MsgMarketOrder = {
     const message = createBaseMsgMarketOrder();
     message.creator = object.creator ?? "";
     message.denomAsk = object.denomAsk ?? "";
+    message.amountAsk = object.amountAsk ?? "";
     message.denomBid = object.denomBid ?? "";
     message.amountBid = object.amountBid ?? "";
     message.slippage = object.slippage ?? "";
@@ -983,6 +1006,7 @@ export const MsgMarketOrder = {
     return {
       creator: object.creator,
       denomAsk: object.denomAsk,
+      amountAsk: object.amountAsk,
       denomBid: object.denomBid,
       amountBid: object.amountBid,
       slippage: object.slippage
@@ -992,6 +1016,7 @@ export const MsgMarketOrder = {
     const obj: any = {};
     obj.creator = message.creator;
     obj.denomAsk = message.denomAsk;
+    obj.amountAsk = message.amountAsk;
     obj.denomBid = message.denomBid;
     obj.amountBid = message.amountBid;
     obj.slippage = message.slippage;
@@ -1014,10 +1039,23 @@ export const MsgMarketOrder = {
   }
 };
 function createBaseMsgMarketOrderResponse(): MsgMarketOrderResponse {
-  return {};
+  return {
+    amountBid: "",
+    amountAsk: "",
+    slippage: ""
+  };
 }
 export const MsgMarketOrderResponse = {
-  encode(_: MsgMarketOrderResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgMarketOrderResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.amountBid !== "") {
+      writer.uint32(10).string(message.amountBid);
+    }
+    if (message.amountAsk !== "") {
+      writer.uint32(18).string(message.amountAsk);
+    }
+    if (message.slippage !== "") {
+      writer.uint32(26).string(message.slippage);
+    }
     return writer;
   },
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgMarketOrderResponse {
@@ -1027,6 +1065,15 @@ export const MsgMarketOrderResponse = {
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
+        case 1:
+          message.amountBid = reader.string();
+          break;
+        case 2:
+          message.amountAsk = reader.string();
+          break;
+        case 3:
+          message.slippage = reader.string();
+          break;
         default:
           reader.skipType(tag & 7);
           break;
@@ -1034,15 +1081,25 @@ export const MsgMarketOrderResponse = {
     }
     return message;
   },
-  fromPartial(_: DeepPartial<MsgMarketOrderResponse>): MsgMarketOrderResponse {
+  fromPartial(object: DeepPartial<MsgMarketOrderResponse>): MsgMarketOrderResponse {
     const message = createBaseMsgMarketOrderResponse();
+    message.amountBid = object.amountBid ?? "";
+    message.amountAsk = object.amountAsk ?? "";
+    message.slippage = object.slippage ?? "";
     return message;
   },
-  fromAmino(_: MsgMarketOrderResponseAmino): MsgMarketOrderResponse {
-    return {};
+  fromAmino(object: MsgMarketOrderResponseAmino): MsgMarketOrderResponse {
+    return {
+      amountBid: object.amountBid,
+      amountAsk: object.amountAsk,
+      slippage: object.slippage
+    };
   },
-  toAmino(_: MsgMarketOrderResponse): MsgMarketOrderResponseAmino {
+  toAmino(message: MsgMarketOrderResponse): MsgMarketOrderResponseAmino {
     const obj: any = {};
+    obj.amountBid = message.amountBid;
+    obj.amountAsk = message.amountAsk;
+    obj.slippage = message.slippage;
     return obj;
   },
   fromAminoMsg(object: MsgMarketOrderResponseAminoMsg): MsgMarketOrderResponse {

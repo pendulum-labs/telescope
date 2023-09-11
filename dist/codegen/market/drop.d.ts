@@ -35,6 +35,7 @@ export interface DropSDKType {
 }
 export interface Drops {
     uids: Long[];
+    sum: string;
 }
 export interface DropsProtoMsg {
     typeUrl: "/pendulumlabs.market.market.Drops";
@@ -42,6 +43,7 @@ export interface DropsProtoMsg {
 }
 export interface DropsAmino {
     uids: string[];
+    sum: string;
 }
 export interface DropsAminoMsg {
     type: "/pendulumlabs.market.market.Drops";
@@ -49,23 +51,24 @@ export interface DropsAminoMsg {
 }
 export interface DropsSDKType {
     uids: Long[];
-}
-export interface DropsSum {
     sum: string;
 }
-export interface DropsSumProtoMsg {
-    typeUrl: "/pendulumlabs.market.market.DropsSum";
+export interface DropPairs {
+    pairs: string[];
+}
+export interface DropPairsProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.DropPairs";
     value: Uint8Array;
 }
-export interface DropsSumAmino {
-    sum: string;
+export interface DropPairsAmino {
+    pairs: string[];
 }
-export interface DropsSumAminoMsg {
-    type: "/pendulumlabs.market.market.DropsSum";
-    value: DropsSumAmino;
+export interface DropPairsAminoMsg {
+    type: "/pendulumlabs.market.market.DropPairs";
+    value: DropPairsAmino;
 }
-export interface DropsSumSDKType {
-    sum: string;
+export interface DropPairsSDKType {
+    pairs: string[];
 }
 export declare const Drop: {
     encode(message: Drop, writer?: _m0.Writer): _m0.Writer;
@@ -89,14 +92,14 @@ export declare const Drops: {
     toProto(message: Drops): Uint8Array;
     toProtoMsg(message: Drops): DropsProtoMsg;
 };
-export declare const DropsSum: {
-    encode(message: DropsSum, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): DropsSum;
-    fromPartial(object: DeepPartial<DropsSum>): DropsSum;
-    fromAmino(object: DropsSumAmino): DropsSum;
-    toAmino(message: DropsSum): DropsSumAmino;
-    fromAminoMsg(object: DropsSumAminoMsg): DropsSum;
-    fromProtoMsg(message: DropsSumProtoMsg): DropsSum;
-    toProto(message: DropsSum): Uint8Array;
-    toProtoMsg(message: DropsSum): DropsSumProtoMsg;
+export declare const DropPairs: {
+    encode(message: DropPairs, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): DropPairs;
+    fromPartial(object: DeepPartial<DropPairs>): DropPairs;
+    fromAmino(object: DropPairsAmino): DropPairs;
+    toAmino(message: DropPairs): DropPairsAmino;
+    fromAminoMsg(object: DropPairsAminoMsg): DropPairs;
+    fromProtoMsg(message: DropPairsProtoMsg): DropPairs;
+    toProto(message: DropPairs): Uint8Array;
+    toProtoMsg(message: DropPairs): DropPairsProtoMsg;
 };
