@@ -17,12 +17,15 @@ export declare namespace pendulumlabs {
             QueryClientImpl: typeof _118.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _84.QueryParamsRequest): Promise<_84.QueryParamsResponse>;
+                burned(request?: _84.QueryBurnedRequest): Promise<_84.QueryBurnedResponse>;
                 pool(request: _84.QueryGetPoolRequest): Promise<_84.QueryGetPoolResponse>;
                 poolAll(request?: _84.QueryAllPoolRequest): Promise<_84.QueryAllPoolResponse>;
+                volume(request: _84.QueryVolumeRequest): Promise<_84.QueryVolumeResponse>;
+                volumeAll(request?: _84.QueryAllVolumeRequest): Promise<_84.QueryAllVolumeResponse>;
                 drop(request: _84.QueryDropRequest): Promise<_84.QueryDropResponse>;
                 dropAmounts(request: _84.QueryDropAmountsRequest): Promise<_84.QueryDropAmountsResponse>;
                 dropCoin(request: _84.QueryDropCoinRequest): Promise<_84.QueryDropCoinResponse>;
-                dropsToCoins(request: _84.QueryDropsToCoinsRequest): Promise<_84.QueryDropAmountsResponse>;
+                dropsToCoins(request: _84.QueryDropsToCoinsRequest): Promise<_84.QueryDropsToCoinsResponse>;
                 dropPairs(request: _84.QueryDropPairsRequest): Promise<_84.QueryDropPairsResponse>;
                 dropOwnerPair(request: _84.QueryDropOwnerPairRequest): Promise<_84.QueryDropsResponse>;
                 dropAll(request?: _84.QueryAllDropRequest): Promise<_84.QueryDropsResponse>;
@@ -371,6 +374,14 @@ export declare namespace pendulumlabs {
                         pair?: string;
                         denom1?: string;
                         denom2?: string;
+                        volume1?: {
+                            denom?: string;
+                            amount?: string;
+                        };
+                        volume2?: {
+                            denom?: string;
+                            amount?: string;
+                        };
                         leaders?: {
                             address?: string;
                             drops?: string;
@@ -413,6 +424,14 @@ export declare namespace pendulumlabs {
                         pair?: string;
                         denom1?: string;
                         denom2?: string;
+                        volume1?: {
+                            denom?: string;
+                            amount?: string;
+                        };
+                        volume2?: {
+                            denom?: string;
+                            amount?: string;
+                        };
                         leaders?: {
                             address?: string;
                             drops?: string;
@@ -431,6 +450,96 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _84.QueryAllPoolResponseProtoMsg): _84.QueryAllPoolResponse;
                 toProto(message: _84.QueryAllPoolResponse): Uint8Array;
                 toProtoMsg(message: _84.QueryAllPoolResponse): _84.QueryAllPoolResponseProtoMsg;
+            };
+            QueryVolumeRequest: {
+                encode(message: _84.QueryVolumeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryVolumeRequest;
+                fromPartial(object: {
+                    denom?: string;
+                }): _84.QueryVolumeRequest;
+                fromAmino(object: _84.QueryVolumeRequestAmino): _84.QueryVolumeRequest;
+                toAmino(message: _84.QueryVolumeRequest): _84.QueryVolumeRequestAmino;
+                fromAminoMsg(object: _84.QueryVolumeRequestAminoMsg): _84.QueryVolumeRequest;
+                fromProtoMsg(message: _84.QueryVolumeRequestProtoMsg): _84.QueryVolumeRequest;
+                toProto(message: _84.QueryVolumeRequest): Uint8Array;
+                toProtoMsg(message: _84.QueryVolumeRequest): _84.QueryVolumeRequestProtoMsg;
+            };
+            QueryVolumeResponse: {
+                encode(message: _84.QueryVolumeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryVolumeResponse;
+                fromPartial(object: {
+                    amount?: string;
+                }): _84.QueryVolumeResponse;
+                fromAmino(object: _84.QueryVolumeResponseAmino): _84.QueryVolumeResponse;
+                toAmino(message: _84.QueryVolumeResponse): _84.QueryVolumeResponseAmino;
+                fromAminoMsg(object: _84.QueryVolumeResponseAminoMsg): _84.QueryVolumeResponse;
+                fromProtoMsg(message: _84.QueryVolumeResponseProtoMsg): _84.QueryVolumeResponse;
+                toProto(message: _84.QueryVolumeResponse): Uint8Array;
+                toProtoMsg(message: _84.QueryVolumeResponse): _84.QueryVolumeResponseProtoMsg;
+            };
+            QueryAllVolumeRequest: {
+                encode(message: _84.QueryAllVolumeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryAllVolumeRequest;
+                fromPartial(object: {
+                    pagination?: {
+                        key?: Uint8Array;
+                        offset?: string | number | import("long").Long;
+                        limit?: string | number | import("long").Long;
+                        countTotal?: boolean;
+                        reverse?: boolean;
+                    };
+                }): _84.QueryAllVolumeRequest;
+                fromAmino(object: _84.QueryAllVolumeRequestAmino): _84.QueryAllVolumeRequest;
+                toAmino(message: _84.QueryAllVolumeRequest): _84.QueryAllVolumeRequestAmino;
+                fromAminoMsg(object: _84.QueryAllVolumeRequestAminoMsg): _84.QueryAllVolumeRequest;
+                fromProtoMsg(message: _84.QueryAllVolumeRequestProtoMsg): _84.QueryAllVolumeRequest;
+                toProto(message: _84.QueryAllVolumeRequest): Uint8Array;
+                toProtoMsg(message: _84.QueryAllVolumeRequest): _84.QueryAllVolumeRequestProtoMsg;
+            };
+            QueryAllVolumeResponse: {
+                encode(message: _84.QueryAllVolumeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryAllVolumeResponse;
+                fromPartial(object: {
+                    volumes?: {
+                        denom?: string;
+                        amount?: string;
+                    }[];
+                    pagination?: {
+                        nextKey?: Uint8Array;
+                        total?: string | number | import("long").Long;
+                    };
+                }): _84.QueryAllVolumeResponse;
+                fromAmino(object: _84.QueryAllVolumeResponseAmino): _84.QueryAllVolumeResponse;
+                toAmino(message: _84.QueryAllVolumeResponse): _84.QueryAllVolumeResponseAmino;
+                fromAminoMsg(object: _84.QueryAllVolumeResponseAminoMsg): _84.QueryAllVolumeResponse;
+                fromProtoMsg(message: _84.QueryAllVolumeResponseProtoMsg): _84.QueryAllVolumeResponse;
+                toProto(message: _84.QueryAllVolumeResponse): Uint8Array;
+                toProtoMsg(message: _84.QueryAllVolumeResponse): _84.QueryAllVolumeResponseProtoMsg;
+            };
+            QueryBurnedRequest: {
+                encode(_: _84.QueryBurnedRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryBurnedRequest;
+                fromPartial(_: {}): _84.QueryBurnedRequest;
+                fromAmino(_: _84.QueryBurnedRequestAmino): _84.QueryBurnedRequest;
+                toAmino(_: _84.QueryBurnedRequest): _84.QueryBurnedRequestAmino;
+                fromAminoMsg(object: _84.QueryBurnedRequestAminoMsg): _84.QueryBurnedRequest;
+                fromProtoMsg(message: _84.QueryBurnedRequestProtoMsg): _84.QueryBurnedRequest;
+                toProto(message: _84.QueryBurnedRequest): Uint8Array;
+                toProtoMsg(message: _84.QueryBurnedRequest): _84.QueryBurnedRequestProtoMsg;
+            };
+            QueryBurnedResponse: {
+                encode(message: _84.QueryBurnedResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryBurnedResponse;
+                fromPartial(object: {
+                    denom?: string;
+                    amount?: string;
+                }): _84.QueryBurnedResponse;
+                fromAmino(object: _84.QueryBurnedResponseAmino): _84.QueryBurnedResponse;
+                toAmino(message: _84.QueryBurnedResponse): _84.QueryBurnedResponseAmino;
+                fromAminoMsg(object: _84.QueryBurnedResponseAminoMsg): _84.QueryBurnedResponse;
+                fromProtoMsg(message: _84.QueryBurnedResponseProtoMsg): _84.QueryBurnedResponse;
+                toProto(message: _84.QueryBurnedResponse): Uint8Array;
+                toProtoMsg(message: _84.QueryBurnedResponse): _84.QueryBurnedResponseProtoMsg;
             };
             QueryDropRequest: {
                 encode(message: _84.QueryDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -527,7 +636,8 @@ export declare namespace pendulumlabs {
                 encode(message: _84.QueryDropsToCoinsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
                 decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryDropsToCoinsRequest;
                 fromPartial(object: {
-                    pair?: string;
+                    denom1?: string;
+                    denom2?: string;
                     drops?: string;
                 }): _84.QueryDropsToCoinsRequest;
                 fromAmino(object: _84.QueryDropsToCoinsRequestAmino): _84.QueryDropsToCoinsRequest;
@@ -536,6 +646,22 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _84.QueryDropsToCoinsRequestProtoMsg): _84.QueryDropsToCoinsRequest;
                 toProto(message: _84.QueryDropsToCoinsRequest): Uint8Array;
                 toProtoMsg(message: _84.QueryDropsToCoinsRequest): _84.QueryDropsToCoinsRequestProtoMsg;
+            };
+            QueryDropsToCoinsResponse: {
+                encode(message: _84.QueryDropsToCoinsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _84.QueryDropsToCoinsResponse;
+                fromPartial(object: {
+                    denom1?: string;
+                    amount1?: string;
+                    denom2?: string;
+                    amount2?: string;
+                }): _84.QueryDropsToCoinsResponse;
+                fromAmino(object: _84.QueryDropsToCoinsResponseAmino): _84.QueryDropsToCoinsResponse;
+                toAmino(message: _84.QueryDropsToCoinsResponse): _84.QueryDropsToCoinsResponseAmino;
+                fromAminoMsg(object: _84.QueryDropsToCoinsResponseAminoMsg): _84.QueryDropsToCoinsResponse;
+                fromProtoMsg(message: _84.QueryDropsToCoinsResponseProtoMsg): _84.QueryDropsToCoinsResponse;
+                toProto(message: _84.QueryDropsToCoinsResponse): Uint8Array;
+                toProtoMsg(message: _84.QueryDropsToCoinsResponse): _84.QueryDropsToCoinsResponseProtoMsg;
             };
             QueryDropPairsRequest: {
                 encode(message: _84.QueryDropPairsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -889,7 +1015,7 @@ export declare namespace pendulumlabs {
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
                         begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
+                        updTime?: string | number | import("long").Long;
                     };
                 }): _84.QueryOrderResponse;
                 fromAmino(object: _84.QueryOrderResponseAmino): _84.QueryOrderResponse;
@@ -915,7 +1041,7 @@ export declare namespace pendulumlabs {
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
                         begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
+                        updTime?: string | number | import("long").Long;
                     }[];
                     pagination?: {
                         nextKey?: Uint8Array;
@@ -1024,7 +1150,7 @@ export declare namespace pendulumlabs {
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
                         begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
+                        updTime?: string | number | import("long").Long;
                     }[];
                     pagination?: {
                         nextKey?: Uint8Array;
@@ -1076,7 +1202,7 @@ export declare namespace pendulumlabs {
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
                         begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
+                        updTime?: string | number | import("long").Long;
                     }[];
                     pagination?: {
                         nextKey?: Uint8Array;
@@ -1161,7 +1287,7 @@ export declare namespace pendulumlabs {
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
                         begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
+                        updTime?: string | number | import("long").Long;
                     }[];
                     pagination?: {
                         nextKey?: Uint8Array;
@@ -1212,6 +1338,14 @@ export declare namespace pendulumlabs {
                     pair?: string;
                     denom1?: string;
                     denom2?: string;
+                    volume1?: {
+                        denom?: string;
+                        amount?: string;
+                    };
+                    volume2?: {
+                        denom?: string;
+                        amount?: string;
+                    };
                     leaders?: {
                         address?: string;
                         drops?: string;
@@ -1239,6 +1373,20 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _83.LeaderProtoMsg): _83.Leader;
                 toProto(message: _83.Leader): Uint8Array;
                 toProtoMsg(message: _83.Leader): _83.LeaderProtoMsg;
+            };
+            Volume: {
+                encode(message: _83.Volume, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _83.Volume;
+                fromPartial(object: {
+                    denom?: string;
+                    amount?: string;
+                }): _83.Volume;
+                fromAmino(object: _83.VolumeAmino): _83.Volume;
+                toAmino(message: _83.Volume): _83.VolumeAmino;
+                fromAminoMsg(object: _83.VolumeAminoMsg): _83.Volume;
+                fromProtoMsg(message: _83.VolumeProtoMsg): _83.Volume;
+                toProto(message: _83.Volume): Uint8Array;
+                toProtoMsg(message: _83.Volume): _83.VolumeProtoMsg;
             };
             Params: {
                 encode(message: _82.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -1271,7 +1419,7 @@ export declare namespace pendulumlabs {
                     prev?: string | number | import("long").Long;
                     next?: string | number | import("long").Long;
                     begTime?: string | number | import("long").Long;
-                    endTime?: string | number | import("long").Long;
+                    updTime?: string | number | import("long").Long;
                 }): _81.Order;
                 fromAmino(object: _81.OrderAmino): _81.Order;
                 toAmino(message: _81.Order): _81.OrderAmino;
@@ -1308,7 +1456,7 @@ export declare namespace pendulumlabs {
                     prev?: string | number | import("long").Long;
                     next?: string | number | import("long").Long;
                     begTime?: string | number | import("long").Long;
-                    endTime?: string | number | import("long").Long;
+                    updTime?: string | number | import("long").Long;
                 }): _81.OrderResponse;
                 fromAmino(object: _81.OrderResponseAmino): _81.OrderResponse;
                 toAmino(message: _81.OrderResponse): _81.OrderResponseAmino;
@@ -1350,6 +1498,14 @@ export declare namespace pendulumlabs {
                         pair?: string;
                         denom1?: string;
                         denom2?: string;
+                        volume1?: {
+                            denom?: string;
+                            amount?: string;
+                        };
+                        volume2?: {
+                            denom?: string;
+                            amount?: string;
+                        };
                         leaders?: {
                             address?: string;
                             drops?: string;
@@ -1390,7 +1546,7 @@ export declare namespace pendulumlabs {
                         prev?: string | number | import("long").Long;
                         next?: string | number | import("long").Long;
                         begTime?: string | number | import("long").Long;
-                        endTime?: string | number | import("long").Long;
+                        updTime?: string | number | import("long").Long;
                     }[];
                 }): _79.GenesisState;
                 fromAmino(object: _79.GenesisStateAmino): _79.GenesisState;
@@ -1458,6 +1614,19 @@ export declare namespace pendulumlabs {
                 fromProtoMsg(message: _77.BurningsProtoMsg): _77.Burnings;
                 toProto(message: _77.Burnings): Uint8Array;
                 toProtoMsg(message: _77.Burnings): _77.BurningsProtoMsg;
+            };
+            Burned: {
+                encode(message: _77.Burned, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _77.Burned;
+                fromPartial(object: {
+                    amount?: string;
+                }): _77.Burned;
+                fromAmino(object: _77.BurnedAmino): _77.Burned;
+                toAmino(message: _77.Burned): _77.BurnedAmino;
+                fromAminoMsg(object: _77.BurnedAminoMsg): _77.Burned;
+                fromProtoMsg(message: _77.BurnedProtoMsg): _77.Burned;
+                toProto(message: _77.Burned): Uint8Array;
+                toProtoMsg(message: _77.Burned): _77.BurnedProtoMsg;
             };
         };
     }
@@ -1591,12 +1760,15 @@ export declare namespace pendulumlabs {
                 market: {
                     market: {
                         params(request?: _84.QueryParamsRequest): Promise<_84.QueryParamsResponse>;
+                        burned(request?: _84.QueryBurnedRequest): Promise<_84.QueryBurnedResponse>;
                         pool(request: _84.QueryGetPoolRequest): Promise<_84.QueryGetPoolResponse>;
                         poolAll(request?: _84.QueryAllPoolRequest): Promise<_84.QueryAllPoolResponse>;
+                        volume(request: _84.QueryVolumeRequest): Promise<_84.QueryVolumeResponse>;
+                        volumeAll(request?: _84.QueryAllVolumeRequest): Promise<_84.QueryAllVolumeResponse>;
                         drop(request: _84.QueryDropRequest): Promise<_84.QueryDropResponse>;
                         dropAmounts(request: _84.QueryDropAmountsRequest): Promise<_84.QueryDropAmountsResponse>;
                         dropCoin(request: _84.QueryDropCoinRequest): Promise<_84.QueryDropCoinResponse>;
-                        dropsToCoins(request: _84.QueryDropsToCoinsRequest): Promise<_84.QueryDropAmountsResponse>;
+                        dropsToCoins(request: _84.QueryDropsToCoinsRequest): Promise<_84.QueryDropsToCoinsResponse>;
                         dropPairs(request: _84.QueryDropPairsRequest): Promise<_84.QueryDropPairsResponse>;
                         dropOwnerPair(request: _84.QueryDropOwnerPairRequest): Promise<_84.QueryDropsResponse>;
                         dropAll(request?: _84.QueryAllDropRequest): Promise<_84.QueryDropsResponse>;

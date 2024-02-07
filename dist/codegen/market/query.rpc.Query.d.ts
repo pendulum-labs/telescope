@@ -1,14 +1,20 @@
 import { Rpc } from "../helpers";
 import { QueryClient } from "@cosmjs/stargate";
-import { QueryParamsRequest, QueryParamsResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropCoinRequest, QueryDropCoinResponse, QueryDropsToCoinsRequest, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse, QueryQuoteRequest, QueryQuoteResponse } from "./query";
+import { QueryParamsRequest, QueryParamsResponse, QueryBurnedRequest, QueryBurnedResponse, QueryGetPoolRequest, QueryGetPoolResponse, QueryAllPoolRequest, QueryAllPoolResponse, QueryVolumeRequest, QueryVolumeResponse, QueryAllVolumeRequest, QueryAllVolumeResponse, QueryDropRequest, QueryDropResponse, QueryDropAmountsRequest, QueryDropAmountsResponse, QueryDropCoinRequest, QueryDropCoinResponse, QueryDropsToCoinsRequest, QueryDropsToCoinsResponse, QueryDropPairsRequest, QueryDropPairsResponse, QueryDropOwnerPairRequest, QueryDropsResponse, QueryAllDropRequest, QueryGetMemberRequest, QueryGetMemberResponse, QueryAllMemberRequest, QueryAllMemberResponse, QueryGetBurningsRequest, QueryGetBurningsResponse, QueryAllBurningsRequest, QueryAllBurningsResponse, QueryOrderRequest, QueryOrderResponse, QueryAllOrderRequest, QueryOrdersResponse, QueryOrderOwnerRequest, QueryOrderOwnerUidsResponse, QueryBookRequest, QueryBookResponse, QueryBookendsRequest, QueryBookendsResponse, QueryHistoryRequest, QueryHistoryResponse, QueryQuoteRequest, QueryQuoteResponse } from "./query";
 /** Query defines the gRPC querier service. */
 export interface Query {
     /** Parameters queries the parameters of the module. */
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
+    /** Queries total burned. */
+    burned(request?: QueryBurnedRequest): Promise<QueryBurnedResponse>;
     /** Queries a Pool by index. */
     pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
     /** Queries a list of Pool items. */
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
+    /** Queries a Volume by index. */
+    volume(request: QueryVolumeRequest): Promise<QueryVolumeResponse>;
+    /** Queries all Volumes. */
+    volumeAll(request?: QueryAllVolumeRequest): Promise<QueryAllVolumeResponse>;
     /** Queries a Drop by index. */
     drop(request: QueryDropRequest): Promise<QueryDropResponse>;
     /** Queries a Drop by index. */
@@ -16,7 +22,7 @@ export interface Query {
     /** Queries a Drop by index. */
     dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse>;
     /** Converts drops to coin amounts */
-    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse>;
+    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropsToCoinsResponse>;
     /** Queries a Drop by index. */
     dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
     /** Queries a Drop by index. */
@@ -52,12 +58,15 @@ export declare class QueryClientImpl implements Query {
     private readonly rpc;
     constructor(rpc: Rpc);
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
+    burned(request?: QueryBurnedRequest): Promise<QueryBurnedResponse>;
     pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
+    volume(request: QueryVolumeRequest): Promise<QueryVolumeResponse>;
+    volumeAll(request?: QueryAllVolumeRequest): Promise<QueryAllVolumeResponse>;
     drop(request: QueryDropRequest): Promise<QueryDropResponse>;
     dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
     dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse>;
-    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse>;
+    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropsToCoinsResponse>;
     dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
     dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse>;
     dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse>;
@@ -76,12 +85,15 @@ export declare class QueryClientImpl implements Query {
 }
 export declare const createRpcQueryExtension: (base: QueryClient) => {
     params(request?: QueryParamsRequest): Promise<QueryParamsResponse>;
+    burned(request?: QueryBurnedRequest): Promise<QueryBurnedResponse>;
     pool(request: QueryGetPoolRequest): Promise<QueryGetPoolResponse>;
     poolAll(request?: QueryAllPoolRequest): Promise<QueryAllPoolResponse>;
+    volume(request: QueryVolumeRequest): Promise<QueryVolumeResponse>;
+    volumeAll(request?: QueryAllVolumeRequest): Promise<QueryAllVolumeResponse>;
     drop(request: QueryDropRequest): Promise<QueryDropResponse>;
     dropAmounts(request: QueryDropAmountsRequest): Promise<QueryDropAmountsResponse>;
     dropCoin(request: QueryDropCoinRequest): Promise<QueryDropCoinResponse>;
-    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropAmountsResponse>;
+    dropsToCoins(request: QueryDropsToCoinsRequest): Promise<QueryDropsToCoinsResponse>;
     dropPairs(request: QueryDropPairsRequest): Promise<QueryDropPairsResponse>;
     dropOwnerPair(request: QueryDropOwnerPairRequest): Promise<QueryDropsResponse>;
     dropAll(request?: QueryAllDropRequest): Promise<QueryDropsResponse>;

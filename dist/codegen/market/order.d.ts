@@ -13,7 +13,7 @@ export interface Order {
     prev: Long;
     next: Long;
     begTime: Long;
-    endTime: Long;
+    updTime: Long;
 }
 export interface OrderProtoMsg {
     typeUrl: "/pendulumlabs.market.market.Order";
@@ -31,7 +31,7 @@ export interface OrderAmino {
     prev: string;
     next: string;
     beg_time: string;
-    end_time: string;
+    upd_time: string;
 }
 export interface OrderAminoMsg {
     type: "/pendulumlabs.market.market.Order";
@@ -49,7 +49,7 @@ export interface OrderSDKType {
     prev: Long;
     next: Long;
     beg_time: Long;
-    end_time: Long;
+    upd_time: Long;
 }
 export interface Orders {
     uids: Long[];
@@ -80,7 +80,7 @@ export interface OrderResponse {
     prev: Long;
     next: Long;
     begTime: Long;
-    endTime: Long;
+    updTime: Long;
 }
 export interface OrderResponseProtoMsg {
     typeUrl: "/pendulumlabs.market.market.OrderResponse";
@@ -98,7 +98,7 @@ export interface OrderResponseAmino {
     prev: string;
     next: string;
     beg_time: string;
-    end_time: string;
+    upd_time: string;
 }
 export interface OrderResponseAminoMsg {
     type: "/pendulumlabs.market.market.OrderResponse";
@@ -116,7 +116,7 @@ export interface OrderResponseSDKType {
     prev: Long;
     next: Long;
     beg_time: Long;
-    end_time: Long;
+    upd_time: Long;
 }
 export declare const Order: {
     encode(message: Order, writer?: _m0.Writer): _m0.Writer;

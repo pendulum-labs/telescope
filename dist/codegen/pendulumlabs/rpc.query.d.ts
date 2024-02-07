@@ -102,12 +102,15 @@ export declare const createRPCQueryClient: ({ rpcEndpoint }: {
         market: {
             market: {
                 params(request?: import("../market/query").QueryParamsRequest): Promise<import("../market/query").QueryParamsResponse>;
+                burned(request?: import("../market/query").QueryBurnedRequest): Promise<import("../market/query").QueryBurnedResponse>;
                 pool(request: import("../market/query").QueryGetPoolRequest): Promise<import("../market/query").QueryGetPoolResponse>;
                 poolAll(request?: import("../market/query").QueryAllPoolRequest): Promise<import("../market/query").QueryAllPoolResponse>;
+                volume(request: import("../market/query").QueryVolumeRequest): Promise<import("../market/query").QueryVolumeResponse>;
+                volumeAll(request?: import("../market/query").QueryAllVolumeRequest): Promise<import("../market/query").QueryAllVolumeResponse>;
                 drop(request: import("../market/query").QueryDropRequest): Promise<import("../market/query").QueryDropResponse>;
                 dropAmounts(request: import("../market/query").QueryDropAmountsRequest): Promise<import("../market/query").QueryDropAmountsResponse>;
                 dropCoin(request: import("../market/query").QueryDropCoinRequest): Promise<import("../market/query").QueryDropCoinResponse>;
-                dropsToCoins(request: import("../market/query").QueryDropsToCoinsRequest): Promise<import("../market/query").QueryDropAmountsResponse>;
+                dropsToCoins(request: import("../market/query").QueryDropsToCoinsRequest): Promise<import("../market/query").QueryDropsToCoinsResponse>;
                 dropPairs(request: import("../market/query").QueryDropPairsRequest): Promise<import("../market/query").QueryDropPairsResponse>;
                 dropOwnerPair(request: import("../market/query").QueryDropOwnerPairRequest): Promise<import("../market/query").QueryDropsResponse>;
                 dropAll(request?: import("../market/query").QueryAllDropRequest): Promise<import("../market/query").QueryDropsResponse>;

@@ -1,6 +1,6 @@
 import { PageRequest, PageResponse } from "../cosmos/base/query/v1beta1/pagination";
 import { Params } from "./params";
-import { Pool } from "./pool";
+import { Pool, Volume } from "./pool";
 import { Drop } from "./drop";
 import { Member } from "./member";
 import { Burnings } from "./burnings";
@@ -367,6 +367,379 @@ export const QueryAllPoolResponse = {
         return {
             typeUrl: "/pendulumlabs.market.market.QueryAllPoolResponse",
             value: QueryAllPoolResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryVolumeRequest() {
+    return {
+        denom: ""
+    };
+}
+export const QueryVolumeRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denom !== "") {
+            writer.uint32(10).string(message.denom);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryVolumeRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denom = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryVolumeRequest();
+        message.denom = object.denom ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denom: object.denom
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denom = message.denom;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryVolumeRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryVolumeRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryVolumeRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryVolumeRequest",
+            value: QueryVolumeRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryVolumeResponse() {
+    return {
+        amount: ""
+    };
+}
+export const QueryVolumeResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.amount !== "") {
+            writer.uint32(10).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryVolumeResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryVolumeResponse();
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryVolumeResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryVolumeResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryVolumeResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryVolumeResponse",
+            value: QueryVolumeResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryAllVolumeRequest() {
+    return {
+        pagination: PageRequest.fromPartial({})
+    };
+}
+export const QueryAllVolumeRequest = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.pagination !== undefined) {
+            PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryAllVolumeRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.pagination = PageRequest.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryAllVolumeRequest();
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageRequest.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            pagination: object?.pagination ? PageRequest.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.pagination = message.pagination ? PageRequest.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryAllVolumeRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryAllVolumeRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryAllVolumeRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryAllVolumeRequest",
+            value: QueryAllVolumeRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryAllVolumeResponse() {
+    return {
+        volumes: [],
+        pagination: PageResponse.fromPartial({})
+    };
+}
+export const QueryAllVolumeResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        for (const v of message.volumes) {
+            Volume.encode(v, writer.uint32(10).fork()).ldelim();
+        }
+        if (message.pagination !== undefined) {
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryAllVolumeResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.volumes.push(Volume.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    message.pagination = PageResponse.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryAllVolumeResponse();
+        message.volumes = object.volumes?.map(e => Volume.fromPartial(e)) || [];
+        message.pagination = object.pagination !== undefined && object.pagination !== null ? PageResponse.fromPartial(object.pagination) : undefined;
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            volumes: Array.isArray(object?.volumes) ? object.volumes.map((e) => Volume.fromAmino(e)) : [],
+            pagination: object?.pagination ? PageResponse.fromAmino(object.pagination) : undefined
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        if (message.volumes) {
+            obj.volumes = message.volumes.map(e => e ? Volume.toAmino(e) : undefined);
+        }
+        else {
+            obj.volumes = [];
+        }
+        obj.pagination = message.pagination ? PageResponse.toAmino(message.pagination) : undefined;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryAllVolumeResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryAllVolumeResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryAllVolumeResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryAllVolumeResponse",
+            value: QueryAllVolumeResponse.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryBurnedRequest() {
+    return {};
+}
+export const QueryBurnedRequest = {
+    encode(_, writer = _m0.Writer.create()) {
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryBurnedRequest();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(_) {
+        const message = createBaseQueryBurnedRequest();
+        return message;
+    },
+    fromAmino(_) {
+        return {};
+    },
+    toAmino(_) {
+        const obj = {};
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryBurnedRequest.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryBurnedRequest.decode(message.value);
+    },
+    toProto(message) {
+        return QueryBurnedRequest.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryBurnedRequest",
+            value: QueryBurnedRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryBurnedResponse() {
+    return {
+        denom: "",
+        amount: ""
+    };
+}
+export const QueryBurnedResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denom !== "") {
+            writer.uint32(10).string(message.denom);
+        }
+        if (message.amount !== "") {
+            writer.uint32(18).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryBurnedResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denom = reader.string();
+                    break;
+                case 2:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryBurnedResponse();
+        message.denom = object.denom ?? "";
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denom: object.denom,
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denom = message.denom;
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryBurnedResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryBurnedResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryBurnedResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryBurnedResponse",
+            value: QueryBurnedResponse.encode(message).finish()
         };
     }
 };
@@ -792,17 +1165,21 @@ export const QueryDropAmountsResponse = {
 };
 function createBaseQueryDropsToCoinsRequest() {
     return {
-        pair: "",
+        denom1: "",
+        denom2: "",
         drops: ""
     };
 }
 export const QueryDropsToCoinsRequest = {
     encode(message, writer = _m0.Writer.create()) {
-        if (message.pair !== "") {
-            writer.uint32(10).string(message.pair);
+        if (message.denom1 !== "") {
+            writer.uint32(10).string(message.denom1);
+        }
+        if (message.denom2 !== "") {
+            writer.uint32(18).string(message.denom2);
         }
         if (message.drops !== "") {
-            writer.uint32(18).string(message.drops);
+            writer.uint32(26).string(message.drops);
         }
         return writer;
     },
@@ -814,9 +1191,12 @@ export const QueryDropsToCoinsRequest = {
             const tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
-                    message.pair = reader.string();
+                    message.denom1 = reader.string();
                     break;
                 case 2:
+                    message.denom2 = reader.string();
+                    break;
+                case 3:
                     message.drops = reader.string();
                     break;
                 default:
@@ -828,19 +1208,22 @@ export const QueryDropsToCoinsRequest = {
     },
     fromPartial(object) {
         const message = createBaseQueryDropsToCoinsRequest();
-        message.pair = object.pair ?? "";
+        message.denom1 = object.denom1 ?? "";
+        message.denom2 = object.denom2 ?? "";
         message.drops = object.drops ?? "";
         return message;
     },
     fromAmino(object) {
         return {
-            pair: object.pair,
+            denom1: object.denom1,
+            denom2: object.denom2,
             drops: object.drops
         };
     },
     toAmino(message) {
         const obj = {};
-        obj.pair = message.pair;
+        obj.denom1 = message.denom1;
+        obj.denom2 = message.denom2;
         obj.drops = message.drops;
         return obj;
     },
@@ -857,6 +1240,96 @@ export const QueryDropsToCoinsRequest = {
         return {
             typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsRequest",
             value: QueryDropsToCoinsRequest.encode(message).finish()
+        };
+    }
+};
+function createBaseQueryDropsToCoinsResponse() {
+    return {
+        denom1: "",
+        amount1: "",
+        denom2: "",
+        amount2: ""
+    };
+}
+export const QueryDropsToCoinsResponse = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denom1 !== "") {
+            writer.uint32(10).string(message.denom1);
+        }
+        if (message.amount1 !== "") {
+            writer.uint32(18).string(message.amount1);
+        }
+        if (message.denom2 !== "") {
+            writer.uint32(26).string(message.denom2);
+        }
+        if (message.amount2 !== "") {
+            writer.uint32(34).string(message.amount2);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseQueryDropsToCoinsResponse();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denom1 = reader.string();
+                    break;
+                case 2:
+                    message.amount1 = reader.string();
+                    break;
+                case 3:
+                    message.denom2 = reader.string();
+                    break;
+                case 4:
+                    message.amount2 = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseQueryDropsToCoinsResponse();
+        message.denom1 = object.denom1 ?? "";
+        message.amount1 = object.amount1 ?? "";
+        message.denom2 = object.denom2 ?? "";
+        message.amount2 = object.amount2 ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denom1: object.denom1,
+            amount1: object.amount1,
+            denom2: object.denom2,
+            amount2: object.amount2
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denom1 = message.denom1;
+        obj.amount1 = message.amount1;
+        obj.denom2 = message.denom2;
+        obj.amount2 = message.amount2;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return QueryDropsToCoinsResponse.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return QueryDropsToCoinsResponse.decode(message.value);
+    },
+    toProto(message) {
+        return QueryDropsToCoinsResponse.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsResponse",
+            value: QueryDropsToCoinsResponse.encode(message).finish()
         };
     }
 };

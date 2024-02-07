@@ -39,7 +39,7 @@ function createBaseOrder() {
         prev: helpers_1.Long.UZERO,
         next: helpers_1.Long.UZERO,
         begTime: helpers_1.Long.ZERO,
-        endTime: helpers_1.Long.ZERO
+        updTime: helpers_1.Long.ZERO
     };
 }
 exports.Order = {
@@ -77,8 +77,8 @@ exports.Order = {
         if (!message.begTime.isZero()) {
             writer.uint32(88).int64(message.begTime);
         }
-        if (!message.endTime.isZero()) {
-            writer.uint32(96).int64(message.endTime);
+        if (!message.updTime.isZero()) {
+            writer.uint32(96).int64(message.updTime);
         }
         return writer;
     },
@@ -123,7 +123,7 @@ exports.Order = {
                     message.begTime = reader.int64();
                     break;
                 case 12:
-                    message.endTime = reader.int64();
+                    message.updTime = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -145,7 +145,7 @@ exports.Order = {
         message.prev = object.prev !== undefined && object.prev !== null ? helpers_1.Long.fromValue(object.prev) : helpers_1.Long.UZERO;
         message.next = object.next !== undefined && object.next !== null ? helpers_1.Long.fromValue(object.next) : helpers_1.Long.UZERO;
         message.begTime = object.begTime !== undefined && object.begTime !== null ? helpers_1.Long.fromValue(object.begTime) : helpers_1.Long.ZERO;
-        message.endTime = object.endTime !== undefined && object.endTime !== null ? helpers_1.Long.fromValue(object.endTime) : helpers_1.Long.ZERO;
+        message.updTime = object.updTime !== undefined && object.updTime !== null ? helpers_1.Long.fromValue(object.updTime) : helpers_1.Long.ZERO;
         return message;
     },
     fromAmino(object) {
@@ -161,7 +161,7 @@ exports.Order = {
             prev: helpers_1.Long.fromString(object.prev),
             next: helpers_1.Long.fromString(object.next),
             begTime: helpers_1.Long.fromString(object.beg_time),
-            endTime: helpers_1.Long.fromString(object.end_time)
+            updTime: helpers_1.Long.fromString(object.upd_time)
         };
     },
     toAmino(message) {
@@ -182,7 +182,7 @@ exports.Order = {
         obj.prev = message.prev ? message.prev.toString() : undefined;
         obj.next = message.next ? message.next.toString() : undefined;
         obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
-        obj.end_time = message.endTime ? message.endTime.toString() : undefined;
+        obj.upd_time = message.updTime ? message.updTime.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {
@@ -289,7 +289,7 @@ function createBaseOrderResponse() {
         prev: helpers_1.Long.UZERO,
         next: helpers_1.Long.UZERO,
         begTime: helpers_1.Long.ZERO,
-        endTime: helpers_1.Long.ZERO
+        updTime: helpers_1.Long.ZERO
     };
 }
 exports.OrderResponse = {
@@ -327,8 +327,8 @@ exports.OrderResponse = {
         if (!message.begTime.isZero()) {
             writer.uint32(88).int64(message.begTime);
         }
-        if (!message.endTime.isZero()) {
-            writer.uint32(96).int64(message.endTime);
+        if (!message.updTime.isZero()) {
+            writer.uint32(96).int64(message.updTime);
         }
         return writer;
     },
@@ -373,7 +373,7 @@ exports.OrderResponse = {
                     message.begTime = reader.int64();
                     break;
                 case 12:
-                    message.endTime = reader.int64();
+                    message.updTime = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -395,7 +395,7 @@ exports.OrderResponse = {
         message.prev = object.prev !== undefined && object.prev !== null ? helpers_1.Long.fromValue(object.prev) : helpers_1.Long.UZERO;
         message.next = object.next !== undefined && object.next !== null ? helpers_1.Long.fromValue(object.next) : helpers_1.Long.UZERO;
         message.begTime = object.begTime !== undefined && object.begTime !== null ? helpers_1.Long.fromValue(object.begTime) : helpers_1.Long.ZERO;
-        message.endTime = object.endTime !== undefined && object.endTime !== null ? helpers_1.Long.fromValue(object.endTime) : helpers_1.Long.ZERO;
+        message.updTime = object.updTime !== undefined && object.updTime !== null ? helpers_1.Long.fromValue(object.updTime) : helpers_1.Long.ZERO;
         return message;
     },
     fromAmino(object) {
@@ -411,7 +411,7 @@ exports.OrderResponse = {
             prev: helpers_1.Long.fromString(object.prev),
             next: helpers_1.Long.fromString(object.next),
             begTime: helpers_1.Long.fromString(object.beg_time),
-            endTime: helpers_1.Long.fromString(object.end_time)
+            updTime: helpers_1.Long.fromString(object.upd_time)
         };
     },
     toAmino(message) {
@@ -432,7 +432,7 @@ exports.OrderResponse = {
         obj.prev = message.prev ? message.prev.toString() : undefined;
         obj.next = message.next ? message.next.toString() : undefined;
         obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
-        obj.end_time = message.endTime ? message.endTime.toString() : undefined;
+        obj.upd_time = message.updTime ? message.updTime.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {

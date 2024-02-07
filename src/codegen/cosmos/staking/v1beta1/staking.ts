@@ -1293,7 +1293,7 @@ export const Validator = {
       consensusPubkey: encodeBech32Pubkey({
         type: "tendermint/PubKeySecp256k1",
         value: toBase64(object.consensus_pubkey.value)
-      }, "cosmos"),
+      }, "cosmos") as unknown as Any,
       jailed: object.jailed,
       status: isSet(object.status) ? bondStatusFromJSON(object.status) : -1,
       tokens: object.tokens,
@@ -1310,7 +1310,7 @@ export const Validator = {
     obj.operator_address = message.operatorAddress;
     obj.consensus_pubkey = message.consensusPubkey ? {
       typeUrl: "/cosmos.crypto.secp256k1.PubKey",
-      value: fromBase64(decodeBech32Pubkey(message.consensusPubkey).value)
+      value: fromBase64(decodeBech32Pubkey(message.consensusPubkey as unknown as string).value)
     } : undefined;
     obj.jailed = message.jailed;
     obj.status = message.status;

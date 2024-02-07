@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Leader = exports.Pool = void 0;
+exports.Volume = exports.Leader = exports.Pool = void 0;
 const helpers_1 = require("../helpers");
 const _m0 = __importStar(require("protobufjs/minimal"));
 function createBasePool() {
@@ -31,6 +31,8 @@ function createBasePool() {
         pair: "",
         denom1: "",
         denom2: "",
+        volume1: exports.Volume.fromPartial({}),
+        volume2: exports.Volume.fromPartial({}),
         leaders: [],
         drops: "",
         history: helpers_1.Long.UZERO
@@ -47,14 +49,20 @@ exports.Pool = {
         if (message.denom2 !== "") {
             writer.uint32(26).string(message.denom2);
         }
+        if (message.volume1 !== undefined) {
+            exports.Volume.encode(message.volume1, writer.uint32(34).fork()).ldelim();
+        }
+        if (message.volume2 !== undefined) {
+            exports.Volume.encode(message.volume2, writer.uint32(42).fork()).ldelim();
+        }
         for (const v of message.leaders) {
-            exports.Leader.encode(v, writer.uint32(34).fork()).ldelim();
+            exports.Leader.encode(v, writer.uint32(50).fork()).ldelim();
         }
         if (message.drops !== "") {
-            writer.uint32(42).string(message.drops);
+            writer.uint32(58).string(message.drops);
         }
         if (!message.history.isZero()) {
-            writer.uint32(48).uint64(message.history);
+            writer.uint32(64).uint64(message.history);
         }
         return writer;
     },
@@ -75,12 +83,18 @@ exports.Pool = {
                     message.denom2 = reader.string();
                     break;
                 case 4:
-                    message.leaders.push(exports.Leader.decode(reader, reader.uint32()));
+                    message.volume1 = exports.Volume.decode(reader, reader.uint32());
                     break;
                 case 5:
-                    message.drops = reader.string();
+                    message.volume2 = exports.Volume.decode(reader, reader.uint32());
                     break;
                 case 6:
+                    message.leaders.push(exports.Leader.decode(reader, reader.uint32()));
+                    break;
+                case 7:
+                    message.drops = reader.string();
+                    break;
+                case 8:
                     message.history = reader.uint64();
                     break;
                 default:
@@ -95,6 +109,8 @@ exports.Pool = {
         message.pair = object.pair ?? "";
         message.denom1 = object.denom1 ?? "";
         message.denom2 = object.denom2 ?? "";
+        message.volume1 = object.volume1 !== undefined && object.volume1 !== null ? exports.Volume.fromPartial(object.volume1) : undefined;
+        message.volume2 = object.volume2 !== undefined && object.volume2 !== null ? exports.Volume.fromPartial(object.volume2) : undefined;
         message.leaders = object.leaders?.map(e => exports.Leader.fromPartial(e)) || [];
         message.drops = object.drops ?? "";
         message.history = object.history !== undefined && object.history !== null ? helpers_1.Long.fromValue(object.history) : helpers_1.Long.UZERO;
@@ -105,6 +121,8 @@ exports.Pool = {
             pair: object.pair,
             denom1: object.denom1,
             denom2: object.denom2,
+            volume1: object?.volume1 ? exports.Volume.fromAmino(object.volume1) : undefined,
+            volume2: object?.volume2 ? exports.Volume.fromAmino(object.volume2) : undefined,
             leaders: Array.isArray(object?.leaders) ? object.leaders.map((e) => exports.Leader.fromAmino(e)) : [],
             drops: object.drops,
             history: helpers_1.Long.fromString(object.history)
@@ -115,6 +133,8 @@ exports.Pool = {
         obj.pair = message.pair;
         obj.denom1 = message.denom1;
         obj.denom2 = message.denom2;
+        obj.volume1 = message.volume1 ? exports.Volume.toAmino(message.volume1) : undefined;
+        obj.volume2 = message.volume2 ? exports.Volume.toAmino(message.volume2) : undefined;
         if (message.leaders) {
             obj.leaders = message.leaders.map(e => e ? exports.Leader.toAmino(e) : undefined);
         }
@@ -208,6 +228,76 @@ exports.Leader = {
         return {
             typeUrl: "/pendulumlabs.market.market.Leader",
             value: exports.Leader.encode(message).finish()
+        };
+    }
+};
+function createBaseVolume() {
+    return {
+        denom: "",
+        amount: ""
+    };
+}
+exports.Volume = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denom !== "") {
+            writer.uint32(10).string(message.denom);
+        }
+        if (message.amount !== "") {
+            writer.uint32(18).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseVolume();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denom = reader.string();
+                    break;
+                case 2:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseVolume();
+        message.denom = object.denom ?? "";
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denom: object.denom,
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denom = message.denom;
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return exports.Volume.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return exports.Volume.decode(message.value);
+    },
+    toProto(message) {
+        return exports.Volume.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.Volume",
+            value: exports.Volume.encode(message).finish()
         };
     }
 };

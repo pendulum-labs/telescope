@@ -69,4 +69,64 @@ export const Burnings = {
         };
     }
 };
+function createBaseBurned() {
+    return {
+        amount: ""
+    };
+}
+export const Burned = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.amount !== "") {
+            writer.uint32(10).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseBurned();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseBurned();
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return Burned.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return Burned.decode(message.value);
+    },
+    toProto(message) {
+        return Burned.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.Burned",
+            value: Burned.encode(message).finish()
+        };
+    }
+};
 //# sourceMappingURL=burnings.js.map

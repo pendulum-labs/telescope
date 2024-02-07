@@ -1,7 +1,7 @@
 /// <reference types="long" />
 import { PageRequest, PageRequestAmino, PageRequestSDKType, PageResponse, PageResponseAmino, PageResponseSDKType } from "../cosmos/base/query/v1beta1/pagination";
 import { Params, ParamsAmino, ParamsSDKType } from "./params";
-import { Pool, PoolAmino, PoolSDKType } from "./pool";
+import { Pool, PoolAmino, PoolSDKType, Volume, VolumeAmino, VolumeSDKType } from "./pool";
 import { Drop, DropAmino, DropSDKType } from "./drop";
 import { Member, MemberAmino, MemberSDKType } from "./member";
 import { Burnings, BurningsAmino, BurningsSDKType } from "./burnings";
@@ -117,6 +117,111 @@ export interface QueryAllPoolResponseAminoMsg {
 export interface QueryAllPoolResponseSDKType {
     pool: PoolSDKType[];
     pagination: PageResponseSDKType;
+}
+export interface QueryVolumeRequest {
+    denom: string;
+}
+export interface QueryVolumeRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryVolumeRequest";
+    value: Uint8Array;
+}
+export interface QueryVolumeRequestAmino {
+    denom: string;
+}
+export interface QueryVolumeRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryVolumeRequest";
+    value: QueryVolumeRequestAmino;
+}
+export interface QueryVolumeRequestSDKType {
+    denom: string;
+}
+export interface QueryVolumeResponse {
+    amount: string;
+}
+export interface QueryVolumeResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryVolumeResponse";
+    value: Uint8Array;
+}
+export interface QueryVolumeResponseAmino {
+    amount: string;
+}
+export interface QueryVolumeResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryVolumeResponse";
+    value: QueryVolumeResponseAmino;
+}
+export interface QueryVolumeResponseSDKType {
+    amount: string;
+}
+export interface QueryAllVolumeRequest {
+    pagination: PageRequest;
+}
+export interface QueryAllVolumeRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryAllVolumeRequest";
+    value: Uint8Array;
+}
+export interface QueryAllVolumeRequestAmino {
+    pagination?: PageRequestAmino;
+}
+export interface QueryAllVolumeRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryAllVolumeRequest";
+    value: QueryAllVolumeRequestAmino;
+}
+export interface QueryAllVolumeRequestSDKType {
+    pagination: PageRequestSDKType;
+}
+export interface QueryAllVolumeResponse {
+    volumes: Volume[];
+    pagination: PageResponse;
+}
+export interface QueryAllVolumeResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryAllVolumeResponse";
+    value: Uint8Array;
+}
+export interface QueryAllVolumeResponseAmino {
+    volumes: VolumeAmino[];
+    pagination?: PageResponseAmino;
+}
+export interface QueryAllVolumeResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryAllVolumeResponse";
+    value: QueryAllVolumeResponseAmino;
+}
+export interface QueryAllVolumeResponseSDKType {
+    volumes: VolumeSDKType[];
+    pagination: PageResponseSDKType;
+}
+export interface QueryBurnedRequest {
+}
+export interface QueryBurnedRequestProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryBurnedRequest";
+    value: Uint8Array;
+}
+export interface QueryBurnedRequestAmino {
+}
+export interface QueryBurnedRequestAminoMsg {
+    type: "/pendulumlabs.market.market.QueryBurnedRequest";
+    value: QueryBurnedRequestAmino;
+}
+export interface QueryBurnedRequestSDKType {
+}
+export interface QueryBurnedResponse {
+    denom: string;
+    amount: string;
+}
+export interface QueryBurnedResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryBurnedResponse";
+    value: Uint8Array;
+}
+export interface QueryBurnedResponseAmino {
+    denom: string;
+    amount: string;
+}
+export interface QueryBurnedResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryBurnedResponse";
+    value: QueryBurnedResponseAmino;
+}
+export interface QueryBurnedResponseSDKType {
+    denom: string;
+    amount: string;
 }
 export interface QueryDropRequest {
     uid: Long;
@@ -239,7 +344,8 @@ export interface QueryDropAmountsResponseSDKType {
     amount2: string;
 }
 export interface QueryDropsToCoinsRequest {
-    pair: string;
+    denom1: string;
+    denom2: string;
     drops: string;
 }
 export interface QueryDropsToCoinsRequestProtoMsg {
@@ -247,7 +353,8 @@ export interface QueryDropsToCoinsRequestProtoMsg {
     value: Uint8Array;
 }
 export interface QueryDropsToCoinsRequestAmino {
-    pair: string;
+    denom1: string;
+    denom2: string;
     drops: string;
 }
 export interface QueryDropsToCoinsRequestAminoMsg {
@@ -255,8 +362,35 @@ export interface QueryDropsToCoinsRequestAminoMsg {
     value: QueryDropsToCoinsRequestAmino;
 }
 export interface QueryDropsToCoinsRequestSDKType {
-    pair: string;
+    denom1: string;
+    denom2: string;
     drops: string;
+}
+export interface QueryDropsToCoinsResponse {
+    denom1: string;
+    amount1: string;
+    denom2: string;
+    amount2: string;
+}
+export interface QueryDropsToCoinsResponseProtoMsg {
+    typeUrl: "/pendulumlabs.market.market.QueryDropsToCoinsResponse";
+    value: Uint8Array;
+}
+export interface QueryDropsToCoinsResponseAmino {
+    denom1: string;
+    amount1: string;
+    denom2: string;
+    amount2: string;
+}
+export interface QueryDropsToCoinsResponseAminoMsg {
+    type: "/pendulumlabs.market.market.QueryDropsToCoinsResponse";
+    value: QueryDropsToCoinsResponseAmino;
+}
+export interface QueryDropsToCoinsResponseSDKType {
+    denom1: string;
+    amount1: string;
+    denom2: string;
+    amount2: string;
 }
 export interface QueryDropPairsRequest {
     address: string;
@@ -1016,6 +1150,72 @@ export declare const QueryAllPoolResponse: {
     toProto(message: QueryAllPoolResponse): Uint8Array;
     toProtoMsg(message: QueryAllPoolResponse): QueryAllPoolResponseProtoMsg;
 };
+export declare const QueryVolumeRequest: {
+    encode(message: QueryVolumeRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryVolumeRequest;
+    fromPartial(object: DeepPartial<QueryVolumeRequest>): QueryVolumeRequest;
+    fromAmino(object: QueryVolumeRequestAmino): QueryVolumeRequest;
+    toAmino(message: QueryVolumeRequest): QueryVolumeRequestAmino;
+    fromAminoMsg(object: QueryVolumeRequestAminoMsg): QueryVolumeRequest;
+    fromProtoMsg(message: QueryVolumeRequestProtoMsg): QueryVolumeRequest;
+    toProto(message: QueryVolumeRequest): Uint8Array;
+    toProtoMsg(message: QueryVolumeRequest): QueryVolumeRequestProtoMsg;
+};
+export declare const QueryVolumeResponse: {
+    encode(message: QueryVolumeResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryVolumeResponse;
+    fromPartial(object: DeepPartial<QueryVolumeResponse>): QueryVolumeResponse;
+    fromAmino(object: QueryVolumeResponseAmino): QueryVolumeResponse;
+    toAmino(message: QueryVolumeResponse): QueryVolumeResponseAmino;
+    fromAminoMsg(object: QueryVolumeResponseAminoMsg): QueryVolumeResponse;
+    fromProtoMsg(message: QueryVolumeResponseProtoMsg): QueryVolumeResponse;
+    toProto(message: QueryVolumeResponse): Uint8Array;
+    toProtoMsg(message: QueryVolumeResponse): QueryVolumeResponseProtoMsg;
+};
+export declare const QueryAllVolumeRequest: {
+    encode(message: QueryAllVolumeRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryAllVolumeRequest;
+    fromPartial(object: DeepPartial<QueryAllVolumeRequest>): QueryAllVolumeRequest;
+    fromAmino(object: QueryAllVolumeRequestAmino): QueryAllVolumeRequest;
+    toAmino(message: QueryAllVolumeRequest): QueryAllVolumeRequestAmino;
+    fromAminoMsg(object: QueryAllVolumeRequestAminoMsg): QueryAllVolumeRequest;
+    fromProtoMsg(message: QueryAllVolumeRequestProtoMsg): QueryAllVolumeRequest;
+    toProto(message: QueryAllVolumeRequest): Uint8Array;
+    toProtoMsg(message: QueryAllVolumeRequest): QueryAllVolumeRequestProtoMsg;
+};
+export declare const QueryAllVolumeResponse: {
+    encode(message: QueryAllVolumeResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryAllVolumeResponse;
+    fromPartial(object: DeepPartial<QueryAllVolumeResponse>): QueryAllVolumeResponse;
+    fromAmino(object: QueryAllVolumeResponseAmino): QueryAllVolumeResponse;
+    toAmino(message: QueryAllVolumeResponse): QueryAllVolumeResponseAmino;
+    fromAminoMsg(object: QueryAllVolumeResponseAminoMsg): QueryAllVolumeResponse;
+    fromProtoMsg(message: QueryAllVolumeResponseProtoMsg): QueryAllVolumeResponse;
+    toProto(message: QueryAllVolumeResponse): Uint8Array;
+    toProtoMsg(message: QueryAllVolumeResponse): QueryAllVolumeResponseProtoMsg;
+};
+export declare const QueryBurnedRequest: {
+    encode(_: QueryBurnedRequest, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryBurnedRequest;
+    fromPartial(_: DeepPartial<QueryBurnedRequest>): QueryBurnedRequest;
+    fromAmino(_: QueryBurnedRequestAmino): QueryBurnedRequest;
+    toAmino(_: QueryBurnedRequest): QueryBurnedRequestAmino;
+    fromAminoMsg(object: QueryBurnedRequestAminoMsg): QueryBurnedRequest;
+    fromProtoMsg(message: QueryBurnedRequestProtoMsg): QueryBurnedRequest;
+    toProto(message: QueryBurnedRequest): Uint8Array;
+    toProtoMsg(message: QueryBurnedRequest): QueryBurnedRequestProtoMsg;
+};
+export declare const QueryBurnedResponse: {
+    encode(message: QueryBurnedResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryBurnedResponse;
+    fromPartial(object: DeepPartial<QueryBurnedResponse>): QueryBurnedResponse;
+    fromAmino(object: QueryBurnedResponseAmino): QueryBurnedResponse;
+    toAmino(message: QueryBurnedResponse): QueryBurnedResponseAmino;
+    fromAminoMsg(object: QueryBurnedResponseAminoMsg): QueryBurnedResponse;
+    fromProtoMsg(message: QueryBurnedResponseProtoMsg): QueryBurnedResponse;
+    toProto(message: QueryBurnedResponse): Uint8Array;
+    toProtoMsg(message: QueryBurnedResponse): QueryBurnedResponseProtoMsg;
+};
 export declare const QueryDropRequest: {
     encode(message: QueryDropRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropRequest;
@@ -1092,6 +1292,17 @@ export declare const QueryDropsToCoinsRequest: {
     fromProtoMsg(message: QueryDropsToCoinsRequestProtoMsg): QueryDropsToCoinsRequest;
     toProto(message: QueryDropsToCoinsRequest): Uint8Array;
     toProtoMsg(message: QueryDropsToCoinsRequest): QueryDropsToCoinsRequestProtoMsg;
+};
+export declare const QueryDropsToCoinsResponse: {
+    encode(message: QueryDropsToCoinsResponse, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): QueryDropsToCoinsResponse;
+    fromPartial(object: DeepPartial<QueryDropsToCoinsResponse>): QueryDropsToCoinsResponse;
+    fromAmino(object: QueryDropsToCoinsResponseAmino): QueryDropsToCoinsResponse;
+    toAmino(message: QueryDropsToCoinsResponse): QueryDropsToCoinsResponseAmino;
+    fromAminoMsg(object: QueryDropsToCoinsResponseAminoMsg): QueryDropsToCoinsResponse;
+    fromProtoMsg(message: QueryDropsToCoinsResponseProtoMsg): QueryDropsToCoinsResponse;
+    toProto(message: QueryDropsToCoinsResponse): Uint8Array;
+    toProtoMsg(message: QueryDropsToCoinsResponse): QueryDropsToCoinsResponseProtoMsg;
 };
 export declare const QueryDropPairsRequest: {
     encode(message: QueryDropPairsRequest, writer?: _m0.Writer): _m0.Writer;

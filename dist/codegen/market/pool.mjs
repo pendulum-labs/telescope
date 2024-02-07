@@ -5,6 +5,8 @@ function createBasePool() {
         pair: "",
         denom1: "",
         denom2: "",
+        volume1: Volume.fromPartial({}),
+        volume2: Volume.fromPartial({}),
         leaders: [],
         drops: "",
         history: Long.UZERO
@@ -21,14 +23,20 @@ export const Pool = {
         if (message.denom2 !== "") {
             writer.uint32(26).string(message.denom2);
         }
+        if (message.volume1 !== undefined) {
+            Volume.encode(message.volume1, writer.uint32(34).fork()).ldelim();
+        }
+        if (message.volume2 !== undefined) {
+            Volume.encode(message.volume2, writer.uint32(42).fork()).ldelim();
+        }
         for (const v of message.leaders) {
-            Leader.encode(v, writer.uint32(34).fork()).ldelim();
+            Leader.encode(v, writer.uint32(50).fork()).ldelim();
         }
         if (message.drops !== "") {
-            writer.uint32(42).string(message.drops);
+            writer.uint32(58).string(message.drops);
         }
         if (!message.history.isZero()) {
-            writer.uint32(48).uint64(message.history);
+            writer.uint32(64).uint64(message.history);
         }
         return writer;
     },
@@ -49,12 +57,18 @@ export const Pool = {
                     message.denom2 = reader.string();
                     break;
                 case 4:
-                    message.leaders.push(Leader.decode(reader, reader.uint32()));
+                    message.volume1 = Volume.decode(reader, reader.uint32());
                     break;
                 case 5:
-                    message.drops = reader.string();
+                    message.volume2 = Volume.decode(reader, reader.uint32());
                     break;
                 case 6:
+                    message.leaders.push(Leader.decode(reader, reader.uint32()));
+                    break;
+                case 7:
+                    message.drops = reader.string();
+                    break;
+                case 8:
                     message.history = reader.uint64();
                     break;
                 default:
@@ -69,6 +83,8 @@ export const Pool = {
         message.pair = object.pair ?? "";
         message.denom1 = object.denom1 ?? "";
         message.denom2 = object.denom2 ?? "";
+        message.volume1 = object.volume1 !== undefined && object.volume1 !== null ? Volume.fromPartial(object.volume1) : undefined;
+        message.volume2 = object.volume2 !== undefined && object.volume2 !== null ? Volume.fromPartial(object.volume2) : undefined;
         message.leaders = object.leaders?.map(e => Leader.fromPartial(e)) || [];
         message.drops = object.drops ?? "";
         message.history = object.history !== undefined && object.history !== null ? Long.fromValue(object.history) : Long.UZERO;
@@ -79,6 +95,8 @@ export const Pool = {
             pair: object.pair,
             denom1: object.denom1,
             denom2: object.denom2,
+            volume1: object?.volume1 ? Volume.fromAmino(object.volume1) : undefined,
+            volume2: object?.volume2 ? Volume.fromAmino(object.volume2) : undefined,
             leaders: Array.isArray(object?.leaders) ? object.leaders.map((e) => Leader.fromAmino(e)) : [],
             drops: object.drops,
             history: Long.fromString(object.history)
@@ -89,6 +107,8 @@ export const Pool = {
         obj.pair = message.pair;
         obj.denom1 = message.denom1;
         obj.denom2 = message.denom2;
+        obj.volume1 = message.volume1 ? Volume.toAmino(message.volume1) : undefined;
+        obj.volume2 = message.volume2 ? Volume.toAmino(message.volume2) : undefined;
         if (message.leaders) {
             obj.leaders = message.leaders.map(e => e ? Leader.toAmino(e) : undefined);
         }
@@ -182,6 +202,76 @@ export const Leader = {
         return {
             typeUrl: "/pendulumlabs.market.market.Leader",
             value: Leader.encode(message).finish()
+        };
+    }
+};
+function createBaseVolume() {
+    return {
+        denom: "",
+        amount: ""
+    };
+}
+export const Volume = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.denom !== "") {
+            writer.uint32(10).string(message.denom);
+        }
+        if (message.amount !== "") {
+            writer.uint32(18).string(message.amount);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseVolume();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    message.denom = reader.string();
+                    break;
+                case 2:
+                    message.amount = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+            }
+        }
+        return message;
+    },
+    fromPartial(object) {
+        const message = createBaseVolume();
+        message.denom = object.denom ?? "";
+        message.amount = object.amount ?? "";
+        return message;
+    },
+    fromAmino(object) {
+        return {
+            denom: object.denom,
+            amount: object.amount
+        };
+    },
+    toAmino(message) {
+        const obj = {};
+        obj.denom = message.denom;
+        obj.amount = message.amount;
+        return obj;
+    },
+    fromAminoMsg(object) {
+        return Volume.fromAmino(object.value);
+    },
+    fromProtoMsg(message) {
+        return Volume.decode(message.value);
+    },
+    toProto(message) {
+        return Volume.encode(message).finish();
+    },
+    toProtoMsg(message) {
+        return {
+            typeUrl: "/pendulumlabs.market.market.Volume",
+            value: Volume.encode(message).finish()
         };
     }
 };

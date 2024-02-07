@@ -13,7 +13,7 @@ function createBaseOrder() {
         prev: Long.UZERO,
         next: Long.UZERO,
         begTime: Long.ZERO,
-        endTime: Long.ZERO
+        updTime: Long.ZERO
     };
 }
 export const Order = {
@@ -51,8 +51,8 @@ export const Order = {
         if (!message.begTime.isZero()) {
             writer.uint32(88).int64(message.begTime);
         }
-        if (!message.endTime.isZero()) {
-            writer.uint32(96).int64(message.endTime);
+        if (!message.updTime.isZero()) {
+            writer.uint32(96).int64(message.updTime);
         }
         return writer;
     },
@@ -97,7 +97,7 @@ export const Order = {
                     message.begTime = reader.int64();
                     break;
                 case 12:
-                    message.endTime = reader.int64();
+                    message.updTime = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -119,7 +119,7 @@ export const Order = {
         message.prev = object.prev !== undefined && object.prev !== null ? Long.fromValue(object.prev) : Long.UZERO;
         message.next = object.next !== undefined && object.next !== null ? Long.fromValue(object.next) : Long.UZERO;
         message.begTime = object.begTime !== undefined && object.begTime !== null ? Long.fromValue(object.begTime) : Long.ZERO;
-        message.endTime = object.endTime !== undefined && object.endTime !== null ? Long.fromValue(object.endTime) : Long.ZERO;
+        message.updTime = object.updTime !== undefined && object.updTime !== null ? Long.fromValue(object.updTime) : Long.ZERO;
         return message;
     },
     fromAmino(object) {
@@ -135,7 +135,7 @@ export const Order = {
             prev: Long.fromString(object.prev),
             next: Long.fromString(object.next),
             begTime: Long.fromString(object.beg_time),
-            endTime: Long.fromString(object.end_time)
+            updTime: Long.fromString(object.upd_time)
         };
     },
     toAmino(message) {
@@ -156,7 +156,7 @@ export const Order = {
         obj.prev = message.prev ? message.prev.toString() : undefined;
         obj.next = message.next ? message.next.toString() : undefined;
         obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
-        obj.end_time = message.endTime ? message.endTime.toString() : undefined;
+        obj.upd_time = message.updTime ? message.updTime.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {
@@ -263,7 +263,7 @@ function createBaseOrderResponse() {
         prev: Long.UZERO,
         next: Long.UZERO,
         begTime: Long.ZERO,
-        endTime: Long.ZERO
+        updTime: Long.ZERO
     };
 }
 export const OrderResponse = {
@@ -301,8 +301,8 @@ export const OrderResponse = {
         if (!message.begTime.isZero()) {
             writer.uint32(88).int64(message.begTime);
         }
-        if (!message.endTime.isZero()) {
-            writer.uint32(96).int64(message.endTime);
+        if (!message.updTime.isZero()) {
+            writer.uint32(96).int64(message.updTime);
         }
         return writer;
     },
@@ -347,7 +347,7 @@ export const OrderResponse = {
                     message.begTime = reader.int64();
                     break;
                 case 12:
-                    message.endTime = reader.int64();
+                    message.updTime = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -369,7 +369,7 @@ export const OrderResponse = {
         message.prev = object.prev !== undefined && object.prev !== null ? Long.fromValue(object.prev) : Long.UZERO;
         message.next = object.next !== undefined && object.next !== null ? Long.fromValue(object.next) : Long.UZERO;
         message.begTime = object.begTime !== undefined && object.begTime !== null ? Long.fromValue(object.begTime) : Long.ZERO;
-        message.endTime = object.endTime !== undefined && object.endTime !== null ? Long.fromValue(object.endTime) : Long.ZERO;
+        message.updTime = object.updTime !== undefined && object.updTime !== null ? Long.fromValue(object.updTime) : Long.ZERO;
         return message;
     },
     fromAmino(object) {
@@ -385,7 +385,7 @@ export const OrderResponse = {
             prev: Long.fromString(object.prev),
             next: Long.fromString(object.next),
             begTime: Long.fromString(object.beg_time),
-            endTime: Long.fromString(object.end_time)
+            updTime: Long.fromString(object.upd_time)
         };
     },
     toAmino(message) {
@@ -406,7 +406,7 @@ export const OrderResponse = {
         obj.prev = message.prev ? message.prev.toString() : undefined;
         obj.next = message.next ? message.next.toString() : undefined;
         obj.beg_time = message.begTime ? message.begTime.toString() : undefined;
-        obj.end_time = message.endTime ? message.endTime.toString() : undefined;
+        obj.upd_time = message.updTime ? message.updTime.toString() : undefined;
         return obj;
     },
     fromAminoMsg(object) {
