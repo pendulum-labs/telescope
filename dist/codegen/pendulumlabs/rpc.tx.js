@@ -40,6 +40,9 @@ const createRPCMsgClient = async ({ rpc }) => ({
         },
         staking: {
             v1beta1: new (await Promise.resolve().then(() => __importStar(require("../cosmos/staking/v1beta1/tx.rpc.msg")))).MsgClientImpl(rpc)
+        },
+        vesting: {
+            v1beta1: new (await Promise.resolve().then(() => __importStar(require("../cosmos/vesting/v1beta1/tx.rpc.msg")))).MsgClientImpl(rpc)
         }
     },
     pendulumlabs: {

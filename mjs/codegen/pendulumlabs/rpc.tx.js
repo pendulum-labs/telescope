@@ -14,6 +14,9 @@ export const createRPCMsgClient = async ({ rpc }) => ({
         },
         staking: {
             v1beta1: new (await import("../cosmos/staking/v1beta1/tx.rpc.msg")).MsgClientImpl(rpc)
+        },
+        vesting: {
+            v1beta1: new (await import("../cosmos/vesting/v1beta1/tx.rpc.msg")).MsgClientImpl(rpc)
         }
     },
     pendulumlabs: {

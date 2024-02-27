@@ -2,6 +2,11 @@ import { GeneratedType, Registry, OfflineSigner } from "@cosmjs/proto-signing";
 import { AminoTypes, SigningStargateClient } from "@cosmjs/stargate";
 import { HttpEndpoint } from "@cosmjs/tendermint-rpc";
 export declare const cosmosAminoConverters: {
+    "/cosmos.vesting.v1beta1.MsgCreateVestingAccount": {
+        aminoType: string;
+        toAmino: (message: import("./vesting/v1beta1/tx").MsgCreateVestingAccount) => import("./vesting/v1beta1/tx").MsgCreateVestingAccountAmino;
+        fromAmino: (object: import("./vesting/v1beta1/tx").MsgCreateVestingAccountAmino) => import("./vesting/v1beta1/tx").MsgCreateVestingAccount;
+    };
     "/cosmos.staking.v1beta1.MsgCreateValidator": {
         aminoType: string;
         toAmino: (message: import("./staking/v1beta1/tx").MsgCreateValidator) => import("./staking/v1beta1/tx").MsgCreateValidatorAmino;

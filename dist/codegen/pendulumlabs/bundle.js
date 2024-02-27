@@ -24,28 +24,26 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.pendulumlabs = void 0;
-const _77 = __importStar(require("../market/burnings"));
-const _78 = __importStar(require("../market/drop"));
-const _79 = __importStar(require("../market/genesis"));
-const _80 = __importStar(require("../market/member"));
-const _81 = __importStar(require("../market/order"));
-const _82 = __importStar(require("../market/params"));
-const _83 = __importStar(require("../market/pool"));
-const _84 = __importStar(require("../market/query"));
-const _85 = __importStar(require("../market/tx"));
-const _116 = __importStar(require("../market/tx.amino"));
-const _117 = __importStar(require("../market/tx.registry"));
-const _118 = __importStar(require("../market/query.rpc.Query"));
-const _119 = __importStar(require("../market/tx.rpc.msg"));
-const _125 = __importStar(require("./rpc.query"));
-const _126 = __importStar(require("./rpc.tx"));
+const _79 = __importStar(require("../market/burnings"));
+const _80 = __importStar(require("../market/drop"));
+const _81 = __importStar(require("../market/genesis"));
+const _82 = __importStar(require("../market/member"));
+const _83 = __importStar(require("../market/order"));
+const _84 = __importStar(require("../market/params"));
+const _85 = __importStar(require("../market/pool"));
+const _86 = __importStar(require("../market/query"));
+const _87 = __importStar(require("../market/tx"));
+const _121 = __importStar(require("../market/tx.amino"));
+const _122 = __importStar(require("../market/tx.registry"));
+const _123 = __importStar(require("../market/query.rpc.Query"));
+const _124 = __importStar(require("../market/tx.rpc.msg"));
+const _130 = __importStar(require("./rpc.query"));
+const _131 = __importStar(require("./rpc.tx"));
 var pendulumlabs;
 (function (pendulumlabs) {
     let market;
     (function (market_1) {
         market_1.market = {
-            ..._77,
-            ..._78,
             ..._79,
             ..._80,
             ..._81,
@@ -53,15 +51,17 @@ var pendulumlabs;
             ..._83,
             ..._84,
             ..._85,
-            ..._116,
-            ..._117,
-            ..._118,
-            ..._119
+            ..._86,
+            ..._87,
+            ..._121,
+            ..._122,
+            ..._123,
+            ..._124
         };
     })(market = pendulumlabs.market || (pendulumlabs.market = {}));
     pendulumlabs.ClientFactory = {
-        ..._125,
-        ..._126
+        ..._130,
+        ..._131
     };
 })(pendulumlabs || (exports.pendulumlabs = pendulumlabs = {}));
 //# sourceMappingURL=bundle.js.map

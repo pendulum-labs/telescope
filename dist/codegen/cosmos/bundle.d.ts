@@ -43,25 +43,28 @@ import * as _42 from "./tx/v1beta1/service";
 import * as _43 from "./tx/v1beta1/tx";
 import * as _44 from "./upgrade/v1beta1/query";
 import * as _45 from "./upgrade/v1beta1/upgrade";
-import * as _96 from "./auth/v1beta1/query.rpc.Query";
-import * as _97 from "./authz/v1beta1/query.rpc.Query";
-import * as _98 from "./bank/v1beta1/query.rpc.Query";
-import * as _99 from "./distribution/v1beta1/query.rpc.Query";
-import * as _100 from "./gov/v1beta1/query.rpc.Query";
-import * as _101 from "./mint/v1beta1/query.rpc.Query";
-import * as _102 from "./params/v1beta1/query.rpc.Query";
-import * as _103 from "./staking/v1beta1/query.rpc.Query";
-import * as _104 from "./tx/v1beta1/service.rpc.Service";
-import * as _105 from "./upgrade/v1beta1/query.rpc.Query";
-import * as _106 from "./authz/v1beta1/tx.rpc.msg";
-import * as _107 from "./bank/v1beta1/tx.rpc.msg";
-import * as _108 from "./distribution/v1beta1/tx.rpc.msg";
-import * as _109 from "./gov/v1beta1/tx.rpc.msg";
-import * as _110 from "./staking/v1beta1/tx.rpc.msg";
+import * as _46 from "./vesting/v1beta1/tx";
+import * as _47 from "./vesting/v1beta1/vesting";
+import * as _100 from "./auth/v1beta1/query.rpc.Query";
+import * as _101 from "./authz/v1beta1/query.rpc.Query";
+import * as _102 from "./bank/v1beta1/query.rpc.Query";
+import * as _103 from "./distribution/v1beta1/query.rpc.Query";
+import * as _104 from "./gov/v1beta1/query.rpc.Query";
+import * as _105 from "./mint/v1beta1/query.rpc.Query";
+import * as _106 from "./params/v1beta1/query.rpc.Query";
+import * as _107 from "./staking/v1beta1/query.rpc.Query";
+import * as _108 from "./tx/v1beta1/service.rpc.Service";
+import * as _109 from "./upgrade/v1beta1/query.rpc.Query";
+import * as _110 from "./authz/v1beta1/tx.rpc.msg";
+import * as _111 from "./bank/v1beta1/tx.rpc.msg";
+import * as _112 from "./distribution/v1beta1/tx.rpc.msg";
+import * as _113 from "./gov/v1beta1/tx.rpc.msg";
+import * as _114 from "./staking/v1beta1/tx.rpc.msg";
+import * as _115 from "./vesting/v1beta1/tx.rpc.msg";
 export declare namespace cosmos {
     namespace auth {
         const v1beta1: {
-            QueryClientImpl: typeof _96.QueryClientImpl;
+            QueryClientImpl: typeof _100.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 accounts(request?: _4.QueryAccountsRequest): Promise<_4.QueryAccountsResponse>;
                 account(request: _4.QueryAccountRequest): Promise<_4.QueryAccountResponse>;
@@ -261,8 +264,8 @@ export declare namespace cosmos {
     }
     namespace authz {
         const v1beta1: {
-            MsgClientImpl: typeof _106.MsgClientImpl;
-            QueryClientImpl: typeof _97.QueryClientImpl;
+            MsgClientImpl: typeof _110.MsgClientImpl;
+            QueryClientImpl: typeof _101.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 grants(request: _8.QueryGrantsRequest): Promise<_8.QueryGrantsResponse>;
             };
@@ -580,8 +583,8 @@ export declare namespace cosmos {
     }
     namespace bank {
         const v1beta1: {
-            MsgClientImpl: typeof _107.MsgClientImpl;
-            QueryClientImpl: typeof _98.QueryClientImpl;
+            MsgClientImpl: typeof _111.MsgClientImpl;
+            QueryClientImpl: typeof _102.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 balance(request: _13.QueryBalanceRequest): Promise<_13.QueryBalanceResponse>;
                 allBalances(request: _13.QueryAllBalancesRequest): Promise<_13.QueryAllBalancesResponse>;
@@ -2123,8 +2126,8 @@ export declare namespace cosmos {
     }
     namespace distribution {
         const v1beta1: {
-            MsgClientImpl: typeof _108.MsgClientImpl;
-            QueryClientImpl: typeof _99.QueryClientImpl;
+            MsgClientImpl: typeof _112.MsgClientImpl;
+            QueryClientImpl: typeof _103.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _25.QueryParamsRequest): Promise<_25.QueryParamsResponse>;
                 validatorOutstandingRewards(request: _25.QueryValidatorOutstandingRewardsRequest): Promise<_25.QueryValidatorOutstandingRewardsResponse>;
@@ -3055,8 +3058,8 @@ export declare namespace cosmos {
     }
     namespace gov {
         const v1beta1: {
-            MsgClientImpl: typeof _109.MsgClientImpl;
-            QueryClientImpl: typeof _100.QueryClientImpl;
+            MsgClientImpl: typeof _113.MsgClientImpl;
+            QueryClientImpl: typeof _104.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 proposal(request: _29.QueryProposalRequest): Promise<_29.QueryProposalResponse>;
                 proposals(request: _29.QueryProposalsRequest): Promise<_29.QueryProposalsResponse>;
@@ -3892,7 +3895,7 @@ export declare namespace cosmos {
     }
     namespace mint {
         const v1beta1: {
-            QueryClientImpl: typeof _101.QueryClientImpl;
+            QueryClientImpl: typeof _105.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _33.QueryParamsRequest): Promise<_33.QueryParamsResponse>;
                 inflation(request?: _33.QueryInflationRequest): Promise<_33.QueryInflationResponse>;
@@ -4046,7 +4049,7 @@ export declare namespace cosmos {
     }
     namespace params {
         const v1beta1: {
-            QueryClientImpl: typeof _102.QueryClientImpl;
+            QueryClientImpl: typeof _106.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request: _35.QueryParamsRequest): Promise<_35.QueryParamsResponse>;
             };
@@ -4123,8 +4126,8 @@ export declare namespace cosmos {
     }
     namespace staking {
         const v1beta1: {
-            MsgClientImpl: typeof _110.MsgClientImpl;
-            QueryClientImpl: typeof _103.QueryClientImpl;
+            MsgClientImpl: typeof _114.MsgClientImpl;
+            QueryClientImpl: typeof _107.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 validators(request: _38.QueryValidatorsRequest): Promise<_38.QueryValidatorsResponse>;
                 validator(request: _38.QueryValidatorRequest): Promise<_38.QueryValidatorResponse>;
@@ -5880,7 +5883,7 @@ export declare namespace cosmos {
             };
         }
         const v1beta1: {
-            ServiceClientImpl: typeof _104.ServiceClientImpl;
+            ServiceClientImpl: typeof _108.ServiceClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 simulate(request: _42.SimulateRequest): Promise<_42.SimulateResponse>;
                 getTx(request: _42.GetTxRequest): Promise<_42.GetTxResponse>;
@@ -6561,7 +6564,7 @@ export declare namespace cosmos {
     }
     namespace upgrade {
         const v1beta1: {
-            QueryClientImpl: typeof _105.QueryClientImpl;
+            QueryClientImpl: typeof _109.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 currentPlan(request?: _44.QueryCurrentPlanRequest): Promise<_44.QueryCurrentPlanResponse>;
                 appliedPlan(request: _44.QueryAppliedPlanRequest): Promise<_44.QueryAppliedPlanResponse>;
@@ -6768,25 +6771,305 @@ export declare namespace cosmos {
             };
         };
     }
+    namespace vesting {
+        const v1beta1: {
+            MsgClientImpl: typeof _115.MsgClientImpl;
+            registry: readonly [string, import("@cosmjs/proto-signing").GeneratedType][];
+            load: (protoRegistry: import("@cosmjs/proto-signing").Registry) => void;
+            MessageComposer: {
+                encoded: {
+                    createVestingAccount(value: _46.MsgCreateVestingAccount): {
+                        typeUrl: string;
+                        value: Uint8Array;
+                    };
+                };
+                withTypeUrl: {
+                    createVestingAccount(value: _46.MsgCreateVestingAccount): {
+                        typeUrl: string;
+                        value: _46.MsgCreateVestingAccount;
+                    };
+                };
+                fromPartial: {
+                    createVestingAccount(value: _46.MsgCreateVestingAccount): {
+                        typeUrl: string;
+                        value: _46.MsgCreateVestingAccount;
+                    };
+                };
+            };
+            AminoConverter: {
+                "/cosmos.vesting.v1beta1.MsgCreateVestingAccount": {
+                    aminoType: string;
+                    toAmino: (message: _46.MsgCreateVestingAccount) => _46.MsgCreateVestingAccountAmino;
+                    fromAmino: (object: _46.MsgCreateVestingAccountAmino) => _46.MsgCreateVestingAccount;
+                };
+            };
+            BaseVestingAccount: {
+                encode(message: _47.BaseVestingAccount, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.BaseVestingAccount;
+                fromPartial(object: {
+                    baseAccount?: {
+                        address?: string;
+                        pubKey?: {
+                            typeUrl?: string;
+                            value?: Uint8Array;
+                        };
+                        accountNumber?: string | number | import("long").Long;
+                        sequence?: string | number | import("long").Long;
+                    };
+                    originalVesting?: {
+                        denom?: string;
+                        amount?: string;
+                    }[];
+                    delegatedFree?: {
+                        denom?: string;
+                        amount?: string;
+                    }[];
+                    delegatedVesting?: {
+                        denom?: string;
+                        amount?: string;
+                    }[];
+                    endTime?: string | number | import("long").Long;
+                }): _47.BaseVestingAccount;
+                fromAmino(object: _47.BaseVestingAccountAmino): _47.BaseVestingAccount;
+                toAmino(message: _47.BaseVestingAccount): _47.BaseVestingAccountAmino;
+                fromAminoMsg(object: _47.BaseVestingAccountAminoMsg): _47.BaseVestingAccount;
+                toAminoMsg(message: _47.BaseVestingAccount): _47.BaseVestingAccountAminoMsg;
+                fromProtoMsg(message: _47.BaseVestingAccountProtoMsg): _47.BaseVestingAccount;
+                toProto(message: _47.BaseVestingAccount): Uint8Array;
+                toProtoMsg(message: _47.BaseVestingAccount): _47.BaseVestingAccountProtoMsg;
+            };
+            ContinuousVestingAccount: {
+                encode(message: _47.ContinuousVestingAccount, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.ContinuousVestingAccount;
+                fromPartial(object: {
+                    baseVestingAccount?: {
+                        baseAccount?: {
+                            address?: string;
+                            pubKey?: {
+                                typeUrl?: string;
+                                value?: Uint8Array;
+                            };
+                            accountNumber?: string | number | import("long").Long;
+                            sequence?: string | number | import("long").Long;
+                        };
+                        originalVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedFree?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        endTime?: string | number | import("long").Long;
+                    };
+                    startTime?: string | number | import("long").Long;
+                }): _47.ContinuousVestingAccount;
+                fromAmino(object: _47.ContinuousVestingAccountAmino): _47.ContinuousVestingAccount;
+                toAmino(message: _47.ContinuousVestingAccount): _47.ContinuousVestingAccountAmino;
+                fromAminoMsg(object: _47.ContinuousVestingAccountAminoMsg): _47.ContinuousVestingAccount;
+                toAminoMsg(message: _47.ContinuousVestingAccount): _47.ContinuousVestingAccountAminoMsg;
+                fromProtoMsg(message: _47.ContinuousVestingAccountProtoMsg): _47.ContinuousVestingAccount;
+                toProto(message: _47.ContinuousVestingAccount): Uint8Array;
+                toProtoMsg(message: _47.ContinuousVestingAccount): _47.ContinuousVestingAccountProtoMsg;
+            };
+            DelayedVestingAccount: {
+                encode(message: _47.DelayedVestingAccount, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.DelayedVestingAccount;
+                fromPartial(object: {
+                    baseVestingAccount?: {
+                        baseAccount?: {
+                            address?: string;
+                            pubKey?: {
+                                typeUrl?: string;
+                                value?: Uint8Array;
+                            };
+                            accountNumber?: string | number | import("long").Long;
+                            sequence?: string | number | import("long").Long;
+                        };
+                        originalVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedFree?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        endTime?: string | number | import("long").Long;
+                    };
+                }): _47.DelayedVestingAccount;
+                fromAmino(object: _47.DelayedVestingAccountAmino): _47.DelayedVestingAccount;
+                toAmino(message: _47.DelayedVestingAccount): _47.DelayedVestingAccountAmino;
+                fromAminoMsg(object: _47.DelayedVestingAccountAminoMsg): _47.DelayedVestingAccount;
+                toAminoMsg(message: _47.DelayedVestingAccount): _47.DelayedVestingAccountAminoMsg;
+                fromProtoMsg(message: _47.DelayedVestingAccountProtoMsg): _47.DelayedVestingAccount;
+                toProto(message: _47.DelayedVestingAccount): Uint8Array;
+                toProtoMsg(message: _47.DelayedVestingAccount): _47.DelayedVestingAccountProtoMsg;
+            };
+            Period: {
+                encode(message: _47.Period, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.Period;
+                fromPartial(object: {
+                    length?: string | number | import("long").Long;
+                    amount?: {
+                        denom?: string;
+                        amount?: string;
+                    }[];
+                }): _47.Period;
+                fromAmino(object: _47.PeriodAmino): _47.Period;
+                toAmino(message: _47.Period): _47.PeriodAmino;
+                fromAminoMsg(object: _47.PeriodAminoMsg): _47.Period;
+                toAminoMsg(message: _47.Period): _47.PeriodAminoMsg;
+                fromProtoMsg(message: _47.PeriodProtoMsg): _47.Period;
+                toProto(message: _47.Period): Uint8Array;
+                toProtoMsg(message: _47.Period): _47.PeriodProtoMsg;
+            };
+            PeriodicVestingAccount: {
+                encode(message: _47.PeriodicVestingAccount, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.PeriodicVestingAccount;
+                fromPartial(object: {
+                    baseVestingAccount?: {
+                        baseAccount?: {
+                            address?: string;
+                            pubKey?: {
+                                typeUrl?: string;
+                                value?: Uint8Array;
+                            };
+                            accountNumber?: string | number | import("long").Long;
+                            sequence?: string | number | import("long").Long;
+                        };
+                        originalVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedFree?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        endTime?: string | number | import("long").Long;
+                    };
+                    startTime?: string | number | import("long").Long;
+                    vestingPeriods?: {
+                        length?: string | number | import("long").Long;
+                        amount?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                    }[];
+                }): _47.PeriodicVestingAccount;
+                fromAmino(object: _47.PeriodicVestingAccountAmino): _47.PeriodicVestingAccount;
+                toAmino(message: _47.PeriodicVestingAccount): _47.PeriodicVestingAccountAmino;
+                fromAminoMsg(object: _47.PeriodicVestingAccountAminoMsg): _47.PeriodicVestingAccount;
+                toAminoMsg(message: _47.PeriodicVestingAccount): _47.PeriodicVestingAccountAminoMsg;
+                fromProtoMsg(message: _47.PeriodicVestingAccountProtoMsg): _47.PeriodicVestingAccount;
+                toProto(message: _47.PeriodicVestingAccount): Uint8Array;
+                toProtoMsg(message: _47.PeriodicVestingAccount): _47.PeriodicVestingAccountProtoMsg;
+            };
+            PermanentLockedAccount: {
+                encode(message: _47.PermanentLockedAccount, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.PermanentLockedAccount;
+                fromPartial(object: {
+                    baseVestingAccount?: {
+                        baseAccount?: {
+                            address?: string;
+                            pubKey?: {
+                                typeUrl?: string;
+                                value?: Uint8Array;
+                            };
+                            accountNumber?: string | number | import("long").Long;
+                            sequence?: string | number | import("long").Long;
+                        };
+                        originalVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedFree?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        delegatedVesting?: {
+                            denom?: string;
+                            amount?: string;
+                        }[];
+                        endTime?: string | number | import("long").Long;
+                    };
+                }): _47.PermanentLockedAccount;
+                fromAmino(object: _47.PermanentLockedAccountAmino): _47.PermanentLockedAccount;
+                toAmino(message: _47.PermanentLockedAccount): _47.PermanentLockedAccountAmino;
+                fromAminoMsg(object: _47.PermanentLockedAccountAminoMsg): _47.PermanentLockedAccount;
+                toAminoMsg(message: _47.PermanentLockedAccount): _47.PermanentLockedAccountAminoMsg;
+                fromProtoMsg(message: _47.PermanentLockedAccountProtoMsg): _47.PermanentLockedAccount;
+                toProto(message: _47.PermanentLockedAccount): Uint8Array;
+                toProtoMsg(message: _47.PermanentLockedAccount): _47.PermanentLockedAccountProtoMsg;
+            };
+            MsgCreateVestingAccount: {
+                encode(message: _46.MsgCreateVestingAccount, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _46.MsgCreateVestingAccount;
+                fromPartial(object: {
+                    fromAddress?: string;
+                    toAddress?: string;
+                    amount?: {
+                        denom?: string;
+                        amount?: string;
+                    }[];
+                    endTime?: string | number | import("long").Long;
+                    delayed?: boolean;
+                }): _46.MsgCreateVestingAccount;
+                fromAmino(object: _46.MsgCreateVestingAccountAmino): _46.MsgCreateVestingAccount;
+                toAmino(message: _46.MsgCreateVestingAccount): _46.MsgCreateVestingAccountAmino;
+                fromAminoMsg(object: _46.MsgCreateVestingAccountAminoMsg): _46.MsgCreateVestingAccount;
+                toAminoMsg(message: _46.MsgCreateVestingAccount): _46.MsgCreateVestingAccountAminoMsg;
+                fromProtoMsg(message: _46.MsgCreateVestingAccountProtoMsg): _46.MsgCreateVestingAccount;
+                toProto(message: _46.MsgCreateVestingAccount): Uint8Array;
+                toProtoMsg(message: _46.MsgCreateVestingAccount): _46.MsgCreateVestingAccountProtoMsg;
+            };
+            MsgCreateVestingAccountResponse: {
+                encode(_: _46.MsgCreateVestingAccountResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _46.MsgCreateVestingAccountResponse;
+                fromPartial(_: {}): _46.MsgCreateVestingAccountResponse;
+                fromAmino(_: _46.MsgCreateVestingAccountResponseAmino): _46.MsgCreateVestingAccountResponse;
+                toAmino(_: _46.MsgCreateVestingAccountResponse): _46.MsgCreateVestingAccountResponseAmino;
+                fromAminoMsg(object: _46.MsgCreateVestingAccountResponseAminoMsg): _46.MsgCreateVestingAccountResponse;
+                toAminoMsg(message: _46.MsgCreateVestingAccountResponse): _46.MsgCreateVestingAccountResponseAminoMsg;
+                fromProtoMsg(message: _46.MsgCreateVestingAccountResponseProtoMsg): _46.MsgCreateVestingAccountResponse;
+                toProto(message: _46.MsgCreateVestingAccountResponse): Uint8Array;
+                toProtoMsg(message: _46.MsgCreateVestingAccountResponse): _46.MsgCreateVestingAccountResponseProtoMsg;
+            };
+        };
+    }
     const ClientFactory: {
         createRPCMsgClient: ({ rpc }: {
             rpc: import("../helpers").Rpc;
         }) => Promise<{
             cosmos: {
                 authz: {
-                    v1beta1: _106.MsgClientImpl;
+                    v1beta1: _110.MsgClientImpl;
                 };
                 bank: {
-                    v1beta1: _107.MsgClientImpl;
+                    v1beta1: _111.MsgClientImpl;
                 };
                 distribution: {
-                    v1beta1: _108.MsgClientImpl;
+                    v1beta1: _112.MsgClientImpl;
                 };
                 gov: {
-                    v1beta1: _109.MsgClientImpl;
+                    v1beta1: _113.MsgClientImpl;
                 };
                 staking: {
-                    v1beta1: _110.MsgClientImpl;
+                    v1beta1: _114.MsgClientImpl;
+                };
+                vesting: {
+                    v1beta1: _115.MsgClientImpl;
                 };
             };
         }>;

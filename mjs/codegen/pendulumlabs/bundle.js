@@ -1,25 +1,23 @@
-import * as _77 from "../market/burnings";
-import * as _78 from "../market/drop";
-import * as _79 from "../market/genesis";
-import * as _80 from "../market/member";
-import * as _81 from "../market/order";
-import * as _82 from "../market/params";
-import * as _83 from "../market/pool";
-import * as _84 from "../market/query";
-import * as _85 from "../market/tx";
-import * as _116 from "../market/tx.amino";
-import * as _117 from "../market/tx.registry";
-import * as _118 from "../market/query.rpc.Query";
-import * as _119 from "../market/tx.rpc.msg";
-import * as _125 from "./rpc.query";
-import * as _126 from "./rpc.tx";
+import * as _79 from "../market/burnings";
+import * as _80 from "../market/drop";
+import * as _81 from "../market/genesis";
+import * as _82 from "../market/member";
+import * as _83 from "../market/order";
+import * as _84 from "../market/params";
+import * as _85 from "../market/pool";
+import * as _86 from "../market/query";
+import * as _87 from "../market/tx";
+import * as _121 from "../market/tx.amino";
+import * as _122 from "../market/tx.registry";
+import * as _123 from "../market/query.rpc.Query";
+import * as _124 from "../market/tx.rpc.msg";
+import * as _130 from "./rpc.query";
+import * as _131 from "./rpc.tx";
 export var pendulumlabs;
 (function (pendulumlabs) {
     let market;
     (function (market_1) {
         market_1.market = {
-            ..._77,
-            ..._78,
             ..._79,
             ..._80,
             ..._81,
@@ -27,15 +25,17 @@ export var pendulumlabs;
             ..._83,
             ..._84,
             ..._85,
-            ..._116,
-            ..._117,
-            ..._118,
-            ..._119
+            ..._86,
+            ..._87,
+            ..._121,
+            ..._122,
+            ..._123,
+            ..._124
         };
     })(market = pendulumlabs.market || (pendulumlabs.market = {}));
     pendulumlabs.ClientFactory = {
-        ..._125,
-        ..._126
+        ..._130,
+        ..._131
     };
 })(pendulumlabs || (pendulumlabs = {}));
 //# sourceMappingURL=bundle.js.map

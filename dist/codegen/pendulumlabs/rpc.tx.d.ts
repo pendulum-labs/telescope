@@ -18,6 +18,9 @@ export declare const createRPCMsgClient: ({ rpc }: {
         staking: {
             v1beta1: import("../cosmos/staking/v1beta1/tx.rpc.msg").MsgClientImpl;
         };
+        vesting: {
+            v1beta1: import("../cosmos/vesting/v1beta1/tx.rpc.msg").MsgClientImpl;
+        };
     };
     pendulumlabs: {
         market: {
