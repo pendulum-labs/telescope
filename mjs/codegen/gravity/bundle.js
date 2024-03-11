@@ -6,12 +6,12 @@ import * as _60 from "./v1/msgs";
 import * as _61 from "./v1/pool";
 import * as _62 from "./v1/query";
 import * as _63 from "./v1/types";
-import * as _116 from "./v1/msgs.amino";
-import * as _117 from "./v1/msgs.registry";
-import * as _118 from "./v1/query.rpc.Query";
-import * as _119 from "./v1/msgs.rpc.msg";
-import * as _127 from "./rpc.query";
-import * as _128 from "./rpc.tx";
+import * as _117 from "./v1/msgs.amino";
+import * as _118 from "./v1/msgs.registry";
+import * as _119 from "./v1/query.rpc.Query";
+import * as _120 from "./v1/msgs.rpc.msg";
+import * as _128 from "./rpc.query";
+import * as _129 from "./rpc.tx";
 export var gravity;
 (function (gravity) {
     gravity.v1 = {
@@ -23,14 +23,14 @@ export var gravity;
         ..._61,
         ..._62,
         ..._63,
-        ..._116,
         ..._117,
         ..._118,
-        ..._119
+        ..._119,
+        ..._120
     };
     gravity.ClientFactory = {
-        ..._127,
-        ..._128
+        ..._128,
+        ..._129
     };
 })(gravity || (gravity = {}));
 //# sourceMappingURL=bundle.js.map

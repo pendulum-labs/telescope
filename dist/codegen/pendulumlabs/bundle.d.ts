@@ -6,236 +6,237 @@ import * as _82 from "../market/member";
 import * as _83 from "../market/order";
 import * as _84 from "../market/params";
 import * as _85 from "../market/pool";
-import * as _86 from "../market/query";
-import * as _87 from "../market/tx";
-import * as _123 from "../market/query.rpc.Query";
-import * as _124 from "../market/tx.rpc.msg";
+import * as _86 from "../market/proposal";
+import * as _87 from "../market/query";
+import * as _88 from "../market/tx";
+import * as _124 from "../market/query.rpc.Query";
+import * as _125 from "../market/tx.rpc.msg";
 export declare namespace pendulumlabs {
     namespace market {
         const market: {
-            MsgClientImpl: typeof _124.MsgClientImpl;
-            QueryClientImpl: typeof _123.QueryClientImpl;
+            MsgClientImpl: typeof _125.MsgClientImpl;
+            QueryClientImpl: typeof _124.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
-                params(request?: _86.QueryParamsRequest): Promise<_86.QueryParamsResponse>;
-                burned(request?: _86.QueryBurnedRequest): Promise<_86.QueryBurnedResponse>;
-                pool(request: _86.QueryGetPoolRequest): Promise<_86.QueryGetPoolResponse>;
-                poolAll(request?: _86.QueryAllPoolRequest): Promise<_86.QueryAllPoolResponse>;
-                volume(request: _86.QueryVolumeRequest): Promise<_86.QueryVolumeResponse>;
-                volumeAll(request?: _86.QueryAllVolumeRequest): Promise<_86.QueryAllVolumeResponse>;
-                drop(request: _86.QueryDropRequest): Promise<_86.QueryDropResponse>;
-                dropAmounts(request: _86.QueryDropAmountsRequest): Promise<_86.QueryDropAmountsResponse>;
-                dropCoin(request: _86.QueryDropCoinRequest): Promise<_86.QueryDropCoinResponse>;
-                dropsToCoins(request: _86.QueryDropsToCoinsRequest): Promise<_86.QueryDropsToCoinsResponse>;
-                dropPairs(request: _86.QueryDropPairsRequest): Promise<_86.QueryDropPairsResponse>;
-                dropOwnerPair(request: _86.QueryDropOwnerPairRequest): Promise<_86.QueryDropsResponse>;
-                dropAll(request?: _86.QueryAllDropRequest): Promise<_86.QueryDropsResponse>;
-                member(request: _86.QueryGetMemberRequest): Promise<_86.QueryGetMemberResponse>;
-                memberAll(request?: _86.QueryAllMemberRequest): Promise<_86.QueryAllMemberResponse>;
-                burnings(request: _86.QueryGetBurningsRequest): Promise<_86.QueryGetBurningsResponse>;
-                burningsAll(request?: _86.QueryAllBurningsRequest): Promise<_86.QueryAllBurningsResponse>;
-                order(request: _86.QueryOrderRequest): Promise<_86.QueryOrderResponse>;
-                orderAll(request?: _86.QueryAllOrderRequest): Promise<_86.QueryOrdersResponse>;
-                orderOwner(request: _86.QueryOrderOwnerRequest): Promise<_86.QueryOrdersResponse>;
-                orderOwnerUids(request: _86.QueryOrderOwnerRequest): Promise<_86.QueryOrderOwnerUidsResponse>;
-                book(request: _86.QueryBookRequest): Promise<_86.QueryBookResponse>;
-                bookends(request: _86.QueryBookendsRequest): Promise<_86.QueryBookendsResponse>;
-                history(request: _86.QueryHistoryRequest): Promise<_86.QueryHistoryResponse>;
-                quote(request: _86.QueryQuoteRequest): Promise<_86.QueryQuoteResponse>;
+                params(request?: _87.QueryParamsRequest): Promise<_87.QueryParamsResponse>;
+                burned(request?: _87.QueryBurnedRequest): Promise<_87.QueryBurnedResponse>;
+                pool(request: _87.QueryGetPoolRequest): Promise<_87.QueryGetPoolResponse>;
+                poolAll(request?: _87.QueryAllPoolRequest): Promise<_87.QueryAllPoolResponse>;
+                volume(request: _87.QueryVolumeRequest): Promise<_87.QueryVolumeResponse>;
+                volumeAll(request?: _87.QueryAllVolumeRequest): Promise<_87.QueryAllVolumeResponse>;
+                drop(request: _87.QueryDropRequest): Promise<_87.QueryDropResponse>;
+                dropAmounts(request: _87.QueryDropAmountsRequest): Promise<_87.QueryDropAmountsResponse>;
+                dropCoin(request: _87.QueryDropCoinRequest): Promise<_87.QueryDropCoinResponse>;
+                dropsToCoins(request: _87.QueryDropsToCoinsRequest): Promise<_87.QueryDropsToCoinsResponse>;
+                dropPairs(request: _87.QueryDropPairsRequest): Promise<_87.QueryDropPairsResponse>;
+                dropOwnerPair(request: _87.QueryDropOwnerPairRequest): Promise<_87.QueryDropsResponse>;
+                dropAll(request?: _87.QueryAllDropRequest): Promise<_87.QueryDropsResponse>;
+                member(request: _87.QueryGetMemberRequest): Promise<_87.QueryGetMemberResponse>;
+                memberAll(request?: _87.QueryAllMemberRequest): Promise<_87.QueryAllMemberResponse>;
+                burnings(request: _87.QueryGetBurningsRequest): Promise<_87.QueryGetBurningsResponse>;
+                burningsAll(request?: _87.QueryAllBurningsRequest): Promise<_87.QueryAllBurningsResponse>;
+                order(request: _87.QueryOrderRequest): Promise<_87.QueryOrderResponse>;
+                orderAll(request?: _87.QueryAllOrderRequest): Promise<_87.QueryOrdersResponse>;
+                orderOwner(request: _87.QueryOrderOwnerRequest): Promise<_87.QueryOrdersResponse>;
+                orderOwnerUids(request: _87.QueryOrderOwnerRequest): Promise<_87.QueryOrderOwnerUidsResponse>;
+                book(request: _87.QueryBookRequest): Promise<_87.QueryBookResponse>;
+                bookends(request: _87.QueryBookendsRequest): Promise<_87.QueryBookendsResponse>;
+                history(request: _87.QueryHistoryRequest): Promise<_87.QueryHistoryResponse>;
+                quote(request: _87.QueryQuoteRequest): Promise<_87.QueryQuoteResponse>;
             };
             registry: readonly [string, import("@cosmjs/proto-signing").GeneratedType][];
             load: (protoRegistry: import("@cosmjs/proto-signing").Registry) => void;
             MessageComposer: {
                 encoded: {
-                    createPool(value: _87.MsgCreatePool): {
+                    createPool(value: _88.MsgCreatePool): {
                         typeUrl: string;
                         value: Uint8Array;
                     };
-                    createDrop(value: _87.MsgCreateDrop): {
+                    createDrop(value: _88.MsgCreateDrop): {
                         typeUrl: string;
                         value: Uint8Array;
                     };
-                    redeemDrop(value: _87.MsgRedeemDrop): {
+                    redeemDrop(value: _88.MsgRedeemDrop): {
                         typeUrl: string;
                         value: Uint8Array;
                     };
-                    createOrder(value: _87.MsgCreateOrder): {
+                    createOrder(value: _88.MsgCreateOrder): {
                         typeUrl: string;
                         value: Uint8Array;
                     };
-                    cancelOrder(value: _87.MsgCancelOrder): {
+                    cancelOrder(value: _88.MsgCancelOrder): {
                         typeUrl: string;
                         value: Uint8Array;
                     };
-                    marketOrder(value: _87.MsgMarketOrder): {
+                    marketOrder(value: _88.MsgMarketOrder): {
                         typeUrl: string;
                         value: Uint8Array;
                     };
                 };
                 withTypeUrl: {
-                    createPool(value: _87.MsgCreatePool): {
+                    createPool(value: _88.MsgCreatePool): {
                         typeUrl: string;
-                        value: _87.MsgCreatePool;
+                        value: _88.MsgCreatePool;
                     };
-                    createDrop(value: _87.MsgCreateDrop): {
+                    createDrop(value: _88.MsgCreateDrop): {
                         typeUrl: string;
-                        value: _87.MsgCreateDrop;
+                        value: _88.MsgCreateDrop;
                     };
-                    redeemDrop(value: _87.MsgRedeemDrop): {
+                    redeemDrop(value: _88.MsgRedeemDrop): {
                         typeUrl: string;
-                        value: _87.MsgRedeemDrop;
+                        value: _88.MsgRedeemDrop;
                     };
-                    createOrder(value: _87.MsgCreateOrder): {
+                    createOrder(value: _88.MsgCreateOrder): {
                         typeUrl: string;
-                        value: _87.MsgCreateOrder;
+                        value: _88.MsgCreateOrder;
                     };
-                    cancelOrder(value: _87.MsgCancelOrder): {
+                    cancelOrder(value: _88.MsgCancelOrder): {
                         typeUrl: string;
-                        value: _87.MsgCancelOrder;
+                        value: _88.MsgCancelOrder;
                     };
-                    marketOrder(value: _87.MsgMarketOrder): {
+                    marketOrder(value: _88.MsgMarketOrder): {
                         typeUrl: string;
-                        value: _87.MsgMarketOrder;
+                        value: _88.MsgMarketOrder;
                     };
                 };
                 fromPartial: {
-                    createPool(value: _87.MsgCreatePool): {
+                    createPool(value: _88.MsgCreatePool): {
                         typeUrl: string;
-                        value: _87.MsgCreatePool;
+                        value: _88.MsgCreatePool;
                     };
-                    createDrop(value: _87.MsgCreateDrop): {
+                    createDrop(value: _88.MsgCreateDrop): {
                         typeUrl: string;
-                        value: _87.MsgCreateDrop;
+                        value: _88.MsgCreateDrop;
                     };
-                    redeemDrop(value: _87.MsgRedeemDrop): {
+                    redeemDrop(value: _88.MsgRedeemDrop): {
                         typeUrl: string;
-                        value: _87.MsgRedeemDrop;
+                        value: _88.MsgRedeemDrop;
                     };
-                    createOrder(value: _87.MsgCreateOrder): {
+                    createOrder(value: _88.MsgCreateOrder): {
                         typeUrl: string;
-                        value: _87.MsgCreateOrder;
+                        value: _88.MsgCreateOrder;
                     };
-                    cancelOrder(value: _87.MsgCancelOrder): {
+                    cancelOrder(value: _88.MsgCancelOrder): {
                         typeUrl: string;
-                        value: _87.MsgCancelOrder;
+                        value: _88.MsgCancelOrder;
                     };
-                    marketOrder(value: _87.MsgMarketOrder): {
+                    marketOrder(value: _88.MsgMarketOrder): {
                         typeUrl: string;
-                        value: _87.MsgMarketOrder;
+                        value: _88.MsgMarketOrder;
                     };
                 };
             };
             AminoConverter: {
                 "/pendulumlabs.market.market.MsgCreatePool": {
                     aminoType: string;
-                    toAmino: (message: _87.MsgCreatePool) => _87.MsgCreatePoolAmino;
-                    fromAmino: (object: _87.MsgCreatePoolAmino) => _87.MsgCreatePool;
+                    toAmino: (message: _88.MsgCreatePool) => _88.MsgCreatePoolAmino;
+                    fromAmino: (object: _88.MsgCreatePoolAmino) => _88.MsgCreatePool;
                 };
                 "/pendulumlabs.market.market.MsgCreateDrop": {
                     aminoType: string;
-                    toAmino: (message: _87.MsgCreateDrop) => _87.MsgCreateDropAmino;
-                    fromAmino: (object: _87.MsgCreateDropAmino) => _87.MsgCreateDrop;
+                    toAmino: (message: _88.MsgCreateDrop) => _88.MsgCreateDropAmino;
+                    fromAmino: (object: _88.MsgCreateDropAmino) => _88.MsgCreateDrop;
                 };
                 "/pendulumlabs.market.market.MsgRedeemDrop": {
                     aminoType: string;
-                    toAmino: (message: _87.MsgRedeemDrop) => _87.MsgRedeemDropAmino;
-                    fromAmino: (object: _87.MsgRedeemDropAmino) => _87.MsgRedeemDrop;
+                    toAmino: (message: _88.MsgRedeemDrop) => _88.MsgRedeemDropAmino;
+                    fromAmino: (object: _88.MsgRedeemDropAmino) => _88.MsgRedeemDrop;
                 };
                 "/pendulumlabs.market.market.MsgCreateOrder": {
                     aminoType: string;
-                    toAmino: (message: _87.MsgCreateOrder) => _87.MsgCreateOrderAmino;
-                    fromAmino: (object: _87.MsgCreateOrderAmino) => _87.MsgCreateOrder;
+                    toAmino: (message: _88.MsgCreateOrder) => _88.MsgCreateOrderAmino;
+                    fromAmino: (object: _88.MsgCreateOrderAmino) => _88.MsgCreateOrder;
                 };
                 "/pendulumlabs.market.market.MsgCancelOrder": {
                     aminoType: string;
-                    toAmino: (message: _87.MsgCancelOrder) => _87.MsgCancelOrderAmino;
-                    fromAmino: (object: _87.MsgCancelOrderAmino) => _87.MsgCancelOrder;
+                    toAmino: (message: _88.MsgCancelOrder) => _88.MsgCancelOrderAmino;
+                    fromAmino: (object: _88.MsgCancelOrderAmino) => _88.MsgCancelOrder;
                 };
                 "/pendulumlabs.market.market.MsgMarketOrder": {
                     aminoType: string;
-                    toAmino: (message: _87.MsgMarketOrder) => _87.MsgMarketOrderAmino;
-                    fromAmino: (object: _87.MsgMarketOrderAmino) => _87.MsgMarketOrder;
+                    toAmino: (message: _88.MsgMarketOrder) => _88.MsgMarketOrderAmino;
+                    fromAmino: (object: _88.MsgMarketOrderAmino) => _88.MsgMarketOrder;
                 };
             };
             MsgCreatePool: {
-                encode(message: _87.MsgCreatePool, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCreatePool;
+                encode(message: _88.MsgCreatePool, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCreatePool;
                 fromPartial(object: {
                     creator?: string;
                     coinA?: string;
                     coinB?: string;
-                }): _87.MsgCreatePool;
-                fromAmino(object: _87.MsgCreatePoolAmino): _87.MsgCreatePool;
-                toAmino(message: _87.MsgCreatePool): _87.MsgCreatePoolAmino;
-                fromAminoMsg(object: _87.MsgCreatePoolAminoMsg): _87.MsgCreatePool;
-                fromProtoMsg(message: _87.MsgCreatePoolProtoMsg): _87.MsgCreatePool;
-                toProto(message: _87.MsgCreatePool): Uint8Array;
-                toProtoMsg(message: _87.MsgCreatePool): _87.MsgCreatePoolProtoMsg;
+                }): _88.MsgCreatePool;
+                fromAmino(object: _88.MsgCreatePoolAmino): _88.MsgCreatePool;
+                toAmino(message: _88.MsgCreatePool): _88.MsgCreatePoolAmino;
+                fromAminoMsg(object: _88.MsgCreatePoolAminoMsg): _88.MsgCreatePool;
+                fromProtoMsg(message: _88.MsgCreatePoolProtoMsg): _88.MsgCreatePool;
+                toProto(message: _88.MsgCreatePool): Uint8Array;
+                toProtoMsg(message: _88.MsgCreatePool): _88.MsgCreatePoolProtoMsg;
             };
             MsgCreatePoolResponse: {
-                encode(_: _87.MsgCreatePoolResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCreatePoolResponse;
-                fromPartial(_: {}): _87.MsgCreatePoolResponse;
-                fromAmino(_: _87.MsgCreatePoolResponseAmino): _87.MsgCreatePoolResponse;
-                toAmino(_: _87.MsgCreatePoolResponse): _87.MsgCreatePoolResponseAmino;
-                fromAminoMsg(object: _87.MsgCreatePoolResponseAminoMsg): _87.MsgCreatePoolResponse;
-                fromProtoMsg(message: _87.MsgCreatePoolResponseProtoMsg): _87.MsgCreatePoolResponse;
-                toProto(message: _87.MsgCreatePoolResponse): Uint8Array;
-                toProtoMsg(message: _87.MsgCreatePoolResponse): _87.MsgCreatePoolResponseProtoMsg;
+                encode(_: _88.MsgCreatePoolResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCreatePoolResponse;
+                fromPartial(_: {}): _88.MsgCreatePoolResponse;
+                fromAmino(_: _88.MsgCreatePoolResponseAmino): _88.MsgCreatePoolResponse;
+                toAmino(_: _88.MsgCreatePoolResponse): _88.MsgCreatePoolResponseAmino;
+                fromAminoMsg(object: _88.MsgCreatePoolResponseAminoMsg): _88.MsgCreatePoolResponse;
+                fromProtoMsg(message: _88.MsgCreatePoolResponseProtoMsg): _88.MsgCreatePoolResponse;
+                toProto(message: _88.MsgCreatePoolResponse): Uint8Array;
+                toProtoMsg(message: _88.MsgCreatePoolResponse): _88.MsgCreatePoolResponseProtoMsg;
             };
             MsgCreateDrop: {
-                encode(message: _87.MsgCreateDrop, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCreateDrop;
+                encode(message: _88.MsgCreateDrop, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCreateDrop;
                 fromPartial(object: {
                     creator?: string;
                     pair?: string;
                     drops?: string;
-                }): _87.MsgCreateDrop;
-                fromAmino(object: _87.MsgCreateDropAmino): _87.MsgCreateDrop;
-                toAmino(message: _87.MsgCreateDrop): _87.MsgCreateDropAmino;
-                fromAminoMsg(object: _87.MsgCreateDropAminoMsg): _87.MsgCreateDrop;
-                fromProtoMsg(message: _87.MsgCreateDropProtoMsg): _87.MsgCreateDrop;
-                toProto(message: _87.MsgCreateDrop): Uint8Array;
-                toProtoMsg(message: _87.MsgCreateDrop): _87.MsgCreateDropProtoMsg;
+                }): _88.MsgCreateDrop;
+                fromAmino(object: _88.MsgCreateDropAmino): _88.MsgCreateDrop;
+                toAmino(message: _88.MsgCreateDrop): _88.MsgCreateDropAmino;
+                fromAminoMsg(object: _88.MsgCreateDropAminoMsg): _88.MsgCreateDrop;
+                fromProtoMsg(message: _88.MsgCreateDropProtoMsg): _88.MsgCreateDrop;
+                toProto(message: _88.MsgCreateDrop): Uint8Array;
+                toProtoMsg(message: _88.MsgCreateDrop): _88.MsgCreateDropProtoMsg;
             };
             MsgCreateDropResponse: {
-                encode(_: _87.MsgCreateDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCreateDropResponse;
-                fromPartial(_: {}): _87.MsgCreateDropResponse;
-                fromAmino(_: _87.MsgCreateDropResponseAmino): _87.MsgCreateDropResponse;
-                toAmino(_: _87.MsgCreateDropResponse): _87.MsgCreateDropResponseAmino;
-                fromAminoMsg(object: _87.MsgCreateDropResponseAminoMsg): _87.MsgCreateDropResponse;
-                fromProtoMsg(message: _87.MsgCreateDropResponseProtoMsg): _87.MsgCreateDropResponse;
-                toProto(message: _87.MsgCreateDropResponse): Uint8Array;
-                toProtoMsg(message: _87.MsgCreateDropResponse): _87.MsgCreateDropResponseProtoMsg;
+                encode(_: _88.MsgCreateDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCreateDropResponse;
+                fromPartial(_: {}): _88.MsgCreateDropResponse;
+                fromAmino(_: _88.MsgCreateDropResponseAmino): _88.MsgCreateDropResponse;
+                toAmino(_: _88.MsgCreateDropResponse): _88.MsgCreateDropResponseAmino;
+                fromAminoMsg(object: _88.MsgCreateDropResponseAminoMsg): _88.MsgCreateDropResponse;
+                fromProtoMsg(message: _88.MsgCreateDropResponseProtoMsg): _88.MsgCreateDropResponse;
+                toProto(message: _88.MsgCreateDropResponse): Uint8Array;
+                toProtoMsg(message: _88.MsgCreateDropResponse): _88.MsgCreateDropResponseProtoMsg;
             };
             MsgRedeemDrop: {
-                encode(message: _87.MsgRedeemDrop, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgRedeemDrop;
+                encode(message: _88.MsgRedeemDrop, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgRedeemDrop;
                 fromPartial(object: {
                     creator?: string;
                     uid?: string;
-                }): _87.MsgRedeemDrop;
-                fromAmino(object: _87.MsgRedeemDropAmino): _87.MsgRedeemDrop;
-                toAmino(message: _87.MsgRedeemDrop): _87.MsgRedeemDropAmino;
-                fromAminoMsg(object: _87.MsgRedeemDropAminoMsg): _87.MsgRedeemDrop;
-                fromProtoMsg(message: _87.MsgRedeemDropProtoMsg): _87.MsgRedeemDrop;
-                toProto(message: _87.MsgRedeemDrop): Uint8Array;
-                toProtoMsg(message: _87.MsgRedeemDrop): _87.MsgRedeemDropProtoMsg;
+                }): _88.MsgRedeemDrop;
+                fromAmino(object: _88.MsgRedeemDropAmino): _88.MsgRedeemDrop;
+                toAmino(message: _88.MsgRedeemDrop): _88.MsgRedeemDropAmino;
+                fromAminoMsg(object: _88.MsgRedeemDropAminoMsg): _88.MsgRedeemDrop;
+                fromProtoMsg(message: _88.MsgRedeemDropProtoMsg): _88.MsgRedeemDrop;
+                toProto(message: _88.MsgRedeemDrop): Uint8Array;
+                toProtoMsg(message: _88.MsgRedeemDrop): _88.MsgRedeemDropProtoMsg;
             };
             MsgRedeemDropResponse: {
-                encode(_: _87.MsgRedeemDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgRedeemDropResponse;
-                fromPartial(_: {}): _87.MsgRedeemDropResponse;
-                fromAmino(_: _87.MsgRedeemDropResponseAmino): _87.MsgRedeemDropResponse;
-                toAmino(_: _87.MsgRedeemDropResponse): _87.MsgRedeemDropResponseAmino;
-                fromAminoMsg(object: _87.MsgRedeemDropResponseAminoMsg): _87.MsgRedeemDropResponse;
-                fromProtoMsg(message: _87.MsgRedeemDropResponseProtoMsg): _87.MsgRedeemDropResponse;
-                toProto(message: _87.MsgRedeemDropResponse): Uint8Array;
-                toProtoMsg(message: _87.MsgRedeemDropResponse): _87.MsgRedeemDropResponseProtoMsg;
+                encode(_: _88.MsgRedeemDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgRedeemDropResponse;
+                fromPartial(_: {}): _88.MsgRedeemDropResponse;
+                fromAmino(_: _88.MsgRedeemDropResponseAmino): _88.MsgRedeemDropResponse;
+                toAmino(_: _88.MsgRedeemDropResponse): _88.MsgRedeemDropResponseAmino;
+                fromAminoMsg(object: _88.MsgRedeemDropResponseAminoMsg): _88.MsgRedeemDropResponse;
+                fromProtoMsg(message: _88.MsgRedeemDropResponseProtoMsg): _88.MsgRedeemDropResponse;
+                toProto(message: _88.MsgRedeemDropResponse): Uint8Array;
+                toProtoMsg(message: _88.MsgRedeemDropResponse): _88.MsgRedeemDropResponseProtoMsg;
             };
             MsgCreateOrder: {
-                encode(message: _87.MsgCreateOrder, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCreateOrder;
+                encode(message: _88.MsgCreateOrder, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCreateOrder;
                 fromPartial(object: {
                     creator?: string;
                     denomAsk?: string;
@@ -245,55 +246,55 @@ export declare namespace pendulumlabs {
                     rate?: string[];
                     prev?: string;
                     next?: string;
-                }): _87.MsgCreateOrder;
-                fromAmino(object: _87.MsgCreateOrderAmino): _87.MsgCreateOrder;
-                toAmino(message: _87.MsgCreateOrder): _87.MsgCreateOrderAmino;
-                fromAminoMsg(object: _87.MsgCreateOrderAminoMsg): _87.MsgCreateOrder;
-                fromProtoMsg(message: _87.MsgCreateOrderProtoMsg): _87.MsgCreateOrder;
-                toProto(message: _87.MsgCreateOrder): Uint8Array;
-                toProtoMsg(message: _87.MsgCreateOrder): _87.MsgCreateOrderProtoMsg;
+                }): _88.MsgCreateOrder;
+                fromAmino(object: _88.MsgCreateOrderAmino): _88.MsgCreateOrder;
+                toAmino(message: _88.MsgCreateOrder): _88.MsgCreateOrderAmino;
+                fromAminoMsg(object: _88.MsgCreateOrderAminoMsg): _88.MsgCreateOrder;
+                fromProtoMsg(message: _88.MsgCreateOrderProtoMsg): _88.MsgCreateOrder;
+                toProto(message: _88.MsgCreateOrder): Uint8Array;
+                toProtoMsg(message: _88.MsgCreateOrder): _88.MsgCreateOrderProtoMsg;
             };
             MsgCreateOrderResponse: {
-                encode(message: _87.MsgCreateOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCreateOrderResponse;
+                encode(message: _88.MsgCreateOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCreateOrderResponse;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                }): _87.MsgCreateOrderResponse;
-                fromAmino(object: _87.MsgCreateOrderResponseAmino): _87.MsgCreateOrderResponse;
-                toAmino(message: _87.MsgCreateOrderResponse): _87.MsgCreateOrderResponseAmino;
-                fromAminoMsg(object: _87.MsgCreateOrderResponseAminoMsg): _87.MsgCreateOrderResponse;
-                fromProtoMsg(message: _87.MsgCreateOrderResponseProtoMsg): _87.MsgCreateOrderResponse;
-                toProto(message: _87.MsgCreateOrderResponse): Uint8Array;
-                toProtoMsg(message: _87.MsgCreateOrderResponse): _87.MsgCreateOrderResponseProtoMsg;
+                }): _88.MsgCreateOrderResponse;
+                fromAmino(object: _88.MsgCreateOrderResponseAmino): _88.MsgCreateOrderResponse;
+                toAmino(message: _88.MsgCreateOrderResponse): _88.MsgCreateOrderResponseAmino;
+                fromAminoMsg(object: _88.MsgCreateOrderResponseAminoMsg): _88.MsgCreateOrderResponse;
+                fromProtoMsg(message: _88.MsgCreateOrderResponseProtoMsg): _88.MsgCreateOrderResponse;
+                toProto(message: _88.MsgCreateOrderResponse): Uint8Array;
+                toProtoMsg(message: _88.MsgCreateOrderResponse): _88.MsgCreateOrderResponseProtoMsg;
             };
             MsgCancelOrder: {
-                encode(message: _87.MsgCancelOrder, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCancelOrder;
+                encode(message: _88.MsgCancelOrder, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCancelOrder;
                 fromPartial(object: {
                     creator?: string;
                     uid?: string;
-                }): _87.MsgCancelOrder;
-                fromAmino(object: _87.MsgCancelOrderAmino): _87.MsgCancelOrder;
-                toAmino(message: _87.MsgCancelOrder): _87.MsgCancelOrderAmino;
-                fromAminoMsg(object: _87.MsgCancelOrderAminoMsg): _87.MsgCancelOrder;
-                fromProtoMsg(message: _87.MsgCancelOrderProtoMsg): _87.MsgCancelOrder;
-                toProto(message: _87.MsgCancelOrder): Uint8Array;
-                toProtoMsg(message: _87.MsgCancelOrder): _87.MsgCancelOrderProtoMsg;
+                }): _88.MsgCancelOrder;
+                fromAmino(object: _88.MsgCancelOrderAmino): _88.MsgCancelOrder;
+                toAmino(message: _88.MsgCancelOrder): _88.MsgCancelOrderAmino;
+                fromAminoMsg(object: _88.MsgCancelOrderAminoMsg): _88.MsgCancelOrder;
+                fromProtoMsg(message: _88.MsgCancelOrderProtoMsg): _88.MsgCancelOrder;
+                toProto(message: _88.MsgCancelOrder): Uint8Array;
+                toProtoMsg(message: _88.MsgCancelOrder): _88.MsgCancelOrderProtoMsg;
             };
             MsgCancelOrderResponse: {
-                encode(_: _87.MsgCancelOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgCancelOrderResponse;
-                fromPartial(_: {}): _87.MsgCancelOrderResponse;
-                fromAmino(_: _87.MsgCancelOrderResponseAmino): _87.MsgCancelOrderResponse;
-                toAmino(_: _87.MsgCancelOrderResponse): _87.MsgCancelOrderResponseAmino;
-                fromAminoMsg(object: _87.MsgCancelOrderResponseAminoMsg): _87.MsgCancelOrderResponse;
-                fromProtoMsg(message: _87.MsgCancelOrderResponseProtoMsg): _87.MsgCancelOrderResponse;
-                toProto(message: _87.MsgCancelOrderResponse): Uint8Array;
-                toProtoMsg(message: _87.MsgCancelOrderResponse): _87.MsgCancelOrderResponseProtoMsg;
+                encode(_: _88.MsgCancelOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgCancelOrderResponse;
+                fromPartial(_: {}): _88.MsgCancelOrderResponse;
+                fromAmino(_: _88.MsgCancelOrderResponseAmino): _88.MsgCancelOrderResponse;
+                toAmino(_: _88.MsgCancelOrderResponse): _88.MsgCancelOrderResponseAmino;
+                fromAminoMsg(object: _88.MsgCancelOrderResponseAminoMsg): _88.MsgCancelOrderResponse;
+                fromProtoMsg(message: _88.MsgCancelOrderResponseProtoMsg): _88.MsgCancelOrderResponse;
+                toProto(message: _88.MsgCancelOrderResponse): Uint8Array;
+                toProtoMsg(message: _88.MsgCancelOrderResponse): _88.MsgCancelOrderResponseProtoMsg;
             };
             MsgMarketOrder: {
-                encode(message: _87.MsgMarketOrder, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgMarketOrder;
+                encode(message: _88.MsgMarketOrder, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgMarketOrder;
                 fromPartial(object: {
                     creator?: string;
                     denomAsk?: string;
@@ -301,43 +302,43 @@ export declare namespace pendulumlabs {
                     denomBid?: string;
                     amountBid?: string;
                     slippage?: string;
-                }): _87.MsgMarketOrder;
-                fromAmino(object: _87.MsgMarketOrderAmino): _87.MsgMarketOrder;
-                toAmino(message: _87.MsgMarketOrder): _87.MsgMarketOrderAmino;
-                fromAminoMsg(object: _87.MsgMarketOrderAminoMsg): _87.MsgMarketOrder;
-                fromProtoMsg(message: _87.MsgMarketOrderProtoMsg): _87.MsgMarketOrder;
-                toProto(message: _87.MsgMarketOrder): Uint8Array;
-                toProtoMsg(message: _87.MsgMarketOrder): _87.MsgMarketOrderProtoMsg;
+                }): _88.MsgMarketOrder;
+                fromAmino(object: _88.MsgMarketOrderAmino): _88.MsgMarketOrder;
+                toAmino(message: _88.MsgMarketOrder): _88.MsgMarketOrderAmino;
+                fromAminoMsg(object: _88.MsgMarketOrderAminoMsg): _88.MsgMarketOrder;
+                fromProtoMsg(message: _88.MsgMarketOrderProtoMsg): _88.MsgMarketOrder;
+                toProto(message: _88.MsgMarketOrder): Uint8Array;
+                toProtoMsg(message: _88.MsgMarketOrder): _88.MsgMarketOrderProtoMsg;
             };
             MsgMarketOrderResponse: {
-                encode(message: _87.MsgMarketOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.MsgMarketOrderResponse;
+                encode(message: _88.MsgMarketOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _88.MsgMarketOrderResponse;
                 fromPartial(object: {
                     amountBid?: string;
                     amountAsk?: string;
                     slippage?: string;
-                }): _87.MsgMarketOrderResponse;
-                fromAmino(object: _87.MsgMarketOrderResponseAmino): _87.MsgMarketOrderResponse;
-                toAmino(message: _87.MsgMarketOrderResponse): _87.MsgMarketOrderResponseAmino;
-                fromAminoMsg(object: _87.MsgMarketOrderResponseAminoMsg): _87.MsgMarketOrderResponse;
-                fromProtoMsg(message: _87.MsgMarketOrderResponseProtoMsg): _87.MsgMarketOrderResponse;
-                toProto(message: _87.MsgMarketOrderResponse): Uint8Array;
-                toProtoMsg(message: _87.MsgMarketOrderResponse): _87.MsgMarketOrderResponseProtoMsg;
+                }): _88.MsgMarketOrderResponse;
+                fromAmino(object: _88.MsgMarketOrderResponseAmino): _88.MsgMarketOrderResponse;
+                toAmino(message: _88.MsgMarketOrderResponse): _88.MsgMarketOrderResponseAmino;
+                fromAminoMsg(object: _88.MsgMarketOrderResponseAminoMsg): _88.MsgMarketOrderResponse;
+                fromProtoMsg(message: _88.MsgMarketOrderResponseProtoMsg): _88.MsgMarketOrderResponse;
+                toProto(message: _88.MsgMarketOrderResponse): Uint8Array;
+                toProtoMsg(message: _88.MsgMarketOrderResponse): _88.MsgMarketOrderResponseProtoMsg;
             };
             QueryParamsRequest: {
-                encode(_: _86.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryParamsRequest;
-                fromPartial(_: {}): _86.QueryParamsRequest;
-                fromAmino(_: _86.QueryParamsRequestAmino): _86.QueryParamsRequest;
-                toAmino(_: _86.QueryParamsRequest): _86.QueryParamsRequestAmino;
-                fromAminoMsg(object: _86.QueryParamsRequestAminoMsg): _86.QueryParamsRequest;
-                fromProtoMsg(message: _86.QueryParamsRequestProtoMsg): _86.QueryParamsRequest;
-                toProto(message: _86.QueryParamsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryParamsRequest): _86.QueryParamsRequestProtoMsg;
+                encode(_: _87.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryParamsRequest;
+                fromPartial(_: {}): _87.QueryParamsRequest;
+                fromAmino(_: _87.QueryParamsRequestAmino): _87.QueryParamsRequest;
+                toAmino(_: _87.QueryParamsRequest): _87.QueryParamsRequestAmino;
+                fromAminoMsg(object: _87.QueryParamsRequestAminoMsg): _87.QueryParamsRequest;
+                fromProtoMsg(message: _87.QueryParamsRequestProtoMsg): _87.QueryParamsRequest;
+                toProto(message: _87.QueryParamsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryParamsRequest): _87.QueryParamsRequestProtoMsg;
             };
             QueryParamsResponse: {
-                encode(message: _86.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryParamsResponse;
+                encode(message: _87.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryParamsResponse;
                 fromPartial(object: {
                     params?: {
                         earnRates?: string;
@@ -345,30 +346,30 @@ export declare namespace pendulumlabs {
                         burnCoin?: string;
                         marketFee?: string;
                     };
-                }): _86.QueryParamsResponse;
-                fromAmino(object: _86.QueryParamsResponseAmino): _86.QueryParamsResponse;
-                toAmino(message: _86.QueryParamsResponse): _86.QueryParamsResponseAmino;
-                fromAminoMsg(object: _86.QueryParamsResponseAminoMsg): _86.QueryParamsResponse;
-                fromProtoMsg(message: _86.QueryParamsResponseProtoMsg): _86.QueryParamsResponse;
-                toProto(message: _86.QueryParamsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryParamsResponse): _86.QueryParamsResponseProtoMsg;
+                }): _87.QueryParamsResponse;
+                fromAmino(object: _87.QueryParamsResponseAmino): _87.QueryParamsResponse;
+                toAmino(message: _87.QueryParamsResponse): _87.QueryParamsResponseAmino;
+                fromAminoMsg(object: _87.QueryParamsResponseAminoMsg): _87.QueryParamsResponse;
+                fromProtoMsg(message: _87.QueryParamsResponseProtoMsg): _87.QueryParamsResponse;
+                toProto(message: _87.QueryParamsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryParamsResponse): _87.QueryParamsResponseProtoMsg;
             };
             QueryGetPoolRequest: {
-                encode(message: _86.QueryGetPoolRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryGetPoolRequest;
+                encode(message: _87.QueryGetPoolRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryGetPoolRequest;
                 fromPartial(object: {
                     pair?: string;
-                }): _86.QueryGetPoolRequest;
-                fromAmino(object: _86.QueryGetPoolRequestAmino): _86.QueryGetPoolRequest;
-                toAmino(message: _86.QueryGetPoolRequest): _86.QueryGetPoolRequestAmino;
-                fromAminoMsg(object: _86.QueryGetPoolRequestAminoMsg): _86.QueryGetPoolRequest;
-                fromProtoMsg(message: _86.QueryGetPoolRequestProtoMsg): _86.QueryGetPoolRequest;
-                toProto(message: _86.QueryGetPoolRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryGetPoolRequest): _86.QueryGetPoolRequestProtoMsg;
+                }): _87.QueryGetPoolRequest;
+                fromAmino(object: _87.QueryGetPoolRequestAmino): _87.QueryGetPoolRequest;
+                toAmino(message: _87.QueryGetPoolRequest): _87.QueryGetPoolRequestAmino;
+                fromAminoMsg(object: _87.QueryGetPoolRequestAminoMsg): _87.QueryGetPoolRequest;
+                fromProtoMsg(message: _87.QueryGetPoolRequestProtoMsg): _87.QueryGetPoolRequest;
+                toProto(message: _87.QueryGetPoolRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryGetPoolRequest): _87.QueryGetPoolRequestProtoMsg;
             };
             QueryGetPoolResponse: {
-                encode(message: _86.QueryGetPoolResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryGetPoolResponse;
+                encode(message: _87.QueryGetPoolResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryGetPoolResponse;
                 fromPartial(object: {
                     pool?: {
                         pair?: string;
@@ -389,17 +390,17 @@ export declare namespace pendulumlabs {
                         drops?: string;
                         history?: string | number | import("long").Long;
                     };
-                }): _86.QueryGetPoolResponse;
-                fromAmino(object: _86.QueryGetPoolResponseAmino): _86.QueryGetPoolResponse;
-                toAmino(message: _86.QueryGetPoolResponse): _86.QueryGetPoolResponseAmino;
-                fromAminoMsg(object: _86.QueryGetPoolResponseAminoMsg): _86.QueryGetPoolResponse;
-                fromProtoMsg(message: _86.QueryGetPoolResponseProtoMsg): _86.QueryGetPoolResponse;
-                toProto(message: _86.QueryGetPoolResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryGetPoolResponse): _86.QueryGetPoolResponseProtoMsg;
+                }): _87.QueryGetPoolResponse;
+                fromAmino(object: _87.QueryGetPoolResponseAmino): _87.QueryGetPoolResponse;
+                toAmino(message: _87.QueryGetPoolResponse): _87.QueryGetPoolResponseAmino;
+                fromAminoMsg(object: _87.QueryGetPoolResponseAminoMsg): _87.QueryGetPoolResponse;
+                fromProtoMsg(message: _87.QueryGetPoolResponseProtoMsg): _87.QueryGetPoolResponse;
+                toProto(message: _87.QueryGetPoolResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryGetPoolResponse): _87.QueryGetPoolResponseProtoMsg;
             };
             QueryAllPoolRequest: {
-                encode(message: _86.QueryAllPoolRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllPoolRequest;
+                encode(message: _87.QueryAllPoolRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllPoolRequest;
                 fromPartial(object: {
                     pagination?: {
                         key?: Uint8Array;
@@ -408,17 +409,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryAllPoolRequest;
-                fromAmino(object: _86.QueryAllPoolRequestAmino): _86.QueryAllPoolRequest;
-                toAmino(message: _86.QueryAllPoolRequest): _86.QueryAllPoolRequestAmino;
-                fromAminoMsg(object: _86.QueryAllPoolRequestAminoMsg): _86.QueryAllPoolRequest;
-                fromProtoMsg(message: _86.QueryAllPoolRequestProtoMsg): _86.QueryAllPoolRequest;
-                toProto(message: _86.QueryAllPoolRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryAllPoolRequest): _86.QueryAllPoolRequestProtoMsg;
+                }): _87.QueryAllPoolRequest;
+                fromAmino(object: _87.QueryAllPoolRequestAmino): _87.QueryAllPoolRequest;
+                toAmino(message: _87.QueryAllPoolRequest): _87.QueryAllPoolRequestAmino;
+                fromAminoMsg(object: _87.QueryAllPoolRequestAminoMsg): _87.QueryAllPoolRequest;
+                fromProtoMsg(message: _87.QueryAllPoolRequestProtoMsg): _87.QueryAllPoolRequest;
+                toProto(message: _87.QueryAllPoolRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryAllPoolRequest): _87.QueryAllPoolRequestProtoMsg;
             };
             QueryAllPoolResponse: {
-                encode(message: _86.QueryAllPoolResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllPoolResponse;
+                encode(message: _87.QueryAllPoolResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllPoolResponse;
                 fromPartial(object: {
                     pool?: {
                         pair?: string;
@@ -443,43 +444,43 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryAllPoolResponse;
-                fromAmino(object: _86.QueryAllPoolResponseAmino): _86.QueryAllPoolResponse;
-                toAmino(message: _86.QueryAllPoolResponse): _86.QueryAllPoolResponseAmino;
-                fromAminoMsg(object: _86.QueryAllPoolResponseAminoMsg): _86.QueryAllPoolResponse;
-                fromProtoMsg(message: _86.QueryAllPoolResponseProtoMsg): _86.QueryAllPoolResponse;
-                toProto(message: _86.QueryAllPoolResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryAllPoolResponse): _86.QueryAllPoolResponseProtoMsg;
+                }): _87.QueryAllPoolResponse;
+                fromAmino(object: _87.QueryAllPoolResponseAmino): _87.QueryAllPoolResponse;
+                toAmino(message: _87.QueryAllPoolResponse): _87.QueryAllPoolResponseAmino;
+                fromAminoMsg(object: _87.QueryAllPoolResponseAminoMsg): _87.QueryAllPoolResponse;
+                fromProtoMsg(message: _87.QueryAllPoolResponseProtoMsg): _87.QueryAllPoolResponse;
+                toProto(message: _87.QueryAllPoolResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryAllPoolResponse): _87.QueryAllPoolResponseProtoMsg;
             };
             QueryVolumeRequest: {
-                encode(message: _86.QueryVolumeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryVolumeRequest;
+                encode(message: _87.QueryVolumeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryVolumeRequest;
                 fromPartial(object: {
                     denom?: string;
-                }): _86.QueryVolumeRequest;
-                fromAmino(object: _86.QueryVolumeRequestAmino): _86.QueryVolumeRequest;
-                toAmino(message: _86.QueryVolumeRequest): _86.QueryVolumeRequestAmino;
-                fromAminoMsg(object: _86.QueryVolumeRequestAminoMsg): _86.QueryVolumeRequest;
-                fromProtoMsg(message: _86.QueryVolumeRequestProtoMsg): _86.QueryVolumeRequest;
-                toProto(message: _86.QueryVolumeRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryVolumeRequest): _86.QueryVolumeRequestProtoMsg;
+                }): _87.QueryVolumeRequest;
+                fromAmino(object: _87.QueryVolumeRequestAmino): _87.QueryVolumeRequest;
+                toAmino(message: _87.QueryVolumeRequest): _87.QueryVolumeRequestAmino;
+                fromAminoMsg(object: _87.QueryVolumeRequestAminoMsg): _87.QueryVolumeRequest;
+                fromProtoMsg(message: _87.QueryVolumeRequestProtoMsg): _87.QueryVolumeRequest;
+                toProto(message: _87.QueryVolumeRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryVolumeRequest): _87.QueryVolumeRequestProtoMsg;
             };
             QueryVolumeResponse: {
-                encode(message: _86.QueryVolumeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryVolumeResponse;
+                encode(message: _87.QueryVolumeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryVolumeResponse;
                 fromPartial(object: {
                     amount?: string;
-                }): _86.QueryVolumeResponse;
-                fromAmino(object: _86.QueryVolumeResponseAmino): _86.QueryVolumeResponse;
-                toAmino(message: _86.QueryVolumeResponse): _86.QueryVolumeResponseAmino;
-                fromAminoMsg(object: _86.QueryVolumeResponseAminoMsg): _86.QueryVolumeResponse;
-                fromProtoMsg(message: _86.QueryVolumeResponseProtoMsg): _86.QueryVolumeResponse;
-                toProto(message: _86.QueryVolumeResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryVolumeResponse): _86.QueryVolumeResponseProtoMsg;
+                }): _87.QueryVolumeResponse;
+                fromAmino(object: _87.QueryVolumeResponseAmino): _87.QueryVolumeResponse;
+                toAmino(message: _87.QueryVolumeResponse): _87.QueryVolumeResponseAmino;
+                fromAminoMsg(object: _87.QueryVolumeResponseAminoMsg): _87.QueryVolumeResponse;
+                fromProtoMsg(message: _87.QueryVolumeResponseProtoMsg): _87.QueryVolumeResponse;
+                toProto(message: _87.QueryVolumeResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryVolumeResponse): _87.QueryVolumeResponseProtoMsg;
             };
             QueryAllVolumeRequest: {
-                encode(message: _86.QueryAllVolumeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllVolumeRequest;
+                encode(message: _87.QueryAllVolumeRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllVolumeRequest;
                 fromPartial(object: {
                     pagination?: {
                         key?: Uint8Array;
@@ -488,17 +489,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryAllVolumeRequest;
-                fromAmino(object: _86.QueryAllVolumeRequestAmino): _86.QueryAllVolumeRequest;
-                toAmino(message: _86.QueryAllVolumeRequest): _86.QueryAllVolumeRequestAmino;
-                fromAminoMsg(object: _86.QueryAllVolumeRequestAminoMsg): _86.QueryAllVolumeRequest;
-                fromProtoMsg(message: _86.QueryAllVolumeRequestProtoMsg): _86.QueryAllVolumeRequest;
-                toProto(message: _86.QueryAllVolumeRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryAllVolumeRequest): _86.QueryAllVolumeRequestProtoMsg;
+                }): _87.QueryAllVolumeRequest;
+                fromAmino(object: _87.QueryAllVolumeRequestAmino): _87.QueryAllVolumeRequest;
+                toAmino(message: _87.QueryAllVolumeRequest): _87.QueryAllVolumeRequestAmino;
+                fromAminoMsg(object: _87.QueryAllVolumeRequestAminoMsg): _87.QueryAllVolumeRequest;
+                fromProtoMsg(message: _87.QueryAllVolumeRequestProtoMsg): _87.QueryAllVolumeRequest;
+                toProto(message: _87.QueryAllVolumeRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryAllVolumeRequest): _87.QueryAllVolumeRequestProtoMsg;
             };
             QueryAllVolumeResponse: {
-                encode(message: _86.QueryAllVolumeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllVolumeResponse;
+                encode(message: _87.QueryAllVolumeResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllVolumeResponse;
                 fromPartial(object: {
                     volumes?: {
                         denom?: string;
@@ -508,84 +509,84 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryAllVolumeResponse;
-                fromAmino(object: _86.QueryAllVolumeResponseAmino): _86.QueryAllVolumeResponse;
-                toAmino(message: _86.QueryAllVolumeResponse): _86.QueryAllVolumeResponseAmino;
-                fromAminoMsg(object: _86.QueryAllVolumeResponseAminoMsg): _86.QueryAllVolumeResponse;
-                fromProtoMsg(message: _86.QueryAllVolumeResponseProtoMsg): _86.QueryAllVolumeResponse;
-                toProto(message: _86.QueryAllVolumeResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryAllVolumeResponse): _86.QueryAllVolumeResponseProtoMsg;
+                }): _87.QueryAllVolumeResponse;
+                fromAmino(object: _87.QueryAllVolumeResponseAmino): _87.QueryAllVolumeResponse;
+                toAmino(message: _87.QueryAllVolumeResponse): _87.QueryAllVolumeResponseAmino;
+                fromAminoMsg(object: _87.QueryAllVolumeResponseAminoMsg): _87.QueryAllVolumeResponse;
+                fromProtoMsg(message: _87.QueryAllVolumeResponseProtoMsg): _87.QueryAllVolumeResponse;
+                toProto(message: _87.QueryAllVolumeResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryAllVolumeResponse): _87.QueryAllVolumeResponseProtoMsg;
             };
             QueryBurnedRequest: {
-                encode(_: _86.QueryBurnedRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryBurnedRequest;
-                fromPartial(_: {}): _86.QueryBurnedRequest;
-                fromAmino(_: _86.QueryBurnedRequestAmino): _86.QueryBurnedRequest;
-                toAmino(_: _86.QueryBurnedRequest): _86.QueryBurnedRequestAmino;
-                fromAminoMsg(object: _86.QueryBurnedRequestAminoMsg): _86.QueryBurnedRequest;
-                fromProtoMsg(message: _86.QueryBurnedRequestProtoMsg): _86.QueryBurnedRequest;
-                toProto(message: _86.QueryBurnedRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryBurnedRequest): _86.QueryBurnedRequestProtoMsg;
+                encode(_: _87.QueryBurnedRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryBurnedRequest;
+                fromPartial(_: {}): _87.QueryBurnedRequest;
+                fromAmino(_: _87.QueryBurnedRequestAmino): _87.QueryBurnedRequest;
+                toAmino(_: _87.QueryBurnedRequest): _87.QueryBurnedRequestAmino;
+                fromAminoMsg(object: _87.QueryBurnedRequestAminoMsg): _87.QueryBurnedRequest;
+                fromProtoMsg(message: _87.QueryBurnedRequestProtoMsg): _87.QueryBurnedRequest;
+                toProto(message: _87.QueryBurnedRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryBurnedRequest): _87.QueryBurnedRequestProtoMsg;
             };
             QueryBurnedResponse: {
-                encode(message: _86.QueryBurnedResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryBurnedResponse;
+                encode(message: _87.QueryBurnedResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryBurnedResponse;
                 fromPartial(object: {
                     denom?: string;
                     amount?: string;
-                }): _86.QueryBurnedResponse;
-                fromAmino(object: _86.QueryBurnedResponseAmino): _86.QueryBurnedResponse;
-                toAmino(message: _86.QueryBurnedResponse): _86.QueryBurnedResponseAmino;
-                fromAminoMsg(object: _86.QueryBurnedResponseAminoMsg): _86.QueryBurnedResponse;
-                fromProtoMsg(message: _86.QueryBurnedResponseProtoMsg): _86.QueryBurnedResponse;
-                toProto(message: _86.QueryBurnedResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryBurnedResponse): _86.QueryBurnedResponseProtoMsg;
+                }): _87.QueryBurnedResponse;
+                fromAmino(object: _87.QueryBurnedResponseAmino): _87.QueryBurnedResponse;
+                toAmino(message: _87.QueryBurnedResponse): _87.QueryBurnedResponseAmino;
+                fromAminoMsg(object: _87.QueryBurnedResponseAminoMsg): _87.QueryBurnedResponse;
+                fromProtoMsg(message: _87.QueryBurnedResponseProtoMsg): _87.QueryBurnedResponse;
+                toProto(message: _87.QueryBurnedResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryBurnedResponse): _87.QueryBurnedResponseProtoMsg;
             };
             QueryDropRequest: {
-                encode(message: _86.QueryDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropRequest;
+                encode(message: _87.QueryDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropRequest;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                }): _86.QueryDropRequest;
-                fromAmino(object: _86.QueryDropRequestAmino): _86.QueryDropRequest;
-                toAmino(message: _86.QueryDropRequest): _86.QueryDropRequestAmino;
-                fromAminoMsg(object: _86.QueryDropRequestAminoMsg): _86.QueryDropRequest;
-                fromProtoMsg(message: _86.QueryDropRequestProtoMsg): _86.QueryDropRequest;
-                toProto(message: _86.QueryDropRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropRequest): _86.QueryDropRequestProtoMsg;
+                }): _87.QueryDropRequest;
+                fromAmino(object: _87.QueryDropRequestAmino): _87.QueryDropRequest;
+                toAmino(message: _87.QueryDropRequest): _87.QueryDropRequestAmino;
+                fromAminoMsg(object: _87.QueryDropRequestAminoMsg): _87.QueryDropRequest;
+                fromProtoMsg(message: _87.QueryDropRequestProtoMsg): _87.QueryDropRequest;
+                toProto(message: _87.QueryDropRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropRequest): _87.QueryDropRequestProtoMsg;
             };
             QueryDropCoinRequest: {
-                encode(message: _86.QueryDropCoinRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropCoinRequest;
+                encode(message: _87.QueryDropCoinRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropCoinRequest;
                 fromPartial(object: {
                     denomA?: string;
                     denomB?: string;
                     amountA?: string;
-                }): _86.QueryDropCoinRequest;
-                fromAmino(object: _86.QueryDropCoinRequestAmino): _86.QueryDropCoinRequest;
-                toAmino(message: _86.QueryDropCoinRequest): _86.QueryDropCoinRequestAmino;
-                fromAminoMsg(object: _86.QueryDropCoinRequestAminoMsg): _86.QueryDropCoinRequest;
-                fromProtoMsg(message: _86.QueryDropCoinRequestProtoMsg): _86.QueryDropCoinRequest;
-                toProto(message: _86.QueryDropCoinRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropCoinRequest): _86.QueryDropCoinRequestProtoMsg;
+                }): _87.QueryDropCoinRequest;
+                fromAmino(object: _87.QueryDropCoinRequestAmino): _87.QueryDropCoinRequest;
+                toAmino(message: _87.QueryDropCoinRequest): _87.QueryDropCoinRequestAmino;
+                fromAminoMsg(object: _87.QueryDropCoinRequestAminoMsg): _87.QueryDropCoinRequest;
+                fromProtoMsg(message: _87.QueryDropCoinRequestProtoMsg): _87.QueryDropCoinRequest;
+                toProto(message: _87.QueryDropCoinRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropCoinRequest): _87.QueryDropCoinRequestProtoMsg;
             };
             QueryDropCoinResponse: {
-                encode(message: _86.QueryDropCoinResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropCoinResponse;
+                encode(message: _87.QueryDropCoinResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropCoinResponse;
                 fromPartial(object: {
                     drops?: string;
                     amountB?: string;
-                }): _86.QueryDropCoinResponse;
-                fromAmino(object: _86.QueryDropCoinResponseAmino): _86.QueryDropCoinResponse;
-                toAmino(message: _86.QueryDropCoinResponse): _86.QueryDropCoinResponseAmino;
-                fromAminoMsg(object: _86.QueryDropCoinResponseAminoMsg): _86.QueryDropCoinResponse;
-                fromProtoMsg(message: _86.QueryDropCoinResponseProtoMsg): _86.QueryDropCoinResponse;
-                toProto(message: _86.QueryDropCoinResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropCoinResponse): _86.QueryDropCoinResponseProtoMsg;
+                }): _87.QueryDropCoinResponse;
+                fromAmino(object: _87.QueryDropCoinResponseAmino): _87.QueryDropCoinResponse;
+                toAmino(message: _87.QueryDropCoinResponse): _87.QueryDropCoinResponseAmino;
+                fromAminoMsg(object: _87.QueryDropCoinResponseAminoMsg): _87.QueryDropCoinResponse;
+                fromProtoMsg(message: _87.QueryDropCoinResponseProtoMsg): _87.QueryDropCoinResponse;
+                toProto(message: _87.QueryDropCoinResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropCoinResponse): _87.QueryDropCoinResponseProtoMsg;
             };
             QueryDropResponse: {
-                encode(message: _86.QueryDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropResponse;
+                encode(message: _87.QueryDropResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropResponse;
                 fromPartial(object: {
                     drop?: {
                         uid?: string | number | import("long").Long;
@@ -595,103 +596,103 @@ export declare namespace pendulumlabs {
                         product?: string;
                         active?: boolean;
                     };
-                }): _86.QueryDropResponse;
-                fromAmino(object: _86.QueryDropResponseAmino): _86.QueryDropResponse;
-                toAmino(message: _86.QueryDropResponse): _86.QueryDropResponseAmino;
-                fromAminoMsg(object: _86.QueryDropResponseAminoMsg): _86.QueryDropResponse;
-                fromProtoMsg(message: _86.QueryDropResponseProtoMsg): _86.QueryDropResponse;
-                toProto(message: _86.QueryDropResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropResponse): _86.QueryDropResponseProtoMsg;
+                }): _87.QueryDropResponse;
+                fromAmino(object: _87.QueryDropResponseAmino): _87.QueryDropResponse;
+                toAmino(message: _87.QueryDropResponse): _87.QueryDropResponseAmino;
+                fromAminoMsg(object: _87.QueryDropResponseAminoMsg): _87.QueryDropResponse;
+                fromProtoMsg(message: _87.QueryDropResponseProtoMsg): _87.QueryDropResponse;
+                toProto(message: _87.QueryDropResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropResponse): _87.QueryDropResponseProtoMsg;
             };
             QueryDropAmountsRequest: {
-                encode(message: _86.QueryDropAmountsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropAmountsRequest;
+                encode(message: _87.QueryDropAmountsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropAmountsRequest;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                }): _86.QueryDropAmountsRequest;
-                fromAmino(object: _86.QueryDropAmountsRequestAmino): _86.QueryDropAmountsRequest;
-                toAmino(message: _86.QueryDropAmountsRequest): _86.QueryDropAmountsRequestAmino;
-                fromAminoMsg(object: _86.QueryDropAmountsRequestAminoMsg): _86.QueryDropAmountsRequest;
-                fromProtoMsg(message: _86.QueryDropAmountsRequestProtoMsg): _86.QueryDropAmountsRequest;
-                toProto(message: _86.QueryDropAmountsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropAmountsRequest): _86.QueryDropAmountsRequestProtoMsg;
+                }): _87.QueryDropAmountsRequest;
+                fromAmino(object: _87.QueryDropAmountsRequestAmino): _87.QueryDropAmountsRequest;
+                toAmino(message: _87.QueryDropAmountsRequest): _87.QueryDropAmountsRequestAmino;
+                fromAminoMsg(object: _87.QueryDropAmountsRequestAminoMsg): _87.QueryDropAmountsRequest;
+                fromProtoMsg(message: _87.QueryDropAmountsRequestProtoMsg): _87.QueryDropAmountsRequest;
+                toProto(message: _87.QueryDropAmountsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropAmountsRequest): _87.QueryDropAmountsRequestProtoMsg;
             };
             QueryDropAmountsResponse: {
-                encode(message: _86.QueryDropAmountsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropAmountsResponse;
+                encode(message: _87.QueryDropAmountsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropAmountsResponse;
                 fromPartial(object: {
                     denom1?: string;
                     denom2?: string;
                     amount1?: string;
                     amount2?: string;
-                }): _86.QueryDropAmountsResponse;
-                fromAmino(object: _86.QueryDropAmountsResponseAmino): _86.QueryDropAmountsResponse;
-                toAmino(message: _86.QueryDropAmountsResponse): _86.QueryDropAmountsResponseAmino;
-                fromAminoMsg(object: _86.QueryDropAmountsResponseAminoMsg): _86.QueryDropAmountsResponse;
-                fromProtoMsg(message: _86.QueryDropAmountsResponseProtoMsg): _86.QueryDropAmountsResponse;
-                toProto(message: _86.QueryDropAmountsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropAmountsResponse): _86.QueryDropAmountsResponseProtoMsg;
+                }): _87.QueryDropAmountsResponse;
+                fromAmino(object: _87.QueryDropAmountsResponseAmino): _87.QueryDropAmountsResponse;
+                toAmino(message: _87.QueryDropAmountsResponse): _87.QueryDropAmountsResponseAmino;
+                fromAminoMsg(object: _87.QueryDropAmountsResponseAminoMsg): _87.QueryDropAmountsResponse;
+                fromProtoMsg(message: _87.QueryDropAmountsResponseProtoMsg): _87.QueryDropAmountsResponse;
+                toProto(message: _87.QueryDropAmountsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropAmountsResponse): _87.QueryDropAmountsResponseProtoMsg;
             };
             QueryDropsToCoinsRequest: {
-                encode(message: _86.QueryDropsToCoinsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropsToCoinsRequest;
+                encode(message: _87.QueryDropsToCoinsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropsToCoinsRequest;
                 fromPartial(object: {
                     denom1?: string;
                     denom2?: string;
                     drops?: string;
-                }): _86.QueryDropsToCoinsRequest;
-                fromAmino(object: _86.QueryDropsToCoinsRequestAmino): _86.QueryDropsToCoinsRequest;
-                toAmino(message: _86.QueryDropsToCoinsRequest): _86.QueryDropsToCoinsRequestAmino;
-                fromAminoMsg(object: _86.QueryDropsToCoinsRequestAminoMsg): _86.QueryDropsToCoinsRequest;
-                fromProtoMsg(message: _86.QueryDropsToCoinsRequestProtoMsg): _86.QueryDropsToCoinsRequest;
-                toProto(message: _86.QueryDropsToCoinsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropsToCoinsRequest): _86.QueryDropsToCoinsRequestProtoMsg;
+                }): _87.QueryDropsToCoinsRequest;
+                fromAmino(object: _87.QueryDropsToCoinsRequestAmino): _87.QueryDropsToCoinsRequest;
+                toAmino(message: _87.QueryDropsToCoinsRequest): _87.QueryDropsToCoinsRequestAmino;
+                fromAminoMsg(object: _87.QueryDropsToCoinsRequestAminoMsg): _87.QueryDropsToCoinsRequest;
+                fromProtoMsg(message: _87.QueryDropsToCoinsRequestProtoMsg): _87.QueryDropsToCoinsRequest;
+                toProto(message: _87.QueryDropsToCoinsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropsToCoinsRequest): _87.QueryDropsToCoinsRequestProtoMsg;
             };
             QueryDropsToCoinsResponse: {
-                encode(message: _86.QueryDropsToCoinsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropsToCoinsResponse;
+                encode(message: _87.QueryDropsToCoinsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropsToCoinsResponse;
                 fromPartial(object: {
                     denom1?: string;
                     amount1?: string;
                     denom2?: string;
                     amount2?: string;
-                }): _86.QueryDropsToCoinsResponse;
-                fromAmino(object: _86.QueryDropsToCoinsResponseAmino): _86.QueryDropsToCoinsResponse;
-                toAmino(message: _86.QueryDropsToCoinsResponse): _86.QueryDropsToCoinsResponseAmino;
-                fromAminoMsg(object: _86.QueryDropsToCoinsResponseAminoMsg): _86.QueryDropsToCoinsResponse;
-                fromProtoMsg(message: _86.QueryDropsToCoinsResponseProtoMsg): _86.QueryDropsToCoinsResponse;
-                toProto(message: _86.QueryDropsToCoinsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropsToCoinsResponse): _86.QueryDropsToCoinsResponseProtoMsg;
+                }): _87.QueryDropsToCoinsResponse;
+                fromAmino(object: _87.QueryDropsToCoinsResponseAmino): _87.QueryDropsToCoinsResponse;
+                toAmino(message: _87.QueryDropsToCoinsResponse): _87.QueryDropsToCoinsResponseAmino;
+                fromAminoMsg(object: _87.QueryDropsToCoinsResponseAminoMsg): _87.QueryDropsToCoinsResponse;
+                fromProtoMsg(message: _87.QueryDropsToCoinsResponseProtoMsg): _87.QueryDropsToCoinsResponse;
+                toProto(message: _87.QueryDropsToCoinsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropsToCoinsResponse): _87.QueryDropsToCoinsResponseProtoMsg;
             };
             QueryDropPairsRequest: {
-                encode(message: _86.QueryDropPairsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropPairsRequest;
+                encode(message: _87.QueryDropPairsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropPairsRequest;
                 fromPartial(object: {
                     address?: string;
-                }): _86.QueryDropPairsRequest;
-                fromAmino(object: _86.QueryDropPairsRequestAmino): _86.QueryDropPairsRequest;
-                toAmino(message: _86.QueryDropPairsRequest): _86.QueryDropPairsRequestAmino;
-                fromAminoMsg(object: _86.QueryDropPairsRequestAminoMsg): _86.QueryDropPairsRequest;
-                fromProtoMsg(message: _86.QueryDropPairsRequestProtoMsg): _86.QueryDropPairsRequest;
-                toProto(message: _86.QueryDropPairsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropPairsRequest): _86.QueryDropPairsRequestProtoMsg;
+                }): _87.QueryDropPairsRequest;
+                fromAmino(object: _87.QueryDropPairsRequestAmino): _87.QueryDropPairsRequest;
+                toAmino(message: _87.QueryDropPairsRequest): _87.QueryDropPairsRequestAmino;
+                fromAminoMsg(object: _87.QueryDropPairsRequestAminoMsg): _87.QueryDropPairsRequest;
+                fromProtoMsg(message: _87.QueryDropPairsRequestProtoMsg): _87.QueryDropPairsRequest;
+                toProto(message: _87.QueryDropPairsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropPairsRequest): _87.QueryDropPairsRequestProtoMsg;
             };
             QueryDropPairsResponse: {
-                encode(message: _86.QueryDropPairsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropPairsResponse;
+                encode(message: _87.QueryDropPairsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropPairsResponse;
                 fromPartial(object: {
                     pairs?: string[];
-                }): _86.QueryDropPairsResponse;
-                fromAmino(object: _86.QueryDropPairsResponseAmino): _86.QueryDropPairsResponse;
-                toAmino(message: _86.QueryDropPairsResponse): _86.QueryDropPairsResponseAmino;
-                fromAminoMsg(object: _86.QueryDropPairsResponseAminoMsg): _86.QueryDropPairsResponse;
-                fromProtoMsg(message: _86.QueryDropPairsResponseProtoMsg): _86.QueryDropPairsResponse;
-                toProto(message: _86.QueryDropPairsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropPairsResponse): _86.QueryDropPairsResponseProtoMsg;
+                }): _87.QueryDropPairsResponse;
+                fromAmino(object: _87.QueryDropPairsResponseAmino): _87.QueryDropPairsResponse;
+                toAmino(message: _87.QueryDropPairsResponse): _87.QueryDropPairsResponseAmino;
+                fromAminoMsg(object: _87.QueryDropPairsResponseAminoMsg): _87.QueryDropPairsResponse;
+                fromProtoMsg(message: _87.QueryDropPairsResponseProtoMsg): _87.QueryDropPairsResponse;
+                toProto(message: _87.QueryDropPairsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropPairsResponse): _87.QueryDropPairsResponseProtoMsg;
             };
             QueryDropOwnerPairRequest: {
-                encode(message: _86.QueryDropOwnerPairRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropOwnerPairRequest;
+                encode(message: _87.QueryDropOwnerPairRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropOwnerPairRequest;
                 fromPartial(object: {
                     address?: string;
                     pair?: string;
@@ -702,44 +703,44 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryDropOwnerPairRequest;
-                fromAmino(object: _86.QueryDropOwnerPairRequestAmino): _86.QueryDropOwnerPairRequest;
-                toAmino(message: _86.QueryDropOwnerPairRequest): _86.QueryDropOwnerPairRequestAmino;
-                fromAminoMsg(object: _86.QueryDropOwnerPairRequestAminoMsg): _86.QueryDropOwnerPairRequest;
-                fromProtoMsg(message: _86.QueryDropOwnerPairRequestProtoMsg): _86.QueryDropOwnerPairRequest;
-                toProto(message: _86.QueryDropOwnerPairRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropOwnerPairRequest): _86.QueryDropOwnerPairRequestProtoMsg;
+                }): _87.QueryDropOwnerPairRequest;
+                fromAmino(object: _87.QueryDropOwnerPairRequestAmino): _87.QueryDropOwnerPairRequest;
+                toAmino(message: _87.QueryDropOwnerPairRequest): _87.QueryDropOwnerPairRequestAmino;
+                fromAminoMsg(object: _87.QueryDropOwnerPairRequestAminoMsg): _87.QueryDropOwnerPairRequest;
+                fromProtoMsg(message: _87.QueryDropOwnerPairRequestProtoMsg): _87.QueryDropOwnerPairRequest;
+                toProto(message: _87.QueryDropOwnerPairRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropOwnerPairRequest): _87.QueryDropOwnerPairRequestProtoMsg;
             };
             QueryDropOwnerPairSumRequest: {
-                encode(message: _86.QueryDropOwnerPairSumRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropOwnerPairSumRequest;
+                encode(message: _87.QueryDropOwnerPairSumRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropOwnerPairSumRequest;
                 fromPartial(object: {
                     address?: string;
                     pair?: string;
-                }): _86.QueryDropOwnerPairSumRequest;
-                fromAmino(object: _86.QueryDropOwnerPairSumRequestAmino): _86.QueryDropOwnerPairSumRequest;
-                toAmino(message: _86.QueryDropOwnerPairSumRequest): _86.QueryDropOwnerPairSumRequestAmino;
-                fromAminoMsg(object: _86.QueryDropOwnerPairSumRequestAminoMsg): _86.QueryDropOwnerPairSumRequest;
-                fromProtoMsg(message: _86.QueryDropOwnerPairSumRequestProtoMsg): _86.QueryDropOwnerPairSumRequest;
-                toProto(message: _86.QueryDropOwnerPairSumRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropOwnerPairSumRequest): _86.QueryDropOwnerPairSumRequestProtoMsg;
+                }): _87.QueryDropOwnerPairSumRequest;
+                fromAmino(object: _87.QueryDropOwnerPairSumRequestAmino): _87.QueryDropOwnerPairSumRequest;
+                toAmino(message: _87.QueryDropOwnerPairSumRequest): _87.QueryDropOwnerPairSumRequestAmino;
+                fromAminoMsg(object: _87.QueryDropOwnerPairSumRequestAminoMsg): _87.QueryDropOwnerPairSumRequest;
+                fromProtoMsg(message: _87.QueryDropOwnerPairSumRequestProtoMsg): _87.QueryDropOwnerPairSumRequest;
+                toProto(message: _87.QueryDropOwnerPairSumRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropOwnerPairSumRequest): _87.QueryDropOwnerPairSumRequestProtoMsg;
             };
             QueryDropOwnerPairSumResponse: {
-                encode(message: _86.QueryDropOwnerPairSumResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropOwnerPairSumResponse;
+                encode(message: _87.QueryDropOwnerPairSumResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropOwnerPairSumResponse;
                 fromPartial(object: {
                     sum?: string;
-                }): _86.QueryDropOwnerPairSumResponse;
-                fromAmino(object: _86.QueryDropOwnerPairSumResponseAmino): _86.QueryDropOwnerPairSumResponse;
-                toAmino(message: _86.QueryDropOwnerPairSumResponse): _86.QueryDropOwnerPairSumResponseAmino;
-                fromAminoMsg(object: _86.QueryDropOwnerPairSumResponseAminoMsg): _86.QueryDropOwnerPairSumResponse;
-                fromProtoMsg(message: _86.QueryDropOwnerPairSumResponseProtoMsg): _86.QueryDropOwnerPairSumResponse;
-                toProto(message: _86.QueryDropOwnerPairSumResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropOwnerPairSumResponse): _86.QueryDropOwnerPairSumResponseProtoMsg;
+                }): _87.QueryDropOwnerPairSumResponse;
+                fromAmino(object: _87.QueryDropOwnerPairSumResponseAmino): _87.QueryDropOwnerPairSumResponse;
+                toAmino(message: _87.QueryDropOwnerPairSumResponse): _87.QueryDropOwnerPairSumResponseAmino;
+                fromAminoMsg(object: _87.QueryDropOwnerPairSumResponseAminoMsg): _87.QueryDropOwnerPairSumResponse;
+                fromProtoMsg(message: _87.QueryDropOwnerPairSumResponseProtoMsg): _87.QueryDropOwnerPairSumResponse;
+                toProto(message: _87.QueryDropOwnerPairSumResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropOwnerPairSumResponse): _87.QueryDropOwnerPairSumResponseProtoMsg;
             };
             QueryDropOwnerPairUidsRequest: {
-                encode(message: _86.QueryDropOwnerPairUidsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropOwnerPairUidsRequest;
+                encode(message: _87.QueryDropOwnerPairUidsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropOwnerPairUidsRequest;
                 fromPartial(object: {
                     address?: string;
                     pair?: string;
@@ -750,34 +751,34 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryDropOwnerPairUidsRequest;
-                fromAmino(object: _86.QueryDropOwnerPairUidsRequestAmino): _86.QueryDropOwnerPairUidsRequest;
-                toAmino(message: _86.QueryDropOwnerPairUidsRequest): _86.QueryDropOwnerPairUidsRequestAmino;
-                fromAminoMsg(object: _86.QueryDropOwnerPairUidsRequestAminoMsg): _86.QueryDropOwnerPairUidsRequest;
-                fromProtoMsg(message: _86.QueryDropOwnerPairUidsRequestProtoMsg): _86.QueryDropOwnerPairUidsRequest;
-                toProto(message: _86.QueryDropOwnerPairUidsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropOwnerPairUidsRequest): _86.QueryDropOwnerPairUidsRequestProtoMsg;
+                }): _87.QueryDropOwnerPairUidsRequest;
+                fromAmino(object: _87.QueryDropOwnerPairUidsRequestAmino): _87.QueryDropOwnerPairUidsRequest;
+                toAmino(message: _87.QueryDropOwnerPairUidsRequest): _87.QueryDropOwnerPairUidsRequestAmino;
+                fromAminoMsg(object: _87.QueryDropOwnerPairUidsRequestAminoMsg): _87.QueryDropOwnerPairUidsRequest;
+                fromProtoMsg(message: _87.QueryDropOwnerPairUidsRequestProtoMsg): _87.QueryDropOwnerPairUidsRequest;
+                toProto(message: _87.QueryDropOwnerPairUidsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropOwnerPairUidsRequest): _87.QueryDropOwnerPairUidsRequestProtoMsg;
             };
             QueryUidsResponse: {
-                encode(message: _86.QueryUidsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryUidsResponse;
+                encode(message: _87.QueryUidsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryUidsResponse;
                 fromPartial(object: {
                     uids?: (string | number | import("long").Long)[];
                     pagination?: {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryUidsResponse;
-                fromAmino(object: _86.QueryUidsResponseAmino): _86.QueryUidsResponse;
-                toAmino(message: _86.QueryUidsResponse): _86.QueryUidsResponseAmino;
-                fromAminoMsg(object: _86.QueryUidsResponseAminoMsg): _86.QueryUidsResponse;
-                fromProtoMsg(message: _86.QueryUidsResponseProtoMsg): _86.QueryUidsResponse;
-                toProto(message: _86.QueryUidsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryUidsResponse): _86.QueryUidsResponseProtoMsg;
+                }): _87.QueryUidsResponse;
+                fromAmino(object: _87.QueryUidsResponseAmino): _87.QueryUidsResponse;
+                toAmino(message: _87.QueryUidsResponse): _87.QueryUidsResponseAmino;
+                fromAminoMsg(object: _87.QueryUidsResponseAminoMsg): _87.QueryUidsResponse;
+                fromProtoMsg(message: _87.QueryUidsResponseProtoMsg): _87.QueryUidsResponse;
+                toProto(message: _87.QueryUidsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryUidsResponse): _87.QueryUidsResponseProtoMsg;
             };
             QueryDropOwnerPairDetailRequest: {
-                encode(message: _86.QueryDropOwnerPairDetailRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropOwnerPairDetailRequest;
+                encode(message: _87.QueryDropOwnerPairDetailRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropOwnerPairDetailRequest;
                 fromPartial(object: {
                     address?: string;
                     pair?: string;
@@ -788,17 +789,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryDropOwnerPairDetailRequest;
-                fromAmino(object: _86.QueryDropOwnerPairDetailRequestAmino): _86.QueryDropOwnerPairDetailRequest;
-                toAmino(message: _86.QueryDropOwnerPairDetailRequest): _86.QueryDropOwnerPairDetailRequestAmino;
-                fromAminoMsg(object: _86.QueryDropOwnerPairDetailRequestAminoMsg): _86.QueryDropOwnerPairDetailRequest;
-                fromProtoMsg(message: _86.QueryDropOwnerPairDetailRequestProtoMsg): _86.QueryDropOwnerPairDetailRequest;
-                toProto(message: _86.QueryDropOwnerPairDetailRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryDropOwnerPairDetailRequest): _86.QueryDropOwnerPairDetailRequestProtoMsg;
+                }): _87.QueryDropOwnerPairDetailRequest;
+                fromAmino(object: _87.QueryDropOwnerPairDetailRequestAmino): _87.QueryDropOwnerPairDetailRequest;
+                toAmino(message: _87.QueryDropOwnerPairDetailRequest): _87.QueryDropOwnerPairDetailRequestAmino;
+                fromAminoMsg(object: _87.QueryDropOwnerPairDetailRequestAminoMsg): _87.QueryDropOwnerPairDetailRequest;
+                fromProtoMsg(message: _87.QueryDropOwnerPairDetailRequestProtoMsg): _87.QueryDropOwnerPairDetailRequest;
+                toProto(message: _87.QueryDropOwnerPairDetailRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryDropOwnerPairDetailRequest): _87.QueryDropOwnerPairDetailRequestProtoMsg;
             };
             QueryAllDropRequest: {
-                encode(message: _86.QueryAllDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllDropRequest;
+                encode(message: _87.QueryAllDropRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllDropRequest;
                 fromPartial(object: {
                     pagination?: {
                         key?: Uint8Array;
@@ -807,17 +808,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryAllDropRequest;
-                fromAmino(object: _86.QueryAllDropRequestAmino): _86.QueryAllDropRequest;
-                toAmino(message: _86.QueryAllDropRequest): _86.QueryAllDropRequestAmino;
-                fromAminoMsg(object: _86.QueryAllDropRequestAminoMsg): _86.QueryAllDropRequest;
-                fromProtoMsg(message: _86.QueryAllDropRequestProtoMsg): _86.QueryAllDropRequest;
-                toProto(message: _86.QueryAllDropRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryAllDropRequest): _86.QueryAllDropRequestProtoMsg;
+                }): _87.QueryAllDropRequest;
+                fromAmino(object: _87.QueryAllDropRequestAmino): _87.QueryAllDropRequest;
+                toAmino(message: _87.QueryAllDropRequest): _87.QueryAllDropRequestAmino;
+                fromAminoMsg(object: _87.QueryAllDropRequestAminoMsg): _87.QueryAllDropRequest;
+                fromProtoMsg(message: _87.QueryAllDropRequestProtoMsg): _87.QueryAllDropRequest;
+                toProto(message: _87.QueryAllDropRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryAllDropRequest): _87.QueryAllDropRequestProtoMsg;
             };
             QueryDropsResponse: {
-                encode(message: _86.QueryDropsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryDropsResponse;
+                encode(message: _87.QueryDropsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryDropsResponse;
                 fromPartial(object: {
                     drops?: {
                         uid?: string | number | import("long").Long;
@@ -831,31 +832,31 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryDropsResponse;
-                fromAmino(object: _86.QueryDropsResponseAmino): _86.QueryDropsResponse;
-                toAmino(message: _86.QueryDropsResponse): _86.QueryDropsResponseAmino;
-                fromAminoMsg(object: _86.QueryDropsResponseAminoMsg): _86.QueryDropsResponse;
-                fromProtoMsg(message: _86.QueryDropsResponseProtoMsg): _86.QueryDropsResponse;
-                toProto(message: _86.QueryDropsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryDropsResponse): _86.QueryDropsResponseProtoMsg;
+                }): _87.QueryDropsResponse;
+                fromAmino(object: _87.QueryDropsResponseAmino): _87.QueryDropsResponse;
+                toAmino(message: _87.QueryDropsResponse): _87.QueryDropsResponseAmino;
+                fromAminoMsg(object: _87.QueryDropsResponseAminoMsg): _87.QueryDropsResponse;
+                fromProtoMsg(message: _87.QueryDropsResponseProtoMsg): _87.QueryDropsResponse;
+                toProto(message: _87.QueryDropsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryDropsResponse): _87.QueryDropsResponseProtoMsg;
             };
             QueryGetMemberRequest: {
-                encode(message: _86.QueryGetMemberRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryGetMemberRequest;
+                encode(message: _87.QueryGetMemberRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryGetMemberRequest;
                 fromPartial(object: {
                     denomA?: string;
                     denomB?: string;
-                }): _86.QueryGetMemberRequest;
-                fromAmino(object: _86.QueryGetMemberRequestAmino): _86.QueryGetMemberRequest;
-                toAmino(message: _86.QueryGetMemberRequest): _86.QueryGetMemberRequestAmino;
-                fromAminoMsg(object: _86.QueryGetMemberRequestAminoMsg): _86.QueryGetMemberRequest;
-                fromProtoMsg(message: _86.QueryGetMemberRequestProtoMsg): _86.QueryGetMemberRequest;
-                toProto(message: _86.QueryGetMemberRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryGetMemberRequest): _86.QueryGetMemberRequestProtoMsg;
+                }): _87.QueryGetMemberRequest;
+                fromAmino(object: _87.QueryGetMemberRequestAmino): _87.QueryGetMemberRequest;
+                toAmino(message: _87.QueryGetMemberRequest): _87.QueryGetMemberRequestAmino;
+                fromAminoMsg(object: _87.QueryGetMemberRequestAminoMsg): _87.QueryGetMemberRequest;
+                fromProtoMsg(message: _87.QueryGetMemberRequestProtoMsg): _87.QueryGetMemberRequest;
+                toProto(message: _87.QueryGetMemberRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryGetMemberRequest): _87.QueryGetMemberRequestProtoMsg;
             };
             QueryGetMemberResponse: {
-                encode(message: _86.QueryGetMemberResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryGetMemberResponse;
+                encode(message: _87.QueryGetMemberResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryGetMemberResponse;
                 fromPartial(object: {
                     member?: {
                         pair?: string;
@@ -866,17 +867,17 @@ export declare namespace pendulumlabs {
                         limit?: string | number | import("long").Long;
                         stop?: string | number | import("long").Long;
                     };
-                }): _86.QueryGetMemberResponse;
-                fromAmino(object: _86.QueryGetMemberResponseAmino): _86.QueryGetMemberResponse;
-                toAmino(message: _86.QueryGetMemberResponse): _86.QueryGetMemberResponseAmino;
-                fromAminoMsg(object: _86.QueryGetMemberResponseAminoMsg): _86.QueryGetMemberResponse;
-                fromProtoMsg(message: _86.QueryGetMemberResponseProtoMsg): _86.QueryGetMemberResponse;
-                toProto(message: _86.QueryGetMemberResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryGetMemberResponse): _86.QueryGetMemberResponseProtoMsg;
+                }): _87.QueryGetMemberResponse;
+                fromAmino(object: _87.QueryGetMemberResponseAmino): _87.QueryGetMemberResponse;
+                toAmino(message: _87.QueryGetMemberResponse): _87.QueryGetMemberResponseAmino;
+                fromAminoMsg(object: _87.QueryGetMemberResponseAminoMsg): _87.QueryGetMemberResponse;
+                fromProtoMsg(message: _87.QueryGetMemberResponseProtoMsg): _87.QueryGetMemberResponse;
+                toProto(message: _87.QueryGetMemberResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryGetMemberResponse): _87.QueryGetMemberResponseProtoMsg;
             };
             QueryAllMemberRequest: {
-                encode(message: _86.QueryAllMemberRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllMemberRequest;
+                encode(message: _87.QueryAllMemberRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllMemberRequest;
                 fromPartial(object: {
                     pagination?: {
                         key?: Uint8Array;
@@ -885,17 +886,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryAllMemberRequest;
-                fromAmino(object: _86.QueryAllMemberRequestAmino): _86.QueryAllMemberRequest;
-                toAmino(message: _86.QueryAllMemberRequest): _86.QueryAllMemberRequestAmino;
-                fromAminoMsg(object: _86.QueryAllMemberRequestAminoMsg): _86.QueryAllMemberRequest;
-                fromProtoMsg(message: _86.QueryAllMemberRequestProtoMsg): _86.QueryAllMemberRequest;
-                toProto(message: _86.QueryAllMemberRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryAllMemberRequest): _86.QueryAllMemberRequestProtoMsg;
+                }): _87.QueryAllMemberRequest;
+                fromAmino(object: _87.QueryAllMemberRequestAmino): _87.QueryAllMemberRequest;
+                toAmino(message: _87.QueryAllMemberRequest): _87.QueryAllMemberRequestAmino;
+                fromAminoMsg(object: _87.QueryAllMemberRequestAminoMsg): _87.QueryAllMemberRequest;
+                fromProtoMsg(message: _87.QueryAllMemberRequestProtoMsg): _87.QueryAllMemberRequest;
+                toProto(message: _87.QueryAllMemberRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryAllMemberRequest): _87.QueryAllMemberRequestProtoMsg;
             };
             QueryAllMemberResponse: {
-                encode(message: _86.QueryAllMemberResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllMemberResponse;
+                encode(message: _87.QueryAllMemberResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllMemberResponse;
                 fromPartial(object: {
                     member?: {
                         pair?: string;
@@ -910,46 +911,46 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryAllMemberResponse;
-                fromAmino(object: _86.QueryAllMemberResponseAmino): _86.QueryAllMemberResponse;
-                toAmino(message: _86.QueryAllMemberResponse): _86.QueryAllMemberResponseAmino;
-                fromAminoMsg(object: _86.QueryAllMemberResponseAminoMsg): _86.QueryAllMemberResponse;
-                fromProtoMsg(message: _86.QueryAllMemberResponseProtoMsg): _86.QueryAllMemberResponse;
-                toProto(message: _86.QueryAllMemberResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryAllMemberResponse): _86.QueryAllMemberResponseProtoMsg;
+                }): _87.QueryAllMemberResponse;
+                fromAmino(object: _87.QueryAllMemberResponseAmino): _87.QueryAllMemberResponse;
+                toAmino(message: _87.QueryAllMemberResponse): _87.QueryAllMemberResponseAmino;
+                fromAminoMsg(object: _87.QueryAllMemberResponseAminoMsg): _87.QueryAllMemberResponse;
+                fromProtoMsg(message: _87.QueryAllMemberResponseProtoMsg): _87.QueryAllMemberResponse;
+                toProto(message: _87.QueryAllMemberResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryAllMemberResponse): _87.QueryAllMemberResponseProtoMsg;
             };
             QueryGetBurningsRequest: {
-                encode(message: _86.QueryGetBurningsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryGetBurningsRequest;
+                encode(message: _87.QueryGetBurningsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryGetBurningsRequest;
                 fromPartial(object: {
                     denom?: string;
-                }): _86.QueryGetBurningsRequest;
-                fromAmino(object: _86.QueryGetBurningsRequestAmino): _86.QueryGetBurningsRequest;
-                toAmino(message: _86.QueryGetBurningsRequest): _86.QueryGetBurningsRequestAmino;
-                fromAminoMsg(object: _86.QueryGetBurningsRequestAminoMsg): _86.QueryGetBurningsRequest;
-                fromProtoMsg(message: _86.QueryGetBurningsRequestProtoMsg): _86.QueryGetBurningsRequest;
-                toProto(message: _86.QueryGetBurningsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryGetBurningsRequest): _86.QueryGetBurningsRequestProtoMsg;
+                }): _87.QueryGetBurningsRequest;
+                fromAmino(object: _87.QueryGetBurningsRequestAmino): _87.QueryGetBurningsRequest;
+                toAmino(message: _87.QueryGetBurningsRequest): _87.QueryGetBurningsRequestAmino;
+                fromAminoMsg(object: _87.QueryGetBurningsRequestAminoMsg): _87.QueryGetBurningsRequest;
+                fromProtoMsg(message: _87.QueryGetBurningsRequestProtoMsg): _87.QueryGetBurningsRequest;
+                toProto(message: _87.QueryGetBurningsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryGetBurningsRequest): _87.QueryGetBurningsRequestProtoMsg;
             };
             QueryGetBurningsResponse: {
-                encode(message: _86.QueryGetBurningsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryGetBurningsResponse;
+                encode(message: _87.QueryGetBurningsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryGetBurningsResponse;
                 fromPartial(object: {
                     burnings?: {
                         denom?: string;
                         amount?: string;
                     };
-                }): _86.QueryGetBurningsResponse;
-                fromAmino(object: _86.QueryGetBurningsResponseAmino): _86.QueryGetBurningsResponse;
-                toAmino(message: _86.QueryGetBurningsResponse): _86.QueryGetBurningsResponseAmino;
-                fromAminoMsg(object: _86.QueryGetBurningsResponseAminoMsg): _86.QueryGetBurningsResponse;
-                fromProtoMsg(message: _86.QueryGetBurningsResponseProtoMsg): _86.QueryGetBurningsResponse;
-                toProto(message: _86.QueryGetBurningsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryGetBurningsResponse): _86.QueryGetBurningsResponseProtoMsg;
+                }): _87.QueryGetBurningsResponse;
+                fromAmino(object: _87.QueryGetBurningsResponseAmino): _87.QueryGetBurningsResponse;
+                toAmino(message: _87.QueryGetBurningsResponse): _87.QueryGetBurningsResponseAmino;
+                fromAminoMsg(object: _87.QueryGetBurningsResponseAminoMsg): _87.QueryGetBurningsResponse;
+                fromProtoMsg(message: _87.QueryGetBurningsResponseProtoMsg): _87.QueryGetBurningsResponse;
+                toProto(message: _87.QueryGetBurningsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryGetBurningsResponse): _87.QueryGetBurningsResponseProtoMsg;
             };
             QueryAllBurningsRequest: {
-                encode(message: _86.QueryAllBurningsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllBurningsRequest;
+                encode(message: _87.QueryAllBurningsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllBurningsRequest;
                 fromPartial(object: {
                     pagination?: {
                         key?: Uint8Array;
@@ -958,17 +959,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryAllBurningsRequest;
-                fromAmino(object: _86.QueryAllBurningsRequestAmino): _86.QueryAllBurningsRequest;
-                toAmino(message: _86.QueryAllBurningsRequest): _86.QueryAllBurningsRequestAmino;
-                fromAminoMsg(object: _86.QueryAllBurningsRequestAminoMsg): _86.QueryAllBurningsRequest;
-                fromProtoMsg(message: _86.QueryAllBurningsRequestProtoMsg): _86.QueryAllBurningsRequest;
-                toProto(message: _86.QueryAllBurningsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryAllBurningsRequest): _86.QueryAllBurningsRequestProtoMsg;
+                }): _87.QueryAllBurningsRequest;
+                fromAmino(object: _87.QueryAllBurningsRequestAmino): _87.QueryAllBurningsRequest;
+                toAmino(message: _87.QueryAllBurningsRequest): _87.QueryAllBurningsRequestAmino;
+                fromAminoMsg(object: _87.QueryAllBurningsRequestAminoMsg): _87.QueryAllBurningsRequest;
+                fromProtoMsg(message: _87.QueryAllBurningsRequestProtoMsg): _87.QueryAllBurningsRequest;
+                toProto(message: _87.QueryAllBurningsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryAllBurningsRequest): _87.QueryAllBurningsRequestProtoMsg;
             };
             QueryAllBurningsResponse: {
-                encode(message: _86.QueryAllBurningsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllBurningsResponse;
+                encode(message: _87.QueryAllBurningsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllBurningsResponse;
                 fromPartial(object: {
                     burnings?: {
                         denom?: string;
@@ -978,30 +979,30 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryAllBurningsResponse;
-                fromAmino(object: _86.QueryAllBurningsResponseAmino): _86.QueryAllBurningsResponse;
-                toAmino(message: _86.QueryAllBurningsResponse): _86.QueryAllBurningsResponseAmino;
-                fromAminoMsg(object: _86.QueryAllBurningsResponseAminoMsg): _86.QueryAllBurningsResponse;
-                fromProtoMsg(message: _86.QueryAllBurningsResponseProtoMsg): _86.QueryAllBurningsResponse;
-                toProto(message: _86.QueryAllBurningsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryAllBurningsResponse): _86.QueryAllBurningsResponseProtoMsg;
+                }): _87.QueryAllBurningsResponse;
+                fromAmino(object: _87.QueryAllBurningsResponseAmino): _87.QueryAllBurningsResponse;
+                toAmino(message: _87.QueryAllBurningsResponse): _87.QueryAllBurningsResponseAmino;
+                fromAminoMsg(object: _87.QueryAllBurningsResponseAminoMsg): _87.QueryAllBurningsResponse;
+                fromProtoMsg(message: _87.QueryAllBurningsResponseProtoMsg): _87.QueryAllBurningsResponse;
+                toProto(message: _87.QueryAllBurningsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryAllBurningsResponse): _87.QueryAllBurningsResponseProtoMsg;
             };
             QueryOrderRequest: {
-                encode(message: _86.QueryOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrderRequest;
+                encode(message: _87.QueryOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrderRequest;
                 fromPartial(object: {
                     uid?: string | number | import("long").Long;
-                }): _86.QueryOrderRequest;
-                fromAmino(object: _86.QueryOrderRequestAmino): _86.QueryOrderRequest;
-                toAmino(message: _86.QueryOrderRequest): _86.QueryOrderRequestAmino;
-                fromAminoMsg(object: _86.QueryOrderRequestAminoMsg): _86.QueryOrderRequest;
-                fromProtoMsg(message: _86.QueryOrderRequestProtoMsg): _86.QueryOrderRequest;
-                toProto(message: _86.QueryOrderRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryOrderRequest): _86.QueryOrderRequestProtoMsg;
+                }): _87.QueryOrderRequest;
+                fromAmino(object: _87.QueryOrderRequestAmino): _87.QueryOrderRequest;
+                toAmino(message: _87.QueryOrderRequest): _87.QueryOrderRequestAmino;
+                fromAminoMsg(object: _87.QueryOrderRequestAminoMsg): _87.QueryOrderRequest;
+                fromProtoMsg(message: _87.QueryOrderRequestProtoMsg): _87.QueryOrderRequest;
+                toProto(message: _87.QueryOrderRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryOrderRequest): _87.QueryOrderRequestProtoMsg;
             };
             QueryOrderResponse: {
-                encode(message: _86.QueryOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrderResponse;
+                encode(message: _87.QueryOrderResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrderResponse;
                 fromPartial(object: {
                     order?: {
                         uid?: string | number | import("long").Long;
@@ -1017,17 +1018,17 @@ export declare namespace pendulumlabs {
                         begTime?: string | number | import("long").Long;
                         updTime?: string | number | import("long").Long;
                     };
-                }): _86.QueryOrderResponse;
-                fromAmino(object: _86.QueryOrderResponseAmino): _86.QueryOrderResponse;
-                toAmino(message: _86.QueryOrderResponse): _86.QueryOrderResponseAmino;
-                fromAminoMsg(object: _86.QueryOrderResponseAminoMsg): _86.QueryOrderResponse;
-                fromProtoMsg(message: _86.QueryOrderResponseProtoMsg): _86.QueryOrderResponse;
-                toProto(message: _86.QueryOrderResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryOrderResponse): _86.QueryOrderResponseProtoMsg;
+                }): _87.QueryOrderResponse;
+                fromAmino(object: _87.QueryOrderResponseAmino): _87.QueryOrderResponse;
+                toAmino(message: _87.QueryOrderResponse): _87.QueryOrderResponseAmino;
+                fromAminoMsg(object: _87.QueryOrderResponseAminoMsg): _87.QueryOrderResponse;
+                fromProtoMsg(message: _87.QueryOrderResponseProtoMsg): _87.QueryOrderResponse;
+                toProto(message: _87.QueryOrderResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryOrderResponse): _87.QueryOrderResponseProtoMsg;
             };
             QueryOrdersResponse: {
-                encode(message: _86.QueryOrdersResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrdersResponse;
+                encode(message: _87.QueryOrdersResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrdersResponse;
                 fromPartial(object: {
                     orders?: {
                         uid?: string | number | import("long").Long;
@@ -1047,17 +1048,17 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryOrdersResponse;
-                fromAmino(object: _86.QueryOrdersResponseAmino): _86.QueryOrdersResponse;
-                toAmino(message: _86.QueryOrdersResponse): _86.QueryOrdersResponseAmino;
-                fromAminoMsg(object: _86.QueryOrdersResponseAminoMsg): _86.QueryOrdersResponse;
-                fromProtoMsg(message: _86.QueryOrdersResponseProtoMsg): _86.QueryOrdersResponse;
-                toProto(message: _86.QueryOrdersResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryOrdersResponse): _86.QueryOrdersResponseProtoMsg;
+                }): _87.QueryOrdersResponse;
+                fromAmino(object: _87.QueryOrdersResponseAmino): _87.QueryOrdersResponse;
+                toAmino(message: _87.QueryOrdersResponse): _87.QueryOrdersResponseAmino;
+                fromAminoMsg(object: _87.QueryOrdersResponseAminoMsg): _87.QueryOrdersResponse;
+                fromProtoMsg(message: _87.QueryOrdersResponseProtoMsg): _87.QueryOrdersResponse;
+                toProto(message: _87.QueryOrdersResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryOrdersResponse): _87.QueryOrdersResponseProtoMsg;
             };
             QueryAllOrderRequest: {
-                encode(message: _86.QueryAllOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryAllOrderRequest;
+                encode(message: _87.QueryAllOrderRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryAllOrderRequest;
                 fromPartial(object: {
                     pagination?: {
                         key?: Uint8Array;
@@ -1066,17 +1067,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryAllOrderRequest;
-                fromAmino(object: _86.QueryAllOrderRequestAmino): _86.QueryAllOrderRequest;
-                toAmino(message: _86.QueryAllOrderRequest): _86.QueryAllOrderRequestAmino;
-                fromAminoMsg(object: _86.QueryAllOrderRequestAminoMsg): _86.QueryAllOrderRequest;
-                fromProtoMsg(message: _86.QueryAllOrderRequestProtoMsg): _86.QueryAllOrderRequest;
-                toProto(message: _86.QueryAllOrderRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryAllOrderRequest): _86.QueryAllOrderRequestProtoMsg;
+                }): _87.QueryAllOrderRequest;
+                fromAmino(object: _87.QueryAllOrderRequestAmino): _87.QueryAllOrderRequest;
+                toAmino(message: _87.QueryAllOrderRequest): _87.QueryAllOrderRequestAmino;
+                fromAminoMsg(object: _87.QueryAllOrderRequestAminoMsg): _87.QueryAllOrderRequest;
+                fromProtoMsg(message: _87.QueryAllOrderRequestProtoMsg): _87.QueryAllOrderRequest;
+                toProto(message: _87.QueryAllOrderRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryAllOrderRequest): _87.QueryAllOrderRequestProtoMsg;
             };
             QueryOrderOwnerRequest: {
-                encode(message: _86.QueryOrderOwnerRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrderOwnerRequest;
+                encode(message: _87.QueryOrderOwnerRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrderOwnerRequest;
                 fromPartial(object: {
                     address?: string;
                     pagination?: {
@@ -1086,17 +1087,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryOrderOwnerRequest;
-                fromAmino(object: _86.QueryOrderOwnerRequestAmino): _86.QueryOrderOwnerRequest;
-                toAmino(message: _86.QueryOrderOwnerRequest): _86.QueryOrderOwnerRequestAmino;
-                fromAminoMsg(object: _86.QueryOrderOwnerRequestAminoMsg): _86.QueryOrderOwnerRequest;
-                fromProtoMsg(message: _86.QueryOrderOwnerRequestProtoMsg): _86.QueryOrderOwnerRequest;
-                toProto(message: _86.QueryOrderOwnerRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryOrderOwnerRequest): _86.QueryOrderOwnerRequestProtoMsg;
+                }): _87.QueryOrderOwnerRequest;
+                fromAmino(object: _87.QueryOrderOwnerRequestAmino): _87.QueryOrderOwnerRequest;
+                toAmino(message: _87.QueryOrderOwnerRequest): _87.QueryOrderOwnerRequestAmino;
+                fromAminoMsg(object: _87.QueryOrderOwnerRequestAminoMsg): _87.QueryOrderOwnerRequest;
+                fromProtoMsg(message: _87.QueryOrderOwnerRequestProtoMsg): _87.QueryOrderOwnerRequest;
+                toProto(message: _87.QueryOrderOwnerRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryOrderOwnerRequest): _87.QueryOrderOwnerRequestProtoMsg;
             };
             QueryOrderOwnerUidsResponse: {
-                encode(message: _86.QueryOrderOwnerUidsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrderOwnerUidsResponse;
+                encode(message: _87.QueryOrderOwnerUidsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrderOwnerUidsResponse;
                 fromPartial(object: {
                     orders?: {
                         uids?: (string | number | import("long").Long)[];
@@ -1105,17 +1106,17 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryOrderOwnerUidsResponse;
-                fromAmino(object: _86.QueryOrderOwnerUidsResponseAmino): _86.QueryOrderOwnerUidsResponse;
-                toAmino(message: _86.QueryOrderOwnerUidsResponse): _86.QueryOrderOwnerUidsResponseAmino;
-                fromAminoMsg(object: _86.QueryOrderOwnerUidsResponseAminoMsg): _86.QueryOrderOwnerUidsResponse;
-                fromProtoMsg(message: _86.QueryOrderOwnerUidsResponseProtoMsg): _86.QueryOrderOwnerUidsResponse;
-                toProto(message: _86.QueryOrderOwnerUidsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryOrderOwnerUidsResponse): _86.QueryOrderOwnerUidsResponseProtoMsg;
+                }): _87.QueryOrderOwnerUidsResponse;
+                fromAmino(object: _87.QueryOrderOwnerUidsResponseAmino): _87.QueryOrderOwnerUidsResponse;
+                toAmino(message: _87.QueryOrderOwnerUidsResponse): _87.QueryOrderOwnerUidsResponseAmino;
+                fromAminoMsg(object: _87.QueryOrderOwnerUidsResponseAminoMsg): _87.QueryOrderOwnerUidsResponse;
+                fromProtoMsg(message: _87.QueryOrderOwnerUidsResponseProtoMsg): _87.QueryOrderOwnerUidsResponse;
+                toProto(message: _87.QueryOrderOwnerUidsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryOrderOwnerUidsResponse): _87.QueryOrderOwnerUidsResponseProtoMsg;
             };
             QueryOrderOwnerPairRequest: {
-                encode(message: _86.QueryOrderOwnerPairRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrderOwnerPairRequest;
+                encode(message: _87.QueryOrderOwnerPairRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrderOwnerPairRequest;
                 fromPartial(object: {
                     address?: string;
                     pair?: string;
@@ -1126,17 +1127,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryOrderOwnerPairRequest;
-                fromAmino(object: _86.QueryOrderOwnerPairRequestAmino): _86.QueryOrderOwnerPairRequest;
-                toAmino(message: _86.QueryOrderOwnerPairRequest): _86.QueryOrderOwnerPairRequestAmino;
-                fromAminoMsg(object: _86.QueryOrderOwnerPairRequestAminoMsg): _86.QueryOrderOwnerPairRequest;
-                fromProtoMsg(message: _86.QueryOrderOwnerPairRequestProtoMsg): _86.QueryOrderOwnerPairRequest;
-                toProto(message: _86.QueryOrderOwnerPairRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryOrderOwnerPairRequest): _86.QueryOrderOwnerPairRequestProtoMsg;
+                }): _87.QueryOrderOwnerPairRequest;
+                fromAmino(object: _87.QueryOrderOwnerPairRequestAmino): _87.QueryOrderOwnerPairRequest;
+                toAmino(message: _87.QueryOrderOwnerPairRequest): _87.QueryOrderOwnerPairRequestAmino;
+                fromAminoMsg(object: _87.QueryOrderOwnerPairRequestAminoMsg): _87.QueryOrderOwnerPairRequest;
+                fromProtoMsg(message: _87.QueryOrderOwnerPairRequestProtoMsg): _87.QueryOrderOwnerPairRequest;
+                toProto(message: _87.QueryOrderOwnerPairRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryOrderOwnerPairRequest): _87.QueryOrderOwnerPairRequestProtoMsg;
             };
             QueryOrderOwnerPairResponse: {
-                encode(message: _86.QueryOrderOwnerPairResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryOrderOwnerPairResponse;
+                encode(message: _87.QueryOrderOwnerPairResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryOrderOwnerPairResponse;
                 fromPartial(object: {
                     order?: {
                         uid?: string | number | import("long").Long;
@@ -1156,17 +1157,17 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryOrderOwnerPairResponse;
-                fromAmino(object: _86.QueryOrderOwnerPairResponseAmino): _86.QueryOrderOwnerPairResponse;
-                toAmino(message: _86.QueryOrderOwnerPairResponse): _86.QueryOrderOwnerPairResponseAmino;
-                fromAminoMsg(object: _86.QueryOrderOwnerPairResponseAminoMsg): _86.QueryOrderOwnerPairResponse;
-                fromProtoMsg(message: _86.QueryOrderOwnerPairResponseProtoMsg): _86.QueryOrderOwnerPairResponse;
-                toProto(message: _86.QueryOrderOwnerPairResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryOrderOwnerPairResponse): _86.QueryOrderOwnerPairResponseProtoMsg;
+                }): _87.QueryOrderOwnerPairResponse;
+                fromAmino(object: _87.QueryOrderOwnerPairResponseAmino): _87.QueryOrderOwnerPairResponse;
+                toAmino(message: _87.QueryOrderOwnerPairResponse): _87.QueryOrderOwnerPairResponseAmino;
+                fromAminoMsg(object: _87.QueryOrderOwnerPairResponseAminoMsg): _87.QueryOrderOwnerPairResponse;
+                fromProtoMsg(message: _87.QueryOrderOwnerPairResponseProtoMsg): _87.QueryOrderOwnerPairResponse;
+                toProto(message: _87.QueryOrderOwnerPairResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryOrderOwnerPairResponse): _87.QueryOrderOwnerPairResponseProtoMsg;
             };
             QueryBookRequest: {
-                encode(message: _86.QueryBookRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryBookRequest;
+                encode(message: _87.QueryBookRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryBookRequest;
                 fromPartial(object: {
                     denomA?: string;
                     denomB?: string;
@@ -1178,17 +1179,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryBookRequest;
-                fromAmino(object: _86.QueryBookRequestAmino): _86.QueryBookRequest;
-                toAmino(message: _86.QueryBookRequest): _86.QueryBookRequestAmino;
-                fromAminoMsg(object: _86.QueryBookRequestAminoMsg): _86.QueryBookRequest;
-                fromProtoMsg(message: _86.QueryBookRequestProtoMsg): _86.QueryBookRequest;
-                toProto(message: _86.QueryBookRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryBookRequest): _86.QueryBookRequestProtoMsg;
+                }): _87.QueryBookRequest;
+                fromAmino(object: _87.QueryBookRequestAmino): _87.QueryBookRequest;
+                toAmino(message: _87.QueryBookRequest): _87.QueryBookRequestAmino;
+                fromAminoMsg(object: _87.QueryBookRequestAminoMsg): _87.QueryBookRequest;
+                fromProtoMsg(message: _87.QueryBookRequestProtoMsg): _87.QueryBookRequest;
+                toProto(message: _87.QueryBookRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryBookRequest): _87.QueryBookRequestProtoMsg;
             };
             QueryBookResponse: {
-                encode(message: _86.QueryBookResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryBookResponse;
+                encode(message: _87.QueryBookResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryBookResponse;
                 fromPartial(object: {
                     book?: {
                         uid?: string | number | import("long").Long;
@@ -1208,33 +1209,33 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryBookResponse;
-                fromAmino(object: _86.QueryBookResponseAmino): _86.QueryBookResponse;
-                toAmino(message: _86.QueryBookResponse): _86.QueryBookResponseAmino;
-                fromAminoMsg(object: _86.QueryBookResponseAminoMsg): _86.QueryBookResponse;
-                fromProtoMsg(message: _86.QueryBookResponseProtoMsg): _86.QueryBookResponse;
-                toProto(message: _86.QueryBookResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryBookResponse): _86.QueryBookResponseProtoMsg;
+                }): _87.QueryBookResponse;
+                fromAmino(object: _87.QueryBookResponseAmino): _87.QueryBookResponse;
+                toAmino(message: _87.QueryBookResponse): _87.QueryBookResponseAmino;
+                fromAminoMsg(object: _87.QueryBookResponseAminoMsg): _87.QueryBookResponse;
+                fromProtoMsg(message: _87.QueryBookResponseProtoMsg): _87.QueryBookResponse;
+                toProto(message: _87.QueryBookResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryBookResponse): _87.QueryBookResponseProtoMsg;
             };
             QueryBookendsRequest: {
-                encode(message: _86.QueryBookendsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryBookendsRequest;
+                encode(message: _87.QueryBookendsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryBookendsRequest;
                 fromPartial(object: {
                     coinA?: string;
                     coinB?: string;
                     orderType?: string;
                     rate?: string[];
-                }): _86.QueryBookendsRequest;
-                fromAmino(object: _86.QueryBookendsRequestAmino): _86.QueryBookendsRequest;
-                toAmino(message: _86.QueryBookendsRequest): _86.QueryBookendsRequestAmino;
-                fromAminoMsg(object: _86.QueryBookendsRequestAminoMsg): _86.QueryBookendsRequest;
-                fromProtoMsg(message: _86.QueryBookendsRequestProtoMsg): _86.QueryBookendsRequest;
-                toProto(message: _86.QueryBookendsRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryBookendsRequest): _86.QueryBookendsRequestProtoMsg;
+                }): _87.QueryBookendsRequest;
+                fromAmino(object: _87.QueryBookendsRequestAmino): _87.QueryBookendsRequest;
+                toAmino(message: _87.QueryBookendsRequest): _87.QueryBookendsRequestAmino;
+                fromAminoMsg(object: _87.QueryBookendsRequestAminoMsg): _87.QueryBookendsRequest;
+                fromProtoMsg(message: _87.QueryBookendsRequestProtoMsg): _87.QueryBookendsRequest;
+                toProto(message: _87.QueryBookendsRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryBookendsRequest): _87.QueryBookendsRequestProtoMsg;
             };
             QueryBookendsResponse: {
-                encode(message: _86.QueryBookendsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryBookendsResponse;
+                encode(message: _87.QueryBookendsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryBookendsResponse;
                 fromPartial(object: {
                     coinA?: string;
                     coinB?: string;
@@ -1242,17 +1243,17 @@ export declare namespace pendulumlabs {
                     rate?: string[];
                     prev?: string | number | import("long").Long;
                     next?: string | number | import("long").Long;
-                }): _86.QueryBookendsResponse;
-                fromAmino(object: _86.QueryBookendsResponseAmino): _86.QueryBookendsResponse;
-                toAmino(message: _86.QueryBookendsResponse): _86.QueryBookendsResponseAmino;
-                fromAminoMsg(object: _86.QueryBookendsResponseAminoMsg): _86.QueryBookendsResponse;
-                fromProtoMsg(message: _86.QueryBookendsResponseProtoMsg): _86.QueryBookendsResponse;
-                toProto(message: _86.QueryBookendsResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryBookendsResponse): _86.QueryBookendsResponseProtoMsg;
+                }): _87.QueryBookendsResponse;
+                fromAmino(object: _87.QueryBookendsResponseAmino): _87.QueryBookendsResponse;
+                toAmino(message: _87.QueryBookendsResponse): _87.QueryBookendsResponseAmino;
+                fromAminoMsg(object: _87.QueryBookendsResponseAminoMsg): _87.QueryBookendsResponse;
+                fromProtoMsg(message: _87.QueryBookendsResponseProtoMsg): _87.QueryBookendsResponse;
+                toProto(message: _87.QueryBookendsResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryBookendsResponse): _87.QueryBookendsResponseProtoMsg;
             };
             QueryHistoryRequest: {
-                encode(message: _86.QueryHistoryRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryHistoryRequest;
+                encode(message: _87.QueryHistoryRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryHistoryRequest;
                 fromPartial(object: {
                     pair?: string;
                     length?: string;
@@ -1263,17 +1264,17 @@ export declare namespace pendulumlabs {
                         countTotal?: boolean;
                         reverse?: boolean;
                     };
-                }): _86.QueryHistoryRequest;
-                fromAmino(object: _86.QueryHistoryRequestAmino): _86.QueryHistoryRequest;
-                toAmino(message: _86.QueryHistoryRequest): _86.QueryHistoryRequestAmino;
-                fromAminoMsg(object: _86.QueryHistoryRequestAminoMsg): _86.QueryHistoryRequest;
-                fromProtoMsg(message: _86.QueryHistoryRequestProtoMsg): _86.QueryHistoryRequest;
-                toProto(message: _86.QueryHistoryRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryHistoryRequest): _86.QueryHistoryRequestProtoMsg;
+                }): _87.QueryHistoryRequest;
+                fromAmino(object: _87.QueryHistoryRequestAmino): _87.QueryHistoryRequest;
+                toAmino(message: _87.QueryHistoryRequest): _87.QueryHistoryRequestAmino;
+                fromAminoMsg(object: _87.QueryHistoryRequestAminoMsg): _87.QueryHistoryRequest;
+                fromProtoMsg(message: _87.QueryHistoryRequestProtoMsg): _87.QueryHistoryRequest;
+                toProto(message: _87.QueryHistoryRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryHistoryRequest): _87.QueryHistoryRequestProtoMsg;
             };
             QueryHistoryResponse: {
-                encode(message: _86.QueryHistoryResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryHistoryResponse;
+                encode(message: _87.QueryHistoryResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryHistoryResponse;
                 fromPartial(object: {
                     history?: {
                         uid?: string | number | import("long").Long;
@@ -1293,43 +1294,70 @@ export declare namespace pendulumlabs {
                         nextKey?: Uint8Array;
                         total?: string | number | import("long").Long;
                     };
-                }): _86.QueryHistoryResponse;
-                fromAmino(object: _86.QueryHistoryResponseAmino): _86.QueryHistoryResponse;
-                toAmino(message: _86.QueryHistoryResponse): _86.QueryHistoryResponseAmino;
-                fromAminoMsg(object: _86.QueryHistoryResponseAminoMsg): _86.QueryHistoryResponse;
-                fromProtoMsg(message: _86.QueryHistoryResponseProtoMsg): _86.QueryHistoryResponse;
-                toProto(message: _86.QueryHistoryResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryHistoryResponse): _86.QueryHistoryResponseProtoMsg;
+                }): _87.QueryHistoryResponse;
+                fromAmino(object: _87.QueryHistoryResponseAmino): _87.QueryHistoryResponse;
+                toAmino(message: _87.QueryHistoryResponse): _87.QueryHistoryResponseAmino;
+                fromAminoMsg(object: _87.QueryHistoryResponseAminoMsg): _87.QueryHistoryResponse;
+                fromProtoMsg(message: _87.QueryHistoryResponseProtoMsg): _87.QueryHistoryResponse;
+                toProto(message: _87.QueryHistoryResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryHistoryResponse): _87.QueryHistoryResponseProtoMsg;
             };
             QueryQuoteRequest: {
-                encode(message: _86.QueryQuoteRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryQuoteRequest;
+                encode(message: _87.QueryQuoteRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryQuoteRequest;
                 fromPartial(object: {
                     denomAsk?: string;
                     denomBid?: string;
                     denomAmount?: string;
                     amount?: string;
-                }): _86.QueryQuoteRequest;
-                fromAmino(object: _86.QueryQuoteRequestAmino): _86.QueryQuoteRequest;
-                toAmino(message: _86.QueryQuoteRequest): _86.QueryQuoteRequestAmino;
-                fromAminoMsg(object: _86.QueryQuoteRequestAminoMsg): _86.QueryQuoteRequest;
-                fromProtoMsg(message: _86.QueryQuoteRequestProtoMsg): _86.QueryQuoteRequest;
-                toProto(message: _86.QueryQuoteRequest): Uint8Array;
-                toProtoMsg(message: _86.QueryQuoteRequest): _86.QueryQuoteRequestProtoMsg;
+                }): _87.QueryQuoteRequest;
+                fromAmino(object: _87.QueryQuoteRequestAmino): _87.QueryQuoteRequest;
+                toAmino(message: _87.QueryQuoteRequest): _87.QueryQuoteRequestAmino;
+                fromAminoMsg(object: _87.QueryQuoteRequestAminoMsg): _87.QueryQuoteRequest;
+                fromProtoMsg(message: _87.QueryQuoteRequestProtoMsg): _87.QueryQuoteRequest;
+                toProto(message: _87.QueryQuoteRequest): Uint8Array;
+                toProtoMsg(message: _87.QueryQuoteRequest): _87.QueryQuoteRequestProtoMsg;
             };
             QueryQuoteResponse: {
-                encode(message: _86.QueryQuoteResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.QueryQuoteResponse;
+                encode(message: _87.QueryQuoteResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _87.QueryQuoteResponse;
                 fromPartial(object: {
                     denom?: string;
                     amount?: string;
-                }): _86.QueryQuoteResponse;
-                fromAmino(object: _86.QueryQuoteResponseAmino): _86.QueryQuoteResponse;
-                toAmino(message: _86.QueryQuoteResponse): _86.QueryQuoteResponseAmino;
-                fromAminoMsg(object: _86.QueryQuoteResponseAminoMsg): _86.QueryQuoteResponse;
-                fromProtoMsg(message: _86.QueryQuoteResponseProtoMsg): _86.QueryQuoteResponse;
-                toProto(message: _86.QueryQuoteResponse): Uint8Array;
-                toProtoMsg(message: _86.QueryQuoteResponse): _86.QueryQuoteResponseProtoMsg;
+                }): _87.QueryQuoteResponse;
+                fromAmino(object: _87.QueryQuoteResponseAmino): _87.QueryQuoteResponse;
+                toAmino(message: _87.QueryQuoteResponse): _87.QueryQuoteResponseAmino;
+                fromAminoMsg(object: _87.QueryQuoteResponseAminoMsg): _87.QueryQuoteResponse;
+                fromProtoMsg(message: _87.QueryQuoteResponseProtoMsg): _87.QueryQuoteResponse;
+                toProto(message: _87.QueryQuoteResponse): Uint8Array;
+                toProtoMsg(message: _87.QueryQuoteResponse): _87.QueryQuoteResponseProtoMsg;
+            };
+            DenomMetadataProposal: {
+                encode(message: _86.DenomMetadataProposal, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+                decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _86.DenomMetadataProposal;
+                fromPartial(object: {
+                    sender?: string;
+                    title?: string;
+                    description?: string;
+                    metadata?: {
+                        description?: string;
+                        denomUnits?: {
+                            denom?: string;
+                            exponent?: number;
+                            aliases?: string[];
+                        }[];
+                        base?: string;
+                        display?: string;
+                        name?: string;
+                        symbol?: string;
+                    };
+                }): _86.DenomMetadataProposal;
+                fromAmino(object: _86.DenomMetadataProposalAmino): _86.DenomMetadataProposal;
+                toAmino(message: _86.DenomMetadataProposal): _86.DenomMetadataProposalAmino;
+                fromAminoMsg(object: _86.DenomMetadataProposalAminoMsg): _86.DenomMetadataProposal;
+                fromProtoMsg(message: _86.DenomMetadataProposalProtoMsg): _86.DenomMetadataProposal;
+                toProto(message: _86.DenomMetadataProposal): Uint8Array;
+                toProtoMsg(message: _86.DenomMetadataProposal): _86.DenomMetadataProposalProtoMsg;
             };
             Pool: {
                 encode(message: _85.Pool, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
@@ -1656,7 +1684,7 @@ export declare namespace pendulumlabs {
             };
             pendulumlabs: {
                 market: {
-                    market: _124.MsgClientImpl;
+                    market: _125.MsgClientImpl;
                 };
             };
         }>;
@@ -1762,31 +1790,31 @@ export declare namespace pendulumlabs {
             pendulumlabs: {
                 market: {
                     market: {
-                        params(request?: _86.QueryParamsRequest): Promise<_86.QueryParamsResponse>;
-                        burned(request?: _86.QueryBurnedRequest): Promise<_86.QueryBurnedResponse>;
-                        pool(request: _86.QueryGetPoolRequest): Promise<_86.QueryGetPoolResponse>;
-                        poolAll(request?: _86.QueryAllPoolRequest): Promise<_86.QueryAllPoolResponse>;
-                        volume(request: _86.QueryVolumeRequest): Promise<_86.QueryVolumeResponse>;
-                        volumeAll(request?: _86.QueryAllVolumeRequest): Promise<_86.QueryAllVolumeResponse>;
-                        drop(request: _86.QueryDropRequest): Promise<_86.QueryDropResponse>;
-                        dropAmounts(request: _86.QueryDropAmountsRequest): Promise<_86.QueryDropAmountsResponse>;
-                        dropCoin(request: _86.QueryDropCoinRequest): Promise<_86.QueryDropCoinResponse>;
-                        dropsToCoins(request: _86.QueryDropsToCoinsRequest): Promise<_86.QueryDropsToCoinsResponse>;
-                        dropPairs(request: _86.QueryDropPairsRequest): Promise<_86.QueryDropPairsResponse>;
-                        dropOwnerPair(request: _86.QueryDropOwnerPairRequest): Promise<_86.QueryDropsResponse>;
-                        dropAll(request?: _86.QueryAllDropRequest): Promise<_86.QueryDropsResponse>;
-                        member(request: _86.QueryGetMemberRequest): Promise<_86.QueryGetMemberResponse>;
-                        memberAll(request?: _86.QueryAllMemberRequest): Promise<_86.QueryAllMemberResponse>;
-                        burnings(request: _86.QueryGetBurningsRequest): Promise<_86.QueryGetBurningsResponse>;
-                        burningsAll(request?: _86.QueryAllBurningsRequest): Promise<_86.QueryAllBurningsResponse>;
-                        order(request: _86.QueryOrderRequest): Promise<_86.QueryOrderResponse>;
-                        orderAll(request?: _86.QueryAllOrderRequest): Promise<_86.QueryOrdersResponse>;
-                        orderOwner(request: _86.QueryOrderOwnerRequest): Promise<_86.QueryOrdersResponse>;
-                        orderOwnerUids(request: _86.QueryOrderOwnerRequest): Promise<_86.QueryOrderOwnerUidsResponse>;
-                        book(request: _86.QueryBookRequest): Promise<_86.QueryBookResponse>;
-                        bookends(request: _86.QueryBookendsRequest): Promise<_86.QueryBookendsResponse>;
-                        history(request: _86.QueryHistoryRequest): Promise<_86.QueryHistoryResponse>;
-                        quote(request: _86.QueryQuoteRequest): Promise<_86.QueryQuoteResponse>;
+                        params(request?: _87.QueryParamsRequest): Promise<_87.QueryParamsResponse>;
+                        burned(request?: _87.QueryBurnedRequest): Promise<_87.QueryBurnedResponse>;
+                        pool(request: _87.QueryGetPoolRequest): Promise<_87.QueryGetPoolResponse>;
+                        poolAll(request?: _87.QueryAllPoolRequest): Promise<_87.QueryAllPoolResponse>;
+                        volume(request: _87.QueryVolumeRequest): Promise<_87.QueryVolumeResponse>;
+                        volumeAll(request?: _87.QueryAllVolumeRequest): Promise<_87.QueryAllVolumeResponse>;
+                        drop(request: _87.QueryDropRequest): Promise<_87.QueryDropResponse>;
+                        dropAmounts(request: _87.QueryDropAmountsRequest): Promise<_87.QueryDropAmountsResponse>;
+                        dropCoin(request: _87.QueryDropCoinRequest): Promise<_87.QueryDropCoinResponse>;
+                        dropsToCoins(request: _87.QueryDropsToCoinsRequest): Promise<_87.QueryDropsToCoinsResponse>;
+                        dropPairs(request: _87.QueryDropPairsRequest): Promise<_87.QueryDropPairsResponse>;
+                        dropOwnerPair(request: _87.QueryDropOwnerPairRequest): Promise<_87.QueryDropsResponse>;
+                        dropAll(request?: _87.QueryAllDropRequest): Promise<_87.QueryDropsResponse>;
+                        member(request: _87.QueryGetMemberRequest): Promise<_87.QueryGetMemberResponse>;
+                        memberAll(request?: _87.QueryAllMemberRequest): Promise<_87.QueryAllMemberResponse>;
+                        burnings(request: _87.QueryGetBurningsRequest): Promise<_87.QueryGetBurningsResponse>;
+                        burningsAll(request?: _87.QueryAllBurningsRequest): Promise<_87.QueryAllBurningsResponse>;
+                        order(request: _87.QueryOrderRequest): Promise<_87.QueryOrderResponse>;
+                        orderAll(request?: _87.QueryAllOrderRequest): Promise<_87.QueryOrdersResponse>;
+                        orderOwner(request: _87.QueryOrderOwnerRequest): Promise<_87.QueryOrdersResponse>;
+                        orderOwnerUids(request: _87.QueryOrderOwnerRequest): Promise<_87.QueryOrderOwnerUidsResponse>;
+                        book(request: _87.QueryBookRequest): Promise<_87.QueryBookResponse>;
+                        bookends(request: _87.QueryBookendsRequest): Promise<_87.QueryBookendsResponse>;
+                        history(request: _87.QueryHistoryRequest): Promise<_87.QueryHistoryResponse>;
+                        quote(request: _87.QueryQuoteRequest): Promise<_87.QueryQuoteResponse>;
                     };
                 };
             };

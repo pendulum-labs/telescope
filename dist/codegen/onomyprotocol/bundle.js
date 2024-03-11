@@ -28,8 +28,8 @@ const _75 = __importStar(require("./dao/v1/dao"));
 const _76 = __importStar(require("./dao/v1/genesis"));
 const _77 = __importStar(require("./dao/v1/params"));
 const _78 = __importStar(require("./dao/v1/query"));
-const _120 = __importStar(require("./dao/v1/query.rpc.Query"));
-const _129 = __importStar(require("./rpc.query"));
+const _121 = __importStar(require("./dao/v1/query.rpc.Query"));
+const _130 = __importStar(require("./rpc.query"));
 var onomyprotocol;
 (function (onomyprotocol) {
     let dao;
@@ -39,11 +39,11 @@ var onomyprotocol;
             ..._76,
             ..._77,
             ..._78,
-            ..._120
+            ..._121
         };
     })(dao = onomyprotocol.dao || (onomyprotocol.dao = {}));
     onomyprotocol.ClientFactory = {
-        ..._129
+        ..._130
     };
 })(onomyprotocol || (exports.onomyprotocol = onomyprotocol = {}));
 //# sourceMappingURL=bundle.js.map

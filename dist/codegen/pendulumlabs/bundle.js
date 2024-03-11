@@ -31,14 +31,15 @@ const _82 = __importStar(require("../market/member"));
 const _83 = __importStar(require("../market/order"));
 const _84 = __importStar(require("../market/params"));
 const _85 = __importStar(require("../market/pool"));
-const _86 = __importStar(require("../market/query"));
-const _87 = __importStar(require("../market/tx"));
-const _121 = __importStar(require("../market/tx.amino"));
-const _122 = __importStar(require("../market/tx.registry"));
-const _123 = __importStar(require("../market/query.rpc.Query"));
-const _124 = __importStar(require("../market/tx.rpc.msg"));
-const _130 = __importStar(require("./rpc.query"));
-const _131 = __importStar(require("./rpc.tx"));
+const _86 = __importStar(require("../market/proposal"));
+const _87 = __importStar(require("../market/query"));
+const _88 = __importStar(require("../market/tx"));
+const _122 = __importStar(require("../market/tx.amino"));
+const _123 = __importStar(require("../market/tx.registry"));
+const _124 = __importStar(require("../market/query.rpc.Query"));
+const _125 = __importStar(require("../market/tx.rpc.msg"));
+const _131 = __importStar(require("./rpc.query"));
+const _132 = __importStar(require("./rpc.tx"));
 var pendulumlabs;
 (function (pendulumlabs) {
     let market;
@@ -53,15 +54,16 @@ var pendulumlabs;
             ..._85,
             ..._86,
             ..._87,
-            ..._121,
+            ..._88,
             ..._122,
             ..._123,
-            ..._124
+            ..._124,
+            ..._125
         };
     })(market = pendulumlabs.market || (pendulumlabs.market = {}));
     pendulumlabs.ClientFactory = {
-        ..._130,
-        ..._131
+        ..._131,
+        ..._132
     };
 })(pendulumlabs || (exports.pendulumlabs = pendulumlabs = {}));
 //# sourceMappingURL=bundle.js.map

@@ -44,36 +44,36 @@ import * as _44 from "./upgrade/v1beta1/query";
 import * as _45 from "./upgrade/v1beta1/upgrade";
 import * as _46 from "./vesting/v1beta1/tx";
 import * as _47 from "./vesting/v1beta1/vesting";
-import * as _88 from "./authz/v1beta1/tx.amino";
-import * as _89 from "./bank/v1beta1/tx.amino";
-import * as _90 from "./distribution/v1beta1/tx.amino";
-import * as _91 from "./gov/v1beta1/tx.amino";
-import * as _92 from "./staking/v1beta1/tx.amino";
-import * as _93 from "./vesting/v1beta1/tx.amino";
-import * as _94 from "./authz/v1beta1/tx.registry";
-import * as _95 from "./bank/v1beta1/tx.registry";
-import * as _96 from "./distribution/v1beta1/tx.registry";
-import * as _97 from "./gov/v1beta1/tx.registry";
-import * as _98 from "./staking/v1beta1/tx.registry";
-import * as _99 from "./vesting/v1beta1/tx.registry";
-import * as _100 from "./auth/v1beta1/query.rpc.Query";
-import * as _101 from "./authz/v1beta1/query.rpc.Query";
-import * as _102 from "./bank/v1beta1/query.rpc.Query";
-import * as _103 from "./distribution/v1beta1/query.rpc.Query";
-import * as _104 from "./gov/v1beta1/query.rpc.Query";
-import * as _105 from "./mint/v1beta1/query.rpc.Query";
-import * as _106 from "./params/v1beta1/query.rpc.Query";
-import * as _107 from "./staking/v1beta1/query.rpc.Query";
-import * as _108 from "./tx/v1beta1/service.rpc.Service";
-import * as _109 from "./upgrade/v1beta1/query.rpc.Query";
-import * as _110 from "./authz/v1beta1/tx.rpc.msg";
-import * as _111 from "./bank/v1beta1/tx.rpc.msg";
-import * as _112 from "./distribution/v1beta1/tx.rpc.msg";
-import * as _113 from "./gov/v1beta1/tx.rpc.msg";
-import * as _114 from "./staking/v1beta1/tx.rpc.msg";
-import * as _115 from "./vesting/v1beta1/tx.rpc.msg";
-import * as _125 from "./rpc.query";
-import * as _126 from "./rpc.tx";
+import * as _89 from "./authz/v1beta1/tx.amino";
+import * as _90 from "./bank/v1beta1/tx.amino";
+import * as _91 from "./distribution/v1beta1/tx.amino";
+import * as _92 from "./gov/v1beta1/tx.amino";
+import * as _93 from "./staking/v1beta1/tx.amino";
+import * as _94 from "./vesting/v1beta1/tx.amino";
+import * as _95 from "./authz/v1beta1/tx.registry";
+import * as _96 from "./bank/v1beta1/tx.registry";
+import * as _97 from "./distribution/v1beta1/tx.registry";
+import * as _98 from "./gov/v1beta1/tx.registry";
+import * as _99 from "./staking/v1beta1/tx.registry";
+import * as _100 from "./vesting/v1beta1/tx.registry";
+import * as _101 from "./auth/v1beta1/query.rpc.Query";
+import * as _102 from "./authz/v1beta1/query.rpc.Query";
+import * as _103 from "./bank/v1beta1/query.rpc.Query";
+import * as _104 from "./distribution/v1beta1/query.rpc.Query";
+import * as _105 from "./gov/v1beta1/query.rpc.Query";
+import * as _106 from "./mint/v1beta1/query.rpc.Query";
+import * as _107 from "./params/v1beta1/query.rpc.Query";
+import * as _108 from "./staking/v1beta1/query.rpc.Query";
+import * as _109 from "./tx/v1beta1/service.rpc.Service";
+import * as _110 from "./upgrade/v1beta1/query.rpc.Query";
+import * as _111 from "./authz/v1beta1/tx.rpc.msg";
+import * as _112 from "./bank/v1beta1/tx.rpc.msg";
+import * as _113 from "./distribution/v1beta1/tx.rpc.msg";
+import * as _114 from "./gov/v1beta1/tx.rpc.msg";
+import * as _115 from "./staking/v1beta1/tx.rpc.msg";
+import * as _116 from "./vesting/v1beta1/tx.rpc.msg";
+import * as _126 from "./rpc.query";
+import * as _127 from "./rpc.tx";
 export var cosmos;
 (function (cosmos) {
     let auth;
@@ -82,7 +82,7 @@ export var cosmos;
             ..._2,
             ..._3,
             ..._4,
-            ..._100
+            ..._101
         };
     })(auth = cosmos.auth || (cosmos.auth = {}));
     let authz;
@@ -93,10 +93,10 @@ export var cosmos;
             ..._7,
             ..._8,
             ..._9,
-            ..._88,
-            ..._94,
-            ..._101,
-            ..._110
+            ..._89,
+            ..._95,
+            ..._102,
+            ..._111
         };
     })(authz = cosmos.authz || (cosmos.authz = {}));
     let bank;
@@ -107,10 +107,10 @@ export var cosmos;
             ..._12,
             ..._13,
             ..._14,
-            ..._89,
-            ..._95,
-            ..._102,
-            ..._111
+            ..._90,
+            ..._96,
+            ..._103,
+            ..._112
         };
     })(bank = cosmos.bank || (cosmos.bank = {}));
     let base;
@@ -159,10 +159,10 @@ export var cosmos;
             ..._24,
             ..._25,
             ..._26,
-            ..._90,
-            ..._96,
-            ..._103,
-            ..._112
+            ..._91,
+            ..._97,
+            ..._104,
+            ..._113
         };
     })(distribution = cosmos.distribution || (cosmos.distribution = {}));
     let gov;
@@ -172,10 +172,10 @@ export var cosmos;
             ..._28,
             ..._29,
             ..._30,
-            ..._91,
-            ..._97,
-            ..._104,
-            ..._113
+            ..._92,
+            ..._98,
+            ..._105,
+            ..._114
         };
     })(gov = cosmos.gov || (cosmos.gov = {}));
     let mint;
@@ -184,7 +184,7 @@ export var cosmos;
             ..._31,
             ..._32,
             ..._33,
-            ..._105
+            ..._106
         };
     })(mint = cosmos.mint || (cosmos.mint = {}));
     let params;
@@ -192,7 +192,7 @@ export var cosmos;
         params.v1beta1 = {
             ..._34,
             ..._35,
-            ..._106
+            ..._107
         };
     })(params = cosmos.params || (cosmos.params = {}));
     let staking;
@@ -203,10 +203,10 @@ export var cosmos;
             ..._38,
             ..._39,
             ..._40,
-            ..._92,
-            ..._98,
-            ..._107,
-            ..._114
+            ..._93,
+            ..._99,
+            ..._108,
+            ..._115
         };
     })(staking = cosmos.staking || (cosmos.staking = {}));
     let tx;
@@ -220,7 +220,7 @@ export var cosmos;
         tx.v1beta1 = {
             ..._42,
             ..._43,
-            ..._108
+            ..._109
         };
     })(tx = cosmos.tx || (cosmos.tx = {}));
     let upgrade;
@@ -228,7 +228,7 @@ export var cosmos;
         upgrade.v1beta1 = {
             ..._44,
             ..._45,
-            ..._109
+            ..._110
         };
     })(upgrade = cosmos.upgrade || (cosmos.upgrade = {}));
     let vesting;
@@ -236,14 +236,14 @@ export var cosmos;
         vesting.v1beta1 = {
             ..._46,
             ..._47,
-            ..._93,
-            ..._99,
-            ..._115
+            ..._94,
+            ..._100,
+            ..._116
         };
     })(vesting = cosmos.vesting || (cosmos.vesting = {}));
     cosmos.ClientFactory = {
-        ..._125,
-        ..._126
+        ..._126,
+        ..._127
     };
 })(cosmos || (cosmos = {}));
 //# sourceMappingURL=bundle.js.map

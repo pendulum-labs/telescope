@@ -7,12 +7,12 @@ import * as _60 from "./v1/msgs";
 import * as _61 from "./v1/pool";
 import * as _62 from "./v1/query";
 import * as _63 from "./v1/types";
-import * as _118 from "./v1/query.rpc.Query";
-import * as _119 from "./v1/msgs.rpc.msg";
+import * as _119 from "./v1/query.rpc.Query";
+import * as _120 from "./v1/msgs.rpc.msg";
 export declare namespace gravity {
     const v1: {
-        MsgClientImpl: typeof _119.MsgClientImpl;
-        QueryClientImpl: typeof _118.QueryClientImpl;
+        MsgClientImpl: typeof _120.MsgClientImpl;
+        QueryClientImpl: typeof _119.QueryClientImpl;
         createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
             params(request?: _62.QueryParamsRequest): Promise<_62.QueryParamsResponse>;
             currentValset(request?: _62.QueryCurrentValsetRequest): Promise<_62.QueryCurrentValsetResponse>;
@@ -1938,7 +1938,7 @@ export declare namespace gravity {
                 };
             };
             gravity: {
-                v1: _119.MsgClientImpl;
+                v1: _120.MsgClientImpl;
             };
         }>;
         createRPCQueryClient: ({ rpcEndpoint }: {

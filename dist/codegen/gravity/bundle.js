@@ -32,12 +32,12 @@ const _60 = __importStar(require("./v1/msgs"));
 const _61 = __importStar(require("./v1/pool"));
 const _62 = __importStar(require("./v1/query"));
 const _63 = __importStar(require("./v1/types"));
-const _116 = __importStar(require("./v1/msgs.amino"));
-const _117 = __importStar(require("./v1/msgs.registry"));
-const _118 = __importStar(require("./v1/query.rpc.Query"));
-const _119 = __importStar(require("./v1/msgs.rpc.msg"));
-const _127 = __importStar(require("./rpc.query"));
-const _128 = __importStar(require("./rpc.tx"));
+const _117 = __importStar(require("./v1/msgs.amino"));
+const _118 = __importStar(require("./v1/msgs.registry"));
+const _119 = __importStar(require("./v1/query.rpc.Query"));
+const _120 = __importStar(require("./v1/msgs.rpc.msg"));
+const _128 = __importStar(require("./rpc.query"));
+const _129 = __importStar(require("./rpc.tx"));
 var gravity;
 (function (gravity) {
     gravity.v1 = {
@@ -49,14 +49,14 @@ var gravity;
         ..._61,
         ..._62,
         ..._63,
-        ..._116,
         ..._117,
         ..._118,
-        ..._119
+        ..._119,
+        ..._120
     };
     gravity.ClientFactory = {
-        ..._127,
-        ..._128
+        ..._128,
+        ..._129
     };
 })(gravity || (exports.gravity = gravity = {}));
 //# sourceMappingURL=bundle.js.map
