@@ -31,4 +31,7 @@ __exportStar(require("./tendermint/bundle"), exports);
 __exportStar(require("./onomyprotocol/bundle"), exports);
 __exportStar(require("./pendulumlabs/bundle"), exports);
 __exportStar(require("./pendulumlabs/client"), exports);
+__exportStar(require("./amino/bundle"), exports);
+__exportStar(require("./ibc/bundle"), exports);
+__exportStar(require("./ibc/client"), exports);
 //# sourceMappingURL=index.js.map

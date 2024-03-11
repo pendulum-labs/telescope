@@ -32,12 +32,12 @@ const _60 = __importStar(require("./v1/msgs"));
 const _61 = __importStar(require("./v1/pool"));
 const _62 = __importStar(require("./v1/query"));
 const _63 = __importStar(require("./v1/types"));
-const _117 = __importStar(require("./v1/msgs.amino"));
-const _118 = __importStar(require("./v1/msgs.registry"));
-const _119 = __importStar(require("./v1/query.rpc.Query"));
-const _120 = __importStar(require("./v1/msgs.rpc.msg"));
-const _128 = __importStar(require("./rpc.query"));
-const _129 = __importStar(require("./rpc.tx"));
+const _142 = __importStar(require("./v1/msgs.amino"));
+const _143 = __importStar(require("./v1/msgs.registry"));
+const _144 = __importStar(require("./v1/query.rpc.Query"));
+const _145 = __importStar(require("./v1/msgs.rpc.msg"));
+const _170 = __importStar(require("./rpc.query"));
+const _171 = __importStar(require("./rpc.tx"));
 var gravity;
 (function (gravity) {
     gravity.v1 = {
@@ -49,14 +49,14 @@ var gravity;
         ..._61,
         ..._62,
         ..._63,
-        ..._117,
-        ..._118,
-        ..._119,
-        ..._120
+        ..._142,
+        ..._143,
+        ..._144,
+        ..._145
     };
     gravity.ClientFactory = {
-        ..._128,
-        ..._129
+        ..._170,
+        ..._171
     };
 })(gravity || (exports.gravity = gravity = {}));
 //# sourceMappingURL=bundle.js.map

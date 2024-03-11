@@ -9,13 +9,13 @@ import * as _85 from "../market/pool";
 import * as _86 from "../market/proposal";
 import * as _87 from "../market/query";
 import * as _88 from "../market/tx";
-import * as _124 from "../market/query.rpc.Query";
-import * as _125 from "../market/tx.rpc.msg";
+import * as _149 from "../market/query.rpc.Query";
+import * as _150 from "../market/tx.rpc.msg";
 export declare namespace pendulumlabs {
     namespace market {
         const market: {
-            MsgClientImpl: typeof _125.MsgClientImpl;
-            QueryClientImpl: typeof _124.QueryClientImpl;
+            MsgClientImpl: typeof _150.MsgClientImpl;
+            QueryClientImpl: typeof _149.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _87.QueryParamsRequest): Promise<_87.QueryParamsResponse>;
                 burned(request?: _87.QueryBurnedRequest): Promise<_87.QueryBurnedResponse>;
@@ -1684,7 +1684,7 @@ export declare namespace pendulumlabs {
             };
             pendulumlabs: {
                 market: {
-                    market: _125.MsgClientImpl;
+                    market: _150.MsgClientImpl;
                 };
             };
         }>;

@@ -1,6 +1,6 @@
 {
   "name": "@onomy/telescope",
-  "version": "0.11.0",
+  "version": "0.13.0",
   "description": "Onomy Client Core",
   "author": "Onomy <alex@onomy.io>",
   "homepage": "https://github.com/onomy/telescope#readme",
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@cosmology/telescope": "^0.104.0",
+    "@protobufs/ibc": "^0.1.0",
     "@types/jest": "^29.5.0",
     "eslint": "8.45.0",
     "eslint-config-prettier": "^8.8.0",

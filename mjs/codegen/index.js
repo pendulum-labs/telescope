@@ -15,4 +15,7 @@ export * from "./tendermint/bundle";
 export * from "./onomyprotocol/bundle";
 export * from "./pendulumlabs/bundle";
 export * from "./pendulumlabs/client";
+export * from "./amino/bundle";
+export * from "./ibc/bundle";
+export * from "./ibc/client";
 //# sourceMappingURL=index.js.map

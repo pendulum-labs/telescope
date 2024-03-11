@@ -3,11 +3,11 @@ import * as _75 from "./dao/v1/dao";
 import * as _76 from "./dao/v1/genesis";
 import * as _77 from "./dao/v1/params";
 import * as _78 from "./dao/v1/query";
-import * as _121 from "./dao/v1/query.rpc.Query";
+import * as _146 from "./dao/v1/query.rpc.Query";
 export declare namespace onomyprotocol {
     namespace dao {
         const v1: {
-            QueryClientImpl: typeof _121.QueryClientImpl;
+            QueryClientImpl: typeof _146.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _78.QueryParamsRequest): Promise<_78.QueryParamsResponse>;
                 treasury(request?: _78.QueryTreasuryRequest): Promise<_78.QueryTreasuryResponse>;

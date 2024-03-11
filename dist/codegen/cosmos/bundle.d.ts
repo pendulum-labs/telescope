@@ -45,26 +45,26 @@ import * as _44 from "./upgrade/v1beta1/query";
 import * as _45 from "./upgrade/v1beta1/upgrade";
 import * as _46 from "./vesting/v1beta1/tx";
 import * as _47 from "./vesting/v1beta1/vesting";
-import * as _101 from "./auth/v1beta1/query.rpc.Query";
-import * as _102 from "./authz/v1beta1/query.rpc.Query";
-import * as _103 from "./bank/v1beta1/query.rpc.Query";
-import * as _104 from "./distribution/v1beta1/query.rpc.Query";
-import * as _105 from "./gov/v1beta1/query.rpc.Query";
-import * as _106 from "./mint/v1beta1/query.rpc.Query";
-import * as _107 from "./params/v1beta1/query.rpc.Query";
-import * as _108 from "./staking/v1beta1/query.rpc.Query";
-import * as _109 from "./tx/v1beta1/service.rpc.Service";
-import * as _110 from "./upgrade/v1beta1/query.rpc.Query";
-import * as _111 from "./authz/v1beta1/tx.rpc.msg";
-import * as _112 from "./bank/v1beta1/tx.rpc.msg";
-import * as _113 from "./distribution/v1beta1/tx.rpc.msg";
-import * as _114 from "./gov/v1beta1/tx.rpc.msg";
-import * as _115 from "./staking/v1beta1/tx.rpc.msg";
-import * as _116 from "./vesting/v1beta1/tx.rpc.msg";
+import * as _126 from "./auth/v1beta1/query.rpc.Query";
+import * as _127 from "./authz/v1beta1/query.rpc.Query";
+import * as _128 from "./bank/v1beta1/query.rpc.Query";
+import * as _129 from "./distribution/v1beta1/query.rpc.Query";
+import * as _130 from "./gov/v1beta1/query.rpc.Query";
+import * as _131 from "./mint/v1beta1/query.rpc.Query";
+import * as _132 from "./params/v1beta1/query.rpc.Query";
+import * as _133 from "./staking/v1beta1/query.rpc.Query";
+import * as _134 from "./tx/v1beta1/service.rpc.Service";
+import * as _135 from "./upgrade/v1beta1/query.rpc.Query";
+import * as _136 from "./authz/v1beta1/tx.rpc.msg";
+import * as _137 from "./bank/v1beta1/tx.rpc.msg";
+import * as _138 from "./distribution/v1beta1/tx.rpc.msg";
+import * as _139 from "./gov/v1beta1/tx.rpc.msg";
+import * as _140 from "./staking/v1beta1/tx.rpc.msg";
+import * as _141 from "./vesting/v1beta1/tx.rpc.msg";
 export declare namespace cosmos {
     namespace auth {
         const v1beta1: {
-            QueryClientImpl: typeof _101.QueryClientImpl;
+            QueryClientImpl: typeof _126.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 accounts(request?: _4.QueryAccountsRequest): Promise<_4.QueryAccountsResponse>;
                 account(request: _4.QueryAccountRequest): Promise<_4.QueryAccountResponse>;
@@ -264,8 +264,8 @@ export declare namespace cosmos {
     }
     namespace authz {
         const v1beta1: {
-            MsgClientImpl: typeof _111.MsgClientImpl;
-            QueryClientImpl: typeof _102.QueryClientImpl;
+            MsgClientImpl: typeof _136.MsgClientImpl;
+            QueryClientImpl: typeof _127.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 grants(request: _8.QueryGrantsRequest): Promise<_8.QueryGrantsResponse>;
             };
@@ -583,8 +583,8 @@ export declare namespace cosmos {
     }
     namespace bank {
         const v1beta1: {
-            MsgClientImpl: typeof _112.MsgClientImpl;
-            QueryClientImpl: typeof _103.QueryClientImpl;
+            MsgClientImpl: typeof _137.MsgClientImpl;
+            QueryClientImpl: typeof _128.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 balance(request: _13.QueryBalanceRequest): Promise<_13.QueryBalanceResponse>;
                 allBalances(request: _13.QueryAllBalancesRequest): Promise<_13.QueryAllBalancesResponse>;
@@ -2126,8 +2126,8 @@ export declare namespace cosmos {
     }
     namespace distribution {
         const v1beta1: {
-            MsgClientImpl: typeof _113.MsgClientImpl;
-            QueryClientImpl: typeof _104.QueryClientImpl;
+            MsgClientImpl: typeof _138.MsgClientImpl;
+            QueryClientImpl: typeof _129.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _25.QueryParamsRequest): Promise<_25.QueryParamsResponse>;
                 validatorOutstandingRewards(request: _25.QueryValidatorOutstandingRewardsRequest): Promise<_25.QueryValidatorOutstandingRewardsResponse>;
@@ -3058,8 +3058,8 @@ export declare namespace cosmos {
     }
     namespace gov {
         const v1beta1: {
-            MsgClientImpl: typeof _114.MsgClientImpl;
-            QueryClientImpl: typeof _105.QueryClientImpl;
+            MsgClientImpl: typeof _139.MsgClientImpl;
+            QueryClientImpl: typeof _130.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 proposal(request: _29.QueryProposalRequest): Promise<_29.QueryProposalResponse>;
                 proposals(request: _29.QueryProposalsRequest): Promise<_29.QueryProposalsResponse>;
@@ -3895,7 +3895,7 @@ export declare namespace cosmos {
     }
     namespace mint {
         const v1beta1: {
-            QueryClientImpl: typeof _106.QueryClientImpl;
+            QueryClientImpl: typeof _131.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request?: _33.QueryParamsRequest): Promise<_33.QueryParamsResponse>;
                 inflation(request?: _33.QueryInflationRequest): Promise<_33.QueryInflationResponse>;
@@ -4049,7 +4049,7 @@ export declare namespace cosmos {
     }
     namespace params {
         const v1beta1: {
-            QueryClientImpl: typeof _107.QueryClientImpl;
+            QueryClientImpl: typeof _132.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 params(request: _35.QueryParamsRequest): Promise<_35.QueryParamsResponse>;
             };
@@ -4126,8 +4126,8 @@ export declare namespace cosmos {
     }
     namespace staking {
         const v1beta1: {
-            MsgClientImpl: typeof _115.MsgClientImpl;
-            QueryClientImpl: typeof _108.QueryClientImpl;
+            MsgClientImpl: typeof _140.MsgClientImpl;
+            QueryClientImpl: typeof _133.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 validators(request: _38.QueryValidatorsRequest): Promise<_38.QueryValidatorsResponse>;
                 validator(request: _38.QueryValidatorRequest): Promise<_38.QueryValidatorResponse>;
@@ -5883,7 +5883,7 @@ export declare namespace cosmos {
             };
         }
         const v1beta1: {
-            ServiceClientImpl: typeof _109.ServiceClientImpl;
+            ServiceClientImpl: typeof _134.ServiceClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 simulate(request: _42.SimulateRequest): Promise<_42.SimulateResponse>;
                 getTx(request: _42.GetTxRequest): Promise<_42.GetTxResponse>;
@@ -6564,7 +6564,7 @@ export declare namespace cosmos {
     }
     namespace upgrade {
         const v1beta1: {
-            QueryClientImpl: typeof _110.QueryClientImpl;
+            QueryClientImpl: typeof _135.QueryClientImpl;
             createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
                 currentPlan(request?: _44.QueryCurrentPlanRequest): Promise<_44.QueryCurrentPlanResponse>;
                 appliedPlan(request: _44.QueryAppliedPlanRequest): Promise<_44.QueryAppliedPlanResponse>;
@@ -6773,7 +6773,7 @@ export declare namespace cosmos {
     }
     namespace vesting {
         const v1beta1: {
-            MsgClientImpl: typeof _116.MsgClientImpl;
+            MsgClientImpl: typeof _141.MsgClientImpl;
             registry: readonly [string, import("@cosmjs/proto-signing").GeneratedType][];
             load: (protoRegistry: import("@cosmjs/proto-signing").Registry) => void;
             MessageComposer: {
@@ -7054,22 +7054,22 @@ export declare namespace cosmos {
         }) => Promise<{
             cosmos: {
                 authz: {
-                    v1beta1: _111.MsgClientImpl;
+                    v1beta1: _136.MsgClientImpl;
                 };
                 bank: {
-                    v1beta1: _112.MsgClientImpl;
+                    v1beta1: _137.MsgClientImpl;
                 };
                 distribution: {
-                    v1beta1: _113.MsgClientImpl;
+                    v1beta1: _138.MsgClientImpl;
                 };
                 gov: {
-                    v1beta1: _114.MsgClientImpl;
+                    v1beta1: _139.MsgClientImpl;
                 };
                 staking: {
-                    v1beta1: _115.MsgClientImpl;
+                    v1beta1: _140.MsgClientImpl;
                 };
                 vesting: {
-                    v1beta1: _116.MsgClientImpl;
+                    v1beta1: _141.MsgClientImpl;
                 };
             };
         }>;

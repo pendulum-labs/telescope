@@ -7,6 +7,7 @@ const protoDirs = [
   join(__dirname, '/../submodules/onomy/third_party/proto'),
   join(__dirname, '/../submodules/onomy/proto'),
   join(__dirname, '/../submodules/market/proto'),
+  join(__dirname, '/../proto'),
 ];
 const outPath = join(__dirname, '../src/codegen');
 rimraf(outPath);
@@ -61,8 +62,8 @@ telescope({
           'cosmos.slashing.v1beta1',
           //'cosmos.vesting.v1beta1',
           // 'google.api',
-          'ibc.core.port.v1',
-          'ibc.core.types.v1'
+          // 'ibc.core.port.v1',
+          // 'ibc.core.types.v1'
         ]
       },
       methods: {
